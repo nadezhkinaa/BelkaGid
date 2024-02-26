@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>БелкаГид</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vdform.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <script src="web.js"></script>
+
 </head>
 <body>
 <header>
@@ -31,24 +32,31 @@
 </header>
 
 
-<form id="form" onsubmit="return validate()" novalidate action="lichnkabinet.html">
-    <div class="vhod">
-        <p>Личный Кабинет</p>
-
-        <label>
-            <input placeholder=" Логин" type="email" name="login"/>
-        </label>
-        <label>
-            <input placeholder=" Пароль" type="password" name="password"/>
-        </label>
+<div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px;">
 
 
-        <input class="button" type="submit" value="Вход"/>
-        <input class="button" type="submit" value="Регистрация"/>
 
+    <form id="form" action="#" novalidate>
 
-    </div>
-</form>
+        <div class="text-field">
+            <label class="text-field__label" for="email">Email*</label>
+            <input class="text-field__input" type="email" name="email" id="email" required>
+            <div class="text-field__message"></div>
+        </div>
+
+        <div class="text-field">
+            <label class="text-field__label" for="lastname">Last name*</label>
+            <input class="text-field__input"  type="password" name="lastname"
+                   id="lastname" required>
+            <div class="text-field__message"></div>
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+
+</div>
+
+<script defer src="vdform.js"></script>
+
 
 </body>
 </html>

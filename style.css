@@ -29,7 +29,7 @@ html {
 /* Верхнее Меню */
 .logo {
     display: flex;
-    height: 70px; /* optional; just for demo */
+    height: 35%;
     background: white;
 }
 
@@ -37,7 +37,7 @@ html {
     text-decoration: none;
     color: #582F0E;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 3em;
     font-family: "UrbanSlavic";
 }
 
@@ -46,7 +46,7 @@ html {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 4%;
 }
 
 .put {
@@ -69,7 +69,7 @@ html {
     font-family: 'Cruinn';
     color: #333D29;
     text-decoration: none;
-    padding-right: 50px;
+    padding-right: 4%;
 }
 
 .lkab:hover {
@@ -80,7 +80,7 @@ html {
 .menu {
     display: flex;
     justify-content: center;
-    flex-direction: row; /* главная ось направо, поперечная вниз */
+    flex-direction: row;
     align-items: flex-start;
 
 }
@@ -91,7 +91,7 @@ html {
     font-family: 'Cruinn';
     font-weight: 1000;
     font-size: 32px;
-    padding: 15px 100px;
+    padding:1% 7%;
 
 }
 
@@ -116,6 +116,7 @@ html {
     justify-content: center;
     align-items: center;
     height: 500px;
+
     margin: 10px 100px;
 }
 
@@ -366,3 +367,10 @@ input . password :valid {
     padding-bottom: 3%;
 }
 
+.error .input-field{
+border-color:red;
+}
+.error-label{
+display:block;
+color:red;
+margin-bottom:20px;}
