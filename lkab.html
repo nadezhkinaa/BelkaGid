@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>БелкаГид</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <script src="web.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logotype">
+            <div class="nazvanie"><a href="web1.html">БелкаГид</a></div>
+            <img class="photo" src="белка.jpg" alt="" width="55"
+                 height="55">
+        </div>
+
+        <div class="put">Твой путеводитель по Зеленограду</div>
+        <a class="lkab" href="lkab.html">Личный кабинет</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+
+    <div class="menu">
+        <a href="information.html">О нас</a>
+        <a href="mesta.html">Интересные места</a>
+        <a href="cafe.html">Кафе и рестораны</a>
+        <a href="magazin.html">Магазин</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+</header>
+
+
+<form id="form" onsubmit="return validate()" novalidate action="lichnkabinet.html">
+    <div class="vhod">
+        <p>Личный Кабинет</p>
+
+        <label>
+            <input placeholder=" Логин" type="email" name="login"/>
+        </label>
+        <label>
+            <input placeholder=" Пароль" type="password" name="password"/>
+        </label>
+
+
+        <input class="button" type="submit" value="Вход"/>
+        <input class="button" type="submit" value="Регистрация"/>
+
+
+    </div>
+</form>
+
+</body>
+</html>
