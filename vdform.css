@@ -4,20 +4,12 @@
       box-sizing: border-box;
     }
 
-
-
-    h1 {
-      font-size: 1.25rem;
-      font-weight: 500;
-    }
-
-    p {
-      font-weight: 500;
-    }
-
     /* text field */
     .text-field {
       margin-bottom: 1rem;
+      justify-content: center;
+    align-items: center;
+
     }
 
     .text-field__label {
@@ -104,28 +96,10 @@
       display: block;
     }
 
-    button {
-      display: inline-block;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      vertical-align: middle;
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-      background-color: #0d6efd;
-      border: 1px solid #0d6efd;
-      padding: .375rem .75rem;
-      font-size: 1rem;
-      border-radius: .25rem;
-      transition: background-color .15s ease-in-out;
-    }
 
-    button:hover {
-      color: #fff;
-      background-color: #0b5ed7;
-      border-color: #0a58ca;
-    }
+
+
+
+
+
+

@@ -120,6 +120,28 @@ html {
     margin: 10px 100px;
 }
 
+.buttonvhod{
+appearance: none;
+    border: 0;
+    border-radius: 22px;
+    background: #582F0E;
+    color: #fff;
+    font-family: 'Cruinn';
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left:6px;
+    transition-delay: 0.2s;}
+
+.buttonvhod:hover {
+  color: #fff;
+  background-color: #402611;
+  border-color: #0a58ca;
+    }
+
+    
+
 input[type="email"], input[type="password"], textarea {
 
     background-color: #DAD7CD;
@@ -131,16 +153,9 @@ input[type="email"], input[type="password"], textarea {
     margin: 5px;
 }
 
-input .password, input .email :invalid {
-    border: 2px solid red;
-}
-
-input . password :valid {
-    border: 2px solid green;
-}
 
 
-.vhod p, .vhod a {
+.vhod p {
     text-align: center;
     color: #582F0E;
     font-family: 'Cruinn';
@@ -150,28 +165,6 @@ input . password :valid {
 
 }
 
-.button {
-    appearance: none;
-    border: 0;
-    border-radius: 22px;
-    background: #582F0E;
-    color: #fff;
-    font-family: 'Cruinn';
-    width: 250px;
-    height: 40px;
-    font-size: 18px;
-    margin-top: 15px;
-    transition-delay: 0.2s;
-}
-
-.button:hover {
-    background: #402611;
-}
-
-.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px #6C584C;
-}
 
 
 /* Магазин */
@@ -359,18 +352,9 @@ input . password :valid {
     display: flex;
     align-items: center;
     flex-direction: row;
-
-
 }
 
 .settphoto {
     padding-bottom: 3%;
 }
 
-.error .input-field{
-border-color:red;
-}
-.error-label{
-display:block;
-color:red;
-margin-bottom:20px;}

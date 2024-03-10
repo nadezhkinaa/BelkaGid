@@ -32,31 +32,35 @@
 </header>
 
 
-<div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px;">
+<div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px; justify-content: center;
+    align-items: center;">
+
+    <div class="vhod">
+
+        <p>Вход</p>
+        <form id="form" action="#" novalidate>
+
+            <div class="text-field">
+
+                <input class="text-field__input" type="email" name="email" id="email" required>
+                <div class="text-field__message"></div>
+            </div>
+
+            <div class="text-field">
+
+                <input class="text-field__input" type="password" name="lastname"
+                       id="lastname" required>
+                <div class="text-field__message"></div>
+            </div>
+            <button onclick="lichnkabinet.html" class="buttonvhod" type="submit">Войти</button>
 
 
+        </form>
 
-    <form id="form" action="#" novalidate>
+    </div>
 
-        <div class="text-field">
-            <label class="text-field__label" for="email">Email*</label>
-            <input class="text-field__input" type="email" name="email" id="email" required>
-            <div class="text-field__message"></div>
-        </div>
-
-        <div class="text-field">
-            <label class="text-field__label" for="lastname">Last name*</label>
-            <input class="text-field__input"  type="password" name="lastname"
-                   id="lastname" required>
-            <div class="text-field__message"></div>
-        </div>
-        <button type="submit">Отправить</button>
-    </form>
-
+    <script defer src="vdform.js"></script>
 </div>
-
-<script defer src="vdform.js"></script>
-
 
 </body>
 </html>
