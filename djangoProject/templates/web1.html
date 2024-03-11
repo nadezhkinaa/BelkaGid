@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>БелкаГид</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logotype">
+            <div class="nazvanie"><a href="/">БелкаГид</a></div>
+            <img class="photo" src="{% static 'img/белка.jpg' %}" alt="" width="55"
+                 height="55">
+        </div>
+
+        <div class="put">Твой путеводитель по Зеленограду</div>
+        <a class="lkab" href="login">Личный кабинет</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+
+    <div class="menu">
+        <a href="about">О нас</a>
+        <a href="places">Интересные места</a>
+        <a href="cafe">Кафе и рестораны</a>
+        <a href="shop">Магазин</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+</header>
+
+<img class="karta" src="{% static 'img/58.png' %}" alt="" width="800"
+     height="800">
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>БелкаГид</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+
+<body>
+<header>
+    <div class="logo">
+        <div class="logotype">
+            <div class="nazvanie"><a href="/">БелкаГид</a></div>
+            <img class="photo" src="{% static 'img/белка.jpg' %}" alt="" width="55"
+                 height="55">
+        </div>
+
+        <div class="put">Твой путеводитель по Зеленограду</div>
+        <a class="lkab" href="../login">Личный кабинет</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+    <div class="menu">
+        <a href="../about">О нас</a>
+        <a href="../places">Интересные места</a>
+        <a style="color:#6C584C;" href="../cafe">Кафе и рестораны</a>
+        <a href="../shop">Магазин</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+</header>
+<div class="cafe">
+    <img class="cafephoto" src="{% static 'img/61.png' %}" alt="" width="18%" height="18%">
+    <h1>Ресторан "Pivaldi"</h1>
+    <h3>4.9 456 отзывов</h3>
+    <h2>Пивной ресторан</h2>
+    <h2>Адрес: г.Москва,г.Зеленоград, площадь Юности,2</h2>
+
+</div>
+
+<div class="cafe">
+    <img class="cafephoto" src="{% static 'img/mill.png' %}" alt="" width="18%" height="18%">
+    <h1>Кафе"Mill"</h1>
+    <h3>4.9 456 отзывов</h3>
+    <h2>Семейное кафе</h2>
+    <h2>Адрес: г.Москва,г.Зеленоград, площадь Юности,2</h2>
+
+</div>
+
+</body>

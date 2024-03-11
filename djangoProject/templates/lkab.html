@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>БелкаГид</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vdform.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logotype">
+            <div class="nazvanie"><a href="/">БелкаГид</a></div>
+            <img class="photo" src="{% static 'img/белка.jpg' %}" alt="" width="55"
+                 height="55">
+        </div>
+
+        <div class="put">Твой путеводитель по Зеленограду</div>
+        <a class="lkab" href="../login">Личный кабинет</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+
+    <div class="menu">
+        <a href="../about">О нас</a>
+        <a href="../places">Интересные места</a>
+        <a href="../cafe">Кафе и рестораны</a>
+        <a href="../shop">Магазин</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+</header>
+
+
+<div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px; justify-content: center;
+    align-items: center;">
+
+    <div class="vhod">
+        <p>Вход</p>
+        <form id="form" action="#" novalidate>
+
+            <div class="text-field">
+                <input class="text-field__input" type="email" name="email" id="email" required>
+                <div class="text-field__message"></div>
+            </div>
+
+            <div class="text-field">
+
+                <input class="text-field__input" type="password" name="lastname"
+                       id="lastname" required>
+                <div class="text-field__message"></div>
+            </div>
+            <button class="buttonvhod"  type="submit">Войти</button>
+        </form>
+    </div>
+
+    <script defer src="{% static 'js/vdform.js' %}"></script>
+</div>
+
+</body>
+</html>
