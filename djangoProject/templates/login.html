@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <title>БелкаГид</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vdform.css' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 
 </head>
-<body>
+
 <header>
     <div class="logo">
         <div class="logotype">
@@ -26,36 +27,24 @@
         <a href="../about">О нас</a>
         <a href="../places">Интересные места</a>
         <a href="../cafe">Кафе и рестораны</a>
-        <a style="color:#6C584C;" href=../shop">Магазин</a>
+        <a href="../shop">Магазин</a>
     </div>
     <hr align="center" width=100% size="2.5" color="#6C584C"/>
 </header>
 
+<head>
+    <meta charset="UTF-8">
 
-<div class="tovari">
-    <div class="tovar">
-        <img class="odezda" src="{% static 'img/kofta.jpg' %}" alt="" width="250"
-             height="250">
-        <p class='tovname'>kofta</p>
-        <p class='price'>100$</p>
-    </div>
-    <div class="tovar">
-        <img class="odezda" src="{% static 'img/kofta.jpg' %}" alt="" width="250"
-             height="250">
-        <p class='tovname'>kofta</p>
-        <p class='price'>100$</p>
-    </div>
-    <div class="tovar">
-        <img class="odezda" src="{% static 'img/kofta.jpg' %}" alt="" width="250"
-             height="250">
-        <p class='tovname'>kofta</p>
-        <p class='price'>100$</p>
-    </div>
-    <div class="tovar">
-        <img class="odezda" src="{% static 'img/kofta.jpg' %}" alt="" width="250"
-             height="250">
-        <p class='tovname'>kofta</p>
-        <p class='price'>100$</p>
+</head>
+<body>
+<div style="max-width: 500px; margin-left: auto; margin-right: auto; padding: 15px; justify-content: center;
+    align-items: center;">
+    <div class="vhod">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="buttonvhod" type="submit">Войти</button>
+        </form>
     </div>
 </div>
 </body>

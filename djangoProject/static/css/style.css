@@ -127,7 +127,7 @@ html {
     background: #582F0E;
     color: #fff;
     font-family: 'Cruinn';
-    width: 300px;
+    width: 500px;
     height: 40px;
     font-size: 18px;
     margin-top: 15px;
@@ -142,7 +142,7 @@ html {
 }
 
 
-input[type="email"], input[type="password"], textarea {
+input[type="email"], input[type="password"], input[name="username"],textarea {
 
     background-color: #DAD7CD;
     font-family: 'Cruinn';

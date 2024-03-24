@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <div class="logo">
+        <div class="logotype">
+            <div class="nazvanie"><a href="/">БелкаГид</a></div>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <img class="photo" src="{% static 'img/белка.jpg' %}" alt="" width="55"
+                 height="55">
+        </div>
+
+        <div class="put">Твой путеводитель по Зеленограду</div>
+        <a class="lkab" href="../profile">Личный кабинет</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+
+    <div class="menu">
+        <a href="../about">О нас</a>
+        <a href="../places">Интересные места</a>
+        <a href="../cafe">Кафе и рестораны</a>
+        <a href="../shop">Магазин</a>
+    </div>
+    <hr align="center" width=100% size="2.5" color="#6C584C"/>
+</header>
+<head>
+    <meta charset="UTF-8">
+    <div style="max-width: 1000px; margin-left: auto; margin-right: auto; padding: 15px; justify-content: center;
+    align-items: center;">
+        <div class="vhod">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="buttonvhod " type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</head>
+<body>
+
+</body>
+</html>

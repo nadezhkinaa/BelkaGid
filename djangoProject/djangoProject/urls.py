@@ -23,6 +23,9 @@ from belka.views import cafe_page
 from belka.views import shop_page
 from belka.views import profile_page
 from belka.views import login_page
+from belka.views import signup
+from belka.views import login
+from belka.views import log_out
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -32,6 +35,9 @@ urlpatterns = [
     path('cafe/', cafe_page),
     path('shop/', shop_page),
     path('profile/', profile_page),
-    path('login/', login_page)
+    # path('login/', login_page),
+    path('login/', login),
+    path('logout/', log_out),
+    path('register/', signup),
 
 ]
