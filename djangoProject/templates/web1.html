@@ -35,4 +35,11 @@
 <img class="karta" src="{% static 'img/58.png' %}" alt="" width="800"
      height="800">
 </body>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+</form>
 </html>

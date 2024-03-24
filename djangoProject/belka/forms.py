@@ -33,3 +33,12 @@ class CustomAuthenticationForm(AuthenticationForm):
         super().__init__(request=None, *args, **kwargs)
         self.fields['username'].label = 'Логин'
         self.fields['password'].label = 'Пароль'
+
+
+class FeedbackForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+
+
