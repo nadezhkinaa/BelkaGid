@@ -2,6 +2,7 @@ import time
 
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
@@ -18,7 +19,6 @@ async def sendToBot(message, bot_id, chat_id):
     chat_id = chat_id
     try:
         await bot.sendMessage(chat_id=chat_id, text=message)
-        time.sleep(5)
     except Exception as Err:
         print("Error, bot_id : " + bot_id + " channel_id : " + chat_id)
         print(Err)
@@ -33,11 +33,14 @@ def index_page(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             formmessage = form.cleaned_data['message']
+
             # Дополнительная логика сохранения данных или отправки уведомлений
             # Текст сообщения для отправки
             message = "Новое сообщение!\n\nОтправитель: " + name + "\nПочта: " + email + "\n\nТекст сообщения:\n" + formmessage
             asyncio.run(sendToBot(message, bot_token, chat_id))
             form = FeedbackForm()
+            return redirect('/message_sent/')
+
 
     else:
         form = FeedbackForm()
@@ -92,3 +95,7 @@ def log_out(request):
 
 class MyLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
+
+
+def message_sent(request):
+    return render(request, 'message_sent.html')

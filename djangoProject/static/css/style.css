@@ -135,6 +135,38 @@ html {
     transition-delay: 0.2s;
 }
 
+.buttonform {
+    width: 320px;
+    height: 40px;
+    appearance: none;
+    border: 0;
+    border-radius: 22px;
+    background: #582F0E;
+    color: #fff;
+    font-family: 'Cruinn';
+    font-size: 18px;
+
+    transition-delay: 0.2s;
+}
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 10px 100px;
+}
+
+.forma h1 {
+    margin-top: 20px;
+    color: #582F0E;
+    font-family: 'Cruinn';
+    font-weight: 600;
+    font-size: 36px;
+    text-decoration: none;
+}
+
 .buttonvhod:hover {
     color: #fff;
     background-color: #402611;
@@ -142,7 +174,7 @@ html {
 }
 
 
-input[type="email"], input[type="password"], input[name="username"],textarea {
+input[type="email"], input[type="password"], input[name="username"], input[name="name"], textarea {
 
     background-color: #DAD7CD;
     font-family: 'Cruinn';
@@ -151,8 +183,13 @@ input[type="email"], input[type="password"], input[name="username"],textarea {
     height: 30px;
     font-size: 20px;
     margin: 5px;
+    border: none;
+    text-indent: 10px;
 }
 
+textarea {
+    padding-top: 10px;
+}
 
 .vhod p {
     text-align: center;
@@ -356,3 +393,34 @@ input[type="email"], input[type="password"], input[name="username"],textarea {
     padding-bottom: 3%;
 }
 
+.message_sent_success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 10px 100px;
+}
+
+.message_sent_success h1 {
+    margin-top: 20px;
+    color: #582F0E;
+    font-family: 'Cruinn';
+    font-weight: 600;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+.backtomain {
+    width: 320px;
+    height: 40px;
+    appearance: none;
+    border: 0;
+    border-radius: 22px;
+    background: #582F0E;
+    color: #fff;
+    font-family: 'Cruinn';
+    font-size: 18px;
+
+    transition-delay: 0.2s;
+}

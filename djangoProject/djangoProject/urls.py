@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from belka.views import index_page
+from belka.views import index_page, message_sent
 from belka.views import about_page
 from belka.views import places_page
 from belka.views import cafe_page
@@ -39,5 +39,6 @@ urlpatterns = [
     path('login/', login),
     path('logout/', log_out),
     path('register/', signup),
+    path('message_sent/', message_sent)
 
 ]

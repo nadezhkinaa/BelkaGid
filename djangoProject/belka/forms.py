@@ -38,7 +38,19 @@ class CustomAuthenticationForm(AuthenticationForm):
 class FeedbackForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea(attrs={'style': 'height:300px;'}))
+
+    def __init__(self, *args, **kwargs):
+        super(FeedbackForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = ""
+        self.fields['email'].label = ""
+        self.fields['message'].label = ""
+
+        self.fields['name'].widget.attrs['placeholder'] = " Имя"
+        self.fields['email'].widget.attrs['placeholder'] = " Электронная почта"
+        self.fields['message'].widget.attrs['placeholder'] = " Сообщение"
+
+
 
 
 

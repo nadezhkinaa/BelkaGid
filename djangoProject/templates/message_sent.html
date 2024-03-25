@@ -31,20 +31,13 @@
     </div>
     <hr align="center" width=100% size="2.5" color="#6C584C"/>
 </header>
-
-<img class="karta" src="{% static 'img/58.png' %}" alt="" width="800"
-     height="800">
-
-<div class="forma">
-    <hr align="center" width=100% size="2.5" color="#6C584C"/>
-    <h1>Форма обратной связи</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class='buttonform' type="submit">Отправить</button>
-
+<div class="message_sent_success">
+    <h1>Форма отправлена успешно!</h1>
+    <form action="/">
+        <button class='backtomain' type="submit">Вернуться на главную</button>
     </form>
+
+
 </div>
 </body>
 </html>
