@@ -6,9 +6,20 @@
     <title>БелкаГид</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <script src="{% static 'openlayers/dist/ol.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'openlayers/ol.css' %}">
 
 </head>
 <body>
+
+<style>
+    #map {
+        width: 100%;
+        height: 600px;
+    }
+</style>
+
+
 <div class="wrapper">
     <div class="content">
         <header>
@@ -38,8 +49,30 @@
             <button onclick="#" class="button" type="submit">Выбрать маршрут</button>
 
         </div>
-        <img class="karta" src="{% static 'img/58.png' %}" alt="" width="800"
-             height="800">
+        <div id="map" class="map"></div>
+
+        <script>
+            // Создаем карту
+            const map = new ol.Map({
+                target: 'map', // указываем элемент HTML, в который будет добавлена карта
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([0, 0]), // устанавливаем центр карты
+                    zoom: 2 // устанавливаем начальное увеличение
+                })
+            });
+
+            // Добавляем JPEG файл как основное изображение
+            const imageLayer = new ol.layer.Image({
+                source: new ol.source.ImageStatic({
+                    url: '{% static 'img/58.png' %}',
+                    projection: map.getView().getProjection(),
+                    imageExtent: [-5037508.34, -5037508.34, 5037508.34, 5037508.34] // устанавливаем границы изображения
+                })
+            });
+
+            // Добавляем изображение как слой на карту
+            map.addLayer(imageLayer);
+        </script>
         <div class="block2">
             <svg width="284" height="417" style="margin-left:1500px;margin-top:-100px;" viewBox="0 0 284 417"
                  fill="none"
@@ -88,7 +121,8 @@
                 </div>
             </div>
         </div>
-        <svg style="margin-left:25px;" width="1800" height="175" viewBox="0 0 1894 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg style="margin-left:25px;" width="1800" height="175" viewBox="0 0 1894 175" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
             <path d="M-352 70.1368C-258.925 57.8124 -187.991 4.3774 -90.9057 2.77539C-55.7512 2.1953 -15.7276 -0.574896 17.2956 9.68425C87.3533 31.4487 152.057 63.156 221.153 86.8332C292.283 111.207 363.126 135.29 443.044 124.832C521.419 114.575 596.607 97.8903 676.304 91.4391C770.528 83.8121 866.59 84.4055 961.312 85.6817C1025.33 86.5442 1082.54 129.989 1145.57 142.68C1241.61 162.016 1311.58 120.198 1401.96 108.711C1515.13 94.3279 1602.52 164.854 1714.02 172.618C1812.74 179.493 1819.48 91.5797 1892 64.9552"
                   stroke="#A58890" stroke-width="3" stroke-linecap="round"/>
         </svg>
@@ -167,7 +201,7 @@
             </div>
             <div class="svyz">
                 <h1>Соцсети</h1>
-                <svg  width="51"  height="51" viewBox="0 0 51 51" fill="none"
+                <svg width="51" height="51" viewBox="0 0 51 51" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M25.5002 4.32227C13.8039 4.32231 4.32231 13.8039 4.32227 25.5002C4.32231 37.1964 13.8039 46.678 25.5002 46.678C37.1964 46.678 46.678 37.1964 46.678 25.5002C46.678 13.8039 37.1964 4.32231 25.5002 4.32227ZM36.4704 13.8342C37.3308 13.8028 37.9821 14.5817 37.633 15.9812L33.437 35.7568C33.1441 37.1622 32.2944 37.4984 31.118 36.8494L24.7251 32.1257C23.2235 33.5856 21.8785 34.8931 21.652 35.1148C21.2958 35.4627 21.0121 35.7545 20.3726 35.7545C19.5439 35.7545 19.685 35.4409 19.3991 34.6518L17.0474 27.4425L10.9012 25.5235C9.53577 25.1052 9.52584 24.1672 11.2078 23.4924L35.851 13.9875C36.062 13.8917 36.2719 13.8414 36.4704 13.8342ZM32.5615 18.0403C32.3762 18.0378 32.1244 18.1041 31.865 18.2614L18.0123 27.0013L20.3461 34.1584L20.8084 29.2324L32.6705 18.5298C32.9959 18.241 32.8704 18.0446 32.5615 18.0403Z"
                           fill="#333D29"/>
