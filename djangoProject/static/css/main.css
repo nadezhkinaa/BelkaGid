@@ -153,12 +153,12 @@ body {
         position: absolute;
         bottom: 200px;
         left: 100px;
-        width: 350px;
+        width: 380px;
         height: 75px;
         font-weight: 400;
         font-size: 32px;
         color: #fff;
-        font-family: 'Calypso';
+        font-family: 'Montserrat Alternates';
         border-radius: 25px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
@@ -797,6 +797,7 @@ body {
         font-size: 32px;
         color: #a58890;
         background: #eadacd;
+        margin-bottom:15px;
     }
 
     .text-field__input::placeholder {
@@ -987,7 +988,7 @@ body {
     .namemarshr p,
     .namemarshr a {
         display: block;
-        margin-top: -20px;
+        margin-top: 10px;
         margin-left: 20px;
         font-weight: 200;
         font-size: 32px;
