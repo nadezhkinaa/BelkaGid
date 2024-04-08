@@ -26,6 +26,10 @@ async def sendToBot(message, bot_id, chat_id):
 
 # Create your views here.
 def index_page(request):
+    return render(request, 'main.html')
+
+
+def about_page(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
@@ -40,16 +44,10 @@ def index_page(request):
             asyncio.run(sendToBot(message, bot_token, chat_id))
             form = FeedbackForm()
             return redirect('/message_sent/')
-
-
     else:
         form = FeedbackForm()
 
-    return render(request, 'web1.html', {'form': form})
-
-
-def about_page(request):
-    return render(request, 'information.html')
+    return render(request, 'onas.html', {'form': form})
 
 
 def places_page(request):
@@ -64,13 +62,9 @@ def shop_page(request):
     return render(request, 'magazin.html')
 
 
-def login_page(request):
-    return render(request, 'lkab.html')
-
-
 @login_required
 def profile_page(request):
-    return render(request, 'lichnkabinet.html')
+    return render(request, 'lkab.html')
 
 
 def signup(request):
@@ -85,7 +79,7 @@ def signup(request):
 
 
 def login(request):
-    return MyLoginView.as_view(template_name='login.html')(request)
+    return MyLoginView.as_view(template_name='vhod.html')(request)
 
 
 def log_out(request):
@@ -99,3 +93,23 @@ class MyLoginView(LoginView):
 
 def message_sent(request):
     return render(request, 'message_sent.html')
+
+
+@login_required
+def profile_routes_page(request):
+    return render(request, "marsruty.html")
+
+
+@login_required
+def profile_orders_page(request):
+    return render(request, "zakazi.html")
+
+
+@login_required
+def profile_redirect_page(request):
+    return redirect('/profile/routes')
+
+
+@login_required
+def create_order_page(request):
+    return render(request, "zayvka.html")

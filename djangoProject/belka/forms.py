@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-
+from django.core.validators import validate_email
 
 class SignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
@@ -29,16 +29,19 @@ class SignUpForm(UserCreationForm):
 
 
 class CustomAuthenticationForm(AuthenticationForm):
+
     def __init__(self, request=None, *args, **kwargs):
         super().__init__(request=None, *args, **kwargs)
-        self.fields['username'].label = 'Логин'
-        self.fields['password'].label = 'Пароль'
+        self.fields['username'].label = ''
+        self.fields['password'].label = ''
+        self.fields['username'].widget.attrs.update({'class': 'text-field__input', 'placeholder': 'Логин'})
+        self.fields['password'].widget.attrs.update({'class': 'text-field__input', 'placeholder': 'Пароль'})
 
 
 class FeedbackForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea(attrs={'style': 'height:300px;'}))
+    name = forms.CharField(widget=forms.TextInput(attrs={"class": "inputname"}), max_length=100)
+    email = forms.EmailField(widget=forms.TextInput(attrs={"class": "inputemail"}))
+    message = forms.CharField(widget=forms.Textarea(attrs={"class": "inputmessage"}))
 
     def __init__(self, *args, **kwargs):
         super(FeedbackForm, self).__init__(*args, **kwargs)
@@ -49,8 +52,3 @@ class FeedbackForm(forms.Form):
         self.fields['name'].widget.attrs['placeholder'] = " Имя"
         self.fields['email'].widget.attrs['placeholder'] = " Электронная почта"
         self.fields['message'].widget.attrs['placeholder'] = " Сообщение"
-
-
-
-
-

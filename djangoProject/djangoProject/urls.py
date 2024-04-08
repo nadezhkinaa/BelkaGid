@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from belka.views import index_page, message_sent
+from belka.views import index_page, message_sent, profile_routes_page, profile_orders_page, profile_redirect_page, \
+    create_order_page
 from belka.views import about_page
 from belka.views import places_page
 from belka.views import cafe_page
 from belka.views import shop_page
 from belka.views import profile_page
-from belka.views import login_page
 from belka.views import signup
 from belka.views import login
 from belka.views import log_out
@@ -34,11 +34,14 @@ urlpatterns = [
     path('places/', places_page),
     path('cafe/', cafe_page),
     path('shop/', shop_page),
-    path('profile/', profile_page),
-    # path('login/', login_page),
+    path('profile/', profile_redirect_page),
+    path('profile/info', profile_page),
+    path('profile/routes', profile_routes_page),
+    path('profile/orders', profile_orders_page),
+    path('profile/orders/create', create_order_page),
     path('login/', login),
     path('logout/', log_out),
     path('register/', signup),
-    path('message_sent/', message_sent)
+    path('message_sent/', message_sent),
 
 ]
