@@ -336,25 +336,24 @@ body {
         position: absolute;
         top: 440px;
         left: 100px;
-        text-decoration: underline;
-        /* Смещаем подчёркивание на 20 пикселей вниз */
-        text-underline-offset: 20px;
+
+
     }
 
     .block5 p2 {
-        top: 440px;
-        left: 500px;
+        top: 540px;
+        left: 100px;
     }
 
     .block5 p3 {
-        top: 440px;
-        left: 900px;
+        top: 640px;
+        left: 100px;
     }
 
     .buttonvibor {
         position: absolute;
-        top: 420px;
-        right: 50px;
+        top: 800px;
+        left: 660px;
         width: 350px;
         height: 75px;
         font-weight: 400;
@@ -520,7 +519,7 @@ body {
         left: 10px;
     }
 
-    .inputmessage::placeholder {
+    .inputname::placeholder,.inputemail::placeholder,.inputmessage::placeholder  {
         font-family: 'Hero';
         color: #A58890;
     }
@@ -1174,4 +1173,32 @@ body {
         color: #333d29;
         background: #FBFAF8;
     }
+    .managers{
+    display:flex;
+
+    }
+    .box1, .box2,.box3,.data {
+      width: 320px;
+      height: 40px;
+      border: 1px solid #414833;
+      font-size: 18px;
+      color: #414833;
+      background-color: #F0EEE6;
+      border-radius: 15px;
+      font-family: 'Montserrat Alternates';
+      position: absolute;
+      left:660px;
+      top:440px;
+      padding-left:15px;
+      }
+      .data{
+      width: 300px;
+      left:660px;
+      top:540px;
+      }
+      .box3{
+      left:660px;
+      top:640px;
+      }
+
 }
