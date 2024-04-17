@@ -72,6 +72,60 @@
 
             // Добавляем изображение как слой на карту
             map.addLayer(imageLayer);
+
+            // Создаем массив для хранения маркеров
+            const markerFeatures = [];
+
+            // Добавляем маркеры на карту
+            const markerCoords = [
+                [0, 0], // координаты первого маркера
+                [10, 10], // координаты второго маркера
+                [-10, -10] // координаты третьего маркера и т.д.
+            ];
+
+            markerCoords.forEach(coord => {
+                const markerFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.fromLonLat(coord)) // устанавливаем координаты маркера
+                });
+                markerFeatures.push(markerFeature);
+            });
+
+            // Создаем стиль для маркеров
+            const markerStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    src: '{% static 'img/белка.png' %}', // путь к изображению маркера
+                    scale: 0.1 // масштаб маркера
+                })
+            });
+
+            // Применяем стиль к каждому маркеру
+            markerFeatures.forEach(marker => {
+                marker.setStyle(markerStyle);
+            });
+
+            // Создаем и добавляем слой для маркеров на карту
+            const vectorLayer = new ol.layer.Vector({
+                source: new ol.source.Vector({
+                    features: markerFeatures // добавляем маркеры на слой
+                })
+            });
+            map.addLayer(vectorLayer);
+
+            // Обрабатываем события щелчка на каждом маркере
+            map.on('click', function (evt) {
+                map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                    // Проверяем, является ли щелчок на маркере
+                    if (feature === markerFeatures[0]) {
+                        // Обрабатываем щелчок на первом маркере
+                        console.log('Clicked on Marker 1');
+                    } else if (feature === markerFeatures[1]) {
+                        // Обрабатываем щелчок на втором маркере
+                        console.log('Clicked on Marker 2');
+                        
+                    }
+                    // Добавьте условия для других маркеров по аналогии
+                });
+            });
         </script>
         <div class="block2">
             <svg width="284" height="417" style="margin-left:1500px;margin-top:-100px;" viewBox="0 0 284 417"
@@ -155,33 +209,30 @@
             </svg>
 
 
+            <p1>Выберите маршрут:</p1>
 
-                <p1>Выберите маршрут:</p1>
-
-                <select class="box1">
-                    <option value="" disabled selected>Выбрать</option>
-                    <option>Маршрут №1(такой то)</option>
-                    <option>Маршрут №2(такой то)</option>
-                    <option>Маршрут №3(такой то)</option>
-                    <option>Маршрут №4(такой то)</option>
-                </select>
-
+            <select class="box1">
+                <option value="" disabled selected>Выбрать</option>
+                <option>Маршрут №1(такой то)</option>
+                <option>Маршрут №2(такой то)</option>
+                <option>Маршрут №3(такой то)</option>
+                <option>Маршрут №4(такой то)</option>
+            </select>
 
 
-                <p2>Выберите дату:</p2>
-                <input class='data'type="date">
+            <p2>Выберите дату:</p2>
+            <input class='data' type="date">
 
 
+            <p3>Выберите количество человек:</p3>
 
-                <p3>Выберите количество человек:</p3>
-
-                <select class="box3">
-                    <option value="" disabled selected>Выбрать</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
+            <select class="box3">
+                <option value="" disabled selected>Выбрать</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
 
 
             <button onclick="#" class="buttonvibor" type="submit">Выбрать</button>
