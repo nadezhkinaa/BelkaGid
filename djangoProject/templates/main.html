@@ -45,8 +45,15 @@
 
             <h1>Твой путеводитель по зеленограду</h1>
             <h3>«Зеленоград: Мечтай, создавай, действуй»</h3>
+            <div class="main" id="buttonblock">
 
-            <button onclick="#" class="button" type="submit">Выбрать маршрут</button>
+
+
+
+<a href="#routesblock" class="button" type="submit">Выбрать маршрут</a>
+            </div>
+
+
 
 <svg style="opacity:0.5; position:absolute; left:1150px; top:370px;"  width="229" height="333" viewBox="0 0 229 333" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M109.781 200.899H129.458L145.494 332.428H93.4912L109.781 200.899Z" fill="#BCE8BB"/>
@@ -136,6 +143,8 @@
 
 
         </div>
+        <img  src="{% static 'img/Asset 2.svg' %}" alt="" width="950"
+                             height="950">
         <div id="map" class="map"></div>
 
         <script>
@@ -247,7 +256,7 @@
 
             </div>
         </div>
-        <div class="block3">
+        <div class="block3" id="routesblock">
 
             <h1>Маршруты</h1>
             <div class="marshblocks">

@@ -154,7 +154,7 @@ body {
         bottom: 200px;
         left: 100px;
         width: 380px;
-        height: 75px;
+        height: 60px;
         font-weight: 400;
         font-size: 32px;
         color: #fff;
@@ -162,6 +162,11 @@ body {
         border-radius: 25px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
+        padding-left:20px;
+        padding-top:20px;
+
+
+        text-decoration:none;
     }
 
     .karta {
@@ -234,7 +239,7 @@ body {
         font-family: 'Montserrat Alternates';
         font-weight: 700;
         font-size: 96px;
-        color: #88636d;
+        color: #754C24;
         margin-top: 70px;
         margin-left: 80px;
     }
@@ -245,7 +250,7 @@ body {
         width: 411px;
         height: 503px;
         border-radius: 15px;
-        background: #A58890;
+        background: #A98467;
         border: none;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
@@ -455,7 +460,7 @@ body {
         counter-increment: num;
         font-family: 'Bergamasco';
         margin-right: 105px;
-        color: #a58890;
+        color: #A98467;
         font-weight: 300;
         font-size: 64px;
         font-weight: bold;
@@ -511,7 +516,7 @@ body {
         border-radius: 15px;
         width: 635px;
         height: 51px;
-        background: #EADACD;
+        background: #F0EEE6;
     }
 
     .inputemail {
@@ -521,7 +526,7 @@ body {
 
     .inputname::placeholder,.inputemail::placeholder,.inputmessage::placeholder  {
         font-family: 'Hero';
-        color: #A58890;
+        color: #414833;
     }
 
     .inputmessage {
@@ -795,7 +800,7 @@ body {
         font-weight: 200;
         font-size: 32px;
         color: #a58890;
-        background: #eadacd;
+        background: #F0EEE6;
         margin-bottom:15px;
     }
 
@@ -831,7 +836,7 @@ body {
         padding-top: 30px;
         font-weight: 600;
         font-size: 32px;
-        color: #a58890;
+        color: #A98467;
         padding-left: 25px;
         text-decoration: none;
         font-family: 'Montserrat Alternates';
@@ -853,7 +858,7 @@ body {
         border-radius: 15px;
         width: 580px;
         height: 58px;
-        background: #eadacd;
+        background: #F0EEE6;
         margin-bottom: 40px;
     }
 
@@ -929,7 +934,7 @@ body {
     .namezakaz h1 {
         font-weight: 500;
         font-size: 48px;
-        color: #88636d;
+        color: #754C24;
         font-family: 'Montserrat Alternates';
         padding-left: 50px;
         padding-top: 30px;
@@ -965,7 +970,7 @@ body {
         padding-left: 50px;
         font-weight: 500;
         font-size: 36px;
-        color: #88636d;
+        color: #754C24;
         font-family: 'Montserrat Alternates';
     }
 
@@ -1092,7 +1097,7 @@ body {
         padding-left: 45px;
         font-weight: 500;
         font-size: 48px;
-        color: #88636d;
+        color: #754C24;
         font-family: 'Montserrat Alternates';
     }
 
@@ -1200,5 +1205,21 @@ body {
       left:660px;
       top:640px;
       }
+      html {
+  scroll-behavior: smooth;
+}
+
+#buttonblock{
+  height: 1000px;
+
+}
+
+#mblock {
+  height: 1000px;
+
+}
+
+
+
 
 }
