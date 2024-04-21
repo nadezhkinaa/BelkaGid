@@ -216,96 +216,99 @@
         </div>
 
 
-        <div id="map" class="map"></div>
+        <div class="mapclass">
+            <div id="map" class="map"></div>
 
-        <script>
-            var extent = [-512, -512, 512, 512];
-            var projection = new ol.proj.Projection({
-                code: 'static-image',
-                units: 'pixels',
-                extent: extent
-            });
+            <script>
+                var scale = 512;
+                var extent = [-scale, -scale, scale, scale];
+                var projection = new ol.proj.Projection({
+                    code: 'static-image',
+                    units: 'pixels',
+                    extent: extent
+                });
 
-            var map = new ol.Map({
-                layers: [
-                    new ol.layer.Image({
-                        source: new ol.source.ImageStatic({
-                            url: '{% static 'img/Asset 2.svg' %}',
-                            projection: projection,
-                            imageExtent: extent,
-                            imageLoadFunction: function (image, src) {
-                                image.getImage().src = src;
-                                image.getImage().width = ol.extent.getWidth(extent);
-                                image.getImage().height = ol.extent.getHeight(extent);
-                            }
+                var map = new ol.Map({
+                    layers: [
+                        new ol.layer.Image({
+                            source: new ol.source.ImageStatic({
+                                url: '{% static 'img/map_1.svg' %}',
+                                projection: projection,
+                                imageExtent: extent,
+                                imageLoadFunction: function (image, src) {
+                                    image.getImage().src = src;
+                                    image.getImage().width = ol.extent.getWidth(extent);
+                                    image.getImage().height = ol.extent.getHeight(extent);
+                                }
+                            })
                         })
+                    ],
+                    target: 'map',
+                    view: new ol.View({
+                        projection: projection,
+                        center: ol.extent.getCenter(extent),
+                        zoom: 1.8
                     })
-                ],
-                target: 'map',
-                view: new ol.View({
-                    projection: projection,
-                    center: ol.extent.getCenter(extent),
-                    zoom: 1.8
-                })
-            });
-
-            // Добавим три маркера по координатам на карту
-
-            // Создадим массив координат
-            var markerCoordinates = [
-                [-200, -100],
-                [0, 0],
-                [200, 100]
-            ];
-
-            // Создадим массив маркеров
-            var markers = [];
-            for (var i = 0; i < markerCoordinates.length; i++) {
-                var marker = new ol.Feature({
-                    geometry: new ol.geom.Point(markerCoordinates[i]),
-                    name: 'Marker ' + (i + 1)
                 });
 
-                markers.push(marker);
-            }
-            // Создаем стиль для маркеров
-            const markerStyle = new ol.style.Style({
-                image: new ol.style.Icon({
-                    src: '{% static 'img/белка.png' %}', // путь к изображению маркера
-                    scale: 0.1 // масштаб маркера
-                })
-            });
+                // Добавим три маркера по координатам на карту
 
-            // Применяем стиль к каждому маркеру
-            markers.forEach(marker => {
-                marker.setStyle(markerStyle);
-            });
+                // Создадим массив координат
+                var markerCoordinates = [
+                    [-200, -100],
+                    [0, 0],
+                    [200, 100]
+                ];
 
-            // Создадим векторный слой с маркерами
-            var markerVectorLayer = new ol.layer.Vector({
-                source: new ol.source.Vector({
-                    features: markers
-                })
-            });
+                // Создадим массив маркеров
+                var markers = [];
+                for (var i = 0; i < markerCoordinates.length; i++) {
+                    var marker = new ol.Feature({
+                        geometry: new ol.geom.Point(markerCoordinates[i]),
+                        name: 'Marker ' + (i + 1)
+                    });
 
-            // Добавим векторный слой на карту
-            map.addLayer(markerVectorLayer);
-
-            map.on('click', function (evt) {
-                map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                    // Проверяем, является ли щелчок на маркере
-                    if (feature === markers[0]) {
-                        // Обрабатываем щелчок на первом маркере
-                        console.log('Clicked on Marker 1');
-                    } else if (feature === markers[1]) {
-                        // Обрабатываем щелчок на втором маркере
-                        console.log('Clicked on Marker 2');
-
-                    }
-                    // Добавьте условия для других маркеров по аналогии
+                    markers.push(marker);
+                }
+                // Создаем стиль для маркеров
+                const markerStyle = new ol.style.Style({
+                    image: new ol.style.Icon({
+                        src: '{% static 'img/белка.png' %}', // путь к изображению маркера
+                        scale: 0.1 // масштаб маркера
+                    })
                 });
-            });
-        </script>
+
+                // Применяем стиль к каждому маркеру
+                markers.forEach(marker => {
+                    marker.setStyle(markerStyle);
+                });
+
+                // Создадим векторный слой с маркерами
+                var markerVectorLayer = new ol.layer.Vector({
+                    source: new ol.source.Vector({
+                        features: markers
+                    })
+                });
+
+                // Добавим векторный слой на карту
+                map.addLayer(markerVectorLayer);
+
+                map.on('click', function (evt) {
+                    map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                        // Проверяем, является ли щелчок на маркере
+                        if (feature === markers[0]) {
+                            // Обрабатываем щелчок на первом маркере
+                            console.log('Clicked on Marker 1');
+                        } else if (feature === markers[1]) {
+                            // Обрабатываем щелчок на втором маркере
+                            console.log('Clicked on Marker 2');
+
+                        }
+                        // Добавьте условия для других маркеров по аналогии
+                    });
+                });
+            </script>
+        </div>
         <div class="block2">
             <svg width="284" height="417" style="margin-left:1500px;margin-top:-100px;" viewBox="0 0 284 417"
                  fill="none"

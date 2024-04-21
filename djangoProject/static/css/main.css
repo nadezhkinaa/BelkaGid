@@ -162,11 +162,11 @@ body {
         border-radius: 25px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
-        padding-left:20px;
-        padding-top:20px;
+        padding-left: 20px;
+        padding-top: 20px;
 
 
-        text-decoration:none;
+        text-decoration: none;
     }
 
     .karta {
@@ -524,7 +524,7 @@ body {
         left: 10px;
     }
 
-    .inputname::placeholder,.inputemail::placeholder,.inputmessage::placeholder  {
+    .inputname::placeholder, .inputemail::placeholder, .inputmessage::placeholder {
         font-family: 'Hero';
         color: #414833;
     }
@@ -801,7 +801,7 @@ body {
         font-size: 32px;
         color: #a58890;
         background: #F0EEE6;
-        margin-bottom:15px;
+        margin-bottom: 15px;
     }
 
     .text-field__input::placeholder {
@@ -1178,48 +1178,59 @@ body {
         color: #333d29;
         background: #FBFAF8;
     }
-    .managers{
-    display:flex;
+
+    .managers {
+        display: flex;
 
     }
-    .box1, .box2,.box3,.data {
-      width: 320px;
-      height: 40px;
-      border: 1px solid #414833;
-      font-size: 18px;
-      color: #414833;
-      background-color: #F0EEE6;
-      border-radius: 15px;
-      font-family: 'Montserrat Alternates';
-      position: absolute;
-      left:660px;
-      top:440px;
-      padding-left:15px;
-      }
-      .data{
-      width: 300px;
-      left:660px;
-      top:540px;
-      }
-      .box3{
-      left:660px;
-      top:640px;
-      }
-      html {
-  scroll-behavior: smooth;
-}
 
-#buttonblock{
-  height: 1000px;
+    .box1, .box2, .box3, .data {
+        width: 320px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+        left: 660px;
+        top: 440px;
+        padding-left: 15px;
+    }
 
-}
+    .data {
+        width: 300px;
+        left: 660px;
+        top: 540px;
+    }
 
-#mblock {
-  height: 1000px;
+    .box3 {
+        left: 660px;
+        top: 640px;
+    }
 
-}
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #buttonblock {
+        height: 1000px;
+
+    }
+
+    #mblock {
+        height: 1000px;
+
+    }
+
+    .mapclass {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
 
 
+    }
 
 
 }
