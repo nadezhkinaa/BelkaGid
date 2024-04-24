@@ -923,6 +923,7 @@ body {
     }
 
     .zakaz {
+        position:relative;
         margin-left: 40px;
         margin-top: 50px;
         padding-left: 30px;
