@@ -15,7 +15,7 @@
             <div class="headermenu">
                 <div class="logo">
                     <div class="logotype">
-                        <div class="nazvanie"><a href="main.html">БелкаГид</a></div>
+                        <div class="nazvanie"><a href="/">БелкаГид</a></div>
                         <img class="phot" src="{% static 'img/белка.png' %}" alt="" width="55"
                              height="55">
                     </div>
@@ -32,7 +32,14 @@
         </header>
         <div class="strname">
             <h1>Магазин</h1>
-            <h2>фильтр: футболки</h2>
+            <h2>фильтр: </h2>
+            <select class="boxfiltr">
+                <option value="" disabled selected>Выбрать</option>
+                <option>футболки</option>
+                <option>кофты</option>
+                <option>брелки</option>
+
+            </select>
         </div>
         <div class="tovari">
 

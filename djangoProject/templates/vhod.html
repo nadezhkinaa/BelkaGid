@@ -44,11 +44,14 @@
                       fill="#A98467"/>
             </svg>
 
-            <div class="vhodq">
+            <div class="vhodd">
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <div class="vhodd">
                     <button class="buttonvhod" type="submit">Войти</button>
+                    <button class="buttonregistr" type="submit">Зарегистрироваться</button>
+                    </div>
                 </form>
             </div>
 

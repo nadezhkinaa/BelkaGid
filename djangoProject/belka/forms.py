@@ -13,15 +13,20 @@ class SignUpForm(UserCreationForm):
         self.fields['password1'].help_text = ''
         self.fields['password2'].help_text = ''
 
-        self.fields['username'].label = "Логин"
-        self.fields['password1'].label = "Придумайте пароль"
-        self.fields['password2'].label = "Повторите пароль"
+        self.fields['username'].label = ""
+        self.fields['password1'].label = ""
+        self.fields['password2'].label = ""
 
         # Удаляем проверки пароля или добавляем собственные
         del self.fields['password1'].validators[:]
         del self.fields['password2'].validators[:]
 
-    email = forms.EmailField(max_length=254, help_text='', label="Электронный адрес")
+        self.fields['username'].widget.attrs.update({'class': 'username_reg__input','placeholder':'Придумайте логин'})
+        self.fields['email'].widget.attrs.update({'class': 'email_reg__input','placeholder':'Введите email'})
+        self.fields['password1'].widget.attrs.update({'class': 'password1_reg__input','placeholder':'Придумайте пароль'})
+        self.fields['password2'].widget.attrs.update({'class': 'password2_reg__input','placeholder':'Повторите пароль'})
+
+    email = forms.EmailField(max_length=254, help_text='', label="")
 
     class Meta:
         model = User

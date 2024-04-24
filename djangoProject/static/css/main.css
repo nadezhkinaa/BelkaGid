@@ -102,7 +102,10 @@ body {
         display: flex;
         justify-content: flex-end;
         flex: 0.75;
+
+
     }
+
 
     .menu a {
         color: #333D29;
@@ -563,7 +566,7 @@ body {
     }
 
     .strname h1 {
-        flex: 1;
+        flex: 2;
         font-family: 'Montserrat Alternates';
         color: #333D29;
         font-weight: 700;
@@ -577,7 +580,7 @@ body {
         font-family: 'Montserrat Alternates';
         color: #333D29;
         padding-top: 65px;
-        padding-right: 150px;
+        padding-right: 50px;
         text-align: end;
         font-weight: 200;
         font-size: 24px;
@@ -769,6 +772,13 @@ body {
         align-items: center;
         text-align: center;
     }
+    .vhodd{
+     display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        }
 
     .buttonvhod {
         appearance: none;
@@ -860,6 +870,11 @@ body {
         height: 58px;
         background: #F0EEE6;
         margin-bottom: 40px;
+        padding-left:15px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
     }
 
     .lichndann p {
@@ -983,6 +998,7 @@ body {
         height: 235px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
+
     }
 
     .namemarshr {
@@ -991,6 +1007,7 @@ body {
 
     .namemarshr p,
     .namemarshr a {
+
         display: block;
         margin-top: 10px;
         margin-left: 20px;
@@ -1231,6 +1248,62 @@ body {
 
 
     }
+    .vhod h2 {
+
+        font-weight: 600;
+        font-size: 36px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        margin-bottom: 20px;
+        margin-top:-150px;
+    }
+    .email_reg__input, .username_reg__input, .password1_reg__input, .password2_reg__input {
+    border-radius: 22px;
+        width: 351px;
+        height: 50px;
+        padding: 0px 15px;
+        font-family: 'Hero';
+        font-weight: 200;
+        font-size: 24px;
+        color: #333d29;
+        background: #F0EEE6;
+        margin-bottom: 15px;
+    }
+    .text-field__input::placeholder {
+        color: #a58890;
+        opacity: 0.8;
+    }
+    .boxfiltr{
+    width: 320px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+        flex: 0.5;
+        margin-top:60px;
+        margin-right:50px;
+
+
+    }
+    .buttonregistr{
+    appearance: none;
+        border-radius: 15px;
+        width: 258px;
+        height: 40px;
+        border: 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: #cdd1bc;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+        margin-top: 15px;
+        transition-delay: 0.2s;
+    }
+
 
 
 }
