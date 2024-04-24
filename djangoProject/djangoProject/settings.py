@@ -117,3 +117,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/profile/routes'
 LOGIN_URL = '/login/'
+
+AUTHENTICATION_BACKENDS = [
+    'djangoProject.backends.UserModelBackend'
+]
