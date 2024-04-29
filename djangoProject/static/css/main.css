@@ -1311,20 +1311,21 @@ body {
 }
 
 @media screen and (min-width: 641px) and (max-width: 2510px) {
-  .ant-carousel {
+  .ant-carousel,.ant-carousel2 {
     max-width: 1700px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .ant-carousel {
+  .ant-carousel, .ant-carousel2  {
     max-width: 270px;
   }
 }
 
-.ant-carousel {
-  margin: 50px auto auto;
-  padding-top: 40px;
+.ant-carousel, .ant-carousel2 {
+  margin: 0px auto auto;
+  margin-bottom:101px;
+
 
 }
 
@@ -1336,16 +1337,17 @@ body {
 }
 
 /* General styles */
-.ant-carousel {
+.ant-carousel, .ant-carousel2 {
   width: auto;
   position: relative;
 }
 
-.ant-carousel-hider {
+.ant-carousel-hider, .ant-carousel-hider2 {
   overflow: hidden;
 }
 
-.ant-carousel-list {
+.ant-carousel-list, .ant-carousel-list2 {
+
   width: auto;
   margin: 0;
   padding: 0;
@@ -1363,7 +1365,10 @@ body {
 
 /* Navigation item styles */
 div.ant-carousel-arrow-left,
-div.ant-carousel-arrow-right {
+div.ant-carousel-arrow-right,
+div.ant-carousel-arrow-left2,
+div.ant-carousel-arrow-right2
+{
   width: 22px;
   height: 40px;
   position: absolute;
@@ -1374,14 +1379,22 @@ div.ant-carousel-arrow-right {
 /*стрелочки*/
 div.ant-carousel-arrow-left {
   left: -60px;
-  top: 50%;
+  top: 45%;
   display: block;
   background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
+
+}
+.div.ant-carousel-arrow-left2{
+  left: 110px;
+  top: 115%;
+  display: block;
+  background: #000000;
+
 }
 /*стрелочки*/
-div.ant-carousel-arrow-right {
+div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
   right: -60px;
-  top: 50%;
+  top: 45%;
   display: block;
   background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
 }
@@ -1407,12 +1420,13 @@ div.ant-carousel-dots {
 span.ant-dot {
   width: 10px;
   height: 10px;
-  margin: 5px 7px;
+  margin: 10px 7px;
   padding: 0;
   display: inline-block;
   background-color: #BBB;
   border-radius: 5px;
   cursor: pointer;
+
 }
 
 

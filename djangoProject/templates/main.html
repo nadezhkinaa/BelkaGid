@@ -345,6 +345,271 @@
         <div class="block3" id="routesblock">
 
             <h1>Маршруты</h1>
+            <div class="ant-carousel2" id=”second”>
+            <div class="ant-carousel-hider2">
+                <ul class="ant-carousel-list2">
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel1.png' %}" alt="0" width="550"
+                                                          height="300">
+
+                    </li>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel2.jpg' %}" alt="1" width="550"
+                                                          height="300">
+
+                    </li>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel3.jpg' %}" alt="2" width="550"
+                                                          height="300">
+
+                    </li>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel4.jpg' %}" alt="3" width="550"
+                                                          height="300">
+
+                    </li>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel5.jpg' %}" alt="4" width="550"
+                                                          height="300">
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="ant-carousel-arrow-left"></div>
+            <div class="ant-carousel-arrow-right"></div>
+            <div class="ant-carousel-dots"></div>
+            <script>function Ant(crslId) {
+
+	let id = document.getElementById(crslId);
+	if(id) {
+		this.crslRoot = id
+	}
+	else {
+		this.crslRoot = document.querySelector('.ant-carousel2')
+	};
+
+	// Carousel objects
+	this.crslList = this.crslRoot.querySelector('.ant-carousel-list2');
+	this.crslElements = this.crslList.querySelectorAll('.ant-carousel-element');
+	this.crslElemFirst = this.crslList.querySelector('.ant-carousel-element');
+	this.leftArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-left');
+	this.rightArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-right');
+	this.indicatorDots = this.crslRoot.querySelector('div.ant-carousel-dots');
+
+	// Initialization
+	this.options = Ant.defaults;
+	Ant.initialize(this)
+};
+
+Ant.defaults = {
+
+	// Default options for the carousel
+	elemVisible: 1, // Кол-во отображаемых элементов в карусели
+	loop: true,     // Бесконечное зацикливание карусели
+	auto: true,     // Автоматическая прокрутка
+	interval: 5000, // Интервал между прокруткой элементов (мс)
+	speed: 750,     // Скорость анимации (мс)
+	touch: true,    // Прокрутка  прикосновением
+	arrows: true,   // Прокрутка стрелками
+	dots: true      // Индикаторные точки
+};
+
+Ant.prototype.elemPrev = function(num) {
+	num = num || 1;
+
+	if(this.options.dots) this.dotOn(this.currentElement);
+	this.currentElement -= num;
+	if(this.currentElement < 0) this.currentElement = this.dotsVisible-1;
+	if(this.options.dots) this.dotOff(this.currentElement);
+
+	if(!this.options.loop) {  // сдвиг вправо без цикла
+		this.currentOffset += this.elemWidth*num;
+		this.crslList.style.marginLeft = this.currentOffset + 'px';
+		if(this.currentElement == 0) {
+			this.leftArrow.style.display = 'none'; this.touchPrev = false
+		}
+		this.rightArrow.style.display = 'block'; this.touchNext = true
+	}
+	else {                    // сдвиг вправо с циклом
+		let elm, buf, this$ = this;
+		for(let i=0; i<num; i++) {
+			elm = this.crslList.lastElementChild;
+			buf = elm.cloneNode(true);
+			this.crslList.insertBefore(buf, this.crslList.firstElementChild);
+			this.crslList.removeChild(elm)
+		};
+		this.crslList.style.marginLeft = '-' + this.elemWidth*num + 'px';
+		let compStyle = window.getComputedStyle(this.crslList).marginLeft;
+		this.crslList.style.cssText = 'transition:margin '+this.options.speed+'ms ease;';
+		this.crslList.style.marginLeft = '0px';
+		setTimeout(function() {
+			this$.crslList.style.cssText = 'transition:none;'
+		}, this.options.speed)
+	}
+};
+
+Ant.prototype.elemNext = function(num) {
+	num = num || 1;
+
+	if(this.options.dots) this.dotOn(this.currentElement);
+	this.currentElement += num;
+	if(this.currentElement >= this.dotsVisible) this.currentElement = 0;
+	if(this.options.dots) this.dotOff(this.currentElement);
+
+	if(!this.options.loop) {  // сдвиг влево без цикла
+		this.currentOffset -= this.elemWidth*num;
+		this.crslList.style.marginLeft = this.currentOffset + 'px';
+		if(this.currentElement == this.dotsVisible-1) {
+			this.rightArrow.style.display = 'none'; this.touchNext = false
+		}
+		this.leftArrow.style.display = 'block'; this.touchPrev = true
+	}
+	else {                    // сдвиг влево с циклом
+		let elm, buf, this$ = this;
+		this.crslList.style.cssText = 'transition:margin '+this.options.speed+'ms ease;';
+		this.crslList.style.marginLeft = '-' + this.elemWidth*num + 'px';
+		setTimeout(function() {
+			this$.crslList.style.cssText = 'transition:none;';
+			for(let i=0; i<num; i++) {
+				elm = this$.crslList.firstElementChild;
+				buf = elm.cloneNode(true); this$.crslList.appendChild(buf);
+				this$.crslList.removeChild(elm)
+			};
+			this$.crslList.style.marginLeft = '0px'
+		}, this.options.speed)
+	}
+};
+
+Ant.prototype.dotOn = function(num) {
+	this.indicatorDotsAll[num].style.cssText = 'background-color:#BBB; cursor:pointer;'
+};
+
+Ant.prototype.dotOff = function(num) {
+	this.indicatorDotsAll[num].style.cssText = 'background-color:#556; cursor:default;'
+};
+
+Ant.initialize = function(that) {
+
+	// Constants
+	that.elemCount = that.crslElements.length; // Количество элементов
+	that.dotsVisible = that.elemCount;         // Число видимых точек
+	let elemStyle = window.getComputedStyle(that.crslElemFirst);
+	that.elemWidth = that.crslElemFirst.offsetWidth +  // Ширина элемента (без margin)
+	  parseInt(elemStyle.marginLeft) + parseInt(elemStyle.marginRight);
+
+	// Variables
+	that.currentElement = 0; that.currentOffset = 0;
+	that.touchPrev = true; that.touchNext = true;
+	let xTouch, yTouch, xDiff, yDiff, stTime, mvTime;
+	let bgTime = getTime();
+
+	// Functions
+	function getTime() {
+		return new Date().getTime();
+	};
+	function setAutoScroll() {
+		that.autoScroll = setInterval(function() {
+			let fnTime = getTime();
+			if(fnTime - bgTime + 10 > that.options.interval) {
+				bgTime = fnTime; that.elemNext()
+			}
+		}, that.options.interval)
+	};
+
+	// Start initialization
+	if(that.elemCount <= that.options.elemVisible) {   // Отключить навигацию
+		that.options.auto = false; that.options.touch = false;
+		that.options.arrows = false; that.options.dots = false;
+		that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
+	};
+
+	if(!that.options.loop) {       // если нет цикла - уточнить количество точек
+		that.dotsVisible = that.elemCount - that.options.elemVisible + 1;
+		that.leftArrow.style.display = 'none';  // отключить левую стрелку
+		that.touchPrev = false;    // отключить прокрутку прикосновением вправо
+		that.options.auto = false; // отключить автопркрутку
+	}
+	else if(that.options.auto) {   // инициализация автопрокруки
+		setAutoScroll();
+		// Остановка прокрутки при наведении мыши на элемент
+		that.crslList.addEventListener('mouseenter', function() {
+    	clearInterval(that.autoScroll)
+    }, false);
+		that.crslList.addEventListener('mouseleave', setAutoScroll, false)
+	};
+
+	if(that.options.touch) {   // инициализация прокрутки прикосновением
+		that.crslList.addEventListener('touchstart', function(e) {
+			xTouch = parseInt(e.touches[0].clientX);
+			yTouch = parseInt(e.touches[0].clientY);
+			stTime = getTime()
+		}, false);
+		that.crslList.addEventListener('touchmove', function(e) {
+			if(!xTouch || !yTouch) return;
+			xDiff = xTouch - parseInt(e.touches[0].clientX);
+			yDiff = yTouch - parseInt(e.touches[0].clientY);
+			mvTime = getTime();
+			if(Math.abs(xDiff) > 15 && Math.abs(xDiff) > Math.abs(yDiff) && mvTime - stTime < 75) {
+				stTime = 0;
+				if(that.touchNext && xDiff > 0) {
+					bgTime = mvTime; that.elemNext()
+				}
+				else if(that.touchPrev && xDiff < 0) {
+					bgTime = mvTime; that.elemPrev()
+				}
+			}
+		}, false)
+	};
+
+	if(that.options.arrows) {  // инициализация стрелок
+		if(!that.options.loop) that.crslList.style.cssText =
+      'transition:margin '+that.options.speed+'ms ease;';
+		that.leftArrow.addEventListener('click', function() {
+			let fnTime = getTime();
+			if(fnTime - bgTime > that.options.speed) {
+				bgTime = fnTime; that.elemPrev()
+			}
+		}, false);
+		that.rightArrow.addEventListener('click', function() {
+			let fnTime = getTime();
+			if(fnTime - bgTime > that.options.speed) {
+				bgTime = fnTime; that.elemNext()
+			}
+		}, false)
+	}
+	else {
+		that.leftArrow.style.display = 'none';
+    that.rightArrow.style.display = 'none'
+	};
+
+	if(that.options.dots) {  // инициализация индикаторных точек
+		let sum = '', diffNum;
+		for(let i=0; i<that.dotsVisible; i++) {
+			sum += '<span class="ant-dot"></span>'
+		};
+		that.indicatorDots.innerHTML = sum;
+		that.indicatorDotsAll = that.crslRoot.querySelectorAll('span.ant-dot');
+		// Назначаем точкам обработчик события 'click'
+		for(let n=0; n<that.dotsVisible; n++) {
+			that.indicatorDotsAll[n].addEventListener('click', function() {
+				diffNum = Math.abs(n - that.currentElement);
+				if(n < that.currentElement) {
+					bgTime = getTime(); that.elemPrev(diffNum)
+				}
+				else if(n > that.currentElement) {
+					bgTime = getTime(); that.elemNext(diffNum)
+				}
+				// Если n == that.currentElement ничего не делаем
+			}, false)
+		};
+		that.dotOff(0);  // точка[0] выключена, остальные включены
+		for(let i=1; i<that.dotsVisible; i++) {
+			that.dotOn(i)
+		}
+	}
+};
+
+ new Ant("second");
+            </script>
+        </div>
+
             <div class="marshblocks">
                 <div class="marshrblock">
                     <p>маршрут №1</p>
@@ -364,62 +629,7 @@
         </svg>
         <div class="block4">
             <h1>Галерея</h1>
-            <div class="photos">
-                <div class="photo">
-
-                </div>
-                <div class="photo">
-
-                </div>
-                <div class="photo">
-
-                </div>
-            </div>
-        </div>
-        <div class="block5">
-            <h1>Что то про предложить турагенту??</h1>
-            <svg width="138" height="160" style="margin-left:1550px;margin-top:80px;" viewBox="0 0 138 160" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M86.98 70.965C70.8427 78.1409 54.8849 94.2371 46.4405 103.665C54.4699 81.4419 67.3102 60.709 85.9819 46.0702C113.311 44.5908 152.146 14.5734 132.79 1.98794C115.677 -9.15128 91.2975 29.5876 83.9185 42.2283C78.5227 46.1748 73.5142 50.6101 68.9587 55.4761C71.9117 46.0123 73.4493 36.1756 73.5229 26.2756C73.5229 10.4776 58.3388 4.30632 49.973 23.041C43.0987 38.4968 48.8516 69.5519 51.0384 80.0729C46.2905 88.5442 42.3091 97.4103 39.1401 106.569C37.3458 76.5291 23.8214 47.0858 11.4745 50.5523C-6.83834 55.708 1.01163 87.7236 6.21504 107.96C10.3867 124.155 24.4045 139.401 29.8434 144.855C29.2939 149.116 28.9238 153.389 28.722 157.628C28.621 160.52 35.159 159.284 35.2487 156.921C35.3047 155.453 35.3945 153.985 35.5066 152.505C59.6397 158.025 109.98 145.054 116.092 133.793C122.451 122.08 115.251 117.774 88.5836 121.207C65.7514 124.155 43.7266 141.951 35.8094 148.94C37.1983 136.276 39.8502 123.777 43.7266 111.625C71.1343 115.5 137.736 89.5451 136.951 74.0893C136.199 57.9269 110.53 60.4992 86.98 70.965Z"
-                      fill="#BBBEA0"/>
-            </svg>
-
-            <svg width="217" height="174" style="margin-left:1550px;margin-top:600px;" viewBox="0 0 217 174" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M122.26 171.928C109.767 171.072 98.4893 167.059 87.4525 162.131C79.5501 158.767 71.9024 154.852 64.5681 150.416C55.3704 144.631 46.8146 137.916 39.0408 130.38C35.0058 126.368 31.1867 122.152 27.5987 117.75C23.2591 112.488 19.4567 106.819 16.2465 100.826C10.9743 91.2124 6.98241 80.9723 4.36895 70.3579C3.94612 68.9106 3.65455 67.4294 3.49791 65.9315C3.07586 61.0611 2.31322 56.225 1.21544 51.4574C-0.308464 44.6622 -0.400346 37.6325 0.945252 30.801C2.74718 22.5532 4.75921 14.2907 10.21 7.38555C12.2383 4.62005 15.0319 2.48457 18.2588 1.23284C25.4064 -1.40823 31.7731 0.406501 37.6744 4.65581C43.1831 8.77273 47.6489 14.0849 50.7233 20.1776C56.0133 30.1945 60.39 40.6522 63.8022 51.4279C66.5652 60.2806 68.3824 69.2956 71.1904 78.0893C71.9046 80.6228 73.0633 83.0145 74.6141 85.1568C74.8629 85.5189 75.1984 85.8154 75.5911 86.0204C75.9838 86.2254 76.4218 86.3327 76.8665 86.3327C77.3112 86.3327 77.7488 86.2254 78.1415 86.0204C78.5342 85.8154 78.87 85.5189 79.1189 85.1568C80.3421 83.7051 81.1456 81.9572 81.4461 80.0959C82.2351 75.4503 82.1743 70.7036 81.2661 66.079C80.26 60.3395 79.2088 54.6 77.7823 48.949C76.1193 42.7693 75.0387 36.4522 74.5539 30.0779C74.1936 24.058 74.644 17.994 77.5572 12.4906C79.1625 9.26381 81.7286 6.59301 84.9149 4.83286C87.1582 3.52972 89.7523 2.92914 92.3518 3.11102C94.9512 3.29289 97.4326 4.24869 99.4653 5.85102C103.845 8.9168 107.548 12.8215 110.352 17.3301C117.86 29.2665 122.905 42.2063 126.87 55.692C128.867 62.3463 130.489 69.1629 133.702 75.4336C134.319 77.0142 135.219 78.4733 136.36 79.7418C136.561 79.946 136.806 80.1036 137.077 80.2027C137.348 80.3018 137.638 80.34 137.926 80.3145C138.214 80.2891 138.493 80.2006 138.741 80.0555C138.99 79.9105 139.202 79.7125 139.363 79.4763C141.62 76.1902 142.857 72.3301 142.922 68.3661C142.757 59.174 142.171 49.9818 142.487 40.8192C142.772 32.5862 143.478 24.3236 147.322 16.6513C149.989 11.3942 154.235 7.06811 159.485 4.25741C161.661 3.02985 164.088 2.29489 166.589 2.10601C169.091 1.91712 171.604 2.27909 173.945 3.16559C177.937 4.5161 181.631 6.59899 184.832 9.30354C191.077 14.8709 196.365 21.3927 200.493 28.6172C203.883 34.2986 206.844 40.2162 209.353 46.3227C213.115 55.9887 215.539 66.1073 216.561 76.4072C217.256 83.6975 217.125 91.0413 216.17 98.3031C214.967 107.649 212.008 116.694 207.446 124.979C202.764 133.836 196.968 142.08 190.193 149.516C184.881 155.216 178.78 160.153 172.068 164.182C167.143 167.116 161.761 169.234 156.136 170.453C144.829 172.917 133.432 174.127 122.26 171.928Z"
-                      fill="#333D29"/>
-            </svg>
-
-
-            <p1>Выберите маршрут:</p1>
-
-            <select class="box1">
-                <option value="" disabled selected>Выбрать</option>
-                <option>Маршрут №1(такой то)</option>
-                <option>Маршрут №2(такой то)</option>
-                <option>Маршрут №3(такой то)</option>
-                <option>Маршрут №4(такой то)</option>
-            </select>
-
-
-            <p2>Выберите дату:</p2>
-            <input class='data' type="date">
-
-
-            <p3>Выберите количество человек:</p3>
-
-            <select class="box3">
-                <option value="" disabled selected>Выбрать</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-
-
-            <button onclick="#" class="buttonvibor" type="submit">Выбрать</button>
-        </div>
-        <div class="ant-carousel">
+            <div class="ant-carousel" id=”first”>
             <div class="ant-carousel-hider">
                 <ul class="ant-carousel-list">
                     <li class="ant-carousel-element"><img src="{% static 'img/zel1.png' %}" alt="0" width="550"
@@ -434,27 +644,16 @@
                                                           height="300">
 
                     </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img3.jpg" alt="3">
-                        <p>Описание 3</p>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel4.jpg' %}" alt="3" width="550"
+                                                          height="300">
+
                     </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img4.jpg" alt="4">
-                        <p>Описание 4</p>
+                    <li class="ant-carousel-element"><img src="{% static 'img/zel5.jpg' %}" alt="4" width="550"
+                                                          height="300">
+
                     </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img5.jpg" alt="5">
-                        <p>Описание 5</p>
-                    </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img6.jpg" alt="6">
-                        <p>Описание 6</p>
-                    </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img7.jpg" alt="7">
-                        <p>Описание 7</p>
-                    </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img8.jpg" alt="8">
-                        <p>Описание 8</p>
-                    </li>
-                    <li class="ant-carousel-element"><img src="http://pvbk.spb.ru/inc/carousel/imgs/img9.jpg" alt="9">
-                        <p>Описание 9</p>
-                    </li>
+
+
                 </ul>
             </div>
             <div class="ant-carousel-arrow-left"></div>
@@ -691,9 +890,54 @@ Ant.initialize = function(that) {
 	}
 };
 
-new Ant();
+new Ant("first");
             </script>
         </div>
+        </div>
+        <div class="block5">
+            <h1>Что то про предложить турагенту??</h1>
+            <svg width="138" height="160" style="margin-left:1550px;margin-top:80px;" viewBox="0 0 138 160" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M86.98 70.965C70.8427 78.1409 54.8849 94.2371 46.4405 103.665C54.4699 81.4419 67.3102 60.709 85.9819 46.0702C113.311 44.5908 152.146 14.5734 132.79 1.98794C115.677 -9.15128 91.2975 29.5876 83.9185 42.2283C78.5227 46.1748 73.5142 50.6101 68.9587 55.4761C71.9117 46.0123 73.4493 36.1756 73.5229 26.2756C73.5229 10.4776 58.3388 4.30632 49.973 23.041C43.0987 38.4968 48.8516 69.5519 51.0384 80.0729C46.2905 88.5442 42.3091 97.4103 39.1401 106.569C37.3458 76.5291 23.8214 47.0858 11.4745 50.5523C-6.83834 55.708 1.01163 87.7236 6.21504 107.96C10.3867 124.155 24.4045 139.401 29.8434 144.855C29.2939 149.116 28.9238 153.389 28.722 157.628C28.621 160.52 35.159 159.284 35.2487 156.921C35.3047 155.453 35.3945 153.985 35.5066 152.505C59.6397 158.025 109.98 145.054 116.092 133.793C122.451 122.08 115.251 117.774 88.5836 121.207C65.7514 124.155 43.7266 141.951 35.8094 148.94C37.1983 136.276 39.8502 123.777 43.7266 111.625C71.1343 115.5 137.736 89.5451 136.951 74.0893C136.199 57.9269 110.53 60.4992 86.98 70.965Z"
+                      fill="#BBBEA0"/>
+            </svg>
+
+            <svg width="217" height="174" style="margin-left:1550px;margin-top:600px;" viewBox="0 0 217 174" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M122.26 171.928C109.767 171.072 98.4893 167.059 87.4525 162.131C79.5501 158.767 71.9024 154.852 64.5681 150.416C55.3704 144.631 46.8146 137.916 39.0408 130.38C35.0058 126.368 31.1867 122.152 27.5987 117.75C23.2591 112.488 19.4567 106.819 16.2465 100.826C10.9743 91.2124 6.98241 80.9723 4.36895 70.3579C3.94612 68.9106 3.65455 67.4294 3.49791 65.9315C3.07586 61.0611 2.31322 56.225 1.21544 51.4574C-0.308464 44.6622 -0.400346 37.6325 0.945252 30.801C2.74718 22.5532 4.75921 14.2907 10.21 7.38555C12.2383 4.62005 15.0319 2.48457 18.2588 1.23284C25.4064 -1.40823 31.7731 0.406501 37.6744 4.65581C43.1831 8.77273 47.6489 14.0849 50.7233 20.1776C56.0133 30.1945 60.39 40.6522 63.8022 51.4279C66.5652 60.2806 68.3824 69.2956 71.1904 78.0893C71.9046 80.6228 73.0633 83.0145 74.6141 85.1568C74.8629 85.5189 75.1984 85.8154 75.5911 86.0204C75.9838 86.2254 76.4218 86.3327 76.8665 86.3327C77.3112 86.3327 77.7488 86.2254 78.1415 86.0204C78.5342 85.8154 78.87 85.5189 79.1189 85.1568C80.3421 83.7051 81.1456 81.9572 81.4461 80.0959C82.2351 75.4503 82.1743 70.7036 81.2661 66.079C80.26 60.3395 79.2088 54.6 77.7823 48.949C76.1193 42.7693 75.0387 36.4522 74.5539 30.0779C74.1936 24.058 74.644 17.994 77.5572 12.4906C79.1625 9.26381 81.7286 6.59301 84.9149 4.83286C87.1582 3.52972 89.7523 2.92914 92.3518 3.11102C94.9512 3.29289 97.4326 4.24869 99.4653 5.85102C103.845 8.9168 107.548 12.8215 110.352 17.3301C117.86 29.2665 122.905 42.2063 126.87 55.692C128.867 62.3463 130.489 69.1629 133.702 75.4336C134.319 77.0142 135.219 78.4733 136.36 79.7418C136.561 79.946 136.806 80.1036 137.077 80.2027C137.348 80.3018 137.638 80.34 137.926 80.3145C138.214 80.2891 138.493 80.2006 138.741 80.0555C138.99 79.9105 139.202 79.7125 139.363 79.4763C141.62 76.1902 142.857 72.3301 142.922 68.3661C142.757 59.174 142.171 49.9818 142.487 40.8192C142.772 32.5862 143.478 24.3236 147.322 16.6513C149.989 11.3942 154.235 7.06811 159.485 4.25741C161.661 3.02985 164.088 2.29489 166.589 2.10601C169.091 1.91712 171.604 2.27909 173.945 3.16559C177.937 4.5161 181.631 6.59899 184.832 9.30354C191.077 14.8709 196.365 21.3927 200.493 28.6172C203.883 34.2986 206.844 40.2162 209.353 46.3227C213.115 55.9887 215.539 66.1073 216.561 76.4072C217.256 83.6975 217.125 91.0413 216.17 98.3031C214.967 107.649 212.008 116.694 207.446 124.979C202.764 133.836 196.968 142.08 190.193 149.516C184.881 155.216 178.78 160.153 172.068 164.182C167.143 167.116 161.761 169.234 156.136 170.453C144.829 172.917 133.432 174.127 122.26 171.928Z"
+                      fill="#333D29"/>
+            </svg>
+
+
+            <p1>Выберите маршрут:</p1>
+
+            <select class="box1">
+                <option value="" disabled selected>Выбрать</option>
+                <option>Маршрут №1(такой то)</option>
+                <option>Маршрут №2(такой то)</option>
+                <option>Маршрут №3(такой то)</option>
+                <option>Маршрут №4(такой то)</option>
+            </select>
+
+
+            <p2>Выберите дату:</p2>
+            <input class='data' type="date">
+
+
+            <p3>Выберите количество человек:</p3>
+
+            <select class="box3">
+                <option value="" disabled selected>Выбрать</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+
+            <button onclick="#" class="buttonvibor" type="submit">Выбрать</button>
+        </div>
+
 
     </div>
     <div class="footer">
