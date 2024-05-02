@@ -586,11 +586,13 @@ body {
         font-size: 24px;
     }
 
-    .tovari {
+.tovari {
         padding-top: 80px;
-        display: flex;
+        display: grid;
         justify-content: center;
-        flex-direction: row;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        grid-auto-rows: min-content;
     }
 
     .tovar {
@@ -614,16 +616,35 @@ body {
 
     .tovar p {
         font-family: 'Hero';
+        font-weight: 800;
+        font-size: 24px;
+        color: #000;
+    }
+
+    .tovar h1{
+        font-family: 'Hero';
         font-weight: 200;
         font-size: 36px;
         color: #000;
     }
 
+    .tovar h2{
+        font-family: 'Hero';
+        font-weight: 200;
+        font-size: 24px;
+        color: #000;
+    }
+
     .cardi {
         padding-top: 80px;
-        display: flex;
+        display: grid;
         justify-content: center;
         flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        grid-auto-rows: min-content;
+
+
     }
 
     .card {
@@ -667,7 +688,7 @@ body {
         margin-top: 35px;
         font-family: 'Hero';
         font-weight: 600;
-        font-size: 20px;
+        font-size: 14px;
         color: #414833;
         width: 400px;
     }
@@ -701,6 +722,8 @@ body {
         height: 712px;
         margin-right: 120px;
         margin-left: 120px;
+
+
     }
 
     .cafecard img {
@@ -711,7 +734,7 @@ body {
     .cafecard h1 {
         padding-top: 10px;
         padding-left: 25px;
-        padding-bottom: 35px;
+        padding-bottom: 15px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 32px;
@@ -735,8 +758,8 @@ body {
 
     .cafecard h2 {
         padding-left: 25px;
-        padding-bottom: 55px;
-        padding-top: 55px;
+        padding-bottom: 15px;
+        padding-top: 15px;
         font-family: 'Hero';
         font-weight: 600;
         font-size: 20px;

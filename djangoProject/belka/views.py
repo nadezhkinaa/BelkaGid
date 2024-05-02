@@ -10,6 +10,8 @@ from django.contrib.auth.views import LoginView
 import telegram
 import asyncio
 
+from .models import Shop, Place, Cafe
+
 bot_token = ''
 chat_id = ''
 
@@ -51,15 +53,33 @@ def about_page(request):
 
 
 def places_page(request):
-    return render(request, 'mesta.html')
+    items = Place.objects.all()
+    for item in items:
+        item.image = item.image.replace("static/", "")
+    context = {
+        'items': items,
+    }
+    return render(request, 'mesta.html', context)
 
 
 def cafe_page(request):
-    return render(request, 'cafe.html')
+    items = Cafe.objects.all()
+    for item in items:
+        item.image = item.image.replace("static/", "")
+    context = {
+        'items': items,
+    }
+    return render(request, 'cafe.html', context)
 
 
 def shop_page(request):
-    return render(request, 'magazin.html')
+    items = Shop.objects.all()
+    for item in items:
+        item.image = item.image.replace("static/", "")
+    context = {
+        'items': items,
+    }
+    return render(request, 'magazin.html', context)
 
 
 @login_required
