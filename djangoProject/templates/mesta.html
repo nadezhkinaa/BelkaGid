@@ -1,10 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
     <title>БелкаГид</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/card_filter.js' %}"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 
 </head>
@@ -33,20 +35,27 @@
         <div class="strname">
             <h1>Места</h1>
             <h2>фильтр:</h2>
-            <select class="boxfiltr">
-                <option value="" disabled selected>Выбрать</option>
-                <option>церкви</option>
-                <option>парки</option>
-                <option>музеи</option>
 
+
+            <select id="type-filter" class="boxfiltr" onchange="filterItems()">
+                <option value="all">Все</option>
+                <option value=1>Парки</option>
+                <option value=2>Музеи</option>
+                <option value=3>Театры</option>
+                <option value=4>Памятники</option>
+                <option value=5>Церкви</option>
+                <option value=6>Прочее</option>
             </select>
 
+            <script>
+            </script>
         </div>
+
 
         <div class="cardi">
 
             {% for item in items %}
-                <div class="card">
+                <div class="card" data-type="{{ item.type }}">
                     <img src="{% static item.image %}" alt="{{ item.name }}">
                     <div class="card-body">
                         <h1>{{ item.name }}</h1>

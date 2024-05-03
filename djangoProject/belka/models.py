@@ -2,12 +2,15 @@ from django.db import models
 
 
 # Create your models here.
+
 class Place(models.Model):
     name = models.TextField()
     short_description = models.TextField()
     description = models.TextField()
     rating = models.FloatField()
     image = models.FilePathField(path='static/img/places', null=1)
+    # парки - 1,  музеи - 2, театры - 3, памятники - 4, церкви - 5, прочее - 6
+    type = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -19,6 +22,8 @@ class Cafe(models.Model):
     rating = models.FloatField()
     image = models.FilePathField(path='static/img/cafes', null=1)
     address = models.TextField()
+    # кафе - 1, рестораны - 2, фастфуд - 3, бары - 4, столовые - 5, прочее - 6
+    type = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -29,6 +34,8 @@ class Shop(models.Model):
     short_description = models.TextField()
     cost = models.IntegerField()
     image = models.FilePathField(path='static/img/shops', null=1)
+    # футболки - 1, кофты - 2, прочее - 3
+    type = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
