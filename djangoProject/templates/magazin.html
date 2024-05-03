@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>БелкаГид</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/magazin_filter.js' %}"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 
 </head>
@@ -33,19 +34,18 @@
         <div class="strname">
             <h1>Магазин</h1>
             <h2>фильтр: </h2>
-            <select class="boxfiltr">
-                <option value="" disabled selected>Выбрать</option>
-                <option>футболки</option>
-                <option>кофты</option>
-                <option>брелки</option>
-
+            <select id="type-filter" class="boxfiltr" onchange="filterItems()">
+                <option value="all">Все</option>
+                <option value=1>Футболки</option>
+                <option value=2>Кофты</option>
+                <option value=3>Прочее</option>
             </select>
         </div>
 
 
         <div class="tovari">
             {% for item in items %}
-                <div class="tovar">
+                <div class="tovar" data-type="{{ item.type }}">
                     <img src="{% static item.image %}" alt="{{ item.name }}">
                     <div class="card-body">
                         <p>{{ item.name }}</p>
@@ -55,7 +55,6 @@
                 </div>
             {% endfor %}
         </div>
-
 
 
         <div class="footer">
