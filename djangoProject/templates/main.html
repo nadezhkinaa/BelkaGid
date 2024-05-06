@@ -272,6 +272,7 @@
                     });
                     markers.push(marker);
                 }
+
                 // Создаем стиль для маркеров
                 const markerStyle = new ol.style.Style({
                     image: new ol.style.Icon({
@@ -329,6 +330,9 @@
   </defs>
 </svg>
   `;
+                        
+
+                        `;
                         document.querySelector('#popup-closer').addEventListener('click', function () {
                             map.removeOverlay(popup);
                         });

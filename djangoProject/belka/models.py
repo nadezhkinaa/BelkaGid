@@ -45,3 +45,17 @@ class Shop(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UserFavourites(models.Model):
+    user_id = models.IntegerField()
+    favourite_places = models.TextField()
+
+    def getFavouritePlaces(self):
+        return self.favourite_places.split("$")
+
+    def saveFavouritePlaces(self, new_places):
+        self.favourite_places = '$'.join(new_places)
+
+    def __str__(self):
+        return "Favourites of user " + str(self.user_id)

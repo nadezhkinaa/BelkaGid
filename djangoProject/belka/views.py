@@ -8,7 +8,7 @@ from django.core import serializers
 from django.shortcuts import render, redirect
 
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
-from .models import Shop, Place, Cafe
+from .models import Shop, Place, Cafe, UserFavourites
 
 bot_token = ''
 chat_id = ''
@@ -147,6 +147,9 @@ def profile_orders_page(request):
 
 @login_required
 def profile_redirect_page(request):
+    user = request.user
+    if not UserFavourites.objects.filter(user_id=user.id).exists():
+        UserFavourites.objects.create(user_id=user.id, favourite_places="")
     return redirect('/profile/routes')
 
 
