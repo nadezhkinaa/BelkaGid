@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
 
+
 class SignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
@@ -21,10 +22,12 @@ class SignUpForm(UserCreationForm):
         del self.fields['password1'].validators[:]
         del self.fields['password2'].validators[:]
 
-        self.fields['username'].widget.attrs.update({'class': 'username_reg__input','placeholder':'Придумайте логин'})
-        self.fields['email'].widget.attrs.update({'class': 'email_reg__input','placeholder':'Введите email'})
-        self.fields['password1'].widget.attrs.update({'class': 'password1_reg__input','placeholder':'Придумайте пароль'})
-        self.fields['password2'].widget.attrs.update({'class': 'password2_reg__input','placeholder':'Повторите пароль'})
+        self.fields['username'].widget.attrs.update({'class': 'username_reg__input', 'placeholder': 'Придумайте логин'})
+        self.fields['email'].widget.attrs.update({'class': 'email_reg__input', 'placeholder': 'Введите email'})
+        self.fields['password1'].widget.attrs.update(
+            {'class': 'password1_reg__input', 'placeholder': 'Придумайте пароль'})
+        self.fields['password2'].widget.attrs.update(
+            {'class': 'password2_reg__input', 'placeholder': 'Повторите пароль'})
 
     email = forms.EmailField(max_length=254, help_text='', label="")
 

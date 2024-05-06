@@ -1,18 +1,13 @@
-import json
-import time
-
-from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
-from django.core import serializers
-from django.core.serializers.json import DjangoJSONEncoder
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.shortcuts import render, redirect
-from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
-from django.contrib.auth.views import LoginView
-import telegram
 import asyncio
 
+import telegram
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.core import serializers
+from django.shortcuts import render, redirect
+
+from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
 from .models import Shop, Place, Cafe
 
 bot_token = ''

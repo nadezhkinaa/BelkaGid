@@ -9,28 +9,28 @@ const checkValidity = (input) => {
 
     if (input.type == "email") {
         if (EMAIL_REGEXP.test(input.value)) {
-        input.classList.add('text-field__input_valid');
-        input.nextElementSibling.textContent = 'Отлично!';
-        isValidEmail = true;
-        }else{
-        input.classList.add('text-field__input_invalid');
-        input.nextElementSibling.textContent = input.validationMessage;
-        isValidEmail = false;
+            input.classList.add('text-field__input_valid');
+            input.nextElementSibling.textContent = 'Отлично!';
+            isValidEmail = true;
+        } else {
+            input.classList.add('text-field__input_invalid');
+            input.nextElementSibling.textContent = input.validationMessage;
+            isValidEmail = false;
         }
     }
     // строчная + заглавная + цифра, от 6 символов
-if (input.type == "password") {
-    var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-    if (re.test(input.value)) {
-        input.classList.add('text-field__input_valid');
-   input.nextElementSibling.textContent = 'Отлично!';
-   isValidPass = true;
-        }else{
-        input.classList.add('text-field__input_invalid');
-   input.nextElementSibling.textContent = "Пароль должен содержать цифру, заглавную и прописную латинские буквы. Не менее 6 символов.";
-       isValidPass = false;
+    if (input.type == "password") {
+        var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+        if (re.test(input.value)) {
+            input.classList.add('text-field__input_valid');
+            input.nextElementSibling.textContent = 'Отлично!';
+            isValidPass = true;
+        } else {
+            input.classList.add('text-field__input_invalid');
+            input.nextElementSibling.textContent = "Пароль должен содержать цифру, заглавную и прописную латинские буквы. Не менее 6 символов.";
+            isValidPass = false;
         }
-}
+    }
 }
 
 
@@ -59,7 +59,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     checkValidityAll();
 
-    if (isValidEmail && isValidPass){window.location.replace("../profile");}
+    if (isValidEmail && isValidPass) {
+        window.location.replace("../profile");
+    }
 
 
 });
