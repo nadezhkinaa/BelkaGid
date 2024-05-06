@@ -163,11 +163,7 @@ def add_favourite(request):
     if request.method == "POST":
         argument = request.POST.get('place-id')  # Получение аргумента из запроса
         favourite, created = UserFavourites.objects.get_or_create(user_id=request.user.id)
-
         favourite.addId(argument)
-
-        print(favourite.getFavouritePlaces())
-
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})
