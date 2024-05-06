@@ -167,3 +167,18 @@ def add_favourite(request):
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})
+
+
+@csrf_exempt
+@login_required
+def check_favourite(request):
+    if request.method == "POST":
+        argument = request.POST.get('place-id')  # Получение аргумента из запроса
+        favourite = UserFavourites.objects.get(user_id=request.user.id)
+        if argument not in favourite.getFavouritePlaces():
+            return JsonResponse({'success': True, "color": "#333D29"})  # Возврат ответа в виде JSON
+        else:
+            return JsonResponse({'success': True, "color": "#ff033e"})  # Возврат ответа в виде JSON
+
+    else:
+        return JsonResponse({'success': False})

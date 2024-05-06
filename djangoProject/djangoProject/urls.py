@@ -47,5 +47,6 @@ urlpatterns = [
     path('message_sent/', message_sent),
 
     path('add_fav/', belka.views.add_favourite, name='add_favourite'),
+    path('check_fav/', belka.views.check_favourite, name='check_favourite'),
 
 ]
