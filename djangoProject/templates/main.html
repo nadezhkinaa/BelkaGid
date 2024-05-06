@@ -272,6 +272,7 @@
                     });
                     markers.push(marker);
                 }
+
                 // Создаем стиль для маркеров
                 const markerStyle = new ol.style.Style({
                     image: new ol.style.Icon({
@@ -317,6 +318,7 @@
                         <form action="/${url}">
                             <input class='buttonpodr' type="submit" value="Подробнее" />
                         </form>
+                        
 
                         `;
                         document.querySelector('#popup-closer').addEventListener('click', function () {
