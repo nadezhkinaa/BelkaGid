@@ -1,7 +1,10 @@
+import json
 import time
 
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import render, redirect
@@ -28,7 +31,29 @@ async def sendToBot(message, bot_id, chat_id):
 
 # Create your views here.
 def index_page(request):
-    return render(request, 'main.html')
+    places = Place.objects.all()
+    cafes = Cafe.objects.all()
+    shops = Shop.objects.all()
+
+    for place in places:
+        place.image = place.image.replace("static/", "")
+
+    for cafe in cafes:
+        cafe.image = cafe.image.replace("static/", "")
+
+    for shop in shops:
+        shop.image = shop.image.replace("static/", "")
+
+    places = serializers.serialize("json", Place.objects.all())
+    cafes = serializers.serialize("json", Cafe.objects.all())
+    shops = serializers.serialize("json", Shop.objects.all())
+
+    context = {
+        'places': places,
+        'cafes': cafes,
+        'shops': shops,
+    }
+    return render(request, 'main.html', context)
 
 
 def about_page(request):
