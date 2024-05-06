@@ -215,26 +215,15 @@ body {
     }
 
     .rectangle {
-        width: 580px;
-        height: 731px;
-        border: 1px solid #FFF;
+
         position: absolute;
-        top: 250px;
-        left: 1100px;
+        top: 350px;
+        left: 1150px;
         border-radius: 15px;
-        background: #D9D9D9;
+
     }
 
-    .rectangle1 {
-        width: 580px;
-        height: 731px;
-        border: 1px solid #FFF;
-        position: absolute;
-        top: 250px;
-        left: 1100px;
-        border-radius: 15px;
-        background: #D9D9D9;
-    }
+
 
     .block3 h1,
     .block4 h1,
@@ -423,7 +412,7 @@ body {
 
     .onasblock1 p {
         font-weight: 200;
-        font-size: 24px;
+        font-size: 32px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
@@ -448,14 +437,18 @@ body {
         font-family: 'Hero';
         color: #414833;
         margin-left: 400px;
-        margin-top: 100px;
+        margin-top: 50px;
         margin-bottom: 50px;
         width: 1500px;
+
     }
 
     ol {
         list-style-type: none;
         counter-reset: num;
+        margin-right: 80px;
+        list-style-type: none;
+
     }
 
     ol li:before {
@@ -463,10 +456,15 @@ body {
         counter-increment: num;
         font-family: 'Bergamasco';
         margin-right: 105px;
+
         color: #A98467;
         font-weight: 300;
         font-size: 64px;
         font-weight: bold;
+        content: counter(num);
+
+	text-align: center;
+
     }
 
     .onasblock3 h2 {
@@ -603,8 +601,8 @@ body {
         background: #FBFAF8;
         border-radius: 15px;
         text-align: center;
-        margin-right: 50px;
-        margin-left: 50px;
+        margin-right: 35px;
+        margin-left: 35px;
     }
 
     .tovar img {
@@ -736,7 +734,7 @@ body {
         border: 3px solid #fff;
         border-radius: 15px;
         width: 647px;
-        height: 612px;
+        height: 662px;
         margin-right: 120px;
         margin-left: 120px;
         position: relative
@@ -779,7 +777,7 @@ body {
         font-weight: 600;
         font-size: 20px;
         color: #414833;
-        width: 400px;
+        width: 600px;
     }
 
     .rate {
@@ -1547,6 +1545,7 @@ body {
         font-size: 14px;
         margin-bottom: 15px;
     }
+
 
     .buttonpodr {
         margin-left: -5px;
