@@ -5,7 +5,9 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core import serializers
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
 from .models import Shop, Place, Cafe, UserFavourites
@@ -147,12 +149,21 @@ def profile_orders_page(request):
 
 @login_required
 def profile_redirect_page(request):
-    user = request.user
-    if not UserFavourites.objects.filter(user_id=user.id).exists():
-        UserFavourites.objects.create(user_id=user.id, favourite_places="")
     return redirect('/profile/routes')
 
 
 @login_required
 def create_order_page(request):
     return render(request, "zayvka.html")
+
+
+@csrf_exempt
+@login_required
+def add_favourite(request):
+    if request.method == "POST":
+        argument = request.POST.get('place-id')  # Получение аргумента из запроса
+        favourite, created = UserFavourites.objects.get_or_create(user_id=request.user.id)
+        favourite.addId(argument)
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})

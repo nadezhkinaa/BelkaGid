@@ -57,5 +57,14 @@ class UserFavourites(models.Model):
     def saveFavouritePlaces(self, new_places):
         self.favourite_places = '$'.join(new_places)
 
+    def addId(self, new_id):
+        temp_places = self.getFavouritePlaces()
+        if new_id not in temp_places:
+            self.favourite_places += new_id + "$"
+            self.save()
+        else:
+            self.favourite_places = self.favourite_places.replace(str(new_id) + "$", "", 1)
+            self.save()
+
     def __str__(self):
         return "Favourites of user " + str(self.user_id)

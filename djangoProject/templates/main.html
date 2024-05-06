@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <script src="{% static 'openlayers/dist/ol.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'openlayers/ol.css' %}">
 
 </head>
@@ -300,11 +301,11 @@
                 map.on('click', function (evt) {
                     map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
                         var marker_fields = getFromDb(markers.indexOf(feature));
-                        popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url);
+                        popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url, marker_fields.map_id);
                     });
                 });
 
-                function popupFunc(evt, name, text, url) {
+                function popupFunc(evt, name, text, url, id) {
                     var feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
                         return feature
                     })
@@ -318,7 +319,8 @@
                         <form action="/${url}">
                             <input class='buttonpodr' type="submit" value="Подробнее" />
                         </form>
-                        <svg style="margin-left: -5px;  margin-top: 5px;" width="30" height="30" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a onclick="addFavourites(${id})">
+<svg style="margin-left: -5px;  margin-top: 5px;" width="30" height="30" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_282_37)">
     <path d="M30.936 9.3548C36.4829 9.3818 40.973 13.8718 41 19.4188C41 29.5814 22.5 39.6455 22.5 39.6455C22.5 39.6455 4 29.4335 4 19.4188C4 13.8607 8.50577 9.3548 14.064 9.3548C17.4664 9.32826 20.6473 11.0396 22.5 13.8934C24.3655 11.0534 27.5381 9.34658 30.936 9.3548Z" fill="#333D29" />
     <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z" stroke="#333D29" stroke-width="2" />
@@ -329,7 +331,7 @@
     </clipPath>
   </defs>
 </svg>
-
+</a>
                         
 
                         `;
@@ -364,6 +366,26 @@
                     return markerCoordinates;
                 }
 
+                function addFavourites(place_id) {
+
+                    var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                    if (!is_authenticated) {
+                        window.location.href = "/login/";
+                    } else {
+                        $.ajax({
+                            url: "/add_fav/",  // URL функции отображения, которую вы хотите вызвать
+                            type: "POST",
+                            data: {"place-id": place_id},  // Передача аргумента в виде объекта JSON
+                            success: function (data) {
+                                // Здесь обработать полученные данные и обновить часть страницы
+                            },
+                            error: function (error) {
+                                // Обработать ошибки
+                            }
+                        });
+                    }
+
+                }
 
             </script>
         </div>
