@@ -596,10 +596,11 @@ body {
     }
 
     .tovar {
-        width: 351px;
-        height: 428px;
+    position:relative;
+        width: 380px;
+        height: 480px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        background: #cdd1bc;
+        background: #FBFAF8;
         border-radius: 15px;
         text-align: center;
         margin-right: 50px;
@@ -608,31 +609,42 @@ body {
 
     .tovar img {
         border-radius: 15px;
-        width: 273px;
-        height: 274px;
+        width: 293px;
+        height: 294px;
         background: #fff;
         margin-top: 25px;
     }
 
     .tovar p {
-        font-family: 'Hero';
-        font-weight: 800;
+        position:absolute;
+        left:25px;
+        top:320px;
+        text-align: center;
+        font-family: 'Montserrat Alternates';
+        font-weight: 200;
         font-size: 24px;
-        color: #000;
+        color: #414833;
     }
 
     .tovar h1 {
-        font-family: 'Hero';
-        font-weight: 200;
-        font-size: 36px;
-        color: #000;
+    position:absolute;
+        left:25px;
+        top:325px;
+        text-align: center;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 32px;
+        color: #414833;
     }
 
     .tovar h2 {
+    position:absolute;
+        left:30px;
+        top:400px;
         font-family: 'Hero';
-        font-weight: 200;
-        font-size: 24px;
-        color: #000;
+        font-weight: 800;
+        font-size: 28px;
+        color: #414833;
     }
 
     .cardi {
@@ -648,8 +660,9 @@ body {
     }
 
     .card {
+        position:relative;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        background: #fbfaf8;
+        background: #FBFAF8;
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
@@ -664,9 +677,9 @@ body {
     }
 
     .card h1 {
-        margin-top: 10px;
-        margin-left: 25px;
-        margin-bottom: 35px;
+        position:absolute;
+        left:25px;
+        top:380px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 32px;
@@ -675,7 +688,9 @@ body {
     }
 
     .card p {
-        margin-left: 10px;
+    position:absolute;
+        left:135px;
+        top:480px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
         font-size: 18px;
@@ -683,14 +698,15 @@ body {
     }
 
     .card h2 {
-        margin-left: 25px;
-        margin-bottom: 15px;
-        margin-top: 35px;
+    position:absolute;
+        left:25px;
+        top:530px;
+
         font-family: 'Hero';
         font-weight: 600;
-        font-size: 14px;
+        font-size: 18px;
         color: #414833;
-        width: 400px;
+        width: 600px;
     }
 
     .rate {
@@ -719,10 +735,10 @@ body {
         border: 3px solid #fff;
         border-radius: 15px;
         width: 647px;
-        height: 712px;
+        height: 612px;
         margin-right: 120px;
         margin-left: 120px;
-
+        position:relative
 
     }
 
@@ -732,9 +748,9 @@ body {
     }
 
     .cafecard h1 {
-        padding-top: 10px;
-        padding-left: 25px;
-        padding-bottom: 15px;
+        position:absolute;
+        top:380px;
+        left:25px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 32px;
@@ -742,24 +758,24 @@ body {
         width: 450px;
     }
 
-    .cafecard p,
-    .cafecard p1 {
-        padding-left: 10px;
+    .cafecard p
+     {
+        position:absolute;
+        top:450px;
+        left:135px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
         font-size: 18px;
         color: #333d29;
     }
 
-    .cafecard p1 {
-        padding-left: 25px;
-        padding-top: 2px;
-    }
+
 
     .cafecard h2 {
-        padding-left: 25px;
-        padding-bottom: 15px;
-        padding-top: 15px;
+    position:absolute;
+        top:500px;
+        left:25px;
+
         font-family: 'Hero';
         font-weight: 600;
         font-size: 20px;
@@ -1543,6 +1559,23 @@ body {
         background-color: #fff;
         padding-left: 2px;
 
+        padding-bottom: 3px;
+        text-decoration: none;
+    }
+    .buttonmesta{
+        position:absolute;
+        left:25px;
+        top:660px;
+        width: 130px;
+        height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333D29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 10px;
+        border: 1px solid #333D29;
+        background-color: #fff;
+        padding-left: 2px;
         padding-bottom: 3px;
         text-decoration: none;
     }
