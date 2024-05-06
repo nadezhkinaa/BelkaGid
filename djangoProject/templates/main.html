@@ -13,7 +13,6 @@
 <body>
 
 
-
 <div id="popup" class="ol-popup">
     <a id="popup-closer" class="ol-popup-closer"></a>
     <div id="popup-content"></div>
@@ -220,6 +219,10 @@
             <div id="map" class="map"></div>
 
             <script>
+                const places_json = {{ places|safe }};
+                const cafes_json = {{ cafes|safe }};
+                const shops_json = {{ shops|safe }};
+
                 const popup = new ol.Overlay({
                     element: document.getElementById('popup')
                 });
@@ -258,11 +261,7 @@
                 // Добавим три маркера по координатам на карту
 
                 // Создадим массив координат
-                var markerCoordinates = [
-                    [-200, -100],
-                    [0, 0],
-                    [200, 100]
-                ];
+                markerCoordinates = initMarkers();
 
                 // Создадим массив маркеров
                 var markers = [];
@@ -271,7 +270,6 @@
                         geometry: new ol.geom.Point(markerCoordinates[i]),
                         name: 'Marker ' + (i + 1)
                     });
-
                     markers.push(marker);
                 }
                 // Создаем стиль для маркеров
@@ -297,22 +295,11 @@
                 // Добавим векторный слой на карту
                 map.addLayer(markerVectorLayer);
 
-                const places_json = {{ places|safe }};
-                const cafes_json = {{ cafes|safe }};
-                const shops_json = {{ shops|safe }};
 
                 map.on('click', function (evt) {
                     map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                        switch (feature) {
-                            case markers[0]:
-                                // Обрабатываем щелчок на первом маркере
-                                popupFunc(evt, "текст примера 1 маркер");
-                                break;
-                            case markers[1]:
-                                // Обрабатываем щелчок на втором маркере
-                                popupFunc(evt, places_json[0].fields.name, places_json[0].fields.short_description, "places");
-                                break;
-                        }
+                        var marker_fields = getFromDb(markers.indexOf(feature));
+                        popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url);
                     });
                 });
 
@@ -321,7 +308,6 @@
                         return feature
                     })
                     if (feature) {
-                        console.log(evt.coordinate);
                         const content = feature.getGeometry().getCoordinates();
                         popup.setPosition(content);
                         map.addOverlay(popup);
@@ -338,6 +324,41 @@
                         });
                     }
                 }
+
+                function getFromDb(map_id) {
+                    for (const place of places_json) {
+                        if (place.fields.map_id === map_id) {
+                            return place.fields;
+                        }
+                    }
+                    for (const cafe of cafes_json) {
+                        if (cafe.fields.map_id === map_id) {
+                            return cafe.fields;
+                        }
+                    }
+                    return null;
+
+                }
+
+                function initMarkers() {
+                    var markerCoordinates = [];
+                    var size = 0;
+                    for (const place of places_json) {
+                        size += 1;
+                    }
+                    for (const place of cafes_json) {
+                        size += 1;
+                    }
+
+                    for (let i = 0; i < size; i++) {
+                        var local_fields = getFromDb(i);
+                        markerCoordinates.push([local_fields.map_x, local_fields.map_y])
+
+                    }
+                    return markerCoordinates;
+                }
+
+
             </script>
         </div>
         <div class="block2">

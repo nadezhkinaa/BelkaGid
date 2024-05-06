@@ -11,6 +11,10 @@ class Place(models.Model):
     image = models.FilePathField(path='static/img/places', null=1)
     # парки - 1,  музеи - 2, театры - 3, памятники - 4, церкви - 5, прочее - 6
     type = models.IntegerField(default=0)
+    map_id = models.IntegerField(default=0)
+    redirect_url = models.TextField(default="places")
+    map_x = models.IntegerField(default=0)
+    map_y = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -24,6 +28,10 @@ class Cafe(models.Model):
     address = models.TextField()
     # кафе - 1, рестораны - 2, фастфуд - 3, бары - 4, столовые - 5, прочее - 6
     type = models.IntegerField(default=0)
+    map_id = models.IntegerField(default=0)
+    redirect_url = models.TextField(default="cafe")
+    map_x = models.IntegerField(default=0)
+    map_y = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
