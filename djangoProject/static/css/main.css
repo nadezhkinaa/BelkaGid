@@ -1462,4 +1462,88 @@ body {
         cursor: pointer;
 
     }
+     #map {
+        width: 100%;
+        height: 900px;
+    }
+
+
+    .ol-popup {
+        position: absolute;
+        background-color: #FBFAF8;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+        filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+        padding: 25px 25px 15px 35px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 10px;
+        left: -50px;
+    }
+
+    .ol-popup:after,
+    .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: ' ';
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .ol-popup:after {
+        border-top-color: white;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+    }
+
+    .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+    }
+
+    .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+    }
+
+    .ol-popup-closer:after {
+        content: '✖';
+    }
+
+    #popup-content {
+        font-size: 14px;
+        font-family: 'Montserrat Alternates';
+        width:205px;
+        margin-bottom:15px;
+    }
+
+    #popup-content .markerInfo {
+        font-weight: bold;
+    }
+    #popup-content h1{
+    font-size: 14px;
+    margin-bottom:15px;
+    }
+    .buttonpodr{
+        margin-left:-5px;
+        width: 130px;
+        height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333D29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 10px;
+        border: 1px solid #333D29;
+        background-color: #fff;
+        padding-left: 2px;
+
+        padding-bottom: 3px;
+        text-decoration: none;
+    }
 }
