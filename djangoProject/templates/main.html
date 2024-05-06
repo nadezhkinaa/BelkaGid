@@ -331,11 +331,6 @@
                             return place.fields;
                         }
                     }
-                    for (const cafe of cafes_json) {
-                        if (cafe.fields.map_id === map_id) {
-                            return cafe.fields;
-                        }
-                    }
                     return null;
 
                 }
@@ -344,9 +339,6 @@
                     var markerCoordinates = [];
                     var size = 0;
                     for (const place of places_json) {
-                        size += 1;
-                    }
-                    for (const place of cafes_json) {
                         size += 1;
                     }
 

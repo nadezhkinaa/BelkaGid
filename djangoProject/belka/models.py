@@ -25,7 +25,6 @@ class Cafe(models.Model):
     short_description = models.TextField()
     rating = models.FloatField()
     image = models.FilePathField(path='static/img/cafes', null=1)
-    address = models.TextField()
     # кафе - 1, рестораны - 2, фастфуд - 3, бары - 4, столовые - 5, прочее - 6
     type = models.IntegerField(default=0)
     map_id = models.IntegerField(default=0)
@@ -39,7 +38,6 @@ class Cafe(models.Model):
 
 class Shop(models.Model):
     name = models.TextField()
-    short_description = models.TextField()
     cost = models.IntegerField()
     image = models.FilePathField(path='static/img/shops', null=1)
     # футболки - 1, кофты - 2, прочее - 3
