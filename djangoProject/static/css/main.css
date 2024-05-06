@@ -674,6 +674,9 @@ body {
 
     .card img {
         width: 100%;
+        border-radius: 10px;
+        width=647px;
+        height=365px;
     }
 
     .card h1 {
