@@ -215,9 +215,6 @@ body {
     }
 
 
-
-
-
     .block3 h1,
     .block4 h1,
     .onasblock2 h1 {
@@ -263,22 +260,24 @@ body {
     }
 
     .phot {
-    position: absolute;
-        margin-top:320px;
-        width:35%;
-        height:35%;
-        padding-left:50%;
+        position: absolute;
+        margin-top: 320px;
+        width: 35%;
+        height: 35%;
+        padding-left: 50%;
 
     }
-    .phot1{
-     position: absolute;
-        margin-top:0px;
-        width:35%;
-        height:35%;
-        padding-left:0%;
+
+    .phot1 {
+        position: absolute;
+        margin-top: 0px;
+        width: 35%;
+        height: 35%;
+        padding-left: 0%;
     }
-    .imgbelka{
-    padding-top: 8px;
+
+    .imgbelka {
+        padding-top: 8px;
     }
 
 
@@ -426,7 +425,7 @@ body {
         color: #FFF;
         position: absolute;
         top: 300px;
-        padding-left:45%;
+        padding-left: 45%;
         width: 50%;
     }
 
@@ -472,7 +471,7 @@ body {
         font-weight: bold;
         content: counter(num);
 
-	text-align: center;
+        text-align: center;
 
     }
 
@@ -616,10 +615,11 @@ body {
         align-self: center;
         justify-self: center;
     }
-    .basket{
-    position:absolute;
-    left:310px;
-    top:400px;
+
+    .basket {
+        position: absolute;
+        left: 310px;
+        top: 400px;
     }
 
     .tovar img {
@@ -692,8 +692,8 @@ body {
     .card img {
         width: 100%;
         border-radius: 10px;
-        width:647px;
-        height:365px;
+        width: 647px;
+        height: 365px;
     }
 
     .card h1 {
@@ -1052,7 +1052,7 @@ body {
     }
 
     .marshr {
-    position:relative;
+        position: relative;
         margin-left: 80px;
         margin-top: 30px;
         padding-top: 10px;
@@ -1310,7 +1310,6 @@ body {
         width: 70%;
 
 
-
     }
 
     .vhod h2 {
@@ -1404,6 +1403,7 @@ body {
         margin-left: 15px;
         margin-right: 300px;
     }
+
     /* General styles */
     .ant-carousel, .ant-carousel2 {
         width: auto;
@@ -1609,217 +1609,241 @@ body {
         padding-bottom: 3px;
         text-decoration: none;
     }
-    .tree1{
-    opacity:0.5;
-    position:absolute;
-    padding-left:60%;
-    top:370px;
-    width:229px ;
-    height:333px;
+
+    .tree1 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 60%;
+        top: 370px;
+        width: 229px;
+        height: 333px;
     }
-    .tree2{
-    opacity:0.5;
-    position:absolute;
-    padding-left:75%;
-    top:350px;
-    width: 163px;
-    height: 357 px;
+
+    .tree2 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 75%;
+        top: 350px;
+        width: 163px;
+        height: 357px;
     }
-    .tree3{
-    opacity:0.5;
-    position:absolute;
-    padding-left:63%;
-    top:150px;
-    width:261px;
-    height:572px;
+
+    .tree3 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 63%;
+        top: 150px;
+        width: 261px;
+        height: 572px;
     }
-    .tree4{
-    opacity:0.5;
-    position:absolute;
-    padding-left:78%;
-    top:180px;
-    width:337px;
-    height:537px;
+
+    .tree4 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 78%;
+        top: 180px;
+        width: 337px;
+        height: 537px;
     }
-    .girl{
-    position:absolute;
-    padding-left:70%;
-    top:280px;
-    width:316px;
-    height:560px;
+
+    .girl {
+        position: absolute;
+        padding-left: 70%;
+        top: 280px;
+        width: 316px;
+        height: 560px;
     }
-    .branch1{
-    width:284px;
-    height:417px;
-    margin-left:1600px;
-    margin-top:-100px;
+
+    .branch1 {
+        width: 284px;
+        height: 417px;
+        margin-left: 1600px;
+        margin-top: -100px;
     }
-    .branch2{
-    width:213px;
-    height:378px;
-    margin-left:10px;
-    margin-top:700px;
+
+    .branch2 {
+        width: 213px;
+        height: 378px;
+        margin-left: 10px;
+        margin-top: 700px;
     }
-    .mainicon{
-    margin-left:100px;
+
+    .mainicon {
+        margin-left: 100px;
     }
-    .line{
-    text-align: center;
-}
-    .leaf1{
-    width:208px;
-    height:260px;
-    margin-left:86%;
-    margin-top:80px;
+
+    .line {
+        text-align: center;
     }
-    .leaf2{
-    width:287px;
-    height:274px;
-   margin-left:82%;
-    margin-top:380px;
+
+    .leaf1 {
+        width: 208px;
+        height: 260px;
+        margin-left: 86%;
+        margin-top: 80px;
     }
-    .love1{
-    width:37px;
-    height:66px;
-    position:absolute;
-    left:1400px;
-    top:400px;
+
+    .leaf2 {
+        width: 287px;
+        height: 274px;
+        margin-left: 82%;
+        margin-top: 380px;
     }
-    .flower{
-    width:248px;
-    height:275px;
-    padding-left:80%;
-    margin-top:20px;
+
+    .love1 {
+        width: 37px;
+        height: 66px;
+        position: absolute;
+        left: 1400px;
+        top: 400px;
     }
-    .stars{
-    position:absolute;
-    left:25px;
-    top:483px;
+
+    .flower {
+        width: 248px;
+        height: 275px;
+        padding-left: 80%;
+        margin-top: 20px;
+    }
+
+    .stars {
+        position: absolute;
+        left: 25px;
+        top: 483px;
     }
 
     #marshpopup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 1;
-  z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        z-index: 999;
+    }
+
+    #marshpopup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        background-color: #fff;
+        z-index: 999;
+    }
+
+    .close-button-marsh-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: #000;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+    }
 }
 
-#marshpopup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
-  background-color: #fff;
-  z-index: 999;
-}
-
-.close-button-marsh-popup {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: #000;
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  line-height: 30px;
-  cursor: pointer;
-}
-}
-    .love2{
-    width:29px;
-    height:48px;
-    position:absolute;
-    margin-right:410px;
-    margin-bottom:310px;
-    }
-    .love3{
-    width:29px;
-    height:48px;
-    position:absolute;
-    margin-right:-410px;
-    margin-bottom:310px;
-    }
-    .circle1{
-    position: relative;
-    margin-top:18px;
-    margin-left:25px;
-    width:29px;
-    height:27px;
-    }
-    .edit1{
+.love2 {
+    width: 29px;
+    height: 48px;
     position: absolute;
-    left:900px;
+    margin-right: 410px;
+    margin-bottom: 310px;
+}
+
+.love3 {
+    width: 29px;
+    height: 48px;
+    position: absolute;
+    margin-right: -410px;
+    margin-bottom: 310px;
+}
+
+.circle1 {
+    position: relative;
+    margin-top: 18px;
+    margin-left: 25px;
+    width: 29px;
+    height: 27px;
+}
+
+.edit1 {
+    position: absolute;
+    left: 900px;
     top: 20px;
-    width:37px;
-    height:37px;
-    }
-    .edit2{
+    width: 37px;
+    height: 37px;
+}
+
+.edit2 {
     position: absolute;
-    left:900px;
+    left: 900px;
     top: 70px;
-    width:37px;
-    height:37px;
-    }
-    .edit3{
+    width: 37px;
+    height: 37px;
+}
+
+.edit3 {
     position: absolute;
-    left:900px;
+    left: 900px;
     top: 120px;
-    width:37px;
-    height:37px;
-    }
+    width: 37px;
+    height: 37px;
+}
 
-    .export1{
+.export1 {
     position: absolute;
-    left:960px;
-    top:20px;
-    width:36px;
-    height:36px;
+    left: 960px;
+    top: 20px;
+    width: 36px;
+    height: 36px;
 
-    }
-    .export2{
+}
+
+.export2 {
     position: absolute;
-    left:960px;
-    top:70px;
-    width:36px;
-    height:36px;
+    left: 960px;
+    top: 70px;
+    width: 36px;
+    height: 36px;
 
-    }
-    .export3{
+}
+
+.export3 {
     position: absolute;
-    left:960px;
-    top:120px;
-    width:36px;
-    height:36px;
+    left: 960px;
+    top: 120px;
+    width: 36px;
+    height: 36px;
 
-    }
-    .circlezakaz{
+}
+
+.circlezakaz {
     position: relative;
-    margin-top:18px;
-    margin-left:0px;
-    width:29px;
-    height:27px;
-    }
-    .editzakaz{
-    position: absolute;
-    left:950px;
-    top:10px;
-    width:42px;
-    height:42px;
-    }
-    .deletezakaz{
-    position: absolute;
-    left:1010px;
-    top:10px;
-    width:35px;
-    height:35px;
-    }
+    margin-top: 18px;
+    margin-left: 0px;
+    width: 29px;
+    height: 27px;
+}
 
-    }
+.editzakaz {
+    position: absolute;
+    left: 950px;
+    top: 10px;
+    width: 42px;
+    height: 42px;
+}
+
+.deletezakaz {
+    position: absolute;
+    left: 1010px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+}
+

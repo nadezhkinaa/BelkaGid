@@ -152,8 +152,9 @@ body {
         top: 400px;
         left: 100px;
     }
-    .mainicon{
-    margin-left:100px;
+
+    .mainicon {
+        margin-left: 100px;
     }
 
     .button {
@@ -207,13 +208,14 @@ body {
         left: 160px;
         width: 870px;
     }
-    .textblock{
-    position: absolute;
-    width: 42%;
+
+    .textblock {
+        position: absolute;
+        width: 42%;
         height: 443px;
         border-radius: 15px;
         background: #797D66;
-        opacity:0.2;
+        opacity: 0.2;
         border: none;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         top: 300px;
@@ -228,12 +230,10 @@ body {
         position: absolute;
         top: 300px;
         left: 180px;
-         width: 40%;
+        width: 40%;
 
 
     }
-
-
 
 
     .block3 h1,
@@ -284,21 +284,23 @@ body {
     .phot {
 
         position: absolute;
-        margin-top:320px;
-        width:35%;
-        height:35%;
-        padding-left:44%;
+        margin-top: 320px;
+        width: 35%;
+        height: 35%;
+        padding-left: 44%;
 
     }
-    .phot1{
-     position: absolute;
-        margin-top:0px;
-        width:35%;
-        height:35%;
-        padding-left:0%;
+
+    .phot1 {
+        position: absolute;
+        margin-top: 0px;
+        width: 35%;
+        height: 35%;
+        padding-left: 0%;
     }
-    .imgbelka{
-    padding-top: 4px;
+
+    .imgbelka {
+        padding-top: 4px;
     }
 
     .photo {
@@ -447,7 +449,7 @@ body {
         color: #FFF;
         position: absolute;
         top: 300px;
-        padding-left:45%;
+        padding-left: 45%;
         width: 50%;
     }
 
@@ -639,10 +641,11 @@ body {
         background: #fff;
         margin-top: 25px;
     }
-    .basket{
-    position:absolute;
-    left:290px;
-    top:360px;
+
+    .basket {
+        position: absolute;
+        left: 290px;
+        top: 360px;
     }
 
     .tovar h1 {
@@ -655,6 +658,7 @@ body {
         font-size: 32px;
         color: #414833;
     }
+
     .tovar h2 {
         position: absolute;
         left: 30px;
@@ -677,7 +681,7 @@ body {
     }
 
     .card {
-     position: relative;
+        position: relative;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
         border-radius: 15px;
@@ -695,8 +699,8 @@ body {
     .card img {
         width: 100%;
         border-radius: 10px;
-        width:593px;
-        height:345px
+        width: 593px;
+        height: 345px
     }
 
     .card h1 {
@@ -711,7 +715,7 @@ body {
     }
 
     .card p {
-    position: absolute;
+        position: absolute;
         left: 135px;
         top: 458px;
         font-family: 'Montserrat Alternates';
@@ -772,7 +776,7 @@ body {
     }
 
     .cafecard h1 {
-     position: absolute;
+        position: absolute;
         top: 380px;
         left: 25px;
         font-family: 'Montserrat Alternates';
@@ -782,9 +786,9 @@ body {
         width: 450px;
     }
 
-    .cafecard p{
-     position: absolute;
-     top: 450px;
+    .cafecard p {
+        position: absolute;
+        top: 450px;
         left: 135px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
@@ -793,9 +797,8 @@ body {
     }
 
 
-
     .cafecard h2 {
-    position: absolute;
+        position: absolute;
         top: 500px;
         left: 25px;
 
@@ -834,13 +837,14 @@ body {
         align-items: center;
         text-align: center;
     }
-    .vhodd{
-     display: flex;
+
+    .vhodd {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        }
+    }
 
     .buttonvhod {
         appearance: none;
@@ -932,7 +936,7 @@ body {
         height: 58px;
         background: #F0EEE6;
         margin-bottom: 40px;
-        padding-left:15px;
+        padding-left: 15px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
@@ -985,7 +989,7 @@ body {
     }
 
     .zakaz {
-        position:relative;
+        position: relative;
         margin-left: 40px;
         margin-top: 50px;
         padding-left: 30px;
@@ -1054,7 +1058,7 @@ body {
     }
 
     .marshr {
-    position:relative;
+        position: relative;
         margin-left: 80px;
         margin-top: 30px;
         padding-top: 10px;
@@ -1312,9 +1316,10 @@ body {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
-        display:block;
+        display: block;
 
     }
+
     .vhod h2 {
 
         font-weight: 600;
@@ -1322,10 +1327,11 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         margin-bottom: 20px;
-        margin-top:-150px;
+        margin-top: -150px;
     }
+
     .email_reg__input, .username_reg__input, .password1_reg__input, .password2_reg__input {
-    border-radius: 22px;
+        border-radius: 22px;
         width: 351px;
         height: 50px;
         padding: 0px 15px;
@@ -1336,12 +1342,14 @@ body {
         background: #F0EEE6;
         margin-bottom: 15px;
     }
+
     .text-field__input::placeholder {
         color: #a58890;
         opacity: 0.8;
     }
-    .boxfiltr{
-    width: 320px;
+
+    .boxfiltr {
+        width: 320px;
         height: 40px;
         border: 1px solid #414833;
         font-size: 18px;
@@ -1350,13 +1358,14 @@ body {
         border-radius: 15px;
         font-family: 'Montserrat Alternates';
         flex: 0.5;
-        margin-top:60px;
-        margin-right:50px;
+        margin-top: 60px;
+        margin-right: 50px;
 
 
     }
-    .buttonregistr{
-    appearance: none;
+
+    .buttonregistr {
+        appearance: none;
         border-radius: 15px;
         width: 258px;
         height: 40px;
@@ -1371,7 +1380,7 @@ body {
         transition-delay: 0.2s;
     }
 
-  @media screen and (min-width: 1441px) and (max-width: 1891px) {
+    @media screen and (min-width: 1441px) and (max-width: 1891px) {
         .ant-carousel {
             max-width: 1200px;
         }
@@ -1406,6 +1415,7 @@ body {
         margin-left: 15px;
         margin-right: 300px;
     }
+
     .ant-carousel-element2 {
         width: 280px;
         text-align: center;
@@ -1432,7 +1442,6 @@ body {
         display: flex;
         justify-content: flex-start;
     }
-
 
 
     /* Navigation item styles */
@@ -1467,7 +1476,7 @@ body {
 
 
     /*стрелочки*/
-     div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
+    div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
         right: -30px;
         top: 51%;
         display: block;
@@ -1505,12 +1514,14 @@ body {
         cursor: pointer;
 
     }
+
     #map {
         width: 100%;
         height: 900px;
-       
+
         min-height: 70vh;
     }
+
     .ol-popup {
         position: absolute;
         background-color: #FBFAF8;
@@ -1522,6 +1533,7 @@ body {
         bottom: 10px;
         left: -50px;
     }
+
     .ol-popup:after,
     .ol-popup:before {
         top: 100%;
@@ -1532,40 +1544,48 @@ body {
         position: absolute;
         pointer-events: none;
     }
+
     .ol-popup:after {
         border-top-color: white;
         border-width: 10px;
         left: 48px;
         margin-left: -10px;
     }
+
     .ol-popup:before {
         border-top-color: #cccccc;
         border-width: 11px;
         left: 48px;
         margin-left: -11px;
     }
+
     .ol-popup-closer {
         text-decoration: none;
         position: absolute;
         top: 2px;
         right: 8px;
     }
+
     .ol-popup-closer:after {
         content: '✖';
     }
+
     #popup-content {
         font-size: 14px;
         font-family: 'Montserrat Alternates';
         width: 205px;
         margin-bottom: 15px;
     }
+
     #popup-content .markerInfo {
         font-weight: bold;
     }
+
     #popup-content h1 {
         font-size: 14px;
         margin-bottom: 15px;
     }
+
     .buttonpodr {
         margin-left: -5px;
         width: 130px;
@@ -1581,6 +1601,7 @@ body {
         padding-bottom: 3px;
         text-decoration: none;
     }
+
     .buttonmesta {
         position: absolute;
         left: 25px;
@@ -1598,191 +1619,212 @@ body {
         padding-bottom: 3px;
         text-decoration: none;
     }
-.tree1{
-    opacity:0.5;
-    position:absolute;
-    padding-left:60%;
-    top:390px;
-    width:180px ;
-    height:270px;
-    }
-    .tree2{
-    opacity:0.5;
-    position:absolute;
-    padding-left:75%;
-    top:390px;
-    width: 123px;
-    height: 307 px;
-    }
-    .tree3{
-    opacity:0.5;
-    position:absolute;
-    padding-left:63%;
-    top:210px;
-    width:201px;
-    height:472px;
-    }
-    .tree4{
-    opacity:0.5;
-    position:absolute;
-    padding-left:78%;
-    top:250px;
-    width:237px;
-    height:437px;
-    }
-    .girl{
-    position:absolute;
-    padding-left:70%;
-    top:300px;
-    width:266px;
-    height:490px;
-    }
-    .branch1{
-    width:204px;
-    height:317px;
-    margin-left:1470px;
-    margin-top:-80px;
-    }
-    .branch2{
-    width:203px;
-    height:308px;
-    margin-left:10px;
-    margin-top:660px;
-    }
-    .line{
-    text-align: center;
-}
 
-
-
-
-    .leaf1{
-
-    width:188px;
-    height:240px;
-    margin-left:85%;
-    margin-top:50px;
-    }
-    .leaf2{
-    width:257px;
-    height:254px;
-    margin-left:80%;
-    margin-top:300px;
-    }
-    .love1{
-    width:37px;
-    height:66px;
-    position:absolute;
-    left:1400px;
-    top:400px;
-    }
-    .love1{
-    width:37px;
-    height:66px;
-    position:absolute;
-    left:930px;
-    top:290px;
-    }
-    .flower{
-    width:248px;
-    height:275px;
-   padding-left:80%;
-    margin-top:20px;
-    }
-    .stars{
-    position:absolute;
-    left:25px;
-    top:460px;
-    }
-    .love2{
-    width:29px;
-    height:48px;
-    position:absolute;
-    margin-right:380px;
-    margin-bottom:310px;
-    }
-    .love3{
-    width:29px;
-    height:48px;
-    position:absolute;
-    margin-right:-380px;
-    margin-bottom:310px;
-    }
-     .circle1{
-    position: relative;
-    margin-top:18px;
-    margin-left:25px;
-    width:29px;
-    height:27px;
-    }
-    .edit1{
-    position: absolute;
-    left:640px;
-    top: 20px;
-    width:37px;
-    height:37px;
-    }
-    .edit2{
-    position: absolute;
-    left:640px;
-    top: 70px;
-    width:37px;
-    height:37px;
-    }
-    .edit3{
-    position: absolute;
-    left:640px;
-    top: 120px;
-    width:37px;
-    height:37px;
+    .tree1 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 60%;
+        top: 390px;
+        width: 180px;
+        height: 270px;
     }
 
-    .export1{
-    position: absolute;
-    left:700px;
-    top:20px;
-    width:36px;
-    height:36px;
-
-    }
-    .export2{
-    position: absolute;
-    left:700px;
-    top:70px;
-    width:36px;
-    height:36px;
-
-    }
-    .export3{
-    position: absolute;
-    left:700px;
-    top:120px;
-    width:36px;
-    height:36px;
-
-    }
-    .circlezakaz{
-    position: relative;
-    margin-top:18px;
-    margin-left:0px;
-    width:29px;
-    height:27px;
-    }
-    .editzakaz{
-    position: absolute;
-    left:660px;
-    top:10px;
-    width:42px;
-    height:42px;
-    }
-    .deletezakaz{
-    position: absolute;
-    left:720px;
-    top:10px;
-    width:35px;
-    height:35px;
+    .tree2 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 75%;
+        top: 390px;
+        width: 123px;
+        height: 307px;
     }
 
+    .tree3 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 63%;
+        top: 210px;
+        width: 201px;
+        height: 472px;
+    }
+
+    .tree4 {
+        opacity: 0.5;
+        position: absolute;
+        padding-left: 78%;
+        top: 250px;
+        width: 237px;
+        height: 437px;
+    }
+
+    .girl {
+        position: absolute;
+        padding-left: 70%;
+        top: 300px;
+        width: 266px;
+        height: 490px;
+    }
+
+    .branch1 {
+        width: 204px;
+        height: 317px;
+        margin-left: 1470px;
+        margin-top: -80px;
+    }
+
+    .branch2 {
+        width: 203px;
+        height: 308px;
+        margin-left: 10px;
+        margin-top: 660px;
+    }
+
+    .line {
+        text-align: center;
+    }
+
+
+    .leaf1 {
+
+        width: 188px;
+        height: 240px;
+        margin-left: 85%;
+        margin-top: 50px;
+    }
+
+    .leaf2 {
+        width: 257px;
+        height: 254px;
+        margin-left: 80%;
+        margin-top: 300px;
+    }
+
+    .love1 {
+        width: 37px;
+        height: 66px;
+        position: absolute;
+        left: 1400px;
+        top: 400px;
+    }
+
+    .love1 {
+        width: 37px;
+        height: 66px;
+        position: absolute;
+        left: 930px;
+        top: 290px;
+    }
+
+    .flower {
+        width: 248px;
+        height: 275px;
+        padding-left: 80%;
+        margin-top: 20px;
+    }
+
+    .stars {
+        position: absolute;
+        left: 25px;
+        top: 460px;
+    }
+
+    .love2 {
+        width: 29px;
+        height: 48px;
+        position: absolute;
+        margin-right: 380px;
+        margin-bottom: 310px;
+    }
+
+    .love3 {
+        width: 29px;
+        height: 48px;
+        position: absolute;
+        margin-right: -380px;
+        margin-bottom: 310px;
+    }
+
+    .circle1 {
+        position: relative;
+        margin-top: 18px;
+        margin-left: 25px;
+        width: 29px;
+        height: 27px;
+    }
+
+    .edit1 {
+        position: absolute;
+        left: 640px;
+        top: 20px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .edit2 {
+        position: absolute;
+        left: 640px;
+        top: 70px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .edit3 {
+        position: absolute;
+        left: 640px;
+        top: 120px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .export1 {
+        position: absolute;
+        left: 700px;
+        top: 20px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .export2 {
+        position: absolute;
+        left: 700px;
+        top: 70px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .export3 {
+        position: absolute;
+        left: 700px;
+        top: 120px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .circlezakaz {
+        position: relative;
+        margin-top: 18px;
+        margin-left: 0px;
+        width: 29px;
+        height: 27px;
+    }
+
+    .editzakaz {
+        position: absolute;
+        left: 660px;
+        top: 10px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .deletezakaz {
+        position: absolute;
+        left: 720px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+    }
 
 
 }
