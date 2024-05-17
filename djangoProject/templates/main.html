@@ -22,6 +22,15 @@
 </div>
 
 
+<div id="marshpopup-overlay">
+    <div class="close-button-marsh-popup">X</div>
+    <div id="marshpopup">
+        <h1 id="marshnamepopup"></h1>
+        <div id="popupmap"></div>
+    </div>
+</div>
+
+
 <div class="wrapper">
     <div class="content">
         <header>
@@ -505,6 +514,8 @@
                     </ul>
                 </div>
                 <script>
+
+
                     const routes_json = {{ routes|safe }};
 
                     let ilocal = 0;
@@ -517,16 +528,46 @@
                         ilocal++;
                     }
 
+                    const marshpopupOverlay = document.getElementById("marshpopup-overlay");
+                    const marshpopup = document.getElementById("marshpopup");
+
+                    function showPopup() {
+                        marshpopupOverlay.style.display = "block";
+                    }
+
+                    function hidePopup() {
+                        marshpopupOverlay.style.display = "none";
+                    }
+
+                    marshpopupOverlay.addEventListener("click", hidePopup);
+                    const closeButton = document.querySelector(".close-button-marsh-popup");
+                    closeButton.addEventListener("click", hidePopup);
+
+                    hidePopup();
 
                     function exploreMarsh(id) {
+
+
                         switch (id) {
                             case 0:
+                                showPopup();
+                                document.getElementById("marshnamepopup").innerHTML = routes_json[0].fields.name;
+                                document.getElementById("popupmap").innerHTML = ``;
                                 break;
                             case 1:
+                                showPopup();
+                                document.getElementById("marshnamepopup").innerHTML = routes_json[1].fields.name;
+                                document.getElementById("popupmap").innerHTML = ``;
                                 break;
                             case 2:
+                                showPopup();
+                                document.getElementById("marshnamepopup").innerHTML = routes_json[2].fields.name;
+                                document.getElementById("popupmap").innerHTML = ``;
                                 break;
                             case 3:
+                                showPopup();
+                                document.getElementById("marshnamepopup").innerHTML = routes_json[3].fields.name;
+                                document.getElementById("popupmap").innerHTML = ``;
                                 break;
 
                         }
