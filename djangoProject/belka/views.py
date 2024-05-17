@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
-from .models import Shop, Place, Cafe, UserFavourites
+from .models import Shop, Place, Cafe, UserFavourites, Route
 
 bot_token = ''
 chat_id = ''
@@ -31,6 +31,7 @@ def index_page(request):
     places = Place.objects.all()
     cafes = Cafe.objects.all()
     shops = Shop.objects.all()
+    routes = Route.objects.filter(creator=0)
 
     for place in places:
         place.image = place.image.replace("static/", "")
@@ -44,11 +45,14 @@ def index_page(request):
     places = serializers.serialize("json", Place.objects.all())
     cafes = serializers.serialize("json", Cafe.objects.all())
     shops = serializers.serialize("json", Shop.objects.all())
+    routes = serializers.serialize("json", Route.objects.all())
 
     context = {
         'places': places,
         'cafes': cafes,
         'shops': shops,
+        'routes': routes,
+
     }
     return render(request, 'main.html', context)
 

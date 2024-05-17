@@ -450,42 +450,89 @@
             <img class="phot" src="{% static 'img/zele.jpg' %}" alt="">
 
         </div>
+
+
         <div class="block3" id="routesblock">
 
             <h1>Маршруты</h1>
             <div class="ant-carousel2" id=”second”>
                 <div class="ant-carousel-hider2">
                     <ul class="ant-carousel-list2">
+
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p>маршрут №1</p>
+                                <p id="mashr0name"></p>
+                                <p id="mashr0descr"></p>
+                                <button onclick="exploreMarsh(0)">Изучить маршрут</button>
+                                <button>Избранное</button>
+                                <button>Экспорт</button>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p>маршрут №2</p>
+                                <p id="mashr1name"></p>
+                                <p id="mashr1descr"></p>
+                                <button onclick="exploreMarsh(1)">Изучить маршрут</button>
+                                <button>Избранное</button>
+                                <button>Экспорт</button>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p>маршрут №3</p>
+                                <p id="mashr2name"></p>
+                                <p id="mashr2descr"></p>
+                                <button onclick="exploreMarsh(2)">Изучить маршрут</button>
+                                <button>Избранное</button>
+                                <button>Экспорт</button>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p>маршрут №4</p>
+                                <p id="mashr3name"></p>
+                                <p id="mashr3descr"></p>
+                                <button onclick="exploreMarsh(3)">Изучить маршрут</button>
+                                <button>Избранное</button>
+                                <button>Экспорт</button>
                             </div>
 
                         </li>
-
                     </ul>
                 </div>
+                <script>
+                    const routes_json = {{ routes|safe }};
+
+                    let ilocal = 0;
+
+                    for (const route of routes_json) {
+                        document.getElementById("mashr" + ilocal + "name").innerHTML = route.fields.name;
+                        //var placesList = route.fields.marshrut;
+                        //const arr = placesList.split("$").map(Number);
+                        document.getElementById("mashr" + ilocal + "descr").innerHTML = route.fields.short_description;
+                        ilocal++;
+                    }
+
+
+                    function exploreMarsh(id) {
+                        switch (id) {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+
+                        }
+                    }
+                </script>
                 <div class="ant-carousel-arrow-left"></div>
                 <div class="ant-carousel-arrow-right"></div>
                 <div class="ant-carousel-dots"></div>
+
                 <script>function Ant(crslId) {
 
                     let id = document.getElementById(crslId);
@@ -1097,6 +1144,7 @@
                 <a href="profile">Личный кабинет</a>
             </div>
         </div>
+
         <div class="logo">
             <div class="svyz">
                 <h1>Телефон</h1>
