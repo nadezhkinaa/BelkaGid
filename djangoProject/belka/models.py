@@ -68,3 +68,22 @@ class UserFavourites(models.Model):
 
     def __str__(self):
         return "Favourites of user " + str(self.user_id)
+
+
+class Route(models.Model):
+    name = models.TextField()
+    short_description = models.TextField()
+    rating = models.FloatField()
+    votes = models.IntegerField()
+    creator = models.IntegerField()
+    marshrut = models.TextField()
+
+    def getRoute(self):
+        return self.marshrut.split("$")
+
+    def refreshRating(self, new_rate):
+        self.votes += 1
+        self.rating = (self.rating + new_rate) / self.votes
+
+    def __str__(self):
+        return str(self.name)
