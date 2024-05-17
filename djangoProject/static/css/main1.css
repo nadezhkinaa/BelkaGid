@@ -27,7 +27,7 @@ body {
     flex: 0 0 auto;
 }
 
-@media (min-width: 1890px) and (max-width: 3000px) {
+@media (min-width: 1441px) and (max-width: 1890px) {
     @font-face {
         font-family: 'Montserrat Alternates';
         src: url('../fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -80,6 +80,7 @@ body {
     .logo {
         display: flex;
         height: 35%;
+
     }
 
     .nazvanie a {
@@ -112,7 +113,7 @@ body {
         text-decoration: none;
         font-family: 'Montserrat Alternates';
         font-weight: 600;
-        font-size: 32px;
+        font-size: 24px;
         padding-top: 30px;
         margin-right: 50px;
         padding-bottom: 30px;
@@ -133,23 +134,26 @@ body {
 
     .block1 h1 {
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         font-family: 'Montserrat Alternates';
         color: #FFF;
         position: absolute;
-        top: 100px;
+        top: 200px;
         left: 100px;
-        width: 1300px
+        width: 1100px
     }
 
     .block1 h3 {
         font-weight: 400;
-        font-size: 40px;
+        font-size: 36px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 400px;
         left: 100px;
+    }
+    .mainicon{
+    margin-left:100px;
     }
 
     .button {
@@ -186,7 +190,7 @@ body {
         position: relative;
         width: 96%;
         border-radius: 25px;
-        height: 1080px;
+        height: 936px;
         background: #cdd1bc;
         margin-left: auto;
         margin-right: auto;
@@ -194,7 +198,7 @@ body {
 
     .block2 h1 {
         font-weight: 700;
-        font-size: 76px;
+        font-size: 64px;
         font-family: 'Montserrat Alternates';
         color: #414833;
         position: absolute;
@@ -205,15 +209,14 @@ body {
 
     .block2 p {
         font-weight: 200;
-        font-size: 32px;
+        font-size: 24px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 300px;
         left: 180px;
-        width: 900px;
+        width: 700px;
     }
-
 
 
 
@@ -223,7 +226,7 @@ body {
     .onasblock2 h1 {
         font-family: 'Montserrat Alternates';
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #754C24;
         margin-top: 70px;
         margin-left: 80px;
@@ -265,16 +268,14 @@ body {
     .phot {
     position:absolute;
         padding-top: 55px;
-        width:550px;
-        height:380px;
-        top: 310px;
-        left: 1200px;
-
+        width:490px;
+        height:320px;
+        top: 250px;
+        left: 1000px;
     }
     .imgbelka{
     padding-top: 8px;
     }
-
 
     .photo {
         width: 450px;
@@ -295,30 +296,30 @@ body {
 
     .block5 h1 {
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 40px;
+        top: 80px;
         left: 100px;
-        width: 1500px;
+        width: 1200px;
     }
 
     .onasblock1 h1 {
-        top: 60px;
-        left: 60px;
+        top: 100px;
+        left: 150px;
         font-weight: 700;
-        font-size: 96px;
+        font-size: 72px;
         font-family: 'Montserrat Alternates';
         color: #FFF;
         position: absolute;
-        width: 1300px
+
     }
 
     .onasblock3 h1 {
-        width: 1200px;
+        width: 800px;
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
@@ -415,13 +416,13 @@ body {
 
     .onasblock1 p {
         font-weight: 200;
-        font-size: 32px;
+        font-size: 24px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 300px;
-        left: 820px;
-        width: 900px;
+        left: 750px;
+        width: 700px;
     }
 
     .onasblock2 h2 {
@@ -439,18 +440,16 @@ body {
         font-size: 24px;
         font-family: 'Hero';
         color: #414833;
-        margin-left: 400px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-left: 300px;
+        margin-top: 70px;
+        margin-bottom: 40px;
         width: 1500px;
-
     }
 
     ol {
         list-style-type: none;
         counter-reset: num;
         margin-right: 80px;
-        list-style-type: none;
 
     }
 
@@ -459,24 +458,21 @@ body {
         counter-increment: num;
         font-family: 'Bergamasco';
         margin-right: 105px;
-
         color: #A98467;
         font-weight: 300;
         font-size: 64px;
         font-weight: bold;
         content: counter(num);
-
-	text-align: center;
-
+        text-align: center;
     }
 
     .onasblock3 h2 {
         font-weight: 400;
-        font-size: 64px;
+        font-size: 40px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 400px;
+        top: 300px;
         left: 150px;
     }
 
@@ -513,18 +509,18 @@ body {
         font-weight: 400;
         font-size: 32px;
         position: absolute;
-        top: 0px;
+        top: -100px;
         left: 10px;
         padding: 10px;
         border: none;
         border-radius: 15px;
         width: 635px;
-        height: 51px;
+        height: 45px;
         background: #F0EEE6;
     }
 
     .inputemail {
-        top: 100px;
+        top: -10px;
         left: 10px;
     }
 
@@ -536,7 +532,7 @@ body {
     .inputmessage {
         width: 635px;
         height: 133px;
-        top: 200px;
+        top: 100px;
         left: 10px;
         max-height: 175px;
         max-width: 2500px;
@@ -549,15 +545,15 @@ body {
 
     .buttonotpr {
         position: absolute;
-        bottom: 80px;
+        bottom: 45px;
         left: 150px;
-        width: 350px;
-        height: 75px;
+        width: 300px;
+        height: 55px;
         font-weight: 400;
         font-size: 32px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 15px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
@@ -594,67 +590,55 @@ body {
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
         grid-auto-rows: min-content;
+
     }
 
     .tovar {
         position: relative;
-        width: 380px;
-        height: 480px;
+        width: 351px;
+        height: 428px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
         border-radius: 15px;
         text-align: center;
-        margin-right: 35px;
-        margin-left: 35px;
         place-items: center;
         align-self: center;
         justify-self: center;
     }
-    .basket{
-    position:absolute;
-    left:310px;
-    top:400px;
-    }
 
     .tovar img {
         border-radius: 15px;
-        width: 293px;
-        height: 294px;
+        width: 243px;
+        height: 244px;
         background: #fff;
         margin-top: 25px;
     }
-
-    .tovar p {
-        position: absolute;
-        left: 25px;
-        top: 320px;
-        text-align: center;
-        font-family: 'Montserrat Alternates';
-        font-weight: 200;
-        font-size: 24px;
-        color: #414833;
+    .basket{
+    position:absolute;
+    left:290px;
+    top:360px;
     }
 
     .tovar h1 {
         position: absolute;
         left: 25px;
-        top: 325px;
+        top: 285px;
         text-align: center;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 32px;
         color: #414833;
     }
-
     .tovar h2 {
         position: absolute;
         left: 30px;
-        top: 400px;
+        top: 360px;
         font-family: 'Hero';
         font-weight: 800;
         font-size: 28px;
         color: #414833;
     }
+
 
     .cardi {
         padding-top: 80px;
@@ -664,20 +648,19 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         grid-auto-rows: min-content;
-
-
     }
 
     .card {
-        position: relative;
+     position: relative;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        background: #FBFAF8;
+        background: #fbfaf8;
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 647px;
-        height: 712px;
-
+        width: 593px;
+        height: 663px;
+        margin-right: 100px;
+        margin-left: 100px;
         place-items: center;
         align-self: center;
         justify-self: center;
@@ -686,14 +669,14 @@ body {
     .card img {
         width: 100%;
         border-radius: 10px;
-        width:647px;
-        height:365px;
+        width:593px;
+        height:345px
     }
 
     .card h1 {
         position: absolute;
         left: 25px;
-        top: 380px;
+        top: 360px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 32px;
@@ -702,9 +685,9 @@ body {
     }
 
     .card p {
-        position: absolute;
+    position: absolute;
         left: 135px;
-        top: 480px;
+        top: 458px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
         font-size: 18px;
@@ -714,13 +697,12 @@ body {
     .card h2 {
         position: absolute;
         left: 25px;
-        top: 530px;
-
+        top: 490px;
         font-family: 'Hero';
         font-weight: 600;
         font-size: 18px;
         color: #414833;
-        width: 600px;
+        width: 550px;
     }
 
     .rate {
@@ -748,15 +730,14 @@ body {
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 647px;
-        height: 662px;
+        width: 593px;
+        height: 663px;
         margin-right: 120px;
         margin-left: 120px;
         position: relative;
         place-items: center;
         align-self: center;
         justify-self: center;
-
     }
 
     .cafecard img {
@@ -765,7 +746,7 @@ body {
     }
 
     .cafecard h1 {
-        position: absolute;
+     position: absolute;
         top: 380px;
         left: 25px;
         font-family: 'Montserrat Alternates';
@@ -775,9 +756,9 @@ body {
         width: 450px;
     }
 
-    .cafecard p {
-        position: absolute;
-        top: 450px;
+    .cafecard p{
+     position: absolute;
+     top: 450px;
         left: 135px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
@@ -786,8 +767,9 @@ body {
     }
 
 
+
     .cafecard h2 {
-        position: absolute;
+    position: absolute;
         top: 500px;
         left: 25px;
 
@@ -795,7 +777,7 @@ body {
         font-weight: 600;
         font-size: 20px;
         color: #414833;
-        width: 600px;
+        width: 500px;
     }
 
     .rate {
@@ -826,14 +808,13 @@ body {
         align-items: center;
         text-align: center;
     }
-
-    .vhodd {
-        display: flex;
+    .vhodd{
+     display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-    }
+        }
 
     .buttonvhod {
         appearance: none;
@@ -925,7 +906,7 @@ body {
         height: 58px;
         background: #F0EEE6;
         margin-bottom: 40px;
-        padding-left: 15px;
+        padding-left:15px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
@@ -978,7 +959,7 @@ body {
     }
 
     .zakaz {
-        position: relative;
+        position:relative;
         margin-left: 40px;
         margin-top: 50px;
         padding-left: 30px;
@@ -1300,12 +1281,13 @@ body {
     .mapclass {
         margin-left: auto;
         margin-right: auto;
-        width: 60%;
+        width: 50%;
+        display:block;
+
 
 
 
     }
-
     .vhod h2 {
 
         font-weight: 600;
@@ -1313,11 +1295,10 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         margin-bottom: 20px;
-        margin-top: -150px;
+        margin-top:-150px;
     }
-
     .email_reg__input, .username_reg__input, .password1_reg__input, .password2_reg__input {
-        border-radius: 22px;
+    border-radius: 22px;
         width: 351px;
         height: 50px;
         padding: 0px 15px;
@@ -1328,14 +1309,12 @@ body {
         background: #F0EEE6;
         margin-bottom: 15px;
     }
-
     .text-field__input::placeholder {
         color: #a58890;
         opacity: 0.8;
     }
-
-    .boxfiltr {
-        width: 320px;
+    .boxfiltr{
+    width: 320px;
         height: 40px;
         border: 1px solid #414833;
         font-size: 18px;
@@ -1344,14 +1323,13 @@ body {
         border-radius: 15px;
         font-family: 'Montserrat Alternates';
         flex: 0.5;
-        margin-top: 60px;
-        margin-right: 50px;
+        margin-top:60px;
+        margin-right:50px;
 
 
     }
-
-    .buttonregistr {
-        appearance: none;
+    .buttonregistr{
+    appearance: none;
         border-radius: 15px;
         width: 258px;
         height: 40px;
@@ -1366,13 +1344,18 @@ body {
         transition-delay: 0.2s;
     }
 
-    @media screen and (min-width: 911px) {
+  @media screen and (min-width: 1441px) and (max-width: 1891px) {
         .ant-carousel {
-            max-width: 810px;
+            max-width: 1200px;
+        }
+    }
+    @media screen and (min-width: 1441px) and (max-width: 1891px) {
+        .ant-carousel2 {
+            max-width: 1480px;
         }
     }
 
-    @media screen and (min-width: 641px) and (max-width: 2510px) {
+    @media screen and (min-width: 1891px) and (max-width: 2510px) {
         .ant-carousel, .ant-carousel2 {
             max-width: 1700px;
         }
@@ -1388,7 +1371,6 @@ body {
         margin: 0px auto auto;
         margin-bottom: 101px;
 
-
     }
 
     .ant-carousel-element {
@@ -1397,6 +1379,13 @@ body {
         margin-left: 15px;
         margin-right: 300px;
     }
+    .ant-carousel-element2 {
+        width: 280px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 200px;
+    }
+
     /* General styles */
     .ant-carousel, .ant-carousel2 {
         width: auto;
@@ -1417,12 +1406,7 @@ body {
         justify-content: flex-start;
     }
 
-    .ant-carousel-element2 {
-        width: 280px;
-        text-align: center;
-        margin-left: 15px;
-        margin-right: 300px;
-    }
+
 
     /* Navigation item styles */
     div.ant-carousel-arrow-left,
@@ -1440,7 +1424,7 @@ body {
     /*стрелочки*/
     div.ant-carousel-arrow-left {
         left: -60px;
-        top: 45%;
+        top: 50%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
 
@@ -1454,10 +1438,11 @@ body {
 
     }
 
+
     /*стрелочки*/
-    div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
-        right: -60px;
-        top: 45%;
+     div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
+        right: -30px;
+        top: 51%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
     }
@@ -1493,15 +1478,12 @@ body {
         cursor: pointer;
 
     }
-
     #map {
         width: 100%;
         height: 900px;
         min-width: 100vh;
-        min-height: 80vh;
+        min-height: 70vh;
     }
-
-
     .ol-popup {
         position: absolute;
         background-color: #FBFAF8;
@@ -1513,7 +1495,6 @@ body {
         bottom: 10px;
         left: -50px;
     }
-
     .ol-popup:after,
     .ol-popup:before {
         top: 100%;
@@ -1524,52 +1505,42 @@ body {
         position: absolute;
         pointer-events: none;
     }
-
     .ol-popup:after {
         border-top-color: white;
         border-width: 10px;
         left: 48px;
         margin-left: -10px;
     }
-
     .ol-popup:before {
         border-top-color: #cccccc;
         border-width: 11px;
         left: 48px;
         margin-left: -11px;
     }
-
     .ol-popup-closer {
         text-decoration: none;
         position: absolute;
         top: 2px;
         right: 8px;
     }
-
     .ol-popup-closer:after {
         content: '✖';
     }
-
     #popup-content {
         font-size: 14px;
         font-family: 'Montserrat Alternates';
         width: 205px;
         margin-bottom: 15px;
     }
-
     #popup-content .markerInfo {
         font-weight: bold;
     }
-
     #popup-content h1 {
         font-size: 14px;
         margin-bottom: 15px;
     }
-
-
     .buttonpodr {
         margin-left: -5px;
-
         width: 130px;
         height: 30px;
         font-weight: 400;
@@ -1580,15 +1551,13 @@ body {
         border: 1px solid #333D29;
         background-color: #fff;
         padding-left: 2px;
-
         padding-bottom: 3px;
         text-decoration: none;
     }
-
     .buttonmesta {
         position: absolute;
         left: 25px;
-        top: 660px;
+        top: 610px;
         width: 130px;
         height: 30px;
         font-weight: 400;
@@ -1602,77 +1571,74 @@ body {
         padding-bottom: 3px;
         text-decoration: none;
     }
-    .tree1{
+.tree1{
     opacity:0.5;
     position:absolute;
-    left:1150px;
+    left:900px;
     top:370px;
-    width:229px ;
-    height:333px;
+    width:180px ;
+    height:270px;
     }
     .tree2{
     opacity:0.5;
     position:absolute;
-    left:1450px;
+    left:1200px;
     top:350px;
-    width: 163px;
-    height: 357 px;
+    width: 123px;
+    height: 307 px;
     }
     .tree3{
     opacity:0.5;
     position:absolute;
-    left:1250px;
-    top:150px;
-    width:261px;
-    height:572px;
+    left:1000px;
+    top:210px;
+    width:201px;
+    height:472px;
     }
     .tree4{
     opacity:0.5;
     position:absolute;
-    left:1550px;
-    top:180px;
-    width:337px;
-    height:537px;
+    left:1250px;
+    top:250px;
+    width:237px;
+    height:437px;
     }
     .girl{
     position:absolute;
-    left:1400px;
-    top:280px;
-    width:316px;
-    height:560px;
+    left:1150px;
+    top:300px;
+    width:266px;
+    height:490px;
     }
     .branch1{
-    width:284px;
-    height:417px;
-    margin-left:1600px;
-    margin-top:-100px;
+    width:204px;
+    height:317px;
+    margin-left:1470px;
+    margin-top:-80px;
     }
     .branch2{
-    width:213px;
-    height:378px;
+    width:203px;
+    height:308px;
     margin-left:10px;
-    margin-top:700px;
-    }
-    .mainicon{
-    margin-left:100px;
+    margin-top:660px;
     }
     .line{
     margin-left:25px;
-    width:1800px;
+    width:1600px;
     height:175px;
 
     }
     .leaf1{
     width:138px;
     height:160px;
-    margin-left:1550px;
+    margin-left:1450px;
     margin-top:80px;
     }
     .leaf2{
     width:217px;
     height:174px;
-    margin-left:1550px;
-    margin-top:380px;
+    margin-left:1400px;
+    margin-top:500px;
     }
     .love1{
     width:37px;
@@ -1681,15 +1647,25 @@ body {
     left:1400px;
     top:400px;
     }
+    .love1{
+    width:37px;
+    height:66px;
+    position:absolute;
+    left:930px;
+    top:290px;
+    }
     .flower{
     width:248px;
     height:275px;
-    margin-left:1500px;
+    margin-left:1300px;
     margin-top:20px;
     }
     .stars{
     position:absolute;
     left:25px;
-    top:483px;
+    top:460px;
     }
+
+
+
 }
