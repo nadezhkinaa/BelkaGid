@@ -1713,6 +1713,7 @@ body {
 
     #marshpopup-overlay {
         position: fixed;
+        display: none;
         top: 0;
         left: 0;
         width: 100%;
@@ -1746,104 +1747,105 @@ body {
         line-height: 30px;
         cursor: pointer;
     }
+
+
+    .love2 {
+        width: 29px;
+        height: 48px;
+        position: absolute;
+        margin-right: 410px;
+        margin-bottom: 310px;
+    }
+
+    .love3 {
+        width: 29px;
+        height: 48px;
+        position: absolute;
+        margin-right: -410px;
+        margin-bottom: 310px;
+    }
+
+    .circle1 {
+        position: relative;
+        margin-top: 18px;
+        margin-left: 25px;
+        width: 29px;
+        height: 27px;
+    }
+
+    .edit1 {
+        position: absolute;
+        left: 900px;
+        top: 20px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .edit2 {
+        position: absolute;
+        left: 900px;
+        top: 70px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .edit3 {
+        position: absolute;
+        left: 900px;
+        top: 120px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .export1 {
+        position: absolute;
+        left: 960px;
+        top: 20px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .export2 {
+        position: absolute;
+        left: 960px;
+        top: 70px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .export3 {
+        position: absolute;
+        left: 960px;
+        top: 120px;
+        width: 36px;
+        height: 36px;
+
+    }
+
+    .circlezakaz {
+        position: relative;
+        margin-top: 18px;
+        margin-left: 0px;
+        width: 29px;
+        height: 27px;
+    }
+
+    .editzakaz {
+        position: absolute;
+        left: 950px;
+        top: 10px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .deletezakaz {
+        position: absolute;
+        left: 1010px;
+        top: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
 }
-
-.love2 {
-    width: 29px;
-    height: 48px;
-    position: absolute;
-    margin-right: 410px;
-    margin-bottom: 310px;
-}
-
-.love3 {
-    width: 29px;
-    height: 48px;
-    position: absolute;
-    margin-right: -410px;
-    margin-bottom: 310px;
-}
-
-.circle1 {
-    position: relative;
-    margin-top: 18px;
-    margin-left: 25px;
-    width: 29px;
-    height: 27px;
-}
-
-.edit1 {
-    position: absolute;
-    left: 900px;
-    top: 20px;
-    width: 37px;
-    height: 37px;
-}
-
-.edit2 {
-    position: absolute;
-    left: 900px;
-    top: 70px;
-    width: 37px;
-    height: 37px;
-}
-
-.edit3 {
-    position: absolute;
-    left: 900px;
-    top: 120px;
-    width: 37px;
-    height: 37px;
-}
-
-.export1 {
-    position: absolute;
-    left: 960px;
-    top: 20px;
-    width: 36px;
-    height: 36px;
-
-}
-
-.export2 {
-    position: absolute;
-    left: 960px;
-    top: 70px;
-    width: 36px;
-    height: 36px;
-
-}
-
-.export3 {
-    position: absolute;
-    left: 960px;
-    top: 120px;
-    width: 36px;
-    height: 36px;
-
-}
-
-.circlezakaz {
-    position: relative;
-    margin-top: 18px;
-    margin-left: 0px;
-    width: 29px;
-    height: 27px;
-}
-
-.editzakaz {
-    position: absolute;
-    left: 950px;
-    top: 10px;
-    width: 42px;
-    height: 42px;
-}
-
-.deletezakaz {
-    position: absolute;
-    left: 1010px;
-    top: 10px;
-    width: 35px;
-    height: 35px;
-}
-
