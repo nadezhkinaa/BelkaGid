@@ -87,7 +87,7 @@ body {
         text-decoration: none;
         color: #582F0E;
         font-weight: 500;
-        font-size: 72px;
+        font-size: 64px;
         font-family: "UrbanSlavic";
     }
 
@@ -196,6 +196,7 @@ body {
         margin-right: auto;
     }
 
+
     .block2 h1 {
         font-weight: 700;
         font-size: 64px;
@@ -206,6 +207,18 @@ body {
         left: 160px;
         width: 870px;
     }
+    .textblock{
+    position: absolute;
+    width: 42%;
+        height: 443px;
+        border-radius: 15px;
+        background: #797D66;
+        opacity:0.2;
+        border: none;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        top: 300px;
+        left: 180px;
+    }
 
     .block2 p {
         font-weight: 200;
@@ -215,7 +228,9 @@ body {
         position: absolute;
         top: 300px;
         left: 180px;
-        width: 700px;
+         width: 40%;
+
+
     }
 
 
@@ -250,6 +265,7 @@ body {
         font-weight: 400;
         font-size: 32px;
         font-family: "Calypso";
+
     }
 
     .marshblocks {
@@ -266,15 +282,23 @@ body {
     }
 
     .phot {
-    position:absolute;
-        padding-top: 55px;
-        width:490px;
-        height:320px;
-        top: 250px;
-        left: 1000px;
+
+        position: absolute;
+        margin-top:320px;
+        width:35%;
+        height:35%;
+        padding-left:44%;
+
+    }
+    .phot1{
+     position: absolute;
+        margin-top:0px;
+        width:35%;
+        height:35%;
+        padding-left:0%;
     }
     .imgbelka{
-    padding-top: 8px;
+    padding-top: 4px;
     }
 
     .photo {
@@ -296,7 +320,7 @@ body {
 
     .block5 h1 {
         font-weight: 700;
-        font-size: 64px;
+        font-size: 84px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
@@ -367,8 +391,10 @@ body {
     }
 
     .footer {
-        margin-top: 55px;
-        padding: 30px;
+        margin-top: 80px;
+        padding-top: 30px;
+        padding-left: 0px;
+        padding-bottom: 30px;
         background-color: #FBFAF8;
     }
 
@@ -382,7 +408,7 @@ body {
         font-family: 'Montserrat Alternates';
         font-weight: 600;
         font-size: 24px;
-        margin-left: 80px;
+        margin-left: 60px;
     }
 
     .svyz h1 {
@@ -421,8 +447,8 @@ body {
         color: #FFF;
         position: absolute;
         top: 300px;
-        left: 750px;
-        width: 700px;
+        padding-left:45%;
+        width: 50%;
     }
 
     .onasblock2 h2 {
@@ -788,10 +814,10 @@ body {
     .vhod h1 {
         text-align: center;
         font-weight: 600;
-        font-size: 36px;
+        font-size: 32px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 
     .vhod {
@@ -799,8 +825,8 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-        width: 1339px;
-        height: 711px;
+        width: 1150px;
+        height: 600px;
         background: #fbfaf8;
         display: flex;
         flex-direction: column;
@@ -890,10 +916,10 @@ body {
 
     .lichndann {
         position: absolute;
-        left: 550px;
-        top: 252px;
+        left: 480px;
+        top: 240px;
         border-radius: 25px;
-        width: 1169px;
+        width: 950px;
         height: 705px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
@@ -902,7 +928,7 @@ body {
     .tfieldinput {
         border: 0;
         border-radius: 15px;
-        width: 580px;
+        width: 430px;
         height: 58px;
         background: #F0EEE6;
         margin-bottom: 40px;
@@ -915,7 +941,7 @@ body {
 
     .lichndann p {
         position: relative;
-        padding-left: 80px;
+        padding-left: 20px;
         margin: 60px;
         font-weight: 200;
         font-size: 32px;
@@ -925,7 +951,7 @@ body {
 
     .pole {
         position: absolute;
-        left: 450px;
+        left: 380px;
         top: 40px;
         display: flex;
         justify-content: center;
@@ -935,7 +961,7 @@ body {
     .buttonsave {
         position: absolute;
         bottom: 80px;
-        left: 450px;
+        left: 400px;
         width: 429px;
         height: 61px;
         font-weight: 200;
@@ -949,10 +975,10 @@ body {
 
     .zakazi {
         position: absolute;
-        left: 550px;
-        top: 252px;
-        width: 1169px;
-        height: 705px;
+        left: 450px;
+        top: 242px;
+        width: 890px;
+        height: 750px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -965,7 +991,7 @@ body {
         padding-left: 30px;
         display: flex;
         border-radius: 25px;
-        width: 1042px;
+        width: 749px;
         height: 60px;
         background: #FBFAF8;
     }
@@ -984,8 +1010,9 @@ body {
     }
 
     .namezakaz h1 {
+
         font-weight: 500;
-        font-size: 48px;
+        font-size: 32px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
         padding-left: 50px;
@@ -993,7 +1020,7 @@ body {
     }
 
     .buttoncreate {
-        margin-left: 400px;
+        margin-left: 230px;
         margin-top: 35px;
         width: 337px;
         height: 53px;
@@ -1001,17 +1028,17 @@ body {
         font-size: 32px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #F0EEE6;
     }
 
     .marsruty {
         position: absolute;
-        left: 550px;
+        left: 500px;
         top: 252px;
-        width: 1169px;
-        height: 755px;
+        width: 890px;
+        height: 750px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1021,17 +1048,18 @@ body {
         padding-top: 40px;
         padding-left: 50px;
         font-weight: 500;
-        font-size: 36px;
+        font-size: 32px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
 
     .marshr {
+    position:relative;
         margin-left: 80px;
         margin-top: 30px;
         padding-top: 10px;
         border-radius: 25px;
-        width: 1018px;
+        width: 749px;
         height: 235px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
@@ -1179,6 +1207,8 @@ body {
         position: absolute;
         left: 550px;
         top: 252px;
+        width: 890px;
+        height: 750px;
         width: 1169px;
         height: 755px;
         border: 4px solid #fff;
@@ -1478,7 +1508,7 @@ body {
     #map {
         width: 100%;
         height: 900px;
-        min-width: 100vh;
+       
         min-height: 70vh;
     }
     .ol-popup {
@@ -1571,23 +1601,23 @@ body {
 .tree1{
     opacity:0.5;
     position:absolute;
-    left:900px;
-    top:370px;
+    padding-left:60%;
+    top:390px;
     width:180px ;
     height:270px;
     }
     .tree2{
     opacity:0.5;
     position:absolute;
-    left:1200px;
-    top:350px;
+    padding-left:75%;
+    top:390px;
     width: 123px;
     height: 307 px;
     }
     .tree3{
     opacity:0.5;
     position:absolute;
-    left:1000px;
+    padding-left:63%;
     top:210px;
     width:201px;
     height:472px;
@@ -1595,14 +1625,14 @@ body {
     .tree4{
     opacity:0.5;
     position:absolute;
-    left:1250px;
+    padding-left:78%;
     top:250px;
     width:237px;
     height:437px;
     }
     .girl{
     position:absolute;
-    left:1150px;
+    padding-left:70%;
     top:300px;
     width:266px;
     height:490px;
@@ -1620,22 +1650,24 @@ body {
     margin-top:660px;
     }
     .line{
-    margin-left:25px;
-    width:1600px;
-    height:175px;
+    text-align: center;
+}
 
-    }
+
+
+
     .leaf1{
-    width:138px;
-    height:160px;
-    margin-left:1450px;
-    margin-top:80px;
+
+    width:188px;
+    height:240px;
+    margin-left:85%;
+    margin-top:50px;
     }
     .leaf2{
-    width:217px;
-    height:174px;
-    margin-left:1400px;
-    margin-top:500px;
+    width:257px;
+    height:254px;
+    margin-left:80%;
+    margin-top:300px;
     }
     .love1{
     width:37px;
@@ -1654,13 +1686,101 @@ body {
     .flower{
     width:248px;
     height:275px;
-    margin-left:1300px;
+   padding-left:80%;
     margin-top:20px;
     }
     .stars{
     position:absolute;
     left:25px;
     top:460px;
+    }
+    .love2{
+    width:29px;
+    height:48px;
+    position:absolute;
+    margin-right:380px;
+    margin-bottom:310px;
+    }
+    .love3{
+    width:29px;
+    height:48px;
+    position:absolute;
+    margin-right:-380px;
+    margin-bottom:310px;
+    }
+     .circle1{
+    position: relative;
+    margin-top:18px;
+    margin-left:25px;
+    width:29px;
+    height:27px;
+    }
+    .edit1{
+    position: absolute;
+    left:640px;
+    top: 20px;
+    width:37px;
+    height:37px;
+    }
+    .edit2{
+    position: absolute;
+    left:640px;
+    top: 70px;
+    width:37px;
+    height:37px;
+    }
+    .edit3{
+    position: absolute;
+    left:640px;
+    top: 120px;
+    width:37px;
+    height:37px;
+    }
+
+    .export1{
+    position: absolute;
+    left:700px;
+    top:20px;
+    width:36px;
+    height:36px;
+
+    }
+    .export2{
+    position: absolute;
+    left:700px;
+    top:70px;
+    width:36px;
+    height:36px;
+
+    }
+    .export3{
+    position: absolute;
+    left:700px;
+    top:120px;
+    width:36px;
+    height:36px;
+
+    }
+    .circlezakaz{
+    position: relative;
+    margin-top:18px;
+    margin-left:0px;
+    width:29px;
+    height:27px;
+    }
+    .editzakaz{
+    position: absolute;
+    left:660px;
+    top:10px;
+    width:42px;
+    height:42px;
+    }
+    .deletezakaz{
+    position: absolute;
+    left:720px;
+    top:10px;
+    width:35px;
+    height:35px;
     }
 
 
