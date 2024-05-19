@@ -517,7 +517,6 @@
                 function exportRoute(route) {
                     var points = route.fields.marshrut.split("$").map(Number);
                     points.pop();
-                    console.log(points);
                     var tempStr = "";
                     for (let icurr = 0; icurr < points.length; icurr++) {
                         tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
@@ -557,7 +556,6 @@
                 название.</p>
 
             <img class="phot" src="{% static 'img/zele.jpg' %}" alt="">
-
 
 
         </div>
