@@ -140,7 +140,7 @@ body {
         position: absolute;
         top: 200px;
         left: 100px;
-        width: 1100px
+        width: 800px
     }
 
     .block1 h3 {
@@ -287,7 +287,7 @@ body {
         margin-top: 320px;
         width: 35%;
         height: 35%;
-        padding-left: 44%;
+        padding-left: 60%;
 
     }
 
@@ -737,7 +737,7 @@ body {
 
     .rate {
         padding-left: 25px;
-        display: flex
+        display: flex;
     }
 
     .buttonpodr {
@@ -768,6 +768,7 @@ body {
         place-items: center;
         align-self: center;
         justify-self: center;
+
     }
 
     .cafecard img {
@@ -809,10 +810,7 @@ body {
         width: 500px;
     }
 
-    .rate {
-        padding-left: 25px;
-        display: flex
-    }
+
 
     .vhod h1 {
         text-align: center;
@@ -1387,9 +1385,10 @@ body {
     }
     @media screen and (min-width: 1441px) and (max-width: 1891px) {
         .ant-carousel2 {
-            max-width: 1480px;
+            max-width: 1450px;
         }
     }
+
 
     @media screen and (min-width: 1891px) and (max-width: 2510px) {
         .ant-carousel, .ant-carousel2 {
@@ -1467,11 +1466,11 @@ body {
     }
 
     .div.ant-carousel-arrow-left2 {
-        left: 110px;
-        top: 115%;
+        left:-100px;
+        top: 50%;
         display: block;
         background: #000000;
-
+        background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
     }
 
 
@@ -1665,17 +1664,19 @@ body {
     }
 
     .branch1 {
-        width: 204px;
-        height: 317px;
-        margin-left: 1470px;
-        margin-top: -80px;
+        position: absolute;
+        width: 284px;
+        height: 417px;
+        padding-left: 85%;
+        top: -130px;
     }
 
     .branch2 {
-        width: 203px;
-        height: 308px;
-        margin-left: 10px;
-        margin-top: 660px;
+    position: absolute;
+        width: 213px;
+        height: 378px;
+        padding-left: -10%;
+        top: 640px;
     }
 
     .line {
@@ -1698,13 +1699,7 @@ body {
         margin-top: 300px;
     }
 
-    .love1 {
-        width: 37px;
-        height: 66px;
-        position: absolute;
-        left: 1400px;
-        top: 400px;
-    }
+
 
     .love1 {
         width: 37px;
@@ -1725,6 +1720,13 @@ body {
         position: absolute;
         left: 25px;
         top: 460px;
+    }
+    .cafestars{
+    position:absolute;
+    left:25px;
+    top:453px;
+    width:100px;
+    height:16px;
     }
 
     .love2 {

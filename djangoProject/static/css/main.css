@@ -264,7 +264,7 @@ body {
         margin-top: 320px;
         width: 35%;
         height: 35%;
-        padding-left: 50%;
+        padding-left: 63%;
 
     }
 
@@ -731,7 +731,14 @@ body {
 
     .rate {
         padding-left: 25px;
-        display: flex
+        display: flex;
+    }
+    .cafestars{
+    position:absolute;
+    left:25px;
+    top:453px;
+    width:100px;
+    height:16px;
     }
 
     .buttonpodr {
@@ -1655,17 +1662,19 @@ body {
     }
 
     .branch1 {
+        position: absolute;
         width: 284px;
         height: 417px;
-        margin-left: 1600px;
-        margin-top: -100px;
+        padding-left: 85%;
+        top: -130px;
     }
 
     .branch2 {
+    position: absolute;
         width: 213px;
         height: 378px;
-        margin-left: 10px;
-        margin-top: 700px;
+        padding-left: -10%;
+        top: 800px;
     }
 
     .mainicon {

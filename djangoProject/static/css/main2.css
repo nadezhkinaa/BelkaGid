@@ -139,17 +139,18 @@ body {
         position: absolute;
         top: 200px;
         left: 100px;
-        width: 1100px
+        width: 800px
     }
 
     .block1 h3 {
         font-weight: 400;
-        font-size: 36px;
+        font-size: 32px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 400px;
         left: 100px;
+        width:50%;
     }
 
     .mainicon {
@@ -160,10 +161,10 @@ body {
         position: absolute;
         bottom: 200px;
         left: 100px;
-        width: 380px;
-        height: 60px;
+        width: 300px;
+        height: 50px;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 26px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         border-radius: 25px;
@@ -190,7 +191,7 @@ body {
         position: relative;
         width: 96%;
         border-radius: 25px;
-        height: 1080px;
+        height: 920px;
         background: #cdd1bc;
         margin-left: auto;
         margin-right: auto;
@@ -198,7 +199,7 @@ body {
 
     .block2 h1 {
         font-weight: 700;
-        font-size: 76px;
+        font-size: 64px;
         font-family: 'Montserrat Alternates';
         color: #414833;
         position: absolute;
@@ -209,13 +210,13 @@ body {
 
     .block2 p {
         font-weight: 200;
-        font-size: 32px;
+        font-size: 24px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
-        top: 300px;
+        top: 270px;
         left: 180px;
-        width: 900px;
+        width: 43%;
     }
 
     .rectangle {
@@ -245,7 +246,7 @@ body {
     .onasblock2 h1 {
         font-family: 'Montserrat Alternates';
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #754C24;
         margin-top: 70px;
         margin-left: 80px;
@@ -254,8 +255,8 @@ body {
     .marshrblock {
         margin-right: 50px;
         margin-left: 50px;
-        width: 411px;
-        height: 503px;
+        width: 351px;
+        height: 453px;
         border-radius: 15px;
         background: #A98467;
         border: none;
@@ -285,7 +286,21 @@ body {
     }
 
     .phot {
-        padding-top: 8px;
+
+        position: absolute;
+        margin-top: 320px;
+        width: 35%;
+        height: 30%;
+        padding-left: 60%;
+
+    }
+
+    .phot1 {
+        position: absolute;
+        margin-top: 0px;
+        width: 35%;
+        height: 35%;
+        padding-left: 0%;
     }
 
     .photo {
@@ -307,20 +322,20 @@ body {
 
     .block5 h1 {
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 40px;
+        top: 60px;
         left: 100px;
-        width: 1500px;
+        width: 900px;
     }
 
     .onasblock1 h1 {
-        top: 60px;
-        left: 60px;
+        top: 80px;
+        left: 100px;
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         font-family: 'Montserrat Alternates';
         color: #FFF;
         position: absolute;
@@ -328,21 +343,21 @@ body {
     }
 
     .onasblock3 h1 {
-        width: 1200px;
+        width: 800px;
         font-weight: 700;
-        font-size: 96px;
+        font-size: 64px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
         top: 80px;
-        left: 150px;
+        left: 100px;
     }
 
     .block5 p1,
     .block5 p2,
     .block5 p3 {
         font-weight: 100;
-        font-size: 36px;
+        font-size: 32px;
         color: #fff;
         font-family: 'Cruinn';
         position: absolute;
@@ -366,13 +381,13 @@ body {
         position: absolute;
         top: 800px;
         left: 660px;
-        width: 350px;
-        height: 75px;
+        width: 300px;
+        height: 55px;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 28px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 20px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
@@ -433,9 +448,9 @@ body {
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
-        top: 300px;
-        left: 820px;
-        width: 900px;
+        top: 250px;
+        padding-left:50%;
+        width: 45%;
     }
 
     .onasblock2 h2 {
@@ -453,10 +468,10 @@ body {
         font-size: 24px;
         font-family: 'Hero';
         color: #414833;
-        margin-left: 400px;
-        margin-top: 100px;
+        margin-left: 200px;
+        margin-top: 70px;
         margin-bottom: 50px;
-        width: 1500px;
+        width: 800px;
     }
 
     ol {
@@ -468,7 +483,7 @@ body {
         content: counter(num);
         counter-increment: num;
         font-family: 'Bergamasco';
-        margin-right: 105px;
+        margin-right: 55px;
         color: #A98467;
         font-weight: 300;
         font-size: 64px;
@@ -477,12 +492,12 @@ body {
 
     .onasblock3 h2 {
         font-weight: 400;
-        font-size: 64px;
+        font-size: 48px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 400px;
-        left: 150px;
+        top: 300px;
+        left: 100px;
     }
 
     .onasblock3 p,
@@ -518,8 +533,8 @@ body {
         font-weight: 400;
         font-size: 32px;
         position: absolute;
-        top: 0px;
-        left: 10px;
+        top: -50px;
+        left: -50px;
         padding: 10px;
         border: none;
         border-radius: 15px;
@@ -529,8 +544,8 @@ body {
     }
 
     .inputemail {
-        top: 100px;
-        left: 10px;
+        top: 50px;
+        left: -50px;
     }
 
     .inputname::placeholder, .inputemail::placeholder, .inputmessage::placeholder {
@@ -540,9 +555,9 @@ body {
 
     .inputmessage {
         width: 635px;
-        height: 133px;
-        top: 200px;
-        left: 10px;
+        height: 103px;
+        top: 150px;
+        left: -50px;
         max-height: 175px;
         max-width: 2500px;
     }
@@ -554,15 +569,15 @@ body {
 
     .buttonotpr {
         position: absolute;
-        bottom: 80px;
-        left: 150px;
-        width: 350px;
-        height: 75px;
+        bottom: 30px;
+        left: 100px;
+        width: 300px;
+        height: 65px;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 28px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 20px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
@@ -594,20 +609,27 @@ body {
 
     .tovari {
         padding-top: 80px;
-        display: flex;
+        display: grid;
         justify-content: center;
-        flex-direction: row;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        grid-auto-rows: min-content;
     }
 
     .tovar {
-        width: 351px;
-        height: 428px;
+        width: 80%;
+        height: 438px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        background: #cdd1bc;
+        background: #FBFAF8;
         border-radius: 15px;
+        margin-right: -10px;
+        margin-left: -10px;
+        position: relative;
         text-align: center;
-        margin-right: 50px;
-        margin-left: 50px;
+        place-items: center;
+        align-self: center;
+        justify-self: center;
+
     }
 
     .imgbelka {
@@ -617,56 +639,95 @@ body {
     }
 
     .tovar img {
-        border-radius: 15px;
-        width: 273px;
-        height: 274px;
+         border-radius: 15px;
+        width: 80%;
+        height:  50%;
         background: #fff;
         margin-top: 25px;
     }
 
-    .tovar p {
+
+    .basket {
+
+        position: absolute;
+        padding-left:30%;
+        top: 360px;
+
+    }
+    .tovar h1 {
+        position: absolute;
+        left: 25px;
+        top: 285px;
+        text-align: center;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 32px;
+        color: #414833;
+    }
+    .tovar h2 {
+        position: absolute;
+        left: 30px;
+        top: 360px;
         font-family: 'Hero';
-        font-weight: 200;
-        font-size: 36px;
-        color: #000;
+        font-weight: 800;
+        font-size: 28px;
+        color: #414833;
     }
 
     .cardi {
         padding-top: 80px;
-        display: flex;
+        display: grid;
         justify-content: center;
         flex-direction: row;
+         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        grid-auto-rows: min-content;
     }
 
     .card {
+    position:relative;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 647px;
-        height: 712px;
-        margin-right: 120px;
-        margin-left: 120px;
+        width: 447px;
+        height: 552px;
+        margin-right: 20px;
+        margin-left: 20px;
+        place-items: center;
+        align-self: center;
+        justify-self: center;
+    }
+    .stars {
+        position: absolute;
+        left: 25px;
+        top: 330px;
     }
 
     .card img {
         width: 100%;
+        border-radius: 10px;
+        width: 447px;
+        height: 250px
     }
 
     .card h1 {
-        margin-top: 10px;
-        margin-left: 25px;
-        margin-bottom: 35px;
+         position: absolute;
+
+        left: 25px;
+        top: 260px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
-        font-size: 32px;
+        font-size: 24px;
         color: #414833;
         width: 450px;
     }
 
     .card p {
-        margin-left: 10px;
+     position: absolute;
+        left: 135px;
+        top: 330px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
         font-size: 18px;
@@ -674,19 +735,38 @@ body {
     }
 
     .card h2 {
-        margin-left: 25px;
-        margin-bottom: 15px;
-        margin-top: 35px;
+        position: absolute;
+        left: 25px;
+        top: 360px;
         font-family: 'Hero';
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         color: #414833;
         width: 400px;
     }
 
     .rate {
+
+
         padding-left: 25px;
-        display: flex
+        display: flex;
+    }
+    .buttonmesta {
+        position: absolute;
+        left: 25px;
+        top: 500px;
+        width: 130px;
+        height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333D29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 10px;
+        border: 1px solid #333D29;
+        background-color: #fff;
+        padding-left: 2px;
+        padding-bottom: 3px;
+        text-decoration: none;
     }
 
     .buttonpodr {
@@ -709,14 +789,19 @@ body {
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 647px;
-        height: 712px;
-        margin-right: 120px;
-        margin-left: 120px;
+         width: 447px;
+        height: 552px;
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+        place-items: center;
+        align-self: center;
+        justify-self: center;
     }
 
     .cafecard img {
         width: 100%;
+        height:256px;
         border-radius: 15px;
     }
 
@@ -731,34 +816,43 @@ body {
         width: 450px;
     }
 
-    .cafecard p,
-    .cafecard p1 {
-        padding-left: 10px;
+    .cafecard p {
+       position: absolute;
+        top: 330px;
+        left: 135px;
         font-family: 'Montserrat Alternates';
         font-weight: 300;
         font-size: 18px;
         color: #333d29;
     }
 
-    .cafecard p1 {
-        padding-left: 25px;
-        padding-top: 2px;
-    }
+
 
     .cafecard h2 {
-        padding-left: 25px;
-        padding-bottom: 55px;
-        padding-top: 55px;
+        position: absolute;
+        top: 380px;
+        left: 25px;
         font-family: 'Hero';
         font-weight: 600;
-        font-size: 20px;
+        font-size: 18px;
         color: #414833;
         width: 400px;
     }
 
     .rate {
         padding-left: 25px;
-        display: flex
+        display: flex;
+    }
+     .rate1 {
+        padding-left: 25px;
+        display: flex;
+    }
+    .cafestars{
+    position:absolute;
+    left:25px;
+    top:330px;
+    width:100px;
+    height:16px;
     }
 
     .vhod h1 {
@@ -1217,7 +1311,7 @@ body {
     }
 
     .box1, .box2, .box3, .data {
-        width: 320px;
+        width: 300px;
         height: 40px;
         border: 1px solid #414833;
         font-size: 18px;
@@ -1226,21 +1320,24 @@ body {
         border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        left: 660px;
+        left: 600px;
         top: 440px;
         padding-left: 15px;
+
     }
 
     .data {
-        width: 300px;
-        left: 660px;
+        width: 280px;
+        left: 600px;
         top: 540px;
     }
 
     .box3 {
-        left: 660px;
+        left: 600px;
         top: 640px;
+
     }
+
 
     html {
         scroll-behavior: smooth;
@@ -1342,6 +1439,11 @@ body {
             max-width: 1700px;
         }
     }
+    @media screen and (min-width: 1025px) and (max-width: 1440px) {
+        .ant-carousel2 {
+            max-width: 850px;
+        }
+    }
 
     @media screen and (max-width: 640px) {
         .ant-carousel, .ant-carousel2 {
@@ -1362,6 +1464,15 @@ body {
         margin-left: 150px;
         margin-right: 150px;
     }
+    .ant-carousel-element2 {
+        width: 280px;
+        text-align: center;
+        margin-left: -10px;
+        margin-right: 150px;
+    }
+
+    /* General styles */
+
 
     /* General styles */
     .ant-carousel, .ant-carousel2 {
@@ -1468,44 +1579,80 @@ body {
         opacity: 0.5;
         position: absolute;
         padding-left: 60%;
-        top: 390px;
-        width: 180px;
-        height: 270px;
+        top: 430px;
+        width: 140px;
+        height: 230px;
     }
 
     .tree2 {
         opacity: 0.5;
         position: absolute;
         padding-left: 75%;
-        top: 390px;
-        width: 123px;
-        height: 307px;
+        top: 410px;
+        width: 103px;
+        height: 277px;
     }
 
     .tree3 {
         opacity: 0.5;
         position: absolute;
         padding-left: 63%;
-        top: 210px;
-        width: 201px;
-        height: 472px;
+        top: 260px;
+        width: 171px;
+        height: 422px;
     }
 
     .tree4 {
         opacity: 0.5;
         position: absolute;
         padding-left: 78%;
-        top: 250px;
-        width: 237px;
-        height: 437px;
+        top: 300px;
+        width: 207px;
+        height: 407px;
     }
 
     .girl {
         position: absolute;
         padding-left: 70%;
-        top: 300px;
-        width: 266px;
-        height: 490px;
+        top: 350px;
+        width: 206px;
+        height: 430px;
+    }
+    .branch1 {
+        position: absolute;
+        width: 254px;
+        height: 377px;
+        padding-left: 80%;
+        top: -130px;
+    }
+
+    .branch2 {
+    position: absolute;
+        width: 173px;
+        height: 328px;
+        padding-left: -10%;
+        top: 700px;
+    }
+     .leaf1 {
+
+        width: 168px;
+        height: 220px;
+        margin-left: 80%;
+        margin-top: 50px;
+    }
+
+    .leaf2 {
+        display:none;
+    }
+    .love1 {
+        display:none;
+    }
+
+    .flower {
+        width: 188px;
+        height: 205px;
+        padding-left: 80%;
+        margin-top: 20px;
     }
 
     .love2 {
