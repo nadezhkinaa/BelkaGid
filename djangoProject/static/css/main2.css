@@ -204,19 +204,19 @@ body {
         color: #414833;
         position: absolute;
         top: 40px;
-        left: 160px;
+        left: 100px;
         width: 870px;
     }
 
     .block2 p {
         font-weight: 200;
-        font-size: 24px;
+        font-size: 22px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 270px;
-        left: 180px;
-        width: 43%;
+        left: 100px;
+        width: 45%;
     }
 
     .rectangle {
@@ -401,7 +401,7 @@ body {
     }
 
     .footermenu {
-        padding-top: 40px;
+        padding-top: 30px;
     }
 
     .footermenu a {
@@ -1433,6 +1433,11 @@ body {
             max-width: 1150px;
         }
     }
+     @media screen and (min-width: 1025px) and (max-width: 1300px) {
+        .ant-carousel {
+            max-width: 550px;
+        }
+    }
 
     @media screen and (min-width: 1820px) and (max-width: 2510px) {
         .ant-carousel, .ant-carousel2 {
@@ -1444,6 +1449,7 @@ body {
             max-width: 850px;
         }
     }
+
 
     @media screen and (max-width: 640px) {
         .ant-carousel, .ant-carousel2 {
