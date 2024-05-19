@@ -1380,7 +1380,12 @@ body {
 
     @media screen and (min-width: 1441px) and (max-width: 1891px) {
         .ant-carousel {
-            max-width: 1200px;
+            max-width: 1150px;
+        }
+    }
+     @media screen and (min-width: 1025px) and (max-width: 1300px) {
+        .ant-carousel {
+            max-width: 750px;
         }
     }
     @media screen and (min-width: 1441px) and (max-width: 1891px) {
