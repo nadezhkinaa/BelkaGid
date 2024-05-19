@@ -15,6 +15,8 @@ class Place(models.Model):
     redirect_url = models.TextField(default="places")
     map_x = models.IntegerField(default=0)
     map_y = models.IntegerField(default=0)
+    geo_x = models.FloatField(default=0)
+    geo_y = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
@@ -31,6 +33,7 @@ class Cafe(models.Model):
     redirect_url = models.TextField(default="cafe")
     map_x = models.IntegerField(default=0)
     map_y = models.IntegerField(default=0)
+
 
     def __str__(self):
         return self.name
