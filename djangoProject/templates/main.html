@@ -294,7 +294,7 @@
                         var marker_fields = getFromDb(feature.values_.name);
 
 
-                        popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url, marker_fields.map_id);
+                        popupFunc(evt, marker_fields.name, marker_fields.short_description, "places/" + marker_fields.name, marker_fields.map_id);
                     });
                 });
 
