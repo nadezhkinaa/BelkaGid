@@ -420,7 +420,7 @@
                 function deleteMarkers() {
                     let layersTodDelete = [];
                     map.getLayers().forEach(layer => {
-                        
+
                         if (layer.get('name') === 'markerLayer') {
                             layersTodDelete.push(layer);
                         }
@@ -514,6 +514,21 @@
 
                 }
 
+                function exportRoute(route) {
+                    var points = route.fields.marshrut.split("$").map(Number);
+                    points.pop();
+                    console.log(points);
+                    var tempStr = "";
+                    for (let icurr = 0; icurr < points.length; icurr++) {
+                        tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                        if (icurr !== points.length - 1) {
+                            tempStr += "~";
+                        }
+                    }
+                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=mt";
+                    window.open(urlExport);
+                }
+
             </script>
         </div>
         <div class="block2">
@@ -561,7 +576,7 @@
                                 <p id="mashr0descr"></p>
                                 <button onclick="exploreMarsh(0)">Изучить маршрут</button>
                                 <button>Избранное</button>
-                                <button>Экспорт</button>
+                                <button onclick="exportRoute(routes_json[0])">Экспорт</button>
                             </div>
 
                         </li>
@@ -571,7 +586,7 @@
                                 <p id="mashr1descr"></p>
                                 <button onclick="exploreMarsh(1)">Изучить маршрут</button>
                                 <button>Избранное</button>
-                                <button>Экспорт</button>
+                                <button onclick="exportRoute(routes_json[1])">Экспорт</button>
                             </div>
 
                         </li>
@@ -581,7 +596,7 @@
                                 <p id="mashr2descr"></p>
                                 <button onclick="exploreMarsh(2)">Изучить маршрут</button>
                                 <button>Избранное</button>
-                                <button>Экспорт</button>
+                                <button onclick="exportRoute(routes_json[2])">Экспорт</button>
                             </div>
 
                         </li>
@@ -591,7 +606,7 @@
                                 <p id="mashr3descr"></p>
                                 <button onclick="exploreMarsh(3)">Изучить маршрут</button>
                                 <button>Избранное</button>
-                                <button>Экспорт</button>
+                                <button onclick="exportRoute(routes_json[3])">Экспорт</button>
                             </div>
 
                         </li>
@@ -623,8 +638,8 @@
                             coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
                         }
                         setMarkers(coords, ids);
-
                     }
+
                 </script>
                 <div class="ant-carousel-arrow-left"></div>
                 <div class="ant-carousel-arrow-right"></div>
