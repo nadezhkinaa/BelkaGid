@@ -600,7 +600,7 @@
                             <div class="marshrblock">
                                 <p id="mashr0name"></p>
                                 <p id="mashr0descr"></p>
-                                <button onclick="exploreMarsh(0)">Изучить маршрут</button>
+                                <button onclick="exploreMarsh(0);">Изучить маршрут</button>
                                 <button>Избранное</button>
                                 <button onclick="exportRoute(routes_json[0])">Экспорт</button>
                             </div>
@@ -664,6 +664,7 @@
                             coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
                         }
                         setMarkers(coords, ids);
+                        window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
                     }
 
                 </script>
