@@ -50,7 +50,8 @@
             <h3>«Зеленоград: Мечтай, создавай, действуй»</h3>
             <div class="main" id="buttonblock">
 
-                <a onclick="window.scrollTo({top: document.getElementById('routesblock').offsetTop, behavior: 'smooth'});" class="button" type="submit">Выбрать маршрут</a>
+                <a onclick="window.scrollTo({top: document.getElementById('routesblock').offsetTop, behavior: 'smooth'});"
+                   class="button" type="submit">Выбрать маршрут</a>
             </div>
 
 
@@ -265,6 +266,17 @@
                     })
                 });
 
+                map.on('click', function (evt) {
+                    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                        return feature
+                    })
+
+                    // Проверьте, был ли щелчок сделан вне всплывающего окна
+                    if (!feature) {
+                        map.removeOverlay(popup);
+                    }
+                });
+
 
                 map.setView(new ol.View({
                     center: map.getView().getCenter(),
@@ -321,6 +333,7 @@
                         const content = feature.getGeometry().getCoordinates();
                         popup.setPosition(content);
                         map.addOverlay(popup);
+
                         document.getElementById('popup-content').innerHTML = `
                         <h1>${name}</h1>
                         <p>${text}</p>
