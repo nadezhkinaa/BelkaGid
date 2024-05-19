@@ -167,6 +167,7 @@ body {
         background-color: #cdd1bc;
         padding-left: 20px;
         padding-top: 20px;
+        z-index: 2;
 
 
         text-decoration: none;
