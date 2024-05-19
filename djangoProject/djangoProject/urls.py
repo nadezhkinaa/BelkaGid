@@ -49,4 +49,7 @@ urlpatterns = [
     path('add_fav/', belka.views.add_favourite, name='add_favourite'),
     path('check_fav/', belka.views.check_favourite, name='check_favourite'),
 
+    path('places/<str:place_name>/', belka.views.place_detail, name='place_detail'),
+
+
 ]

@@ -21,7 +21,7 @@
                     <div class="logotype">
                         <div class="nazvanie"><a href="/">БелкаГид</a></div>
                         <img class="imgbelka" src="{% static 'img/белка.png' %}" alt="" width="55"
-                             height="55" >
+                             height="55">
                     </div>
 
                     <div class="menu">
@@ -57,7 +57,7 @@
 
             {% for item in items %}
                 <div class="card" data-type="{{ item.type }}">
-                    <img class='img' src="{% static item.image %}"  alt="{{ item.name }}" >
+                    <img class='img' src="{% static item.image %}" alt="{{ item.name }}">
                     <div class="card-body">
                         <h1>{{ item.name }}</h1>
                         <div class="rate">
@@ -77,8 +77,8 @@
                             <p>{{ item.rating }}</p>
                         </div>
                         <h2>{{ item.short_description }}</h2>
-                        <form action="/${url}">
-                            <input class='buttonmesta' type="submit" value="Подробнее" />
+                        <form action="{{ item.name }}">
+                            <input class='buttonmesta' type="submit" value="Подробнее"/>
                         </form>
                     </div>
 
