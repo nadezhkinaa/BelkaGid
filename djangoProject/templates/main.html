@@ -22,15 +22,6 @@
 </div>
 
 
-<div id="marshpopup-overlay">
-    <div class="close-button-marsh-popup">X</div>
-    <div id="marshpopup">
-        <h1 id="marshnamepopup"></h1>
-        <div id="popupmap"></div>
-    </div>
-</div>
-
-
 <div class="wrapper">
     <div class="content">
         <header>
@@ -252,6 +243,7 @@
                     }),
                     layers: [
                         new ol.layer.Image({
+                            name: 'mapMainLayer',
                             source: new ol.source.ImageStatic({
                                 url: '{% static 'img/map_high_q.png' %}',
                                 projection: projection,
@@ -272,6 +264,7 @@
                     })
                 });
 
+
                 map.setView(new ol.View({
                     center: map.getView().getCenter(),
                     extent: map.getView().calculateExtent(map.getSize()),
@@ -284,48 +277,26 @@
 
 
                 // Создадим массив координат
-                markerCoordinates = initMarkers();
-
-                // Создадим массив маркеров
-                var markers = [];
-                for (var i = 0; i < markerCoordinates.length; i++) {
-                    var marker = new ol.Feature({
-                        geometry: new ol.geom.Point(markerCoordinates[i]),
-                        name: 'Marker ' + (i + 1)
-                    });
-                    markers.push(marker);
-                }
-
-                // Создаем стиль для маркеров
-                const markerStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        src: '{% static 'img/marker.png' %}', // путь к изображению маркера
-                        scale: 0.3// масштаб маркера
-                    })
-                });
-
-                // Применяем стиль к каждому маркеру
-                markers.forEach(marker => {
-                    marker.setStyle(markerStyle);
-                });
-
-                // Создадим векторный слой с маркерами
-                var markerVectorLayer = new ol.layer.Vector({
-                    source: new ol.source.Vector({
-                        features: markers
-                    })
-                });
-
-                // Добавим векторный слой на карту
-                map.addLayer(markerVectorLayer);
-
-
+                setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
+                addPanel();
                 map.on('click', function (evt) {
+
+                    var features;
+                    map.getLayers().forEach(layer => {
+
+                        if (layer.get('name') === 'markerLayer') {
+                            features = layer.getSource().getFeatures();
+                        }
+                    });
+                    var markers = features;
                     map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                        var marker_fields = getFromDb(markers.indexOf(feature));
+                        var marker_fields = getFromDb(feature.values_.name);
+
+
                         popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url, marker_fields.map_id);
                     });
                 });
+
 
                 async function popupFunc(evt, name, text, url, id) {
                     var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
@@ -341,7 +312,6 @@
                         color_for_svg = String(response["color"]);
                     }
 
-                    console.log(color_for_svg);
 
                     var feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
                         return feature
@@ -369,7 +339,7 @@
   </defs>
 </svg>
 </a>
-                        
+
 
                         `;
                         document.querySelector('#popup-closer').addEventListener('click', function () {
@@ -386,6 +356,120 @@
                         }
                     }
                     return null;
+
+                }
+
+                function addPanel() {
+                    const panel = document.createElement('div');
+                    panel.id = 'marshpanel'
+                    panel.style.position = 'absolute';
+                    panel.style.top = '0';
+                    panel.style.right = '0';
+                    panel.style.padding = '10px';
+                    panel.style.backgroundColor = 'transparent';
+                    panel.style.display = 'flex';
+                    panel.style.flexDirection = 'column';
+
+                    const button1 = document.createElement('button');
+                    button1.style.width = '50px';
+                    button1.style.height = '50px';
+                    button1.style.backgroundImage = 'url({% static 'img/белка.png' %})';
+                    button1.style.backgroundSize = 'contain';
+
+                    const button2 = document.createElement('button');
+                    button2.style.width = '50px';
+                    button2.style.height = '50px';
+                    button2.style.backgroundImage = 'url({% static 'img/белка.png' %})';
+                    button2.style.backgroundSize = 'contain';
+
+                    const button3 = document.createElement('button');
+                    button3.style.width = '50px';
+                    button3.style.height = '50px';
+                    button3.style.backgroundImage = 'url({% static 'img/белка.png' %} )';
+                    button3.style.backgroundSize = 'contain';
+
+                    panel.appendChild(button1);
+                    panel.appendChild(button2);
+                    panel.appendChild(button3);
+
+                    map.getViewport().appendChild(panel);
+
+                    button1.addEventListener('click', function () {
+                        console.log("кнопка 1");
+                        deleteMarkers();
+                        setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
+                    });
+
+                    button2.addEventListener('click', function () {
+                        console.log("кнопка 2");
+
+                    });
+
+                    button3.addEventListener('click', function () {
+                        deleteMarkers();
+                        console.log("кнопка 3");
+                    });
+                }
+
+                function deletePaneL() {
+                    const panel = document.getElementById('marshpanel');
+                    panel.parentNode.removeChild(panel);
+
+                }
+
+                function deleteMarkers() {
+                    let layersTodDelete = [];
+                    map.getLayers().forEach(layer => {
+                        
+                        if (layer.get('name') === 'markerLayer') {
+                            layersTodDelete.push(layer);
+                        }
+                    });
+                    for (let l = 0; l < layersTodDelete.length; l++) {
+                        map.removeLayer(layersTodDelete[l]);
+                    }
+                }
+
+                function setMarkers(markerCoordinates, mapIDs) {
+
+                    // Создадим массив маркеров
+                    var markers = [];
+                    for (var i = 0; i < markerCoordinates.length; i++) {
+                        var marker = new ol.Feature({
+                            geometry: new ol.geom.Point(markerCoordinates[i]),
+                            name: mapIDs[i]
+                        });
+                        markers.push(marker);
+                    }
+
+
+                    // Создаем стиль для маркеров
+                    const markerStyle = new ol.style.Style({
+                        image: new ol.style.Icon({
+                            src: '{% static 'img/marker.png' %}', // путь к изображению маркера
+                            scale: 0.3// масштаб маркера
+                        })
+                    });
+
+                    // Применяем стиль к каждому маркеру
+                    markers.forEach(marker => {
+                        marker.setStyle(markerStyle);
+                    });
+
+                    // Создадим векторный слой с маркерами
+                    var markerVectorLayer = new ol.layer.Vector({
+                        source: new ol.source.Vector({
+                            features: markers
+                        })
+                    });
+
+                    var source = markerVectorLayer.getSource();
+                    source.clear();
+                    source.addFeatures(markers);
+
+                    markerVectorLayer.set('name', 'markerLayer');
+                    map.addLayer(markerVectorLayer);
+
 
                 }
 
@@ -528,49 +612,18 @@
                         ilocal++;
                     }
 
-                    const marshpopupOverlay = document.getElementById("marshpopup-overlay");
-                    const marshpopup = document.getElementById("marshpopup");
-
-                    function showPopup() {
-                        marshpopupOverlay.style.display = "block";
-                    }
-
-                    function hidePopup() {
-                        marshpopupOverlay.style.display = "none";
-                    }
-
-                    marshpopupOverlay.addEventListener("click", hidePopup);
-                    const closeButton = document.querySelector(".close-button-marsh-popup");
-                    closeButton.addEventListener("click", hidePopup);
-
-                    hidePopup();
 
                     function exploreMarsh(id) {
+                        deleteMarkers();
+                        var ids = routes_json[id].fields.marshrut.split("$").map(Number);
+                        ids.pop();
+                        var coords = [];
 
-
-                        switch (id) {
-                            case 0:
-                                showPopup();
-                                document.getElementById("marshnamepopup").innerHTML = routes_json[0].fields.name;
-                                document.getElementById("popupmap").innerHTML = ``;
-                                break;
-                            case 1:
-                                showPopup();
-                                document.getElementById("marshnamepopup").innerHTML = routes_json[1].fields.name;
-                                document.getElementById("popupmap").innerHTML = ``;
-                                break;
-                            case 2:
-                                showPopup();
-                                document.getElementById("marshnamepopup").innerHTML = routes_json[2].fields.name;
-                                document.getElementById("popupmap").innerHTML = ``;
-                                break;
-                            case 3:
-                                showPopup();
-                                document.getElementById("marshnamepopup").innerHTML = routes_json[3].fields.name;
-                                document.getElementById("popupmap").innerHTML = ``;
-                                break;
-
+                        for (let temp_id in ids) {
+                            coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
                         }
+                        setMarkers(coords, ids);
+
                     }
                 </script>
                 <div class="ant-carousel-arrow-left"></div>
