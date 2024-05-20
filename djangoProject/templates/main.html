@@ -284,12 +284,17 @@
                             name: 'mapMainLayer',
                             source: new ol.source.ImageStatic({
                                 url: '{% static 'img/map_high_q.png' %}',
+
+
                                 projection: projection,
                                 imageExtent: extent,
                                 imageLoadFunction: function (image, src) {
                                     image.getImage().src = src;
                                     image.getImage().width = ol.extent.getWidth(extent);
                                     image.getImage().height = ol.extent.getHeight(extent);
+
+
+
                                 }
                             })
                         })
@@ -654,41 +659,41 @@
 
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p id="mashr0name"></p>
+                                <h1 id="mashr0name"></h1>
                                 <p id="mashr0descr"></p>
-                                <button onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button>Избранное</button>
-                                <button onclick="exportRoute(routes_json[0])">Экспорт</button>
+                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p id="mashr1name"></p>
+                                <h1 id="mashr1name"></h1>
                                 <p id="mashr1descr"></p>
-                                <button onclick="exploreMarsh(1)">Изучить маршрут</button>
-                                <button>Избранное</button>
-                                <button onclick="exportRoute(routes_json[1])">Экспорт</button>
+                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p id="mashr2name"></p>
+                                <h1 id="mashr2name"></h1>
                                 <p id="mashr2descr"></p>
-                                <button onclick="exploreMarsh(2)">Изучить маршрут</button>
-                                <button>Избранное</button>
-                                <button onclick="exportRoute(routes_json[2])">Экспорт</button>
+                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
                         <li class="ant-carousel-element2">
                             <div class="marshrblock">
-                                <p id="mashr3name"></p>
+                                <h1 id="mashr3name"></h1>
                                 <p id="mashr3descr"></p>
-                                <button onclick="exploreMarsh(3)">Изучить маршрут</button>
-                                <button>Избранное</button>
-                                <button onclick="exportRoute(routes_json[3])">Экспорт</button>
+                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
@@ -724,8 +729,8 @@
                     }
 
                 </script>
-                <div class="ant-carousel-arrow-left"></div>
-                <div class="ant-carousel-arrow-right"></div>
+                <div class="ant-carousel-arrow-left2"></div>
+                <div class="ant-carousel-arrow-right2"></div>
                 <div class="ant-carousel-dots"></div>
 
                 <script>function Ant(crslId) {
@@ -742,8 +747,8 @@
                     this.crslList = this.crslRoot.querySelector('.ant-carousel-list2');
                     this.crslElements = this.crslList.querySelectorAll('.ant-carousel-element2');
                     this.crslElemFirst = this.crslList.querySelector('.ant-carousel-element2');
-                    this.leftArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-left');
-                    this.rightArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-right');
+                    this.leftArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-left2');
+                    this.rightArrow = this.crslRoot.querySelector('div.ant-carousel-arrow-right2');
                     this.indicatorDots = this.crslRoot.querySelector('div.ant-carousel-dots');
 
                     // Initialization
@@ -1019,6 +1024,8 @@
                         </li>
 
 
+
+
                     </ul>
                 </div>
                 <div class="ant-carousel-arrow-left"></div>
@@ -1279,6 +1286,7 @@
                 </script>
             </div>
         </div>
+       
         <div class="block5">
 
             <h1>Предложите гиду маршрут.</h1>
@@ -1304,6 +1312,7 @@
                 <option>Маршрут №3(такой то)</option>
                 <option>Маршрут №4(такой то)</option>
             </select>
+
 
 
             <p2>Выберите дату:</p2>

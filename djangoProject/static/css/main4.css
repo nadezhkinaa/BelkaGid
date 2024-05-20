@@ -28,6 +28,13 @@ body {
 }
 
 @media (min-width: 426px) and (max-width: 767px) {
+@font-face {
+        font-family: 'Lab Grotesque';
+        src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
     @font-face {
         font-family: 'Montserrat Alternates';
         src: url('../fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -254,15 +261,55 @@ body {
         background: #A98467;
         border: none;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        position:relative;
+    }
+
+    .marshrblock h1 {
+        position:absolute;
+        top:-40px;
+        left:-10px;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 28px;
+        font-family: "Montserrat Alternates";
     }
 
     .marshrblock p {
+    position:absolute;
+        top:100px;
+        left:20px;
+        width:320px;
         color: #FFF;
-        text-align: center;
-        padding-top: 30px;
         font-weight: 400;
-        font-size: 32px;
-        font-family: "Calypso";
+        font-size: 20px;
+        width:200px;
+        font-family: "Montserrat Alternates";
+    }
+    .buttonizuch{
+    position: absolute;
+        bottom: 80px;
+        left: 20px;
+        width: 220px;
+        height: 45px;
+        font-weight: 400;
+        font-size: 18px;
+        color: #fff;
+        font-family: 'Montserrat Alternates';
+        border-radius: 15px;
+        border: 2px solid #fff;
+        background-color: #A98467;
+        text-align:center;
+        text-decoration: none;
+    }
+    .buttonlike{
+     position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+    .buttonexport{
+     position: absolute;
+        bottom: 17px;
+        left: 80px;
     }
 
     .marshblocks {
@@ -367,8 +414,8 @@ body {
 
     .buttonvibor {
         position: absolute;
-        top: 600px;
-        left: 650px;
+        top: 450px;
+        left: 250px;
         width: 250px;
         height: 50px;
         font-weight: 400;
@@ -1495,7 +1542,7 @@ body {
     }
     .ant-carousel-element2 {
         width: 250px;
-        text-align: center;
+
         margin-left: -40px;
         margin-right: 70px;
     }
@@ -1545,25 +1592,31 @@ body {
 
     /*стрелочки*/
     div.ant-carousel-arrow-left {
-        left: -40px;
-        top: 53%;
+        left: -60px;
+        top: 45%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
 
     }
 
-    .div.ant-carousel-arrow-left2 {
-        left: 110px;
-        top: 63%;
+    div.ant-carousel-arrow-left2 {
+        left:-60px;
+        top: 45%;
         display: block;
         background: #000000;
-
+        background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
     }
 
     /*стрелочки*/
-    div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
-        right: -50px;
-        top: 52%;
+    div.ant-carousel-arrow-right2 {
+        right: -60px;
+        top: 44%;
+        display: block;
+        background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
+        }
+    div.ant-carousel-arrow-right {
+        right: -60px;
+        top: 45%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
     }
@@ -1825,6 +1878,69 @@ body {
   left: -70px;
   top: 5px;
 }
+.ol-popup {
+        position: absolute;
+        background-color: #FBFAF8;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+        filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+        padding: 25px 25px 15px 35px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 10px;
+        left: -50px;
+    }
+
+    .ol-popup:after,
+    .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: ' ';
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .ol-popup:after {
+        border-top-color: white;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+    }
+
+    .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+    }
+
+    .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+    }
+
+    .ol-popup-closer:after {
+        content: '✖';
+    }
+
+    #popup-content {
+        font-size: 14px;
+        font-family: 'Montserrat Alternates';
+        width: 205px;
+        margin-bottom: 15px;
+    }
+
+    #popup-content .markerInfo {
+        font-weight: bold;
+    }
+
+    #popup-content h1 {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
 
 
 

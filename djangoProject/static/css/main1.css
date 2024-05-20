@@ -28,6 +28,13 @@ body {
 }
 
 @media (min-width: 1441px) and (max-width: 1890px) {
+@font-face {
+        font-family: 'Lab Grotesque';
+        src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
     @font-face {
         font-family: 'Montserrat Alternates';
         src: url('../fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -250,6 +257,7 @@ body {
     }
 
     .marshrblock {
+    position:relative;
         margin-right: 50px;
         margin-left: 50px;
         width: 411px;
@@ -260,14 +268,51 @@ body {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
-    .marshrblock p {
+    .marshrblock h1 {
+        position:absolute;
+        top:-40px;
+        left:-50px;
         color: #FFF;
-        text-align: center;
-        padding-top: 30px;
+        font-weight: 600;
+        font-size: 36px;
+        font-family: "Montserrat Alternates";
+    }
+
+    .marshrblock p {
+    position:absolute;
+        top:100px;
+        left:30px;
+        width:320px;
+        color: #FFF;
         font-weight: 400;
         font-size: 32px;
-        font-family: "Calypso";
-
+        font-family: "Montserrat Alternates";
+    }
+    .buttonizuch{
+    position: absolute;
+        bottom: 80px;
+        left: 20px;
+        width: 370px;
+        height: 60px;
+        font-weight: 400;
+        font-size: 32px;
+        color: #fff;
+        font-family: 'Montserrat Alternates';
+        border-radius: 15px;
+        border: 2px solid #fff;
+        background-color: #A98467;
+        text-align:center;
+        text-decoration: none;
+    }
+    .buttonlike{
+     position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+    .buttonexport{
+     position: absolute;
+        bottom: 18px;
+        left: 80px;
     }
 
     .marshblocks {
@@ -1392,7 +1437,7 @@ body {
     }
     @media screen and (min-width: 1441px) and (max-width: 1891px) {
         .ant-carousel2 {
-            max-width: 1450px;
+            max-width: 1400px;
         }
     }
 
@@ -1424,9 +1469,9 @@ body {
 
     .ant-carousel-element2 {
         width: 280px;
-        text-align: center;
+
         margin-left: 0px;
-        margin-right: 200px;
+        margin-right: 190px;
     }
 
     /* General styles */
@@ -1466,25 +1511,30 @@ body {
     /*стрелочки*/
     div.ant-carousel-arrow-left {
         left: -60px;
-        top: 50%;
+        top: 45%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
 
     }
 
-    .div.ant-carousel-arrow-left2 {
-        left:-100px;
-        top: 50%;
+    div.ant-carousel-arrow-left2 {
+        left:-20px;
+        top: 45%;
         display: block;
         background: #000000;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
     }
 
-
     /*стрелочки*/
-    div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
-        right: -30px;
-        top: 51%;
+    div.ant-carousel-arrow-right2 {
+        right: -60px;
+        top: 44%;
+        display: block;
+        background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
+        }
+    div.ant-carousel-arrow-right {
+        right: -60px;
+        top: 45%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
     }
