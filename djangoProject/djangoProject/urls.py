@@ -50,6 +50,6 @@ urlpatterns = [
     path('check_fav/', belka.views.check_favourite, name='check_favourite'),
 
     path('places/<str:place_name>/', belka.views.place_detail, name='place_detail'),
-
+    path('profile/routes/route_<int:route_id>/', belka.views.route_detail, name='route_detail'),
 
 ]

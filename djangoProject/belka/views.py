@@ -197,3 +197,24 @@ def place_detail(request, place_name):
     place.image = place.image.replace("static/", "")
     context = {'place': place}
     return render(request, 'place_detail.html', context)
+
+
+def route_detail(request, route_id):
+    places = Place.objects.all()
+
+    for place in places:
+        place.image = place.image.replace("static/", "")
+
+
+    routeq = Route.objects.get(id=route_id)
+    routeq.marshrut = routeq.marshrut.split("$")
+    arr_stops= []
+    for i in range(len(routeq.marshrut)-1):
+        arr_stops.append(places[int(routeq.marshrut[i])].name)
+
+
+
+
+
+    context = {'route': routeq, 'stops': arr_stops}
+    return render(request, 'marsr.html', context)
