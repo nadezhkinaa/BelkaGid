@@ -1927,6 +1927,45 @@ body {
         flex-direction: row;
 
     }
+    .longdescr h1 {
+        font-weight: 700;
+        font-size: 72px;
+        color: #2B2920;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+        top: 180px;
+        left: 300px;
+        width: 1200px;
+    }
+
+    .longdescr p {
+        font-weight: 400;
+        font-size: 36px;
+        color: #414833;
+        font-family: 'Lab Grotesque';
+        position: absolute;
+        top: 1050px;
+        left: 300px;
+        width: 1200px;
+    }
+
+    .img1 {
+        position: absolute;
+        top: 400px;
+        left: 300px;
+        width: 1200px;
+        height: 600px;
+        border-radius: 15px;
+    }
+
+    .back {
+        width: 70px;
+        height: 70x;
+        position: absolute;
+        top: 210px;
+        left: 80px;
+
+    }
 
 
 }
