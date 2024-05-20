@@ -415,7 +415,7 @@ body {
 
     .svyz h1 {
         font-weight: 600;
-        font-size: 24px;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
     }
@@ -423,7 +423,7 @@ body {
     .svyz h2 {
         margin-top: 40px;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
     }
@@ -1080,7 +1080,7 @@ body {
     .marsruty {
         position: absolute;
         left: 350px;
-        top: 252px;
+        top: 232px;
         width: 720px;
         height: 700px;
         border: 4px solid #fff;
@@ -1759,6 +1759,36 @@ body {
         width: 34px;
         height: 34px;
     }
+      wrapper1 {
+ display:none;
+}
+.menu1 {
+   display:none;
+}
+.menu_active {
+   display:none;
+}
+.menu-list {
+   display:none;
+}
+.menu-list a {
+   display:none;
+
+}
+.menu-icon {
+   display:none;
+}
+.smallmenu1 {
+        display:none;
+    }
+    .smallmenu1 a  {
+        display:none;
+    }
+.svyzi{
+display:flex;
+flex-direction: row;
+
+}
 
 
 }

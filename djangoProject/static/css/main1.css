@@ -1832,6 +1832,36 @@ body {
         width: 35px;
         height: 35px;
     }
+      wrapper1 {
+ display:none;
+}
+.menu1 {
+   display:none;
+}
+.menu_active {
+   display:none;
+}
+.menu-list {
+   display:none;
+}
+.menu-list a {
+   display:none;
+
+}
+.menu-icon {
+   display:none;
+}
+.smallmenu1 {
+        display:none;
+    }
+    .smallmenu1 a  {
+        display:none;
+    }
+ .svyzi{
+display:flex;
+flex-direction: row;
+
+}
 
 
 }

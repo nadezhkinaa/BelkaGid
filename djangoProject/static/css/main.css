@@ -388,6 +388,11 @@ body {
         font-size: 24px;
         margin-left: 80px;
     }
+    .svyzi{
+display:flex;
+flex-direction: row;
+
+}
 
     .svyz h1 {
         font-weight: 600;
@@ -1832,5 +1837,31 @@ body {
         width: 35px;
         height: 35px;
     }
+      wrapper1 {
+ display:none;
+}
+.menu1 {
+   display:none;
+}
+.menu_active {
+   display:none;
+}
+.menu-list {
+   display:none;
+}
+.menu-list a {
+   display:none;
+
+}
+.menu-icon {
+   display:none;
+}
+.smallmenu1 {
+        display:none;
+    }
+    .smallmenu1 a  {
+        display:none;
+    }
+
 
 }

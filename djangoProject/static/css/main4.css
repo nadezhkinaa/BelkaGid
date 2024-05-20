@@ -27,7 +27,7 @@ body {
     flex: 0 0 auto;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 426px) and (max-width: 767px) {
     @font-face {
         font-family: 'Montserrat Alternates';
         src: url('../fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -99,42 +99,14 @@ body {
     }
 
     .menu {
-        display: flex;
-        justify-content: flex-end;
-        flex: 0.75;
+       display:none;
 
 
     }
-     wrapper1 {
- display:none;
-}
-.menu1 {
-   display:none;
-}
-.menu_active {
-   display:none;
-}
-.menu-list {
-   display:none;
-}
-.menu-list a {
-   display:none;
-
-}
-.menu-icon {
-   display:none;
-}
 
 
     .menu a {
-        color: #333D29;
-        text-decoration: none;
-        font-family: 'Montserrat Alternates';
-        font-weight: 600;
-        font-size: 16px;
-        padding-top: 30px;
-        margin-right: 10px;
-        padding-bottom: 20px;
+        display:none;
     }
 
     .menu a:hover,
@@ -146,29 +118,29 @@ body {
     .block1 {
         position: relative;
         width: 100%;
-        height: 833px;
+        height: 800px;
         background: #cdd1bc;
     }
 
     .block1 h1 {
         font-weight: 700;
-        font-size: 60px;
+        font-size: 48px;
         font-family: 'Montserrat Alternates';
         color: #FFF;
         position: absolute;
-        top: 100px;
-        left: 80px;
-        width: 700px
+        top: 80px;
+        left: 20px;
+        width:85%;
     }
 
     .block1 h3 {
         font-weight: 400;
-        font-size: 32px;
+        font-size: 24px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
         top: 300px;
-        left: 80px;
+        left: 20px;
         width:50%;
     }
 
@@ -178,19 +150,21 @@ body {
 
     .button {
         position: absolute;
-        bottom: 350px;
-        left: 80px;
-        width: 280px;
-        height: 40px;
+        top: 510px;
+        left: 15px;
+        width: 150px;
+        height: 60px;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 20px;
+        border-radius: 15px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
-        padding-left: 20px;
-        padding-top: 10px;
+
+        padding-top: 8px;
+        z-index: 2;
+        text-align:center;
 
 
         text-decoration: none;
@@ -210,7 +184,7 @@ body {
         position: relative;
         width: 96%;
         border-radius: 25px;
-        height: 720px;
+        height: 550px;
         background: #cdd1bc;
         margin-left: auto;
         margin-right: auto;
@@ -218,24 +192,24 @@ body {
 
     .block2 h1 {
         font-weight: 700;
-        font-size: 52px;
+        font-size: 36px;
         font-family: 'Montserrat Alternates';
         color: #414833;
         position: absolute;
         top: 50px;
-        left: 50px;
-        width: 700px;
+        left: 20px;
+        width: 400px;
     }
 
     .block2 p {
         font-weight: 200;
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
-        top: 200px;
-        left: 80px;
-        width: 43%;
+        top: 160px;
+        left: 40px;
+        width: 85%;
     }
 
     .rectangle {
@@ -265,17 +239,17 @@ body {
     .onasblock2 h1 {
         font-family: 'Montserrat Alternates';
         font-weight: 700;
-        font-size: 52px;
+        font-size: 36px;
         color: #754C24;
-        margin-top: 70px;
-        margin-left: 80px;
+        margin-top: 50px;
+        margin-left: 30px;
     }
 
     .marshrblock {
         margin-right: 50px;
         margin-left: 50px;
-        width: 301px;
-        height: 423px;
+        width: 261px;
+        height: 403px;
         border-radius: 15px;
         background: #A98467;
         border: none;
@@ -306,20 +280,14 @@ body {
 
     .phot {
 
-        position: absolute;
-        margin-top: 320px;
-        width: 35%;
-        height: 30%;
-        padding-left: 60%;
+
+        display:none;
+
 
     }
 
     .phot1 {
-        position: absolute;
-        margin-top: -55px;
-        width: 35%;
-        height: 35%;
-        padding-left: 0%;
+        display:none;
     }
 
     .photo {
@@ -341,20 +309,20 @@ body {
 
     .block5 h1 {
         font-weight: 700;
-        font-size: 52px;
+        font-size: 36px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 60px;
-        left: 80px;
-        width: 600px;
+        top: 40px;
+        left: 20px;
+        width: 400px;
     }
 
     .onasblock1 h1 {
-        top: 80px;
-        left: 100px;
+        top: 40px;
+        left: 40px;
         font-weight: 700;
-        font-size: 52px;
+        font-size: 36px;
         font-family: 'Montserrat Alternates';
         color: #FFF;
         position: absolute;
@@ -362,54 +330,52 @@ body {
     }
 
     .onasblock3 h1 {
-        width: 700px;
+        width:400px;
         font-weight: 700;
-        font-size: 52px;
+        font-size: 36px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 50px;
-        left: 100px;
+        top: 40px;
+        left: 30px;
     }
 
     .block5 p1,
     .block5 p2,
     .block5 p3 {
         font-weight: 100;
-        font-size: 32px;
+        font-size: 24px;
         color: #fff;
         font-family: 'Cruinn';
         position: absolute;
-        top: 300px;
-        left: 80px;
+        top: 200px;
+        left: 20px;
 
 
     }
 
     .block5 p2 {
-        top: 400px;
-        left: 80px;
-
-
+        top: 280px;
+        left: 20px;
     }
 
     .block5 p3 {
-        top: 500px;
-        left:80px;
-        width:40%;
+        top: 360px;
+        left: 20px;
+        width: 200px;
     }
 
     .buttonvibor {
         position: absolute;
         top: 600px;
-        left: 500px;
-        width: 200px;
-        height: 45px;
+        left: 650px;
+        width: 250px;
+        height: 50px;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 24px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 15px;
+        border-radius: 20px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
@@ -420,10 +386,14 @@ body {
         padding-left: 0px;
         padding-bottom: 30px;
         background-color: #FBFAF8;
+        position:relative;
     }
 
     .footermenu {
-        padding-top: 30px;
+        padding-top: 80px;
+        margin-left: -160px;
+        display: flex;
+        flex-direction: column;
     }
 
     .footermenu a {
@@ -432,20 +402,30 @@ body {
         font-family: 'Montserrat Alternates';
         font-weight: 600;
         font-size: 16px;
-        margin-left: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+    .svyzi{
+    display: flex;
+    flex-direction: column;
+   position:absolute;
+   left:200px;
+   top:40px;
+
+
     }
 
     .svyz h1 {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
     }
 
     .svyz h2 {
-        margin-top: 40px;
+        margin-top: 10px;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
     }
@@ -454,7 +434,7 @@ body {
         display: flex;
         flex-direction: column;
         margin-left: 80px;
-        margin-top: 80px;
+        margin-bottom: 30px;
     }
 
     .rectangle1 {
@@ -470,14 +450,14 @@ body {
         font-family: 'Hero';
         color: #FFF;
         position: absolute;
-        top: 180px;
-        padding-left:50%;
-        width: 45%;
+        top: 120px;
+        padding-left:10%;
+        width: 85%;
     }
 
     .onasblock2 h2 {
         font-weight: 300;
-        font-size: 64px;
+        font-size: 36px;
         color: #a58890;;
         font-family: 'Bergamasco';
         margin-left: 200px;
@@ -487,13 +467,13 @@ body {
     .onasblock2 p,
     li {
         font-weight: 200;
-        font-size: 22px;
+        font-size: 20px;
         font-family: 'Hero';
         color: #414833;
-        margin-left: 100px;
-        margin-top: 70px;
+        margin-left: 50px;
+        margin-top: 60px;
         margin-bottom: 50px;
-        width: 800px;
+        width: 85%;
     }
 
     ol {
@@ -514,12 +494,12 @@ body {
 
     .onasblock3 h2 {
         font-weight: 400;
-        font-size: 36px;
+        font-size: 24px;
         color: #fff;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        top: 200px;
-        left: 100px;
+        top: 150px;
+        left: 30px;
     }
 
     .onasblock3 p,
@@ -553,21 +533,21 @@ body {
         color: #414833;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         position: absolute;
-        top: -220px;
-        left: -50px;
+        top: -310px;
+        left: -120px;
         padding: 10px;
         border: none;
         border-radius: 15px;
-        width: 405px;
-        height: 41px;
+        width: 355px;
+        height: 35px;
         background: #F0EEE6;
     }
 
     .inputemail {
-        top: -120px;
-        left: -50px;
+        top: -230px;
+        left: -120px;
     }
 
     .inputname::placeholder, .inputemail::placeholder, .inputmessage::placeholder {
@@ -577,10 +557,10 @@ body {
 
     .inputmessage {
         width: 405px;
-        height: 103px;
-        top: -20px;
-        left: -50px;
-        max-height: 175px;
+        height: 83px;
+        top: -150px;
+        left: -120px;
+        max-height: 125px;
         max-width: 2500px;
     }
 
@@ -591,15 +571,15 @@ body {
 
     .buttonotpr {
         position: absolute;
-        bottom: 25px;
-        left: 100px;
-        width: 300px;
-        height: 55px;
+        bottom: 20px;
+        left: 30px;
+        width: 200px;
+        height: 45px;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         color: #fff;
         font-family: 'Montserrat Alternates';
-        border-radius: 20px;
+        border-radius: 15px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
@@ -613,20 +593,20 @@ body {
         font-family: 'Montserrat Alternates';
         color: #333D29;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 28px;
         padding-top: 60px;
-        padding-left: 50px;
+        padding-left: 30px;
     }
 
     .strname h2 {
         flex: 1;
         font-family: 'Montserrat Alternates';
         color: #333D29;
-        padding-top: 65px;
-        padding-right: 50px;
+        padding-top: 70px;
+        padding-right: 10px;
         text-align: end;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .tovari {
@@ -639,8 +619,8 @@ body {
     }
 
     .tovar {
-        width: 70%;
-        height: 428px;
+        width: 90%;
+        height: 308px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
         border-radius: 15px;
@@ -662,7 +642,7 @@ body {
 
     .tovar img {
          border-radius: 15px;
-        width: 80%;
+        width: 70%;
         height:  50%;
         background: #fff;
         margin-top: 25px;
@@ -673,26 +653,26 @@ body {
 
         position: absolute;
         padding-left:30%;
-        top: 360px;
+        top: 250px;
 
     }
     .tovar h1 {
         position: absolute;
         left: 25px;
-        top: 285px;
+        top: 185px;
         text-align: center;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
-        font-size: 32px;
+        font-size: 24px;
         color: #414833;
     }
     .tovar h2 {
         position: absolute;
         left: 30px;
-        top: 360px;
+        top: 260px;
         font-family: 'Hero';
         font-weight: 800;
-        font-size: 28px;
+        font-size: 20px;
         color: #414833;
     }
 
@@ -701,7 +681,7 @@ body {
         display: grid;
         justify-content: center;
         flex-direction: row;
-         grid-template-columns: repeat(2, 1fr);
+         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
         grid-auto-rows: min-content;
     }
@@ -713,37 +693,37 @@ body {
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 357px;
+        width: 407px;
         height: 502px;
-        margin-right: 1px;
-        margin-left: 1px;
+        margin-right: 20px;
+        margin-left: 20px;
         place-items: center;
         align-self: center;
         justify-self: center;
     }
     .stars {
         position: absolute;
-        left: 20px;
+        left: 25px;
         top: 330px;
     }
 
     .card img {
         width: 100%;
         border-radius: 10px;
-
+        width: 407px;
         height: 250px
     }
 
     .card h1 {
          position: absolute;
 
-        left: 20px;
+        left: 25px;
         top: 260px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
         color: #414833;
-        width: 340px;
+        width: 450px;
     }
 
     .card p {
@@ -758,13 +738,13 @@ body {
 
     .card h2 {
         position: absolute;
-        left: 20px;
+        left: 25px;
         top: 360px;
         font-family: 'Hero';
         font-weight: 600;
         font-size: 12px;
         color: #414833;
-        width: 330px;
+        width: 380px;
     }
 
     .rate {
@@ -775,7 +755,7 @@ body {
     }
     .buttonmesta {
         position: absolute;
-        left: 20px;
+        left: 25px;
         top: 460px;
         width: 130px;
         height: 30px;
@@ -811,10 +791,10 @@ body {
         border-radius: 15px;
         border: 3px solid #fff;
         border-radius: 15px;
-        width: 357px;
+        width: 407px;
         height: 502px;
-        margin-right: 5px;
-        margin-left: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
         position: relative;
         place-items: center;
         align-self: center;
@@ -835,7 +815,7 @@ body {
         font-weight: 400;
         font-size: 32px;
         color: #414833;
-        width: 350px;
+        width: 450px;
     }
 
     .cafecard p {
@@ -858,7 +838,7 @@ body {
         font-weight: 600;
         font-size: 14px;
         color: #414833;
-        width: 330px;
+        width: 380px;
     }
 
     .rate {
@@ -880,7 +860,7 @@ body {
     .vhod h1 {
         text-align: center;
         font-weight: 600;
-        font-size: 28px;
+        font-size: 24px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
         margin-bottom: 50px;
@@ -891,8 +871,8 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-        width: 700px;
-        height: 400px;
+        width: 400px;
+        height: 380px;
         background: #fbfaf8;
         display: flex;
         flex-direction: column;
@@ -931,13 +911,13 @@ body {
     }
 
     .text-field__input {
-        border-radius: 22px;
-        width: 300px;
-        height: 44px;
+        border-radius: 15px;
+        width: 250px;
+        height: 40px;
         padding: 0px 15px;
         font-family: 'Hero';
         font-weight: 200;
-        font-size: 32px;
+        font-size: 24px;
         color: #a58890;
         background: #F0EEE6;
         margin-bottom: 15px;
@@ -949,55 +929,46 @@ body {
     }
 
     .smallmenu {
+        display:none;
+    }
+    .smallmenu1 {
         display: block;
         position: relative;
         flex: 1;
         margin-top: 55px;
-        margin-left: 35px;
-        border-radius: 33px;
-        width: 230px;
+        margin-left: 15px;
+        border-radius: 13px;
+        width: 80px;
         height: 705px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
+        text-align:center;
     }
-    .smallmenu1 {
-        display:none;
-    }
-    .smallmenu1 a  {
-        display:none;
-    }
-.svyzi{
-display:flex;
-flex-direction: row;
+    .smallmenu1 a {
+        display: block;
+        padding-top: 40px;
 
-}
+    }
 
     .namekab h1 {
         font-family: 'Montserrat Alternates';
         color: #333D29;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 25px;
         padding-top: 50px;
-        padding-left: 100px;
+        padding-left: 20px;
     }
 
     .smallmenu a {
-        display: block;
-        padding-top: 40px;
-        font-weight: 600;
-        font-size: 24px;
-        color: #A98467;
-        padding-left: 15px;
-        text-decoration: none;
-        font-family: 'Montserrat Alternates';
+       display:none;
     }
 
     .lichndann {
         position: absolute;
-        left: 300px;
-        top: 218px;
-        border-radius: 25px;
-        width: 450px;
+        left: 100px;
+        top: 185px;
+        border-radius: 15px;
+        width: 380px;
         height: 705px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
@@ -1006,33 +977,33 @@ flex-direction: row;
     .tfieldinput {
         border: 0;
         border-radius: 15px;
-        width: 180px;
+        width: 200px;
         height: 40px;
         background: #F0EEE6;
-        margin-bottom: 44px;
-        padding-left: 15px;
+        margin-bottom: 43px;
+        padding-left: 5px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
-        font-size: 18px;
+        font-size: 20px;
         color: #333d29;
-        margin-left:-75px;
     }
 
     .lichndann p {
         position: relative;
-        padding-left: -50px;
+        padding-left: 10px;
         margin: 60px;
-        margin-left: 30px;
-        font-weight: 600;
-        font-size: 18px;
+        margin-left: 10px;
+        font-weight: 200;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Hero';
+        width:100px;
     }
 
     .pole {
         position: absolute;
-        left: 300px;
-        top: 40px;
+        left: 150px;
+        top: 50px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -1040,49 +1011,49 @@ flex-direction: row;
 
     .buttonsave {
         position: absolute;
-        bottom: 200px;
-        left: 172px;
-        width: 250px;
-        height: 45px;
+        bottom: 180px;
+        left: 100px;
+        width: 260px;
+        height: 50px;
         font-weight: 200;
-        font-size: 18px;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Hero';
-        border-radius: 15px;
+        border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #fbfaf8;
     }
 
     .zakazi {
         position: absolute;
-        left: 290px;
-        top: 215px;
-        width: 450px;
+        left: 100px;
+        top: 185px;
+        width: 370px;
         height: 700px;
         border: 4px solid #fff;
-        border-radius: 25px;
+        border-radius: 15px;
         background: #F0EEE6;
     }
 
     .zakaz {
         position: relative;
-        margin-left: 20px;
-        margin-top: 50px;
+        margin-left: 10px;
+        margin-top: 30px;
         padding-left: 30px;
         display: flex;
         border-radius: 25px;
-        width: 380px;
-        height: 50px;
+        width: 320px;
+        height: 45px;
         background: #FBFAF8;
     }
 
     .zakaz p {
         font-weight: 200;
-        font-size: 24px;
+        font-size: 22px;
         color: #333d29;
         font-family: 'Hero';
         padding-left: 15px;
-        padding-top: 10px;
+        padding-top: 8px;
     }
 
     .namezakaz {
@@ -1094,14 +1065,14 @@ flex-direction: row;
         font-size: 32px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
-        padding-left: 20px;
-        padding-top: 30px;
+        padding-left: 10px;
+        padding-top: 20px;
     }
 
     .buttoncreate {
-        margin-left: 15px;
-        margin-top: 30px;
-        width: 200px;
+        margin-left: -200px;
+        margin-top: 85px;
+        width: 220px;
         height: 40px;
         font-weight: 400;
         font-size: 20px;
@@ -1114,20 +1085,20 @@ flex-direction: row;
 
     .marsruty {
         position: absolute;
-        left: 280px;
-        top: 218px;
-        width: 460px;
+        left: 100px;
+        top: 186px;
+        width: 360px;
         height: 700px;
         border: 4px solid #fff;
-        border-radius: 25px;
+        border-radius: 15px;
         background: #F0EEE6;
     }
 
     .marsruty h1 {
         padding-top: 20px;
-        padding-left: 50px;
+        padding-left: 10px;
         font-weight: 500;
-        font-size: 32px;
+        font-size: 24px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
@@ -1135,10 +1106,10 @@ flex-direction: row;
     .marshr {
         position: relative;
         margin-left: 10px;
-        margin-top: 30px;
+        margin-top: 20px;
         padding-top: 10px;
         border-radius: 25px;
-        width: 90%;
+        width: 329px;
         height: 155px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
@@ -1153,10 +1124,10 @@ flex-direction: row;
     .namemarshr a {
 
         display: block;
-        margin-top: 10px;
+        margin-top: 5px;
         margin-left: 20px;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Hero';
         text-decoration: none;
@@ -1346,8 +1317,8 @@ flex-direction: row;
     }
 
     .box1, .box2, .box3, .data {
-        width: 300px;
-        height: 40px;
+        width: 200px;
+        height: 35px;
         border: 1px solid #414833;
         font-size: 18px;
         color: #414833;
@@ -1355,21 +1326,21 @@ flex-direction: row;
         border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        left: 400px;
-        top: 300px;
+        left: 250px;
+        top: 190px;
         padding-left: 15px;
 
     }
 
     .data {
-        width: 280px;
-        left: 400px;
-        top: 400px;
+        width: 186px;
+        left: 250px;
+        top: 270px;
     }
 
     .box3 {
-        left: 400px;
-        top: 500px;
+        left: 250px;
+        top: 350px;
 
     }
 
@@ -1433,7 +1404,7 @@ flex-direction: row;
 
     .boxfiltr {
         width: 320px;
-        height: 40px;
+        height: 35px;
         border: 1px solid #414833;
         font-size: 18px;
         color: #414833;
@@ -1494,12 +1465,19 @@ flex-direction: row;
             max-width: 550px;
         }
     }
-
-    @media screen and (max-width: 640px) {
-        .ant-carousel, .ant-carousel2 {
-            max-width: 270px;
+    @media screen and (min-width: 425px) and (max-width: 767px) {
+        .ant-carousel2 {
+            max-width: 280px;
         }
     }
+     @media screen and (min-width: 425px) and (max-width: 767px) {
+        .ant-carousel {
+            max-width: 380px;
+        }
+
+    }
+
+
 
     .ant-carousel, .ant-carousel2 {
         margin: 0px auto auto;
@@ -1509,15 +1487,16 @@ flex-direction: row;
     }
 
     .ant-carousel-element {
-        width: 280px;
+        width: 250px;
+        height:150px;
         text-align: center;
-        margin-left: 150px;
-        margin-right: 150px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
     .ant-carousel-element2 {
-        width: 280px;
+        width: 250px;
         text-align: center;
-        margin-left: -30px;
+        margin-left: -40px;
         margin-right: 70px;
     }
 
@@ -1566,8 +1545,8 @@ flex-direction: row;
 
     /*стрелочки*/
     div.ant-carousel-arrow-left {
-        left: -60px;
-        top: 48%;
+        left: -40px;
+        top: 53%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png") no-repeat;
 
@@ -1575,7 +1554,7 @@ flex-direction: row;
 
     .div.ant-carousel-arrow-left2 {
         left: 110px;
-        top: 115%;
+        top: 63%;
         display: block;
         background: #000000;
 
@@ -1583,8 +1562,8 @@ flex-direction: row;
 
     /*стрелочки*/
     div.ant-carousel-arrow-right, .div.ant-carousel-arrow-right2 {
-        right: -60px;
-        top: 48%;
+        right: -50px;
+        top: 52%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
     }
@@ -1603,7 +1582,7 @@ flex-direction: row;
         height: auto;
         position: absolute;
         left: 0;
-        bottom: -30px;
+        bottom: -50px;
         z-index: 30;
         text-align: center;
     }
@@ -1628,65 +1607,65 @@ flex-direction: row;
     .tree1 {
         opacity: 0.5;
         position: absolute;
-        padding-left: 50%;
-        top: 430px;
-        width: 140px;
-        height: 230px;
+        padding-left: 55%;
+        top: 340px;
+        width: 100px;
+        height: 200px;
     }
 
     .tree2 {
         opacity: 0.5;
         position: absolute;
         padding-left: 70%;
-        top: 410px;
-        width: 103px;
-        height: 277px;
+        top: 320px;
+        width: 83px;
+        height: 207px;
     }
 
     .tree3 {
         opacity: 0.5;
         position: absolute;
-        padding-left: 58%;
-        top: 260px;
-        width: 171px;
-        height: 422px;
+        padding-left: 60%;
+        top: 240px;
+        width: 101px;
+        height: 322px;
     }
 
     .tree4 {
         opacity: 0.5;
         position: absolute;
-        padding-left: 73%;
-        top: 300px;
-        width: 207px;
-        height: 407px;
+        padding-left: 75%;
+        top: 280px;
+        width: 107px;
+        height: 307px;
     }
 
     .girl {
         position: absolute;
         padding-left: 65%;
-        top: 350px;
-        width: 206px;
-        height: 430px;
+        top:300px;
+        width: 106px;
+        height: 330px;
     }
     .branch1 {
         position: absolute;
-        width: 154px;
-        height: 277px;
+        width: 104px;
+        height: 177px;
         padding-left: 83%;
-        top: -80px;
+        top: -60px;
     }
 
     .branch2 {
     position: absolute;
-        width: 103px;
-        height: 228px;
+        width: 73px;
+        height: 158px;
         padding-left: -10%;
-        top: 550px;
+        top: 420px;
     }
      .leaf1 {
 
-        width: 108px;
-        height: 160px;
+        width: 78px;
+        height: 100px;
         margin-left: 80%;
         margin-top: 50px;
     }
@@ -1699,110 +1678,154 @@ flex-direction: row;
     }
 
     .flower {
-        width: 188px;
-        height: 155px;
-        padding-left:75%;
-        margin-top: 20px;
+        width: 58px;
+        height: 85px;
+        padding-left:87%;
+        margin-top: 30px;
     }
 
     .love2 {
-        width: 29px;
-        height: 48px;
+        width: 24px;
+        height: 40px;
         position: absolute;
-        margin-right: 350px;
-        margin-bottom: 290px;
+        margin-right: 280px;
+        margin-bottom: 280px;
     }
 
     .love3 {
-        width: 29px;
-        height: 48px;
+        width: 24px;
+        height: 40px;
         position: absolute;
-        margin-right: -350px;
-        margin-bottom: 290px;
+        margin-right: -280px;
+        margin-bottom: 280px;
     }
 
     .circle1 {
         position: relative;
-        margin-top: 12px;
-        margin-left: 25px;
-        width: 29px;
-        height: 27px;
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
     }
 
     .edit1 {
         position: absolute;
-        left:330px;
-        top: 20px;
-        width: 32px;
-        height: 32px;
+        left: 250px;
+        top: 15px;
+        width: 28px;
+        height: 28px;
     }
 
     .edit2 {
         position: absolute;
-        left:330px;
-        top: 60px;
-        width: 32px;
-        height: 32px;
+        left: 250px;
+        top: 45px;
+        width: 28px;
+        height: 28px;
     }
 
     .edit3 {
         position: absolute;
-        left:330px;
-        top: 100px;
-        width: 32px;
-        height: 32px;
+        left: 250px;
+        top: 75px;
+        width: 28px;
+        height: 28px;
     }
 
     .export1 {
         position: absolute;
-        left:370px;
-        top: 20px;
-        width: 32px;
-        height: 32px;
+        left: 290px;
+        top: 15px;
+        width: 28px;
+        height: 28px;
 
     }
 
     .export2 {
         position: absolute;
-        left:370px;
-        top: 60px;
-        width: 32px;
-        height: 32px;
+        left: 290px;
+        top: 45px;
+        width: 28px;
+        height: 28px;
 
     }
 
     .export3 {
         position: absolute;
-        left:370px;
-        top: 100px;
-        width: 32px;
-        height: 32px;
+        left: 290px;
+        top: 75px;
+        width: 28px;
+        height: 28px;
 
     }
 
     .circlezakaz {
         position: relative;
-        margin-top: 12px;
+        margin-top: 10px;
         margin-left: 0px;
-        width: 29px;
-        height: 27px;
+        width: 25px;
+        height: 25px;
     }
 
     .editzakaz {
         position: absolute;
-        left: 310px;
-        top: 10px;
-        width: 35px;
-        height: 35px;
+        left: 260px;
+        top: 6px;
+        width: 30px;
+        height: 30px;
     }
 
     .deletezakaz {
         position: absolute;
-        left: 355px;
-        top: 10px;
-        width: 32px;
-        height: 32px;
+        left: 300px;
+        top: 6px;
+        width: 30px;
+        height: 30px;
     }
+  wrapper1 {
+  position: relative;
+  overflow-x: hidden;
+}
+.menu1 {
+  position: absolute;
+  top: 0;
+  left: 80%;
+  z-index: 1;
+  width:50%;
+  height: 800px;
+  background-color: #fff;
+  transition: 0.5s;
+  transform: translateX(40%);
+}
+.menu_active {
+  transform: translateX(-60%);
+}
+.menu-list {
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
+  flex-direction: column;
+}
+.menu-list a {
+  text-decoration: none;
+   padding-left:15px;
+  font-weight: 900;
+  color: #9b59b6;
+  color: #333D29;
+  text-decoration: none;
+  font-family: 'Montserrat Alternates';
+  font-weight: 600;
+  font-size: 24px;
+
+}
+.menu-icon {
+  color: #fff;
+  font-size: 150%;
+  position: absolute;
+  left: -70px;
+  top: 5px;
+}
+
 
 
 }
