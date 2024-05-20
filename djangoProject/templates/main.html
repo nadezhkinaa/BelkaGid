@@ -1315,12 +1315,25 @@
                     ilocal++;
                 }
 
+                function offerGuide() {
+                    // Получить выбранный маршрут (id)
+                    const selectedOptionId = document.querySelector('.box1').selectedOptions[0].id;
+
+                    // Получить выбранную дату
+                    const selectedDate = document.querySelector('.data').value;
+
+                    // Получить выбранное количество человек
+                    const selectedCount = document.querySelector('.box3').value;
+
+                    console.log(selectedOptionId, selectedDate, selectedCount);
+
+                }
             </script>
 
 
             <p2>Выберите дату:</p2>
             <input class='data' type="date">
-            
+
             <p3>Выберите количество человек:</p3>
 
             <select class="box3">
@@ -1331,7 +1344,7 @@
                 <option>4</option>
             </select>
 
-            <button onclick="#" class="buttonvibor" type="submit">Выбрать</button>
+            <button onclick="offerGuide()" class="buttonvibor" type="submit">Выбрать</button>
         </div>
 
 
