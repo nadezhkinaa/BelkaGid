@@ -413,30 +413,37 @@
                     const panel = document.createElement('div');
                     panel.id = 'marshpanel'
                     panel.style.position = 'absolute';
-                    panel.style.top = '0';
+                    panel.style.top = '20px';
                     panel.style.right = '0';
-                    panel.style.padding = '10px';
+
                     panel.style.backgroundColor = 'transparent';
                     panel.style.display = 'flex';
                     panel.style.flexDirection = 'column';
 
+
                     const button1 = document.createElement('button');
+                    button1.style.marginTop = '30px';
                     button1.style.width = '50px';
                     button1.style.height = '50px';
-                    button1.style.backgroundImage = 'url({% static 'img/белка.png' %})';
+                    button1.style.backgroundImage = 'url({% static 'img/return_button.svg' %})';
                     button1.style.backgroundSize = 'contain';
+                    button1.style.border = 'none';
 
                     const button2 = document.createElement('button');
+                    button2.style.marginTop = '30px';
                     button2.style.width = '50px';
                     button2.style.height = '50px';
-                    button2.style.backgroundImage = 'url({% static 'img/белка.png' %})';
+                    button2.style.backgroundImage = 'url({% static 'img/like_button.svg' %})';
                     button2.style.backgroundSize = 'contain';
+                    button2.style.border = 'none';
 
                     const button3 = document.createElement('button');
+                    button3.style.marginTop = '30px'
                     button3.style.width = '50px';
                     button3.style.height = '50px';
-                    button3.style.backgroundImage = 'url({% static 'img/белка.png' %} )';
+                    button3.style.backgroundImage = 'url({% static 'img/export_button.svg' %} )';
                     button3.style.backgroundSize = 'contain';
+                    button3.style.border = 'none';
 
                     panel.appendChild(button1);
                     panel.appendChild(button2);

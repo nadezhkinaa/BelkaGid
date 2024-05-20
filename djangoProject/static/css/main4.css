@@ -194,7 +194,7 @@ body {
         font-weight: 700;
         font-size: 36px;
         font-family: 'Montserrat Alternates';
-        color: #414833;
+        color: #2B2920;
         position: absolute;
         top: 50px;
         left: 20px;
@@ -202,10 +202,10 @@ body {
     }
 
     .block2 p {
-        font-weight: 200;
+        font-weight: 400;
         font-size: 16px;
-        font-family: 'Hero';
-        color: #FFF;
+        font-family: 'Lab Grotesque';
+        color: #414833;
         position: absolute;
         top: 160px;
         left: 40px;
@@ -324,7 +324,7 @@ body {
         font-weight: 700;
         font-size: 36px;
         font-family: 'Montserrat Alternates';
-        color: #FFF;
+        color: #2B2920;
         position: absolute;
         width: 1300px
     }
@@ -447,8 +447,8 @@ body {
     .onasblock1 p {
         font-weight: 200;
         font-size: 18px;
-        font-family: 'Hero';
-        color: #FFF;
+        font-family: 'Lab Grotesque';
+        color: #414833;
         position: absolute;
         top: 120px;
         padding-left:10%;
