@@ -86,7 +86,8 @@
             <h3>«Зеленоград: Мечтай, создавай, действуй»</h3>
             <div class="main" id="buttonblock">
 
-                <a href="#routesblock" class="button" type="submit">Выбрать маршрут</a>
+                <a onclick="window.scrollTo({top: document.getElementById('routesblock').offsetTop, behavior: 'smooth'});"
+                   class="button" type="submit">Выбрать маршрут</a>
             </div>
 
 
@@ -301,6 +302,17 @@
                     })
                 });
 
+                map.on('click', function (evt) {
+                    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                        return feature
+                    })
+
+                    // Проверьте, был ли щелчок сделан вне всплывающего окна
+                    if (!feature) {
+                        map.removeOverlay(popup);
+                    }
+                });
+
 
                 map.setView(new ol.View({
                     center: map.getView().getCenter(),
@@ -330,7 +342,7 @@
                         var marker_fields = getFromDb(feature.values_.name);
 
 
-                        popupFunc(evt, marker_fields.name, marker_fields.short_description, marker_fields.redirect_url, marker_fields.map_id);
+                        popupFunc(evt, marker_fields.name, marker_fields.short_description, "places/" + marker_fields.name, marker_fields.map_id);
                     });
                 });
 
@@ -357,6 +369,7 @@
                         const content = feature.getGeometry().getCoordinates();
                         popup.setPosition(content);
                         map.addOverlay(popup);
+
                         document.getElementById('popup-content').innerHTML = `
                         <h1>${name}</h1>
                         <p>${text}</p>
@@ -443,7 +456,20 @@
                     });
 
                     button3.addEventListener('click', function () {
-                        deleteMarkers();
+
+                        var features;
+                        map.getLayers().forEach(layer => {
+
+                            if (layer.get('name') === 'markerLayer') {
+                                features = layer.getSource().getFeatures();
+                            }
+                        });
+                        var markers = features;
+                        var temproute = "";
+                        for (let tempmarker = 0; tempmarker < markers.length; tempmarker++) {
+                            temproute += markers[tempmarker].values_.name + "$";
+                        }
+                        exportMapRoute(temproute);
                         console.log("кнопка 3");
                     });
                 }
@@ -565,6 +591,20 @@
                     window.open(urlExport);
                 }
 
+                function exportMapRoute(route) {
+                    var points = route.split("$").map(Number);
+                    points.pop();
+                    var tempStr = "";
+                    for (let icurr = 0; icurr < points.length; icurr++) {
+                        tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                        if (icurr !== points.length - 1) {
+                            tempStr += "~";
+                        }
+                    }
+                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=mt";
+                    window.open(urlExport);
+                }
+
             </script>
         </div>
         <div class="block2">
@@ -609,8 +649,7 @@
                             <div class="marshrblock">
                                 <p id="mashr0name"></p>
                                 <p id="mashr0descr"></p>
-                                <a href="#map" class="button" onclick="exploreMarsh(0)" type="submit">Изучить маршрут</a>
-
+                                <button onclick="exploreMarsh(0);">Изучить маршрут</button>
                                 <button>Избранное</button>
                                 <button onclick="exportRoute(routes_json[0])">Экспорт</button>
                             </div>
@@ -674,6 +713,7 @@
                             coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
                         }
                         setMarkers(coords, ids);
+                        window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
                     }
 
                 </script>

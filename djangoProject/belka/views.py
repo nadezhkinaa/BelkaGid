@@ -186,3 +186,10 @@ def check_favourite(request):
 
     else:
         return JsonResponse({'success': False})
+
+
+def place_detail(request, place_name):
+    place = Place.objects.get(name=place_name)
+    place.image = place.image.replace("static/", "")
+    context = {'place': place}
+    return render(request, 'place_detail.html', context)
