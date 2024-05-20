@@ -75,7 +75,7 @@ body {
         font-style: normal;
         font-display: swap;
     }
-     @font-face {
+    @font-face {
         font-family: 'Lab Grotesque';
         src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
         font-weight: normal;
@@ -244,12 +244,13 @@ body {
         background: #A98467;
         border: none;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        position:relative;
+        position: relative;
     }
+
     .marshrblock h1 {
-        position:absolute;
-        top:-40px;
-        left:-50px;
+        position: absolute;
+        top: -40px;
+        left: -50px;
         color: #FFF;
         font-weight: 600;
         font-size: 36px;
@@ -257,17 +258,18 @@ body {
     }
 
     .marshrblock p {
-    position:absolute;
-        top:100px;
-        left:30px;
-        width:320px;
+        position: absolute;
+        top: 100px;
+        left: 30px;
+        width: 320px;
         color: #FFF;
         font-weight: 400;
         font-size: 32px;
         font-family: "Montserrat Alternates";
     }
-    .buttonizuch{
-    position: absolute;
+
+    .buttonizuch {
+        position: absolute;
         bottom: 80px;
         left: 20px;
         width: 370px;
@@ -279,16 +281,18 @@ body {
         border-radius: 15px;
         border: 2px solid #fff;
         background-color: #A98467;
-        text-align:center;
+        text-align: center;
         text-decoration: none;
     }
-    .buttonlike{
-     position: absolute;
+
+    .buttonlike {
+        position: absolute;
         bottom: 20px;
         left: 20px;
     }
-    .buttonexport{
-     position: absolute;
+
+    .buttonexport {
+        position: absolute;
         bottom: 18px;
         left: 80px;
     }
@@ -436,11 +440,12 @@ body {
         font-size: 24px;
         margin-left: 80px;
     }
-    .svyzi{
-display:flex;
-flex-direction: row;
 
-}
+    .svyzi {
+        display: flex;
+        flex-direction: row;
+
+    }
 
     .svyz h1 {
         font-weight: 600;
@@ -786,12 +791,13 @@ flex-direction: row;
         padding-left: 25px;
         display: flex;
     }
-    .cafestars{
-    position:absolute;
-    left:25px;
-    top:453px;
-    width:100px;
-    height:16px;
+
+    .cafestars {
+        position: absolute;
+        left: 25px;
+        top: 453px;
+        width: 100px;
+        height: 16px;
     }
 
     .buttonpodr {
@@ -1338,12 +1344,9 @@ flex-direction: row;
         top: 440px;
         padding-left: 15px;
         padding-right: 15px;
-      
-
 
 
     }
-
 
 
     .data {
@@ -1523,7 +1526,7 @@ flex-direction: row;
     }
 
     div.ant-carousel-arrow-left2 {
-        left:-40px;
+        left: -40px;
         top: 45%;
         display: block;
         background: #000000;
@@ -1536,7 +1539,8 @@ flex-direction: row;
         top: 45%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
-        }
+    }
+
     div.ant-carousel-arrow-right {
         right: -60px;
         top: 45%;
@@ -1738,7 +1742,7 @@ flex-direction: row;
     }
 
     .branch2 {
-    position: absolute;
+        position: absolute;
         width: 213px;
         height: 378px;
         padding-left: -10%;
@@ -1801,7 +1805,6 @@ flex-direction: row;
     }
 
 
-
     .love2 {
         width: 29px;
         height: 48px;
@@ -1849,6 +1852,7 @@ flex-direction: row;
         width: 37px;
         height: 37px;
     }
+
 
     .export1 {
         position: absolute;
@@ -1900,112 +1904,126 @@ flex-direction: row;
         width: 35px;
         height: 35px;
     }
-      wrapper1 {
- display:none;
-}
-.menu1 {
-   display:none;
-}
-.menu_active {
-   display:none;
-}
-.menu-list {
-   display:none;
-}
-.menu-list a {
-   display:none;
 
-}
-.menu-icon {
-   display:none;
-}
-.smallmenu1 {
-        display:none;
-    }
-    .smallmenu1 a  {
-        display:none;
+    wrapper1 {
+        display: none;
     }
 
-#myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .menu1 {
+        display: none;
+    }
 
-#myImg:hover {opacity: 0.7;}
+    .menu_active {
+        display: none;
+    }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
+    .menu-list {
+        display: none;
+    }
 
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
+    .menu-list a {
+        display: none;
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
+    }
 
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
+    .menu-icon {
+        display: none;
+    }
 
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
+    .smallmenu1 {
+        display: none;
+    }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    .smallmenu1 a {
+        display: none;
+    }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (Image) */
     .modal-content {
-        width: 100%;
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
     }
-}
-.longdescr h1{
-font-weight: 700;
+
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation - Zoom in the Modal */
+    .modal-content, #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+    .longdescr h1 {
+        font-weight: 700;
         font-size: 84px;
         color: #2B2920;
         font-family: 'Montserrat Alternates';
@@ -2013,9 +2031,10 @@ font-weight: 700;
         top: 180px;
         left: 300px;
         width: 1200px;
-}
-.longdescr p{
-font-weight: 400;
+    }
+
+    .longdescr p {
+        font-weight: 400;
         font-size: 36px;
         color: #414833;
         font-family: 'Lab Grotesque';
@@ -2023,24 +2042,25 @@ font-weight: 400;
         top: 1300px;
         left: 300px;
         width: 1500px;
-}
-.img1{
-position: absolute;
+    }
+
+    .img1 {
+        position: absolute;
         top: 400px;
         left: 300px;
         width: 1500px;
         height: 800px;
-        border-radius:15px;
-}
-.back{
-    width:70px;
-    height:70x;
-    position: absolute;
-    top:210px;
-    left: 80px;
+        border-radius: 15px;
+    }
 
-}
+    .back {
+        width: 70px;
+        height: 70x;
+        position: absolute;
+        top: 210px;
+        left: 80px;
 
+    }
 
 
 }

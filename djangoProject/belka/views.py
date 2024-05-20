@@ -143,7 +143,11 @@ def message_sent(request):
 
 @login_required
 def profile_routes_page(request):
-    return render(request, "marsruty.html")
+    routes = serializers.serialize("json", Route.objects.all().order_by('rating').reverse())
+    context = {
+        'routes': routes,
+    }
+    return render(request, 'marsruty.html', context)
 
 
 @login_required

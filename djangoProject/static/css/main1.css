@@ -28,7 +28,7 @@ body {
 }
 
 @media (min-width: 1441px) and (max-width: 1890px) {
-@font-face {
+    @font-face {
         font-family: 'Lab Grotesque';
         src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
         font-weight: normal;
@@ -257,7 +257,7 @@ body {
     }
 
     .marshrblock {
-    position:relative;
+        position: relative;
         margin-right: 50px;
         margin-left: 50px;
         width: 411px;
@@ -269,9 +269,9 @@ body {
     }
 
     .marshrblock h1 {
-        position:absolute;
-        top:-40px;
-        left:-50px;
+        position: absolute;
+        top: -40px;
+        left: -50px;
         color: #FFF;
         font-weight: 600;
         font-size: 36px;
@@ -279,17 +279,18 @@ body {
     }
 
     .marshrblock p {
-    position:absolute;
-        top:100px;
-        left:30px;
-        width:320px;
+        position: absolute;
+        top: 100px;
+        left: 30px;
+        width: 320px;
         color: #FFF;
         font-weight: 400;
         font-size: 32px;
         font-family: "Montserrat Alternates";
     }
-    .buttonizuch{
-    position: absolute;
+
+    .buttonizuch {
+        position: absolute;
         bottom: 80px;
         left: 20px;
         width: 370px;
@@ -301,16 +302,18 @@ body {
         border-radius: 15px;
         border: 2px solid #fff;
         background-color: #A98467;
-        text-align:center;
+        text-align: center;
         text-decoration: none;
     }
-    .buttonlike{
-     position: absolute;
+
+    .buttonlike {
+        position: absolute;
         bottom: 20px;
         left: 20px;
     }
-    .buttonexport{
-     position: absolute;
+
+    .buttonexport {
+        position: absolute;
         bottom: 18px;
         left: 80px;
     }
@@ -491,7 +494,7 @@ body {
     }
 
     .onasblock1 p {
-        font-weight:400;
+        font-weight: 400;
         font-size: 24px;
         font-family: 'Lab Grotesque';
         color: #414833;
@@ -857,7 +860,6 @@ body {
         color: #414833;
         width: 500px;
     }
-
 
 
     .vhod h1 {
@@ -1431,7 +1433,7 @@ body {
             max-width: 1150px;
         }
     }
-     @media screen and (min-width: 1025px) and (max-width: 1300px) {
+    @media screen and (min-width: 1025px) and (max-width: 1300px) {
         .ant-carousel {
             max-width: 750px;
         }
@@ -1519,7 +1521,7 @@ body {
     }
 
     div.ant-carousel-arrow-left2 {
-        left:-20px;
+        left: -20px;
         top: 45%;
         display: block;
         background: #000000;
@@ -1532,7 +1534,8 @@ body {
         top: 44%;
         display: block;
         background: url("http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png") no-repeat;
-        }
+    }
+
     div.ant-carousel-arrow-right {
         right: -60px;
         top: 45%;
@@ -1730,7 +1733,7 @@ body {
     }
 
     .branch2 {
-    position: absolute;
+        position: absolute;
         width: 213px;
         height: 378px;
         padding-left: -10%;
@@ -1758,7 +1761,6 @@ body {
     }
 
 
-
     .love1 {
         width: 37px;
         height: 66px;
@@ -1779,12 +1781,13 @@ body {
         left: 25px;
         top: 460px;
     }
-    .cafestars{
-    position:absolute;
-    left:25px;
-    top:453px;
-    width:100px;
-    height:16px;
+
+    .cafestars {
+        position: absolute;
+        left: 25px;
+        top: 453px;
+        width: 100px;
+        height: 16px;
     }
 
     .love2 {
@@ -1885,36 +1888,45 @@ body {
         width: 35px;
         height: 35px;
     }
-      wrapper1 {
- display:none;
-}
-.menu1 {
-   display:none;
-}
-.menu_active {
-   display:none;
-}
-.menu-list {
-   display:none;
-}
-.menu-list a {
-   display:none;
 
-}
-.menu-icon {
-   display:none;
-}
-.smallmenu1 {
-        display:none;
+    wrapper1 {
+        display: none;
     }
-    .smallmenu1 a  {
-        display:none;
-    }
- .svyzi{
-display:flex;
-flex-direction: row;
 
-}
+    .menu1 {
+        display: none;
+    }
+
+    .menu_active {
+        display: none;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .menu-list a {
+        display: none;
+
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .smallmenu1 {
+        display: none;
+    }
+
+    .smallmenu1 a {
+        display: none;
+    }
+
+    .svyzi {
+        display: flex;
+        flex-direction: row;
+
+    }
 
 
 }

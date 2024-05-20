@@ -294,7 +294,6 @@
                                     image.getImage().height = ol.extent.getHeight(extent);
 
 
-
                                 }
                             })
                         })
@@ -332,7 +331,6 @@
 
                 // Создадим массив координат
                 setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
-                addPanel();
                 map.on('click', function (evt) {
 
                     var features;
@@ -462,6 +460,7 @@
                     button1.addEventListener('click', function () {
                         console.log("кнопка 1");
                         deleteMarkers();
+                        deletePaneL();
                         setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
                     });
 
@@ -664,9 +663,10 @@
                             <div class="marshrblock">
                                 <h1 id="mashr0name"></h1>
                                 <p id="mashr0descr"></p>
-                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
+                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                        src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
@@ -674,9 +674,10 @@
                             <div class="marshrblock">
                                 <h1 id="mashr1name"></h1>
                                 <p id="mashr1descr"></p>
-                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
+                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                        src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
@@ -684,9 +685,10 @@
                             <div class="marshrblock">
                                 <h1 id="mashr2name"></h1>
                                 <p id="mashr2descr"></p>
-                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
+                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                        src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
@@ -694,9 +696,10 @@
                             <div class="marshrblock">
                                 <h1 id="mashr3name"></h1>
                                 <p id="mashr3descr"></p>
-                                <button class='buttonizuch'onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img  src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img  src="{% static 'img/export.svg' %}" alt=""></button2>
+                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                        src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
                         </li>
@@ -720,6 +723,7 @@
 
                     function exploreMarsh(id) {
                         deleteMarkers();
+                        addPanel();
                         var ids = routes_json[id].fields.marshrut.split("$").map(Number);
                         ids.pop();
                         var coords = [];
@@ -729,6 +733,7 @@
                         }
                         setMarkers(coords, ids);
                         window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
+
                     }
 
                 </script>
@@ -1027,8 +1032,6 @@
                         </li>
 
 
-
-
                     </ul>
                 </div>
                 <div class="ant-carousel-arrow-left"></div>
@@ -1289,7 +1292,7 @@
                 </script>
             </div>
         </div>
-       
+
         <div class="block5">
 
             <h1>Предложите гиду маршрут.</h1>
@@ -1337,7 +1340,6 @@
 
                 }
             </script>
-
 
 
             <p2>Выберите дату:</p2>
