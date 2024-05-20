@@ -202,6 +202,7 @@ body {
 
         text-decoration: none;
         z-index: 2;
+        cursor: pointer;
     }
 
     .karta {
@@ -460,6 +461,7 @@ body {
         border-radius: 15px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
+        cursor: pointer;
     }
 
     .footer {

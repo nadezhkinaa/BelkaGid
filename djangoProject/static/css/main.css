@@ -175,6 +175,9 @@ body {
         padding-left: 20px;
         padding-top: 20px;
         z-index: 2;
+        cursor: pointer;
+
+
         text-decoration: none;
     }
 
@@ -412,6 +415,7 @@ body {
         border-radius: 25px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
+        cursor: pointer;
     }
 
     .footer {

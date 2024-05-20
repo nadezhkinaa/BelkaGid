@@ -437,6 +437,7 @@ body {
         border-radius: 25px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
+        cursor: pointer;
     }
 
     .footer {
