@@ -332,7 +332,6 @@
 
                 // Создадим массив координат
                 setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
-                addPanel();
                 map.on('click', function (evt) {
 
                     var features;
@@ -462,6 +461,7 @@
                     button1.addEventListener('click', function () {
                         console.log("кнопка 1");
                         deleteMarkers();
+                        deletePaneL();
                         setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
                     });
 
@@ -720,6 +720,7 @@
 
                     function exploreMarsh(id) {
                         deleteMarkers();
+                        addPanel();
                         var ids = routes_json[id].fields.marshrut.split("$").map(Number);
                         ids.pop();
                         var coords = [];
@@ -729,6 +730,7 @@
                         }
                         setMarkers(coords, ids);
                         window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
+
                     }
 
                 </script>
