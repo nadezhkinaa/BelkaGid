@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'openlayers/ol.css' %}">
-   <script src="{% static 'lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js' %}"></script>
+    <script src="{% static 'lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'lightbox2-2.11.4/dist/css/lightbox.min.css' %}">
 
 </head>
@@ -270,6 +270,8 @@
                 const popup = new ol.Overlay({
                     element: document.getElementById('popup')
                 });
+
+
                 var scale = 512;
                 var extent = [-scale, -scale, scale, scale];
                 var projection = new ol.proj.Projection({
@@ -310,6 +312,7 @@
                 });
 
                 map.on('click', function (evt) {
+
                     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
                         return feature
                     })
@@ -328,6 +331,9 @@
                 }));
 
                 map.getView().setMaxZoom(18);
+
+                const viewportElement = document.querySelector('.ol-viewport');
+                viewportElement.style.overflow = 'visible';
 
                 // Добавим три маркера по координатам на карту
 
@@ -1014,27 +1020,41 @@
             <div class="ant-carousel" id=”first”>
                 <div class="ant-carousel-hider">
                     <ul class="ant-carousel-list">
-                        <li class="ant-carousel-element"><a class="example-image-link" href="{% static 'img/zelenograd.jpg' %}" data-lightbox="example-2" ><img src="{% static 'img/zelenograd.jpg' %}" alt="0" width="550"
-                                                                                                                                                                                  height="300"></a>
+                        <li class="ant-carousel-element"><a class="example-image-link"
+                                                            href="{% static 'img/zelenograd.jpg' %}"
+                                                            data-lightbox="example-2"><img
+                                src="{% static 'img/zelenograd.jpg' %}" alt="0" width="550"
+                                height="300"></a>
 
                         </li>
-                        <li class="ant-carousel-element"><a class="example-image-link" href="{% static 'img/zel2.jpg' %}" data-lightbox="example-2" data-title="Парк Победы"><img src="{% static 'img/zel2.jpg' %}" alt="1" width="550"
-                                                                                                                                                                                  height="300"></a>
+                        <li class="ant-carousel-element"><a class="example-image-link"
+                                                            href="{% static 'img/zel2.jpg' %}" data-lightbox="example-2"
+                                                            data-title="Парк Победы"><img
+                                src="{% static 'img/zel2.jpg' %}" alt="1" width="550"
+                                height="300"></a>
 
                         </li>
-                        <li class="ant-carousel-element"><a class="example-image-link" href="{% static 'img/zel3.jpg' %}" data-lightbox="example-2" data-title="Фестивальная площадка Легенды Крыма"><img src="{% static 'img/zel3.jpg' %}" alt="2" width="550"
-                                                                                                                                                                                  height="300"></a>
+                        <li class="ant-carousel-element"><a class="example-image-link"
+                                                            href="{% static 'img/zel3.jpg' %}" data-lightbox="example-2"
+                                                            data-title="Фестивальная площадка Легенды Крыма"><img
+                                src="{% static 'img/zel3.jpg' %}" alt="2" width="550"
+                                height="300"></a>
 
                         </li>
-                        <li class="ant-carousel-element"><a class="example-image-link" href="{% static 'img/zel4.jpg' %}" data-lightbox="example-2" data-title="Парк Победы"><img src="{% static 'img/zel4.jpg' %}" alt="3" width="550"
-                                                              height="300"></a>
+                        <li class="ant-carousel-element"><a class="example-image-link"
+                                                            href="{% static 'img/zel4.jpg' %}" data-lightbox="example-2"
+                                                            data-title="Парк Победы"><img
+                                src="{% static 'img/zel4.jpg' %}" alt="3" width="550"
+                                height="300"></a>
 
                         </li>
-                        <li class="ant-carousel-element"><a class="example-image-link" href="{% static 'img/zel5.jpg' %}" data-lightbox="example-2" data-title="Площадь Юности"><img src="{% static 'img/zel5.jpg' %}" alt="4" width="550"
-                                                              height="300"></a>
+                        <li class="ant-carousel-element"><a class="example-image-link"
+                                                            href="{% static 'img/zel5.jpg' %}" data-lightbox="example-2"
+                                                            data-title="Площадь Юности"><img
+                                src="{% static 'img/zel5.jpg' %}" alt="4" width="550"
+                                height="300"></a>
 
                         </li>
-
 
 
                     </ul>
