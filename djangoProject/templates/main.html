@@ -71,11 +71,11 @@
             </div>
 
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-            <script>$('.menu-icon').on('click', function(e) {
-  e.preventDefault();
-  $('.menu1').toggleClass('menu_active');
-  $('section').toggleClass('section_active');
-})
+            <script>$('.menu-icon').on('click', function (e) {
+                e.preventDefault();
+                $('.menu1').toggleClass('menu_active');
+                $('section').toggleClass('section_active');
+            })
             </script>
         </div>
 
@@ -367,6 +367,9 @@
                     })
                     if (feature) {
                         const content = feature.getGeometry().getCoordinates();
+                        /*if (content[1] > 200) {
+                            установить popup перевернутый стиль
+                        }*/
                         popup.setPosition(content);
                         map.addOverlay(popup);
 
@@ -1299,17 +1302,25 @@
 
             <select class="box1">
                 <option value="" disabled selected>Выбрать</option>
-                <option>Маршрут №1(такой то)</option>
-                <option>Маршрут №2(такой то)</option>
-                <option>Маршрут №3(такой то)</option>
-                <option>Маршрут №4(такой то)</option>
+                <option id="optmashr0name"></option>
+                <option id="optmashr1name"></option>
+                <option id="optmashr2name"></option>
+                <option id="optmashr3name"></option>
             </select>
+
+            <script>
+                ilocal = 0;
+                for (const route of routes_json) {
+                    document.getElementById("optmashr" + ilocal + "name").innerHTML = route.fields.name;
+                    ilocal++;
+                }
+
+            </script>
 
 
             <p2>Выберите дату:</p2>
             <input class='data' type="date">
-
-
+            
             <p3>Выберите количество человек:</p3>
 
             <select class="box3">
@@ -1319,7 +1330,6 @@
                 <option>3</option>
                 <option>4</option>
             </select>
-
 
             <button onclick="#" class="buttonvibor" type="submit">Выбрать</button>
         </div>
