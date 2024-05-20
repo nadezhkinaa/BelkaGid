@@ -1206,7 +1206,7 @@ body {
         padding-top: 10px;
         border-radius: 25px;
         width: 90%;
-        height: 155px;
+        height: 185px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
 
@@ -1827,6 +1827,21 @@ body {
         top: 100px;
         width: 32px;
         height: 32px;
+    }
+    .edit4{
+        position: absolute;
+        left: 330px;
+        top: 140px;
+        width: 32px;
+        height: 32px;
+    }
+    .export4 {
+        position: absolute;
+        left: 370px;
+        top: 140px;
+        width: 32px;
+        height: 32px;
+
     }
 
     .export1 {

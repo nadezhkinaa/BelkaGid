@@ -1844,6 +1844,21 @@ body {
         width: 32px;
         height: 32px;
     }
+    .edit4{
+        position: absolute;
+        left: 570px;
+        top: 140px;
+        width: 32px;
+        height: 32px;
+    }
+    .export4 {
+        position: absolute;
+        left: 610px;
+        top: 140px;
+        width: 32px;
+        height: 32px;
+
+    }
 
     .export1 {
         position: absolute;

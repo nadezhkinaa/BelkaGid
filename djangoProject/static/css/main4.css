@@ -1800,6 +1800,21 @@ body {
         width: 28px;
         height: 28px;
     }
+    .edit4{
+        position: absolute;
+        left: 250px;
+        top: 105px;
+        width: 28px;
+        height: 28px;
+    }
+    .export4 {
+        position: absolute;
+        left: 290px;
+        top: 105px;
+        width: 28px;
+        height: 28px;
+
+    }
 
     .export1 {
         position: absolute;
