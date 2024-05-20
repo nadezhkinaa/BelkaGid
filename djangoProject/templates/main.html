@@ -323,14 +323,34 @@
                     }
                 });
 
+                var sss = 1000;
+                var iw = window.innerWidth;
 
+                if (iw < 3000 && iw >= 1890) {
+                    sss = 1400;
+                }
+                if (iw < 1890 && iw >= 1440) {
+                    sss = 1100;
+                }
+                if (iw < 1440 && iw >= 1024) {
+                    sss = 1100;
+                }
+                if (iw < 1024 && iw >= 768) {
+                    sss = 1200;
+                }
+                if (iw < 768 && iw >= 426) {
+                    sss = 1500;
+                }
+
+
+                console.log(window.innerWidth);
                 map.setView(new ol.View({
                     center: map.getView().getCenter(),
-                    extent: map.getView().calculateExtent(map.getSize()),
+                    extent: map.getView().calculateExtent([sss, sss]),
                     zoom: map.getView().getZoom()
                 }));
-
-                map.getView().setMaxZoom(18);
+                console.log(map.getSize());
+                //map.getView().setMaxZoom(18);
 
                 const viewportElement = document.querySelector('.ol-viewport');
                 viewportElement.style.overflow = 'visible';
