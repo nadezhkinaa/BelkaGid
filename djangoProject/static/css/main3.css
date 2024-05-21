@@ -1308,7 +1308,7 @@ body {
     .editmarsr {
         margin-top: 55px;
         width: 700px;
-        height: 1255px;
+         height: auto;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
