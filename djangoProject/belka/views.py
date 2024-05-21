@@ -144,8 +144,16 @@ def message_sent(request):
 @login_required
 def profile_routes_page(request):
     routes = serializers.serialize("json", Route.objects.all().order_by('rating').reverse())
+
+    places = Place.objects.all()
+    for place in places:
+        place.image = place.image.replace("static/", "")
+
+    places = serializers.serialize("json", Place.objects.all())
+
     context = {
         'routes': routes,
+        'places': places,
     }
     return render(request, 'marsruty.html', context)
 
@@ -205,16 +213,11 @@ def route_detail(request, route_id):
     for place in places:
         place.image = place.image.replace("static/", "")
 
-
     routeq = Route.objects.get(id=route_id)
     routeq.marshrut = routeq.marshrut.split("$")
-    arr_stops= []
-    for i in range(len(routeq.marshrut)-1):
+    arr_stops = []
+    for i in range(len(routeq.marshrut) - 1):
         arr_stops.append(places[int(routeq.marshrut[i])].name)
-
-
-
-
 
     context = {'route': routeq, 'stops': arr_stops}
     return render(request, 'marsr.html', context)

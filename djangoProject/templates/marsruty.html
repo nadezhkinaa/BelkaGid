@@ -246,7 +246,7 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <svg class="export1"
+                        <svg class="export1" onclick="exportRoute(routes_json[0])"
                              viewBox="0 0 36 36"
                              fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -276,7 +276,7 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <svg class="export2"
+                        <svg class="export2" onclick="exportRoute(routes_json[1])"
                              viewBox="0 0 36 36"
                              fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -306,7 +306,7 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <svg class="export4"
+                        <svg class="export4"  onclick="exportRoute(routes_json[2])"
                              viewBox="0 0 36 36"
                              fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -337,7 +337,7 @@
                                       stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <svg class="export3"
+                        <svg class="export3" onclick="exportRoute(routes_json[3])"
                              viewBox="0 0 36 36"
                              fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -364,6 +364,23 @@
             document.getElementById('hrefedit2').setAttribute('href', '/profile/routes/route_' + routes_json[1].pk);
             document.getElementById('hrefedit3').setAttribute('href', '/profile/routes/route_' + routes_json[2].pk);
             document.getElementById('hrefedit4').setAttribute('href', '/profile/routes/route_' + routes_json[3].pk);
+
+            const places_json = {{ places|safe }};
+
+            function exportRoute(route) {
+                var points = route.fields.marshrut.split("$").map(Number);
+                points.pop();
+                var tempStr = "";
+                for (let icurr = 0; icurr < points.length; icurr++) {
+                    tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                    if (icurr !== points.length - 1) {
+                        tempStr += "~";
+                    }
+                }
+                var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
+                window.open(urlExport);
+            }
+
         </script>
         <div class="footer">
             <div class="logo">
