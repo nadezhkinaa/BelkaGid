@@ -1308,7 +1308,7 @@ body {
     .editmarsr {
         margin-top: 55px;
         width: 700px;
-         height: auto;
+        height: auto;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1328,11 +1328,12 @@ body {
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
-    .exportm{
-    margin-top:25px;
-    margin-left:150px;
-    width:50px;
-     height:50px;
+
+    .exportm {
+        margin-top: 25px;
+        margin-left: 150px;
+        width: 50px;
+        height: 50px;
     }
 
     .marsr {
@@ -1344,35 +1345,38 @@ body {
         width: 602px;
         height: 100px;
         background: #FBFAF8;
-        position:relative;
+        position: relative;
     }
 
     .marsr p {
-        position:absolute;
+        position: absolute;
         font-weight: 200;
         font-size: 24px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        top:25px;
-        left:65px;
-        width:400px;
+        top: 25px;
+        left: 65px;
+        width: 400px;
     }
-    .editm{
-    position:absolute;
-    top:18px;
-    left:525px;
-    width:42px;
-     height:42px;
+
+    .editm {
+        position: absolute;
+        top: 18px;
+        left: 525px;
+        width: 42px;
+        height: 42px;
     }
-    .deletem{
-    position:absolute;
-    top:18px;
-    left:585px;
-    width:35px;
-    height:35px;
+
+    .deletem {
+        position: absolute;
+        top: 18px;
+        left: 585px;
+        width: 35px;
+        height: 35px;
     }
-    .circle3{
-     position: relative;
+
+    .circle3 {
+        position: relative;
         margin-top: 22px;
         margin-left: -5px;
         width: 29px;
@@ -1858,13 +1862,15 @@ body {
         width: 32px;
         height: 32px;
     }
-    .edit4{
+
+    .edit4 {
         position: absolute;
         left: 330px;
         top: 140px;
         width: 32px;
         height: 32px;
     }
+
     .export4 {
         position: absolute;
         left: 370px;
@@ -1988,6 +1994,7 @@ body {
         font-size: 14px;
         margin-bottom: 15px;
     }
+
     .longdescr h1 {
         font-weight: 700;
         font-size: 52px;

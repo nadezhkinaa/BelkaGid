@@ -1328,7 +1328,7 @@ body {
     .editmarsr {
         margin-top: 55px;
         width: 1000px;
-         height: auto;
+        height: auto;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1348,11 +1348,12 @@ body {
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
-    .exportm{
-    margin-top:45px;
-    margin-left:450px;
-    width:50px;
-     height:50px;
+
+    .exportm {
+        margin-top: 45px;
+        margin-left: 450px;
+        width: 50px;
+        height: 50px;
     }
 
     .marsr {
@@ -1364,35 +1365,38 @@ body {
         width: 902px;
         height: 70px;
         background: #FBFAF8;
-        position:relative;
+        position: relative;
     }
 
     .marsr p {
-        position:absolute;
+        position: absolute;
         font-weight: 200;
         font-size: 28px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        top:18px;
-        left:65px;
-        width:2100px;
+        top: 18px;
+        left: 65px;
+        width: 2100px;
     }
-    .editm{
-    position:absolute;
-    top:18px;
-    left:805px;
-    width:42px;
-     height:42px;
+
+    .editm {
+        position: absolute;
+        top: 18px;
+        left: 805px;
+        width: 42px;
+        height: 42px;
     }
-    .deletem{
-    position:absolute;
-    top:18px;
-    left:855px;
-    width:35px;
-    height:35px;
+
+    .deletem {
+        position: absolute;
+        top: 18px;
+        left: 855px;
+        width: 35px;
+        height: 35px;
     }
-    .circle3{
-     position: relative;
+
+    .circle3 {
+        position: relative;
         margin-top: 22px;
         margin-left: -5px;
         width: 29px;
@@ -1874,13 +1878,15 @@ body {
         width: 32px;
         height: 32px;
     }
-    .edit4{
+
+    .edit4 {
         position: absolute;
         left: 570px;
         top: 140px;
         width: 32px;
         height: 32px;
     }
+
     .export4 {
         position: absolute;
         left: 610px;
@@ -1979,6 +1985,7 @@ body {
         flex-direction: row;
 
     }
+
     .longdescr h1 {
         font-weight: 700;
         font-size: 64px;
@@ -2012,10 +2019,10 @@ body {
 
     .back {
         width: 60px;
-        height: 60x;
+        height: 60px;
         position: absolute;
         top: 210px;
-        left:40px;
+        left: 40px;
 
     }
 

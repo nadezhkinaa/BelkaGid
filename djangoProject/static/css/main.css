@@ -1248,11 +1248,12 @@ body {
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
-    .exportm{
-    margin-top:45px;
-    margin-left:580px;
-    width:50px;
-     height:50px;
+
+    .exportm {
+        margin-top: 45px;
+        margin-left: 580px;
+        width: 50px;
+        height: 50px;
     }
 
     .marsr {
@@ -1264,35 +1265,38 @@ body {
         width: 1042px;
         height: 70px;
         background: #FBFAF8;
-        position:relative;
+        position: relative;
     }
 
     .marsr p {
-        position:absolute;
+        position: absolute;
         font-weight: 200;
         font-size: 32px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        top:18px;
-        left:65px;
-        width:2100px;
+        top: 18px;
+        left: 65px;
+        width: 2100px;
     }
-    .editm{
-    position:absolute;
-    top:18px;
-    left:955px;
-    width:42px;
-     height:42px;
+
+    .editm {
+        position: absolute;
+        top: 18px;
+        left: 955px;
+        width: 42px;
+        height: 42px;
     }
-    .deletem{
-    position:absolute;
-    top:18px;
-    left:1005px;
-    width:35px;
-    height:35px;
+
+    .deletem {
+        position: absolute;
+        top: 18px;
+        left: 1005px;
+        width: 35px;
+        height: 35px;
     }
-    .circle3{
-     position: relative;
+
+    .circle3 {
+        position: relative;
         margin-top: 22px;
         margin-left: -5px;
         width: 29px;
@@ -1413,7 +1417,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
-
 
 
     }
@@ -1892,7 +1895,8 @@ body {
         width: 37px;
         height: 37px;
     }
-    .edit4{
+
+    .edit4 {
         position: absolute;
         left: 900px;
         top: 170px;
@@ -1927,7 +1931,8 @@ body {
         height: 36px;
 
     }
-     .export4 {
+
+    .export4 {
         position: absolute;
         left: 960px;
         top: 170px;

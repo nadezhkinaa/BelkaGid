@@ -342,13 +342,11 @@
                     sss = 1500;
                 }
 
-                console.log(window.innerWidth);
                 map.setView(new ol.View({
                     center: map.getView().getCenter(),
                     extent: map.getView().calculateExtent([sss, sss]),
                     zoom: map.getView().getZoom()
                 }));
-                console.log(map.getSize());
                 //map.getView().setMaxZoom(18);
 
                 const viewportElement = document.querySelector('.ol-viewport');
@@ -486,14 +484,12 @@
                     map.getViewport().appendChild(panel);
 
                     button1.addEventListener('click', function () {
-                        console.log("кнопка 1");
                         deleteMarkers();
                         deletePaneL();
                         setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
                     });
 
                     button2.addEventListener('click', function () {
-                        console.log("кнопка 2");
 
                     });
 
@@ -512,13 +508,15 @@
                             temproute += markers[tempmarker].values_.name + "$";
                         }
                         exportMapRoute(temproute);
-                        console.log("кнопка 3");
                     });
                 }
 
                 function deletePaneL() {
                     const panel = document.getElementById('marshpanel');
-                    panel.parentNode.removeChild(panel);
+                    if (panel) {
+                        panel.parentNode.removeChild(panel);
+                    }
+
 
                 }
 
@@ -629,7 +627,7 @@
                             tempStr += "~";
                         }
                     }
-                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=mt";
+                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
                     window.open(urlExport);
                 }
 
@@ -643,7 +641,7 @@
                             tempStr += "~";
                         }
                     }
-                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=mt";
+                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
                     window.open(urlExport);
                 }
 
@@ -702,9 +700,9 @@
                             <div class="marshrblock">
                                 <h1 id="mashr1name"></h1>
                                 <p id="mashr1descr"></p>
-                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button class='buttonizuch' onclick="exploreMarsh(1);">Изучить маршрут</button>
                                 <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[1])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
@@ -713,9 +711,9 @@
                             <div class="marshrblock">
                                 <h1 id="mashr2name"></h1>
                                 <p id="mashr2descr"></p>
-                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button class='buttonizuch' onclick="exploreMarsh(2);">Изучить маршрут</button>
                                 <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[2])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
@@ -724,9 +722,9 @@
                             <div class="marshrblock">
                                 <h1 id="mashr3name"></h1>
                                 <p id="mashr3descr"></p>
-                                <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
+                                <button class='buttonizuch' onclick="exploreMarsh(3);">Изучить маршрут</button>
                                 <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
-                                <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
+                                <button2 class='buttonexport' onclick="exportRoute(routes_json[3])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
 
@@ -742,14 +740,13 @@
 
                     for (const route of routes_json) {
                         document.getElementById("mashr" + ilocal + "name").innerHTML = route.fields.name;
-                        //var placesList = route.fields.marshrut;
-                        //const arr = placesList.split("$").map(Number);
                         document.getElementById("mashr" + ilocal + "descr").innerHTML = route.fields.short_description;
                         ilocal++;
                     }
 
 
                     function exploreMarsh(id) {
+                        deletePaneL()
                         deleteMarkers();
                         addPanel();
                         var ids = routes_json[id].fields.marshrut.split("$").map(Number);
@@ -1379,8 +1376,6 @@
 
                     // Получить выбранное количество человек
                     const selectedCount = document.querySelector('.box3').value;
-
-                    console.log(selectedOptionId, selectedDate, selectedCount);
 
                 }
             </script>
