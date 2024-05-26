@@ -171,7 +171,7 @@ body {
         color: #fff;
         font-family: 'Montserrat Alternates';
         border-radius: 25px;
-        border: 2px solid #fff;
+        border: 5px solid #fff;
         background-color: #cdd1bc;
         padding-left: 20px;
         padding-top: 20px;
@@ -181,6 +181,14 @@ body {
 
         text-decoration: none;
     }
+    .button:hover {
+    border: 5px solid #333D29;
+    color: #333D29;
+   }
+   .button:active {
+    border: 5px solid #2B2920;
+    color: #2B2920;
+   }
 
     .karta {
         display: block;
@@ -801,19 +809,7 @@ body {
         height: 16px;
     }
 
-    .buttonpodr {
-        margin-top: 25px;
-        margin-left: 25px;
-        border: 1px solid #333d29;
-        border-radius: 15px;
-        width: 198px;
-        height: 42px;
-        font-weight: 400;
-        font-size: 16px;
-        color: #333d29;
-        font-family: 'Montserrat Alternates';
-        background-color: #fbfaf8;
-    }
+
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1709,10 +1705,19 @@ body {
         border: 1px solid #333D29;
         background-color: #fff;
         padding-left: 2px;
-
+        cursor: pointer;
         padding-bottom: 3px;
+        margin-top: 15px;
         text-decoration: none;
     }
+    .buttonpodr:hover {
+    border: 1px solid #000000;
+    color: #000000;
+   }
+   .buttonpodr:active {
+    border: 1px solid #000000;
+    color: #000000;
+   }
 
     .buttonmesta {
         position: absolute;

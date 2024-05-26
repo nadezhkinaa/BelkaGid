@@ -177,6 +177,14 @@ body {
         text-decoration: none;
         cursor: pointer;
     }
+    .button:hover {
+    border: 1px solid #333D29;
+    color: #333D29;
+   }
+   .button:active {
+    border: 1px solid #2B2920;
+    color: #2B2920;
+   }
 
     .karta {
         display: block;
@@ -841,6 +849,14 @@ body {
         font-family: 'Montserrat Alternates';
         background-color: #fbfaf8;
     }
+    .buttonpodr:hover {
+    border: 1px solid #000000;
+    color: #000000;
+   }
+   .buttonpodr:active {
+    border: 1px solid #000000;
+    color: #000000;
+   }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
