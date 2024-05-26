@@ -312,7 +312,17 @@ body {
         background-color: #A98467;
         text-align: center;
         text-decoration: none;
+        cursor: pointer;
     }
+    .buttonizuch:hover {
+    border: 2px solid #754C24;
+    color: #754C24;
+   }
+   .buttonizuch:active {
+    border: 2px solid #754C24;
+    color: #754C24;
+    box-shadow: 2px 2px 4px #754C24;
+   }
 
     .buttonlike {
         position: absolute;
@@ -450,6 +460,14 @@ body {
         background-color: #cdd1bc;
         cursor: pointer;
     }
+    .buttonvibor:hover {
+    border: 2px solid #333D29;
+    color: #333D29;
+   }
+   .buttonvibor:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .footer {
         margin-top: 80px;
@@ -644,6 +662,14 @@ body {
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
+    .buttonotpr:hover {
+    border: 2px solid #333D29;
+    color: #333D29;
+   }
+   .buttonotpr:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .strname {
         display: flex;
@@ -819,6 +845,16 @@ body {
    .buttonpodr:active {
     border: 1px solid #000000;
     color: #000000;
+   }
+   .ocenka{
+   position:relative;
+   }
+
+   .love{
+   position:absolute;
+   left:170px;
+   bottom:27px;
+   cursor: pointer;
    }
 
     .cafecard {
@@ -1097,9 +1133,19 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         border-radius: 20px;
-        border: 1px solid #333d29;
+        border: 2px solid #333d29;
         background-color: #F0EEE6;
+        cursor:pointer;
     }
+    .buttoncreate:hover {
+    border: 2px solid #000000;
+    color: #000000;
+    font-weight: 400;
+   }
+   .buttoncreate:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .marsruty {
         position: absolute;
@@ -1383,6 +1429,7 @@ body {
         left: 660px;
         top: 440px;
         padding-left: 15px;
+        cursor: pointer;
     }
 
     .data {
@@ -1729,6 +1776,15 @@ body {
         padding-bottom: 3px;
         text-decoration: none;
     }
+    .buttonmesta:hover {
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: 600;
+   }
+   .buttonmesta:active {
+    border: 1px solid #2B2920;
+    color: #2B2920;
+   }
 
     .tree1 {
         opacity: 0.5;

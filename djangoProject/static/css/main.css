@@ -292,18 +292,36 @@ body {
         background-color: #A98467;
         text-align: center;
         text-decoration: none;
+        cursor: pointer;
     }
+    .buttonizuch:hover {
+    border: 2px solid #754C24;
+    color: #754C24;
+   }
+   .buttonizuch:active {
+    border: 2px solid #754C24;
+    color: #754C24;
+    box-shadow: 2px 2px 4px #754C24;
+   }
 
     .buttonlike {
         position: absolute;
         bottom: 20px;
         left: 20px;
+        cursor: pointer;
     }
+    .buttonlike:active {
+    fill:  #754C24;
+    color: #754C24;
+
+   }
+
 
     .buttonexport {
         position: absolute;
         bottom: 18px;
         left: 80px;
+        cursor: pointer;
     }
 
     .marshblocks {
@@ -430,6 +448,14 @@ body {
         background-color: #cdd1bc;
         cursor: pointer;
     }
+    .buttonvibor:hover {
+    border: 2px solid #333D29;
+    color: #333D29;
+   }
+   .buttonvibor:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .footer {
         margin-top: 80px;
@@ -633,6 +659,14 @@ body {
         border: 2px solid #fff;
         background-color: #cdd1bc;
     }
+    .buttonotpr:hover {
+    border: 2px solid #333D29;
+    color: #333D29;
+   }
+   .buttonotpr:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .strname {
         display: flex;
@@ -1089,10 +1123,20 @@ body {
         font-size: 32px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
-        border: 1px solid #333d29;
+        border-radius: 20px;
+        border: 2px solid #333d29;
         background-color: #F0EEE6;
+        cursor:pointer;
     }
+    .buttoncreate:hover {
+    border: 2px solid #000000;
+    color: #000000;
+    font-weight: 400;
+   }
+   .buttoncreate:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .marsruty {
         position: absolute;
@@ -1376,6 +1420,7 @@ body {
         top: 440px;
         padding-left: 15px;
         padding-right: 15px;
+        cursor: pointer;
 
 
     }
@@ -1718,24 +1763,45 @@ body {
     border: 1px solid #000000;
     color: #000000;
    }
+   .ocenka{
+   position:relative;
+   }
+
+   .love{
+   position:absolute;
+   left:170px;
+   bottom:27px;
+   cursor: pointer;
+   }
+
 
     .buttonmesta {
         position: absolute;
         left: 25px;
         top: 660px;
-        width: 130px;
-        height: 30px;
+        width: 160px;
+        height: 40px;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 20px;
         color: #333D29;
         font-family: 'Montserrat Alternates';
-        border-radius: 10px;
-        border: 1px solid #333D29;
+        border-radius: 15px;
+        border: 2px solid #333D29;
         background-color: #fff;
         padding-left: 2px;
         padding-bottom: 3px;
         text-decoration: none;
+        cursor:pointer;
     }
+    .buttonmesta:hover {
+    border: 2px solid #000000;
+    color: #000000;
+    font-weight: 600;
+   }
+   .buttonmesta:active {
+    border: 2px solid #2B2920;
+    color: #2B2920;
+   }
 
     .tree1 {
         opacity: 0.5;
@@ -1960,6 +2026,7 @@ body {
         top: 10px;
         width: 42px;
         height: 42px;
+        cursor:pointer;
     }
 
     .deletezakaz {
@@ -1968,6 +2035,7 @@ body {
         top: 10px;
         width: 35px;
         height: 35px;
+        cursor:pointer;
     }
 
     wrapper1 {
