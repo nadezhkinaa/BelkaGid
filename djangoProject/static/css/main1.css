@@ -1091,10 +1091,15 @@ body {
         font-weight: 200;
         font-size: 32px;
         color: #333d29;
-        font-family: 'Hero';
+        font-family: 'Montserrat Alternates';
         border-radius: 25px;
         border: 1px solid #333d29;
         background-color: #fbfaf8;
+        cursor:pointer;
+    }
+    .buttonsave:hover{
+    border: 1px solid #000000;
+    color: #000000;
     }
 
     .zakazi {
