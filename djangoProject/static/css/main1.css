@@ -868,6 +868,10 @@ body {
         bottom: 27px;
         cursor: pointer;
     }
+    .love:hover
+    { stroke: #333D29;
+    stroke-width:3px;
+     }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1008,6 +1012,10 @@ body {
         height: 705px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
+    }
+    .smallmenu a:hover{
+    color: #754C24;
+    font-weight: 1200;
     }
 
     .namekab h1 {
@@ -1316,7 +1324,12 @@ body {
         margin-left: 580px;
         width: 50px;
         height: 50px;
+        cursor:pointer;
     }
+    .exportm:hover{
+     fill: #fff;
+    stroke-width:11px;
+     }
 
     .marsr {
         margin-left: 40px;
@@ -1328,6 +1341,7 @@ body {
         height: 70px;
         background: #FBFAF8;
         position: relative;
+         cursor:pointer;
     }
 
     .marsr p {
@@ -1356,6 +1370,22 @@ body {
         width: 35px;
         height: 35px;
     }
+    .deletem:hover{
+    stroke:#333D29;
+    stroke-width:1px;
+     }
+     .plus{
+     margin-left:50px;
+     margin-top:30px;
+     padding-bottom:35px;
+     width:45px;
+     height:45px;
+     cursor:pointer;
+     }
+     .plus:hover{
+      fill:#fff;
+
+     }
 
     .circle3 {
         position: relative;
@@ -1935,6 +1965,14 @@ body {
         width: 29px;
         height: 27px;
     }
+    .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
+    fill: #333D29;
+    x;
+     }
+     .export1:hover,.export2:hover,.export3:hover,.export4:hover
+    { fill: #f0eee6;
+    stroke-width:11px;
+     }
 
     .edit1 {
         position: absolute;

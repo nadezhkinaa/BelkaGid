@@ -921,6 +921,10 @@ body {
         bottom: 27px;
         cursor: pointer;
     }
+    .love:hover
+    { stroke: #333D29;
+    stroke-width:1px;
+     }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1363,12 +1367,12 @@ body {
 
     .editmarsr {
         margin-top: 55px;
-        width: 650px;
+        width: 460px;
         height: auto;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
-        margin-left: 35px;
+        margin-left: 15px;
 
     }
 
@@ -1377,20 +1381,25 @@ body {
     }
 
     .marsrname h1 {
-        padding-top: 30px;
+        padding-top: 40px;
         padding-left: 45px;
         font-weight: 500;
-        font-size: 36px;
+        font-size: 28px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
 
     .exportm {
-        margin-top: 25px;
-        margin-left: 150px;
-        width: 50px;
-        height: 50px;
+        margin-top: 35px;
+        margin-left: 100px;
+        width: 40px;
+        height: 40px;
+        cursor:pointer;
     }
+    .exportm:hover{
+     fill: #fff;
+    stroke-width:11px;
+     }
 
     .marsr {
         margin-left: 10px;
@@ -1398,21 +1407,22 @@ body {
         padding-left: 30px;
 
         border-radius: 25px;
-        width: 602px;
-        height: 100px;
+        width: 402px;
+        height: 70px;
         background: #FBFAF8;
         position: relative;
+         cursor:pointer;
     }
 
     .marsr p {
         position: absolute;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 18px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
         top: 25px;
         left: 65px;
-        width: 400px;
+        width: 300px;
     }
 
     .editm {
@@ -1426,10 +1436,26 @@ body {
     .deletem {
         position: absolute;
         top: 18px;
-        left: 585px;
+        left: 385px;
         width: 35px;
         height: 35px;
     }
+    .deletem:hover{
+    stroke:#333D29;
+    stroke-width:1px;
+     }
+     .plus{
+     margin-left:50px;
+     margin-top:30px;
+     padding-bottom:35px;
+     width:45px;
+     height:45px;
+     cursor:pointer;
+     }
+     .plus:hover{
+      fill:#fff;
+
+     }
 
     .circle3 {
         position: relative;
@@ -1903,6 +1929,14 @@ body {
         width: 20px;
         height: 20px;
     }
+    .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
+    fill: #333D29;
+    x;
+     }
+     .export1:hover,.export2:hover,.export3:hover,.export4:hover
+    { fill: #f0eee6;
+    stroke-width:11px;
+     }
 
     .edit1 {
         position: absolute;
@@ -2011,6 +2045,11 @@ body {
         background-color: #fff;
         transition: 0.5s;
         transform: translateX(40%);
+    }
+    .menu1 a:hover,
+    .menu1 a:focus,
+    .menu1 a:active {
+        text-decoration: underline;
     }
 
     .menu_active {

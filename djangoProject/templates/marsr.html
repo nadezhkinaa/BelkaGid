@@ -37,6 +37,38 @@
                 </div>
             </div>
         </header>
+        <div class="wrapper1">
+            <div class="menu1">
+                <a href="#" class="menu-icon">
+                    <svg width="42" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_312_2)">
+                            <path d="M20 17.5C20.3852 17.5002 20.7556 17.6486 21.0344 17.9144C21.3132 18.1802 21.479 18.5431 21.4975 18.9279C21.516 19.3127 21.3858 19.6898 21.1338 19.9812C20.8818 20.2726 20.5274 20.4558 20.144 20.493L20 20.5H4C3.61478 20.4998 3.24441 20.3514 2.96561 20.0856C2.68682 19.8198 2.52099 19.4569 2.50248 19.0721C2.48396 18.6873 2.61419 18.3102 2.86618 18.0188C3.11816 17.7274 3.47258 17.5442 3.856 17.507L4 17.5H20ZM20 10.5C20.3978 10.5 20.7794 10.658 21.0607 10.9393C21.342 11.2206 21.5 11.6022 21.5 12C21.5 12.3978 21.342 12.7794 21.0607 13.0607C20.7794 13.342 20.3978 13.5 20 13.5H4C3.60218 13.5 3.22064 13.342 2.93934 13.0607C2.65804 12.7794 2.5 12.3978 2.5 12C2.5 11.6022 2.65804 11.2206 2.93934 10.9393C3.22064 10.658 3.60218 10.5 4 10.5H20ZM20 3.5C20.3978 3.5 20.7794 3.65804 21.0607 3.93934C21.342 4.22064 21.5 4.60218 21.5 5C21.5 5.39782 21.342 5.77936 21.0607 6.06066C20.7794 6.34196 20.3978 6.5 20 6.5H4C3.60218 6.5 3.22064 6.34196 2.93934 6.06066C2.65804 5.77936 2.5 5.39782 2.5 5C2.5 4.60218 2.65804 4.22064 2.93934 3.93934C3.22064 3.65804 3.60218 3.5 4 3.5H20Z"
+                                  fill="#333D29"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_312_2">
+                                <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <nav class="menu-list">
+                    <a href="../about">О нас</a>
+                    <a href="../places">Места</a>
+                    <a href="../cafe">Кафе и рестораны</a>
+                    <a href="../shop">Магазин</a>
+                    <a href="../profile">Личный кабинет</a>
+                </nav>
+            </div>
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+            <script>$('.menu-icon').on('click', function (e) {
+                e.preventDefault();
+                $('.menu1').toggleClass('menu_active');
+                $('section').toggleClass('section_active');
+            })
+            </script>
+        </div>
 
         <div class="namekab">
             <h1>Личный кабинет</h1>
@@ -45,7 +77,7 @@
         <div class="editmarsr">
             <div class="marsrname">
                 <a href="../../../profile/routes" style="display: block; position: relative;">
-                    <svg style="margin-top:45px;margin-left:45px;" width="43" height="36" viewBox="0 0 43 36"
+                    <svg style="margin-top:45px;margin-left:35px;" width="38" height="32" viewBox="0 0 43 36"
                          fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 18H41M2 18L18.25 2M2 18L18.25 34" stroke="#333D29" stroke-width="3"
                               stroke-linecap="round" stroke-linejoin="round"/>
@@ -178,8 +210,7 @@
             </script>
 
 
-            <svg onclick="addPlace()" style="margin-left:50px; margin-top:30px; padding-bottom:35px;" width=" 45
-            " height="45" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="plus"  viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.875 17.5H17.5M17.5 17.5H13.125M17.5 17.5V13.125M17.5 17.5V21.875M24.7917 30.625H10.2083C6.98667 30.625 4.375 28.0133 4.375 24.7917V10.2083C4.375 6.98667 6.98667 4.375 10.2083 4.375H24.7917C28.0133 4.375 30.625 6.98667 30.625 10.2083V24.7917C30.625 28.0133 28.0133 30.625 24.7917 30.625Z"
                       stroke="#333D29" stroke-width="2" stroke-linecap="round"/>
             </svg>
