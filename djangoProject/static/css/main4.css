@@ -667,6 +667,7 @@ body {
         border-radius: 15px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
+         cursor:pointer;
     }
 
     .buttonotpr:hover {
@@ -2108,42 +2109,46 @@ body {
         margin-bottom: 15px;
     }
 
+    .longdescr{
+    display:flex;
+    align-items: center;
+
+  flex-direction: column;
+
+    }
     .longdescr h1 {
         font-weight: 700;
-        font-size: 42px;
+        font-size: 24px;
         color: #2B2920;
         font-family: 'Montserrat Alternates';
-        position: absolute;
-        top: 100px;
-        left: 100px;
-        width: 400px;
+        text-align:start;
+        width: 50%;
+        padding-top:100px;
+        position:relative;
     }
 
     .longdescr p {
         font-weight: 400;
-        font-size: 24px;
+        font-size: 16px;
         color: #414833;
         font-family: 'Lab Grotesque';
-        position: absolute;
-        top: 500px;
-        left: 100px;
-        width: 400px;
+        text-align:start;
+        padding-top:30px;
+        width: 50%;
+
     }
 
     .img1 {
-        position: absolute;
-        top: 280px;
-        left: 100px;
-        width: 400px;
-        height: 200px;
+       margin-top:20px;
+        width: 50%;
+        height: 20%;
         border-radius: 15px;
     }
-
     .back {
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 110px;
+        top: 150px;
         left: 30px;
 
     }
