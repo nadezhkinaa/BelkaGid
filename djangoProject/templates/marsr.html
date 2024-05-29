@@ -53,7 +53,7 @@
                     </svg>
                 </a>
                 <h1>{{ route.name }}</h1>
-                <svg class="exportm" viewBox="0 0 36 36" fill="none"
+                <svg class="exportm" onclick="saveDisplayChanges()" viewBox="0 0 36 36" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
                           stroke-linejoin="round"/>
@@ -91,6 +91,7 @@
                 {% endfor %}
             </div>
             <script>
+                const places_json = {{ places|safe }};
                 $('.allmarsrs').sortable();
 
                 function deleteItem(element) {
@@ -98,6 +99,44 @@
                     currentItem.remove(); // Удаляем текущий элемент marsh из DOM
                 }
 
+                function saveDisplayChanges() {
+                    var stopsInOrder = [];
+                    $('.allmarsrs .marsr').each(function () {
+                        var stopName = $(this).find('p').text();
+                        stopsInOrder.push(getFromDbByName(stopName));
+                    });
+                    console.log(stopsInOrder); // Выводим имена элементов в порядке, в котором они находятся в .allmarsrs
+
+                    var temproute = "";
+                    for (let tempstop = 0; tempstop < stopsInOrder.length; tempstop++) {
+                        temproute += stopsInOrder[tempstop].map_id + "$";
+                    }
+                    exportMapRoute(temproute);
+                }
+
+                function getFromDbByName(name) {
+                    for (const place of places_json) {
+                        if (place.fields.name === name) {
+                            return place.fields;
+                        }
+                    }
+                    return null;
+
+                }
+
+                function exportMapRoute(route) {
+                    var points = route.split("$").map(Number);
+                    points.pop();
+                    var tempStr = "";
+                    for (let icurr = 0; icurr < points.length; icurr++) {
+                        tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                        if (icurr !== points.length - 1) {
+                            tempStr += "~";
+                        }
+                    }
+                    var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
+                    window.open(urlExport);
+                }
             </script>
 
 
