@@ -984,6 +984,10 @@ body {
         bottom: 27px;
         cursor: pointer;
     }
+    .love:hover
+    { stroke: #333D29;
+    stroke-width:2px;
+     }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1140,6 +1144,10 @@ body {
         height: 705px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
+    }
+    .smallmenu a:hover{
+    color: #754C24;
+    font-weight: 1200;
     }
 
     .namekab h1 {
@@ -1948,7 +1956,15 @@ body {
         width: 29px;
         height: 27px;
     }
+    .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
+    fill: #333D29;
+    x;
+     }
 
+.export1:hover,.export2:hover,.export3:hover,.export4:hover
+    { fill: #f0eee6;
+    stroke-width:11px;
+     }
     .edit1 {
         position: absolute;
         left: 570px;

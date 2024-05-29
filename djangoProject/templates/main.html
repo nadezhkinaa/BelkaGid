@@ -465,6 +465,15 @@
                     button2.style.backgroundImage = 'url({% static 'img/like_button.svg' %})';
                     button2.style.backgroundSize = 'contain';
                     button2.style.border = 'none';
+                    button2.addEventListener('mouseenter', function() {
+    button2.style.border = '2px solid blue';
+});
+
+// Удаление стилей при уходе курсора
+button2.addEventListener('mouseleave', function() {
+    button2.style.backgroundColor = ''; // Возвращаем стиль по умолчанию
+    button2.style.color = ''; // Возвращаем стиль по умолчанию
+});
 
                     const button3 = document.createElement('button');
                     button3.style.marginTop = '30px'

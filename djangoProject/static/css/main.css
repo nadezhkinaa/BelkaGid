@@ -1018,6 +1018,10 @@ body {
         text-decoration: none;
         font-family: 'Montserrat Alternates';
     }
+    .smallmenu a:hover{
+    color: #754C24;
+    font-weight: 1200;
+    }
 
     .lichndann {
         position: absolute;
@@ -1787,6 +1791,10 @@ body {
         bottom: 27px;
         cursor: pointer;
     }
+    .love:hover
+    { stroke: #333D29;
+    stroke-width:3px;
+     }
 
 
     .buttonmesta {
@@ -1958,6 +1966,10 @@ body {
         width: 29px;
         height: 27px;
     }
+    .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
+    fill: #333D29;
+
+     }
 
     .edit1 {
         position: absolute;
@@ -1965,6 +1977,7 @@ body {
         top: 20px;
         width: 37px;
         height: 37px;
+        cursor:pointer;
     }
 
     .edit2 {
@@ -1973,6 +1986,7 @@ body {
         top: 70px;
         width: 37px;
         height: 37px;
+        cursor:pointer;
     }
 
     .edit3 {
@@ -1981,6 +1995,7 @@ body {
         top: 120px;
         width: 37px;
         height: 37px;
+        cursor:pointer;
     }
 
     .edit4 {
@@ -1990,6 +2005,10 @@ body {
         width: 37px;
         height: 37px;
     }
+    .export1:hover,.export2:hover,.export3:hover,.export4:hover
+    { fill: #f0eee6;
+    stroke-width:11px;
+     }
 
 
     .export1 {
@@ -1998,7 +2017,7 @@ body {
         top: 20px;
         width: 36px;
         height: 36px;
-
+        cursor:pointer;
     }
 
     .export2 {
@@ -2007,6 +2026,7 @@ body {
         top: 70px;
         width: 36px;
         height: 36px;
+         cursor:pointer;
 
     }
 
@@ -2016,6 +2036,7 @@ body {
         top: 120px;
         width: 36px;
         height: 36px;
+         cursor:pointer;
 
     }
 
@@ -2025,6 +2046,7 @@ body {
         top: 170px;
         width: 36px;
         height: 36px;
+         cursor:pointer;
 
     }
 
