@@ -369,8 +369,6 @@
                     var markers = features;
                     map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
                         var marker_fields = getFromDb(feature.values_.name);
-
-
                         popupFunc(evt, marker_fields.name, marker_fields.short_description, "places/" + marker_fields.name, marker_fields.map_id);
                     });
                 });
@@ -396,9 +394,6 @@
                     })
                     if (feature) {
                         const content = feature.getGeometry().getCoordinates();
-                        /*if (content[1] > 200) {
-                            установить popup перевернутый стиль
-                        }*/
                         popup.setPosition(content);
                         map.addOverlay(popup);
 
