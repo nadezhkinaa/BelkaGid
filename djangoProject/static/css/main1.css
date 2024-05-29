@@ -1324,7 +1324,12 @@ body {
         margin-left: 580px;
         width: 50px;
         height: 50px;
+        cursor:pointer;
     }
+    .exportm:hover{
+     fill: #fff;
+    stroke-width:11px;
+     }
 
     .marsr {
         margin-left: 40px;
@@ -1336,6 +1341,7 @@ body {
         height: 70px;
         background: #FBFAF8;
         position: relative;
+         cursor:pointer;
     }
 
     .marsr p {
@@ -1364,6 +1370,22 @@ body {
         width: 35px;
         height: 35px;
     }
+    .deletem:hover{
+    stroke:#333D29;
+    stroke-width:1px;
+     }
+     .plus{
+     margin-left:50px;
+     margin-top:30px;
+     padding-bottom:35px;
+     width:45px;
+     height:45px;
+     cursor:pointer;
+     }
+     .plus:hover{
+      fill:#fff;
+
+     }
 
     .circle3 {
         position: relative;
