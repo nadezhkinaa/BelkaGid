@@ -1052,7 +1052,7 @@ body {
         position: relative;
         padding-left: 80px;
         margin: 60px;
-        font-weight: 200;
+        font-weight: 600;
         font-size: 32px;
         color: #333d29;
         font-family: 'Hero';
@@ -1076,10 +1076,15 @@ body {
         font-weight: 200;
         font-size: 32px;
         color: #333d29;
-        font-family: 'Hero';
+        font-family: 'Montserrat Alternates';
         border-radius: 25px;
-        border: 1px solid #333d29;
+        border: 2px solid #333d29;
         background-color: #fbfaf8;
+        cursor:pointer;
+    }
+    .buttonsave:hover{
+    border: 2px solid #000000;
+    color: #000000;
     }
 
     .zakazi {
@@ -1992,6 +1997,10 @@ body {
     fill: #333D29;
 
      }
+     .editzakaz:hover{
+    fill: #333D29;
+
+     }
 
     .edit1 {
         position: absolute;
@@ -2097,6 +2106,10 @@ body {
         height: 35px;
         cursor: pointer;
     }
+    .deletezakaz:hover{
+    stroke:#333D29;
+    stroke-width:1px;
+     }
 
     wrapper1 {
         display: none;
