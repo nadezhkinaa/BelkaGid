@@ -35,7 +35,7 @@
                     <div class="logotype">
                         <div class="nazvanie"><a href="/">БелкаГид</a></div>
                         <a href="/"><img class="imgbelka" src="{% static 'img/белка.png' %}" alt="" width="55"
-                             height="55"></a>
+                                         height="55"></a>
                     </div>
 
                     <div class="menu">
@@ -347,7 +347,7 @@
                     extent: map.getView().calculateExtent([sss, sss]),
                     zoom: map.getView().getZoom()
                 }));
-                //map.getView().setMaxZoom(18);
+                map.getView().setMaxZoom(18);
 
                 const viewportElement = document.querySelector('.ol-viewport');
                 viewportElement.style.overflow = 'visible';
@@ -1406,7 +1406,7 @@
             <div class="logotype">
                 <div class="nazvanie"><a href="/">БелкаГид</a></div>
                 <a href="/"><img class="imgbelka" src="{% static 'img/белка.png' %}" alt="" width="55"
-                             height="55"></a>
+                                 height="55"></a>
             </div>
 
             <div class="footermenu">
