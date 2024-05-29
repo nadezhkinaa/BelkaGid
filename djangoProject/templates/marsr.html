@@ -137,10 +137,48 @@
                     var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
                     window.open(urlExport);
                 }
+
+                function addPlace() {
+                    // Создаем overlay
+                    var overlay = document.createElement("div");
+                    overlay.className = "overlay_places";
+
+
+                    // Создаем список для отображения всех мест из places_json
+                    var placesList = document.createElement("ul");
+
+                    // Заполняем список местами из places_json
+                    for (var i = 0; i < places_json.length; i++) {
+                        var place = places_json[i];
+                        var listItem = document.createElement("li");
+                        listItem.textContent = place.fields.name;
+
+                        // Добавляем обработчик события при клике на место
+                        listItem.addEventListener("click", function () {
+                            console.log(this.textContent); // Выводим имя места в консоль
+                            overlay.remove(); // Удаляем overlay после выбора места
+                        });
+
+                        placesList.appendChild(listItem);
+                    }
+
+                    // Сортировка списка мест по алфавиту
+                    var sortedPlaces = Array.from(placesList.children).sort((a, b) => a.textContent.localeCompare(b.textContent));
+                    placesList.innerHTML = ""; // Очищаем текущий список
+
+                    // Добавляем отсортированные элементы обратно в список
+                    sortedPlaces.forEach(function (item) {
+                        placesList.appendChild(item);
+                    });
+
+                    overlay.appendChild(placesList);
+                    // Добавляем overlay на страницу
+                    document.body.appendChild(overlay);
+                }
             </script>
 
 
-            <svg style="margin-left:50px; margin-top:30px; padding-bottom:35px;" width=" 45
+            <svg onclick="addPlace()" style="margin-left:50px; margin-top:30px; padding-bottom:35px;" width=" 45
             " height="45" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.875 17.5H17.5M17.5 17.5H13.125M17.5 17.5V13.125M17.5 17.5V21.875M24.7917 30.625H10.2083C6.98667 30.625 4.375 28.0133 4.375 24.7917V10.2083C4.375 6.98667 6.98667 4.375 10.2083 4.375H24.7917C28.0133 4.375 30.625 6.98667 30.625 10.2083V24.7917C30.625 28.0133 28.0133 30.625 24.7917 30.625Z"
                       stroke="#333D29" stroke-width="2" stroke-linecap="round"/>
