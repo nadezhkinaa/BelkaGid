@@ -977,6 +977,32 @@ body {
         font-size: 18px;
         margin-top: 15px;
         transition-delay: 0.2s;
+        cursor:pointer;
+    }
+    .buttonvhod1 {
+        appearance: none;
+        border-radius: 15px;
+        width: 258px;
+        height: 40px;
+        border: 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: #cdd1bc;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+        font-size: 18px;
+        margin-top: 15px;
+        transition-delay: 0.2s;
+        cursor:pointer;
+    }
+    .buttonvhod:hover{
+    background: #A98467;
+
+    }
+    .buttonvhod1:hover{
+    background: #A98467;
+
     }
 
     .text-field {
@@ -1513,6 +1539,14 @@ body {
         display: block;
 
     }
+    .button1, .button2, .button3{
+    cursor:pointer;
+    }
+    .buttonlike1:hover {
+        stroke: #333D29;
+    stroke-width:10px;
+
+    }
 
     .vhod h2 {
 
@@ -1521,7 +1555,7 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         margin-bottom: 20px;
-        margin-top: -150px;
+        margin-top: -50px;
     }
 
     .email_reg__input, .username_reg__input, .password1_reg__input, .password2_reg__input {
@@ -1572,6 +1606,11 @@ body {
         color: #333d29;
         margin-top: 15px;
         transition-delay: 0.2s;
+        cursor:pointer;
+    }
+    .buttonregistr:hover{
+    background: #A98467;
+
     }
 
     @media screen and (min-width: 1441px) and (max-width: 1891px) {
