@@ -151,7 +151,7 @@ body {
     }
 
     .block1 h3 {
-        font-weight: 400;
+        font-weight: 800;
         font-size: 40px;
         font-family: 'Hero';
         color: #FFF;
@@ -159,6 +159,7 @@ body {
         top: 400px;
         left: 100px;
     }
+
 
     .button {
         position: absolute;
@@ -1761,6 +1762,7 @@ body {
         bottom: 10px;
         left: -50px;
 
+
     }
 
     .ol-popup:after,
@@ -1772,6 +1774,7 @@ body {
         width: 0;
         position: absolute;
         pointer-events: none;
+        cursor:pointer;
     }
 
     .ol-popup:after {
@@ -1779,7 +1782,7 @@ body {
         border-width: 10px;
         left: 48px;
         margin-left: -10px;
-
+        cursor:pointer;
     }
 
     .ol-popup:before {
@@ -1787,6 +1790,7 @@ body {
         border-width: 11px;
         left: 48px;
         margin-left: -11px;
+        cursor:pointer;
 
     }
 
@@ -1800,13 +1804,16 @@ body {
 
     .ol-popup-closer:after {
         content: '✖';
+        cursor:pointer;
     }
+
 
     #popup-content {
         font-size: 14px;
         font-family: 'Montserrat Alternates';
         width: 205px;
         margin-bottom: 15px;
+
 
     }
 
@@ -1817,6 +1824,9 @@ body {
     #popup-content h1 {
         font-size: 14px;
         margin-bottom: 15px;
+    }
+    .marker:hover{
+    cursor:pointer;
     }
 
 

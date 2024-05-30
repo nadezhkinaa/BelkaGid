@@ -311,6 +311,7 @@
                     })
                 });
 
+
                 map.on('click', function (evt) {
 
                     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
@@ -353,7 +354,16 @@
                 viewportElement.style.overflow = 'visible';
 
                 // Добавим три маркера по координатам на карту
-
+                map.on("pointermove", function (evt) {
+    var hit = this.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
+        return true;
+    });
+    if (hit) {
+        this.getTargetElement().style.cursor = 'pointer';
+    } else {
+        this.getTargetElement().style.cursor = '';
+    }
+});
 
                 // Создадим массив координат
                 setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
@@ -552,6 +562,7 @@
                         image: new ol.style.Icon({
                             src: '{% static 'img/marker1.png' %}', // путь к изображению маркера
                             scale: 0.2// масштаб маркера
+
                         })
                     });
 
