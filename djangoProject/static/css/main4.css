@@ -1280,10 +1280,11 @@ body {
         left: 100px;
         top: 186px;
         width: 360px;
-        height: 700px;
+
         border: 4px solid #fff;
         border-radius: 15px;
         background: #F0EEE6;
+        height:content;
     }
 
     .marsruty h1 {
@@ -1302,15 +1303,17 @@ body {
         padding-top: 10px;
         border-radius: 25px;
         width: 329px;
-        height: 155px;
+
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-        fit: content;
-        padding-bottom: 25px;
+        height:content;
+        padding-bottom:35px;
+        margin-bottom:35px;
     }
 
     .namemarshr {
         display: flex;
+        position: relative;
     }
 
     .namemarshr p,
