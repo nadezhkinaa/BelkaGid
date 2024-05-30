@@ -12,8 +12,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
 from .models import Shop, Place, Cafe, UserFavourites, Route
 
-bot_token = '7116656112:AAEc9ejijA5DkLjmCrtLGrQ8F6Cg48_fabI'
-chat_id = '888671286'
+bot_token = ''
+chat_id = ''
 
 
 async def sendToBot(message, bot_id, chat_id):
