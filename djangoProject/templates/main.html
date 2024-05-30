@@ -355,15 +355,15 @@
 
                 // Добавим три маркера по координатам на карту
                 map.on("pointermove", function (evt) {
-    var hit = this.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
-        return true;
-    });
-    if (hit) {
-        this.getTargetElement().style.cursor = 'pointer';
-    } else {
-        this.getTargetElement().style.cursor = '';
-    }
-});
+                    var hit = this.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                        return true;
+                    });
+                    if (hit) {
+                        this.getTargetElement().style.cursor = 'pointer';
+                    } else {
+                        this.getTargetElement().style.cursor = '';
+                    }
+                });
 
                 // Создадим массив координат
                 setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
@@ -657,6 +657,26 @@
                     window.open(urlExport);
                 }
 
+                function saveMarsh(popular_route) {
+
+
+                    $.ajax({
+                        url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
+                        type: "POST",
+                        data: {
+                            "name": popular_route.fields.name,
+                            short_description: popular_route.fields.short_description,
+                            "route": popular_route.fields.marshrut
+                        },  // Передача аргумента в виде объекта JSON
+                        success: function (data) {
+                            alert("Четко");
+                        },
+                        error: function (error) {
+                            // Обработать ошибки
+                        }
+                    });
+                }
+
             </script>
         </div>
         <div class="block2">
@@ -702,7 +722,9 @@
                                 <h1 id="mashr0name"></h1>
                                 <p id="mashr0descr"></p>
                                 <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img class="buttonlike1" src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button1 onclick="saveMarsh(routes_json[0])" class='buttonlike'><img class="buttonlike1"
+                                                                                                     src="{% static 'img/like.svg' %}"
+                                                                                                     alt=""></button1>
                                 <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
@@ -713,7 +735,8 @@
                                 <h1 id="mashr1name"></h1>
                                 <p id="mashr1descr"></p>
                                 <button class='buttonizuch' onclick="exploreMarsh(1);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button1 onclick="saveMarsh(routes_json[1])" class='buttonlike'><img
+                                        src="{% static 'img/like.svg' %}" alt=""></button1>
                                 <button2 class='buttonexport' onclick="exportRoute(routes_json[1])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
@@ -724,7 +747,8 @@
                                 <h1 id="mashr2name"></h1>
                                 <p id="mashr2descr"></p>
                                 <button class='buttonizuch' onclick="exploreMarsh(2);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button1 onclick="saveMarsh(routes_json[2])" class='buttonlike'><img
+                                        src="{% static 'img/like.svg' %}" alt=""></button1>
                                 <button2 class='buttonexport' onclick="exportRoute(routes_json[2])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
@@ -735,7 +759,8 @@
                                 <h1 id="mashr3name"></h1>
                                 <p id="mashr3descr"></p>
                                 <button class='buttonizuch' onclick="exploreMarsh(3);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button1 onclick="saveMarsh(routes_json[3])" class='buttonlike'><img
+                                        src="{% static 'img/like.svg' %}" alt=""></button1>
                                 <button2 class='buttonexport' onclick="exportRoute(routes_json[3])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>

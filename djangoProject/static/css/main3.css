@@ -693,7 +693,7 @@ body {
         border-radius: 20px;
         border: 2px solid #fff;
         background-color: #cdd1bc;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .buttonotpr:hover {
@@ -947,10 +947,11 @@ body {
         bottom: 27px;
         cursor: pointer;
     }
-    .love:hover
-    { stroke: #333D29;
-    stroke-width:1px;
-     }
+
+    .love:hover {
+        stroke: #333D29;
+        stroke-width: 1px;
+    }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1072,8 +1073,9 @@ body {
         font-size: 18px;
         margin-top: 15px;
         transition-delay: 0.2s;
-         cursor:pointer;
+        cursor: pointer;
     }
+
     .buttonvhod1 {
         appearance: none;
         border-radius: 15px;
@@ -1089,14 +1091,16 @@ body {
         font-size: 18px;
         margin-top: 15px;
         transition-delay: 0.2s;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .buttonvhod:hover{
-    background: #A98467;
+
+    .buttonvhod:hover {
+        background: #A98467;
 
     }
-    .buttonvhod1:hover{
-    background: #A98467;
+
+    .buttonvhod1:hover {
+        background: #A98467;
 
     }
 
@@ -1135,9 +1139,10 @@ body {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #fbfaf8;
     }
-    .smallmenu a:hover{
-    color: #754C24;
-    font-weight: 1200;
+
+    .smallmenu a:hover {
+        color: #754C24;
+        font-weight: 1200;
     }
 
     .smallmenu1 {
@@ -1233,11 +1238,12 @@ body {
         border-radius: 15px;
         border: 1px solid #333d29;
         background-color: #fbfaf8;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .buttonsave:hover{
-    border: 1px solid #000000;
-    color: #000000;
+
+    .buttonsave:hover {
+        border: 1px solid #000000;
+        color: #000000;
     }
 
     .zakazi {
@@ -1340,8 +1346,8 @@ body {
         height: 185px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-        fit:content;
-        padding-bottom:25px;
+        fit: content;
+        padding-bottom: 25px;
     }
 
     .namemarshr {
@@ -1460,12 +1466,14 @@ body {
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
-    .button1, .button2, .button3{
-    cursor:pointer;
+
+    .button1, .button2, .button3 {
+        cursor: pointer;
     }
+
     .buttonlike1:hover {
         stroke: #333D29;
-    stroke-width:10px;
+        stroke-width: 10px;
 
     }
 
@@ -1474,12 +1482,13 @@ body {
         margin-left: 150px;
         width: 50px;
         height: 50px;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .exportm:hover{
-     fill: #fff;
-    stroke-width:11px;
-     }
+
+    .exportm:hover {
+        fill: #fff;
+        stroke-width: 11px;
+    }
 
     .marsr {
         margin-left: 40px;
@@ -1491,7 +1500,7 @@ body {
         height: 100px;
         background: #FBFAF8;
         position: relative;
-         cursor:pointer;
+        cursor: pointer;
     }
 
     .marsr p {
@@ -1520,22 +1529,25 @@ body {
         width: 35px;
         height: 35px;
     }
-    .deletem:hover{
-    stroke:#333D29;
-    stroke-width:1px;
-     }
-     .plus{
-     margin-left:50px;
-     margin-top:30px;
-     padding-bottom:35px;
-     width:45px;
-     height:45px;
-     cursor:pointer;
-     }
-     .plus:hover{
-      fill:#fff;
 
-     }
+    .deletem:hover {
+        stroke: #333D29;
+        stroke-width: 1px;
+    }
+
+    .plus {
+        margin-left: 50px;
+        margin-top: 30px;
+        padding-bottom: 35px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .plus:hover {
+        fill: #fff;
+
+    }
 
     .circle3 {
         position: relative;
@@ -1710,10 +1722,12 @@ body {
 
 
     }
-    .add{
-    display:flex;
-    flex-direction: row;
+
+    .add {
+        display: flex;
+        flex-direction: row;
     }
+
     .buttonadd {
         margin-top: 50px;
         margin-left: 25px;
@@ -1726,15 +1740,16 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         background-color: #f0eee6;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .buttonadd:hover {
         border: 2px solid #000000;
         color: #000000;
     }
-    .buttonsavem{
-    margin-top: 50px;
+
+    .buttonsavem {
+        margin-top: 50px;
         margin-left: 20px;
         border: 1px solid #333d29;
         border-radius: 15px;
@@ -1745,8 +1760,9 @@ body {
         color: #333d29;
         font-family: 'Montserrat Alternates';
         background-color: #f0eee6;
-        cursor:pointer;
+        cursor: pointer;
     }
+
     .buttonsavem:hover {
         border: 2px solid #000000;
         color: #000000;
@@ -1764,8 +1780,8 @@ body {
         flex: 0.5;
         margin-top: 50px;
         margin-left: 40px;
-        margin-bottom:30px;
-        cursor:pointer;
+        margin-bottom: 30px;
+        cursor: pointer;
     }
 
     .buttonregistr {
@@ -1782,10 +1798,11 @@ body {
         color: #333d29;
         margin-top: 15px;
         transition-delay: 0.2s;
-         cursor:pointer;
+        cursor: pointer;
     }
-    .buttonregistr:hover{
-    background: #A98467;
+
+    .buttonregistr:hover {
+        background: #A98467;
 
     }
 
@@ -2063,14 +2080,15 @@ body {
         width: 29px;
         height: 27px;
     }
-    .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
-    fill: #333D29;
-    x;
-     }
-     .export1:hover,.export2:hover,.export3:hover,.export4:hover
-    { fill: #f0eee6;
-    stroke-width:11px;
-     }
+
+    .edit1:hover, .edit2:hover, .edit3:hover, .edit4:hover {
+        fill: #333D29;
+    }
+
+    .export1:hover, .export2:hover, .export3:hover, .export4:hover {
+        fill: #f0eee6;
+        stroke-width: 11px;
+    }
 
     .edit1 {
         position: absolute;
@@ -2228,22 +2246,23 @@ body {
         margin-bottom: 15px;
     }
 
-    .longdescr{
-    display:flex;
-    align-items: center;
+    .longdescr {
+        display: flex;
+        align-items: center;
 
-  flex-direction: column;
+        flex-direction: column;
 
     }
+
     .longdescr h1 {
         font-weight: 700;
         font-size: 32px;
         color: #2B2920;
         font-family: 'Montserrat Alternates';
-        text-align:start;
+        text-align: start;
         width: 600px;
-        padding-top:100px;
-        position:relative;
+        padding-top: 100px;
+        position: relative;
     }
 
     .longdescr p {
@@ -2251,18 +2270,19 @@ body {
         font-size: 18px;
         color: #414833;
         font-family: 'Lab Grotesque';
-        text-align:start;
-        padding-top:50px;
+        text-align: start;
+        padding-top: 50px;
         width: 600px;
 
     }
 
     .img1 {
-       margin-top:20px;
+        margin-top: 20px;
         width: 600px;
         height: 300px;
         border-radius: 15px;
     }
+
     .back {
         width: 30px;
         height: 30px;

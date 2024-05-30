@@ -45,7 +45,7 @@ def index_page(request):
     places = serializers.serialize("json", Place.objects.all())
     cafes = serializers.serialize("json", Cafe.objects.all())
     shops = serializers.serialize("json", Shop.objects.all())
-    routes = serializers.serialize("json", Route.objects.all())
+    routes = serializers.serialize("json", routes)
 
     context = {
         'places': places,
