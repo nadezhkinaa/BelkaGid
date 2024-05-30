@@ -154,6 +154,7 @@ def profile_routes_page(request):
     context = {
         'routes': routes,
         'places': places,
+        'personalRoutes': Route.objects.filter(creator=request.user.id)
     }
     return render(request, 'marsruty.html', context)
 
@@ -180,6 +181,24 @@ def add_favourite(request):
         argument = request.POST.get('place-id')  # Получение аргумента из запроса
         favourite, created = UserFavourites.objects.get_or_create(user_id=request.user.id)
         favourite.addId(argument)
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
+
+
+@csrf_exempt
+@login_required
+def saveRoute(request):
+    if request.method == "POST":
+        Route.objects.create(
+            name=request.POST.get("name"),
+            short_description=request.POST.get("short_description"),
+            rating=0.0,
+            votes=0,
+            creator=request.user.id,
+            marshrut=request.POST.get('route'),  # Получение аргумента из запроса
+        )
+
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})
@@ -219,5 +238,6 @@ def route_detail(request, route_id):
     for i in range(len(routeq.marshrut) - 1):
         arr_stops.append(places[int(routeq.marshrut[i])].name)
 
-    context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all()), "placesNonSerialized": Place.objects.all()}
+    context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all()),
+               "placesNonSerialized": Place.objects.all()}
     return render(request, 'marsr.html', context)
