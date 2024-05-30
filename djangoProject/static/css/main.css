@@ -1230,6 +1230,7 @@ body {
 
     .namemarshr {
         display: flex;
+        position:relative;
     }
 
     .namemarshr p,
@@ -2114,7 +2115,7 @@ body {
     .edit1 {
         position: absolute;
         left: 900px;
-        top: 20px;
+        top: 10px;
         width: 37px;
         height: 37px;
         cursor:pointer;
@@ -2154,7 +2155,7 @@ body {
     .export1 {
         position: absolute;
         left: 960px;
-        top: 20px;
+        top: 10px;
         width: 36px;
         height: 36px;
         cursor:pointer;

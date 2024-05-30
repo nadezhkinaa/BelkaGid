@@ -24,6 +24,7 @@ body {
 }
 
 .footer {
+
     flex: 0 0 auto;
 }
 
@@ -1262,10 +1263,12 @@ body {
         left: 500px;
         top: 252px;
         width: 890px;
-        height: 750px;
+
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
+        height:content;
+
     }
 
     .marsruty h1 {
@@ -1284,15 +1287,18 @@ body {
         padding-top: 10px;
         border-radius: 25px;
         width: 749px;
-        height: 235px;
+
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-        fit:content;
+        height:content;
         padding-bottom:25px;
+        margin-bottom:15px;
+
     }
 
     .namemarshr {
         display: flex;
+        position: relative;
     }
 
     .namemarshr p,
@@ -2069,7 +2075,7 @@ body {
     }
     .edit1:hover,.edit2:hover,.edit3:hover,.edit4:hover{
     fill: #333D29;
-    x;
+
      }
      .export1:hover,.export2:hover,.export3:hover,.export4:hover
     { fill: #f0eee6;
@@ -2079,7 +2085,7 @@ body {
     .edit1 {
         position: absolute;
         left: 640px;
-        top: 20px;
+        top: 10px;
         width: 37px;
         height: 37px;
     }
@@ -2120,7 +2126,7 @@ body {
     .export1 {
         position: absolute;
         left: 700px;
-        top: 20px;
+        top: 10px;
         width: 36px;
         height: 36px;
 

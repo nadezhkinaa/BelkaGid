@@ -1336,7 +1336,7 @@ body {
         left: 350px;
         top: 232px;
         width: 720px;
-        height: 700px;
+        height:content;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1358,15 +1358,16 @@ body {
         padding-top: 10px;
         border-radius: 25px;
         width: 649px;
-        height: 205px;
+        height: content;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-        fit:content;
+        margin-bottom:25px;
         padding-bottom:25px;
     }
 
     .namemarshr {
         display: flex;
+        position: relative;
     }
 
     .namemarshr p,
