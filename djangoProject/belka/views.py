@@ -219,5 +219,5 @@ def route_detail(request, route_id):
     for i in range(len(routeq.marshrut) - 1):
         arr_stops.append(places[int(routeq.marshrut[i])].name)
 
-    context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all())}
+    context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all()), "placesNonSerialized": Place.objects.all()}
     return render(request, 'marsr.html', context)
