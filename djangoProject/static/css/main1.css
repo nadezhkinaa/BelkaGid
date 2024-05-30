@@ -857,6 +857,63 @@ body {
         border: 1px solid #000000;
         color: #000000;
     }
+    .add{
+    display:flex;
+    flex-direction: row;
+    }
+    .buttonadd {
+        margin-top: 50px;
+        margin-left: 25px;
+        border: 1px solid #333d29;
+        border-radius: 15px;
+        width: 198px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        background-color: #f0eee6;
+        cursor:pointer;
+    }
+
+    .buttonadd:hover {
+        border: 2px solid #000000;
+        color: #000000;
+    }
+    .buttonsavem{
+    margin-top: 50px;
+        margin-left: 325px;
+        border: 1px solid #333d29;
+        border-radius: 15px;
+        width: 198px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        background-color: #f0eee6;
+        cursor:pointer;
+    }
+    .buttonsavem:hover {
+        border: 2px solid #000000;
+        color: #000000;
+    }
+
+    .boxfiltrm {
+        width: 320px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+        flex: 0.5;
+        margin-top: 50px;
+        margin-left: 40px;
+        margin-bottom:30px;
+        cursor:pointer;
+    }
 
     .ocenka {
         position: relative;
@@ -1230,7 +1287,8 @@ body {
         height: 235px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-
+        fit:content;
+        padding-bottom:25px;
     }
 
     .namemarshr {
