@@ -27,7 +27,7 @@ body {
     flex: 0 0 auto;
 }
 
-@media (min-width: 1890px) and (max-width: 3000px) {
+@media (min-width: 1890px) and (max-width: 8000px) {
     @font-face {
         font-family: 'Montserrat Alternates';
         src: url('../fonts/MontserratAlternates-Regular.ttf') format('truetype');
@@ -313,12 +313,21 @@ body {
         bottom: 20px;
         left: 20px;
         cursor: pointer;
-    }
-
-    .buttonlike:active {
         fill: #754C24;
         color: #754C24;
+    }
 
+    .button1, .button2, .button3{
+    cursor:pointer;
+    }
+    .buttonlike1:hover {
+        stroke: #333D29;
+    stroke-width:10px;
+
+    }
+    .buttonexport:hover{
+    fill: #fff;
+    stroke-width:11px;
     }
 
 
@@ -961,7 +970,33 @@ body {
         color: #333d29;
         font-size: 18px;
         margin-top: 15px;
+
+        cursor:pointer;
+    }
+    .buttonvhod:hover{
+    background: #A98467;
+
+    }
+    .buttonvhod1:hover{
+    background: #A98467;
+
+    }
+    .buttonvhod1 {
+        appearance: none;
+        border-radius: 15px;
+        width: 258px;
+        height: 40px;
+        border: 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: #cdd1bc;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+        font-size: 18px;
+        margin-top: 15px;
         transition-delay: 0.2s;
+        cursor:pointer;
     }
 
     .text-field {
@@ -1562,7 +1597,13 @@ body {
         color: #333d29;
         margin-top: 15px;
         transition-delay: 0.2s;
+        cursor:pointer;
     }
+    .buttonregistr:hover{
+    background: #A98467;
+
+    }
+
 
     @media screen and (min-width: 911px) {
         .ant-carousel {
@@ -1570,7 +1611,7 @@ body {
         }
     }
 
-    @media screen and (min-width: 641px) and (max-width: 3510px) {
+    @media screen and (min-width: 641px) and (max-width: 8510px) {
         .ant-carousel, .ant-carousel2 {
             max-width: 1700px;
         }

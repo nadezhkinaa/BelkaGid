@@ -27,7 +27,7 @@ body {
     flex: 0 0 auto;
 }
 
-@media (min-width: 426px) and (max-width: 767px) {
+@media (min-width: 226px) and (max-width: 767px) {
     @font-face {
         font-family: 'Lab Grotesque';
         src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
@@ -1046,6 +1046,33 @@ body {
         font-size: 18px;
         margin-top: 15px;
         transition-delay: 0.2s;
+        cursor:pointer;
+    }
+    .buttonvhod:hover{
+    background: #A98467;
+
+    }
+    .buttonvhod1:hover{
+    background: #A98467;
+
+    }
+
+    .buttonvhod1 {
+        appearance: none;
+        border-radius: 15px;
+        width: 258px;
+        height: 40px;
+        border: 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: #cdd1bc;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+        font-size: 18px;
+        margin-top: 15px;
+        transition-delay: 0.2s;
+        cursor:pointer;
     }
 
     .text-field {
@@ -1595,21 +1622,29 @@ body {
     .vhod h2 {
 
         font-weight: 600;
-        font-size: 36px;
+        font-size: 24px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
         margin-bottom: 20px;
-        margin-top: -150px;
+        margin-top: -10px;
+    }
+    .button1, .button2, .button3{
+    cursor:pointer;
+    }
+    .buttonlike1:hover {
+        stroke: #333D29;
+    stroke-width:10px;
+
     }
 
     .email_reg__input, .username_reg__input, .password1_reg__input, .password2_reg__input {
         border-radius: 22px;
-        width: 351px;
-        height: 50px;
+        width: 271px;
+        height: 40px;
         padding: 0px 15px;
         font-family: 'Hero';
         font-weight: 200;
-        font-size: 24px;
+        font-size: 18px;
         color: #333d29;
         background: #F0EEE6;
         margin-bottom: 15px;
@@ -1650,6 +1685,11 @@ body {
         color: #333d29;
         margin-top: 15px;
         transition-delay: 0.2s;
+         cursor:pointer;
+    }
+    .buttonregistr:hover{
+    background: #A98467;
+
     }
 
     @media screen and (min-width: 1300px) and (max-width: 1820px) {

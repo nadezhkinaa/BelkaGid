@@ -457,6 +457,7 @@
                     button1.style.backgroundImage = 'url({% static 'img/return_button.svg' %})';
                     button1.style.backgroundSize = 'contain';
                     button1.style.border = 'none';
+                    button1.classList.add('button1');
 
                     const button2 = document.createElement('button');
                     button2.style.marginTop = '30px';
@@ -465,15 +466,8 @@
                     button2.style.backgroundImage = 'url({% static 'img/like_button.svg' %})';
                     button2.style.backgroundSize = 'contain';
                     button2.style.border = 'none';
-                    button2.addEventListener('mouseenter', function() {
-    button2.style.border = '2px solid blue';
-});
+                    button2.classList.add('button2');
 
-// Удаление стилей при уходе курсора
-button2.addEventListener('mouseleave', function() {
-    button2.style.backgroundColor = ''; // Возвращаем стиль по умолчанию
-    button2.style.color = ''; // Возвращаем стиль по умолчанию
-});
 
                     const button3 = document.createElement('button');
                     button3.style.marginTop = '30px'
@@ -482,6 +476,7 @@ button2.addEventListener('mouseleave', function() {
                     button3.style.backgroundImage = 'url({% static 'img/export_button.svg' %} )';
                     button3.style.backgroundSize = 'contain';
                     button3.style.border = 'none';
+                    button3.classList.add('button3');
 
                     panel.appendChild(button1);
                     panel.appendChild(button2);
@@ -696,7 +691,7 @@ button2.addEventListener('mouseleave', function() {
                                 <h1 id="mashr0name"></h1>
                                 <p id="mashr0descr"></p>
                                 <button class='buttonizuch' onclick="exploreMarsh(0);">Изучить маршрут</button>
-                                <button1 class='buttonlike'><img src="{% static 'img/like.svg' %}" alt=""></button1>
+                                <button1 class='buttonlike'><img class="buttonlike1" src="{% static 'img/like.svg' %}" alt=""></button1>
                                 <button2 class='buttonexport' onclick="exportRoute(routes_json[0])"><img
                                         src="{% static 'img/export.svg' %}" alt=""></button2>
                             </div>
