@@ -1972,6 +1972,21 @@ body {
         stroke: #333D29;
         stroke-width: 3px;
     }
+    .lovebuttonm {
+        position: absolute;
+        left: 200px;
+        bottom: 10px;
+        cursor: pointer;
+    }
+
+    .lovebuttonm:hover {
+        stroke: #333D29;
+        stroke-width: 3px;
+    }
+    .lovebuttonmsvg{
+    width:38px;
+    height:38px;
+    }
 
 
     .buttonmesta {
