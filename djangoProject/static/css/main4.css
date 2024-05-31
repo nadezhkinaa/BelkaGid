@@ -27,7 +27,7 @@ body {
     flex: 0 0 auto;
 }
 
-@media (min-width: 226px) and (max-width: 767px) {
+@media (min-width: 226px) and (max-width: 768px) {
     @font-face {
         font-family: 'Lab Grotesque';
         src: url('../fonts/LabGrotesque-Medium.ttf') format('truetype');
@@ -210,13 +210,13 @@ body {
 
     .block2 h1 {
         font-weight: 700;
-        font-size: 36px;
+        font-size: 32px;
         font-family: 'Montserrat Alternates';
         color: #2B2920;
         position: absolute;
         top: 50px;
-        left: 20px;
-        width: 400px;
+        left: 40px;
+        width: 350px;
     }
 
     .block2 p {
@@ -1327,6 +1327,10 @@ body {
         color: #333d29;
         font-family: 'Hero';
         text-decoration: none;
+        cursor:pointer;
+    }
+    .namemarshr p:hover{
+    font-weight: 800;
     }
 
     .namemarshr a {
@@ -1424,7 +1428,7 @@ body {
         padding-top: 40px;
         padding-left: 45px;
         font-weight: 500;
-        font-size: 28px;
+        font-size: 24px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }

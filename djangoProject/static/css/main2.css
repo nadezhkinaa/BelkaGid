@@ -282,13 +282,13 @@ body {
 
     .block2 h1 {
         font-weight: 700;
-        font-size: 64px;
+        font-size: 48px;
         font-family: 'Montserrat Alternates';
         color: #2B2920;;
         position: absolute;
-        top: 40px;
+        top: 70px;
         left: 100px;
-        width: 870px;
+        width:550px;
     }
 
     .block2 p {
@@ -1387,6 +1387,10 @@ body {
         color: #333d29;
         font-family: 'Hero';
         text-decoration: none;
+        cursor:pointer;
+    }
+    .namemarshr p:hover{
+    font-weight: 800;
     }
 
     .namemarshr a {
@@ -1481,10 +1485,10 @@ body {
     }
 
     .marsrname h1 {
-        padding-top: 30px;
+        padding-top: 40px;
         padding-left: 45px;
         font-weight: 500;
-        font-size: 48px;
+        font-size: 36px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
