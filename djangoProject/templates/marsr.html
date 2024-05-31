@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/main4.css' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/tsp.js' %}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 
@@ -209,6 +210,45 @@
 
                     }
                 }
+
+                function makeOptimalMarsh() {
+                    var stopsInOrder = [];
+                    $('.allmarsrs .marsr').each(function () {
+                        var stopName = $(this).find('p').text();
+                        stopsInOrder.push(getFromDbByName(stopName));
+                    });
+
+                    let i, elements = document.getElementsByClassName('marsr');
+                    for (i = elements.length; i--;) {
+                        elements[i].parentNode.removeChild(elements[i]);
+                    }
+
+                    var smejnost = new Array(stopsInOrder.length);
+                    for (let i = 0; i < smejnost.length; i++) {
+                        smejnost[i] = new Array(stopsInOrder.length);
+                    }
+
+                    for (let i = 0; i < stopsInOrder.length; i++) {
+                        for (let j = 0; j < stopsInOrder.length; j++) {
+                            if (i !== j) {
+                                smejnost[i][j] = Math.sqrt(Math.pow(stopsInOrder[i].map_x - stopsInOrder[j].map_x, 2) + Math.pow(stopsInOrder[i].map_y - stopsInOrder[j].map_y, 2));
+                            } else {
+                                smejnost[i][j] = 0;
+                            }
+                        }
+                    }
+                    const finalSolution = tsp(smejnost);
+
+                    for (let i = 0; i < finalSolution.length; i++) {
+                        const newMarsr = $('<div class="marsr">' + '<svg class="circle3" viewBox="0 0 29 27"                              fill="none" xmlns="http://www.w3.org/2000/svg">                             <path fill-rule="evenodd" clip-rule="evenodd"                                   d="M14.1995 3.43647e-05C20.9346 -0.0150583 26.5046 4.94314 28.3187 11.2077C29.9265 16.7599 26.5534 22.2635 21.5623 25.4261C17.2774 28.1413 11.9286 27.0754 7.70787 24.268C3.04259 21.1648 -1.13647 16.5676 0.280474 11.2705C1.95483 5.01114 7.5058 0.0150341 14.1995 3.43647e-05Z"                                   fill="#A98467"/>                         </svg>                          <p>' + stopsInOrder[finalSolution[i]].name + '</p>                         <svg class="deletem" onclick="deleteItem(this)" viewBox="0 0 35 35"                              fill="none"                              xmlns="http://www.w3.org/2000/svg">                             <path d="M30.2469 5.19649H25.7532V3.57261C25.7532 1.60269 24.1505 0 22.1805 0H12.8191C10.8491 0 9.24649 1.60269 9.24649 3.57261V5.19643H4.75274C3.0905 5.19643 1.73828 6.54865 1.73828 8.21088V10.3973C1.73828 12.0595 3.0905 13.4118 4.75274 13.4118H4.96137L7.8052 34.0105C7.88354 34.5776 8.36828 35 8.94079 35H26.0586C26.6311 35 27.1159 34.5776 27.1942 34.0105L30.038 13.4118H30.2467C31.9089 13.4118 33.2612 12.0595 33.2612 10.3973V8.21088C33.2614 6.54872 31.9091 5.19649 30.2469 5.19649ZM11.5392 3.57261C11.5392 2.86687 12.1134 2.29265 12.8192 2.29265H22.1805C22.8863 2.29265 23.4605 2.8668 23.4605 3.57261V5.19643H11.5393V3.57261H11.5392ZM25.0598 32.7074H9.9398L7.27582 13.4118H27.7238L25.0598 32.7074ZM30.9687 10.3974C30.9687 10.7954 30.6449 11.1191 30.2469 11.1191C29.3609 11.1191 5.69159 11.1191 4.75274 11.1191C4.35475 11.1191 4.031 10.7954 4.031 10.3974V8.21088C4.031 7.81289 4.35475 7.48914 4.75274 7.48914C5.1268 7.48914 29.3619 7.48914 30.2469 7.48914C30.6449 7.48914 30.9687 7.81289 30.9687 8.21088V10.3974Z"                                   fill="#333D29"/>                             <path d="M17.4412 15.7583C16.8082 15.7583 16.2949 16.2715 16.2949 16.9046V28.6791C16.2949 29.3122 16.8082 29.8254 17.4412 29.8254C18.0743 29.8254 18.5876 29.3122 18.5876 28.6791V16.9046C18.5876 16.2715 18.0743 15.7583 17.4412 15.7583Z"                                   fill="#333D29"/>                             <path d="M14.3047 28.516L12.6092 16.7415C12.5189 16.1148 11.9384 15.6796 11.3112 15.7702C10.6846 15.8605 10.2497 16.4416 10.34 17.0682L12.0355 28.8427C12.1258 29.4699 12.7075 29.9041 13.3334 29.8139C13.9601 29.7237 14.3949 29.1425 14.3047 28.516Z"                                   fill="#333D29"/>                             <path d="M23.689 15.7702C23.0633 15.6799 22.4812 16.1148 22.391 16.7414L20.6954 28.5157C20.6053 29.1423 21.04 29.7235 21.6667 29.8137C22.2927 29.9039 22.8744 29.4695 22.9646 28.8424L24.6602 17.0681C24.7505 16.4415 24.3157 15.8603 23.689 15.7702Z"                                   fill="#333D29"/>                         </svg>');
+                        newMarsr.append();
+                        newMarsr.appendTo(".allmarsrs");
+                        document.getElementById("place-add-select").selectedIndex = 0;
+
+                    }
+
+                }
+
             </script>
 
             <div class="add">
@@ -219,6 +259,7 @@
                     {% endfor %}
                 </select>
                 <button onclick="addPlace()" class="buttonadd" type="submit">Добавить</button>
+                <button onclick="makeOptimalMarsh()" class="buttonoptimize" type="submit">Оптимальный маршрут</button>
                 <button onclick="saveMarsh()" class="buttonsavem" type="submit">Сохранить</button>
 
             </div>
