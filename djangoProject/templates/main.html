@@ -659,22 +659,26 @@
 
                 function saveMarsh(popular_route) {
 
-
-                    $.ajax({
-                        url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
-                        type: "POST",
-                        data: {
-                            "name": popular_route.fields.name,
-                            short_description: popular_route.fields.short_description,
-                            "route": popular_route.fields.marshrut
-                        },  // Передача аргумента в виде объекта JSON
-                        success: function (data) {
-                            alert("Четко");
-                        },
-                        error: function (error) {
-                            // Обработать ошибки
-                        }
-                    });
+                    var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                    if (is_authenticated) {
+                        $.ajax({
+                            url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
+                            type: "POST",
+                            data: {
+                                "name": popular_route.fields.name,
+                                short_description: popular_route.fields.short_description,
+                                "route": popular_route.fields.marshrut
+                            },  // Передача аргумента в виде объекта JSON
+                            success: function (data) {
+                                alert("Четко");
+                            },
+                            error: function (error) {
+                                // Обработать ошибки
+                            }
+                        });
+                    } else {
+                        alert("Надо авторизоваться!");
+                    }
                 }
 
             </script>
@@ -1430,21 +1434,26 @@
                     // Получить выбранное количество человек
                     const selectedCount = document.querySelector('.box3').value;
 
-                    $.ajax({
-                        url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
-                        type: "POST",
-                        data: {
-                            "route": selectedOptionId,
-                            "date": selectedDate,
-                            "persons": selectedCount
-                        },  // Передача аргумента в виде объекта JSON
-                        success: function (data) {
-                            alert("Четко");
-                        },
-                        error: function (error) {
-                            // Обработать ошибки
-                        }
-                    });
+                    var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                    if (is_authenticated) {
+                        $.ajax({
+                            url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
+                            type: "POST",
+                            data: {
+                                "route": selectedOptionId,
+                                "date": selectedDate,
+                                "persons": selectedCount
+                            },  // Передача аргумента в виде объекта JSON
+                            success: function (data) {
+                                alert("Четко");
+                            },
+                            error: function (error) {
+                                // Обработать ошибки
+                            }
+                        });
+                    } else {
+                        alert("Надо авторизоваться!");
+                    }
 
                 }
             </script>
