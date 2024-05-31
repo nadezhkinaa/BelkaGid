@@ -104,3 +104,15 @@ class Event(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Order(models.Model):
+    route = models.ForeignKey(Route, on_delete=models.CASCADE)
+    date = models.DateField()
+    persons = models.IntegerField()
+    gid = models.IntegerField(default=-1)
+    comments = models.TextField(default="")
+    ordered_user = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "Заказ на " + str(self.date)

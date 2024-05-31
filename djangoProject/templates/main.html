@@ -1395,6 +1395,10 @@
                 <option id="optmashr1name"></option>
                 <option id="optmashr2name"></option>
                 <option id="optmashr3name"></option>
+
+                {% for rfo in routes_for_order %}
+                    <option id='{{ rfo.id }}' label='{{ rfo.name }}'></option>
+                {% endfor %}
             </select>
 
             <script>
@@ -1406,13 +1410,41 @@
 
                 function offerGuide() {
                     // Получить выбранный маршрут (id)
-                    const selectedOptionId = document.querySelector('.box1').selectedOptions[0].id;
+                    let selectedOptionId = document.querySelector('.box1').selectedOptions[0].id;
+                    if (selectedOptionId === "optmashr0name") {
+                        selectedOptionId = 1;
+                    }
+                    if (selectedOptionId === "optmashr1name") {
+                        selectedOptionId = 2;
+                    }
+                    if (selectedOptionId === "optmashr2name") {
+                        selectedOptionId = 3;
+                    }
+                    if (selectedOptionId === "optmashr2name") {
+                        selectedOptionId = 4;
+                    }
 
                     // Получить выбранную дату
                     const selectedDate = document.querySelector('.data').value;
 
                     // Получить выбранное количество человек
                     const selectedCount = document.querySelector('.box3').value;
+
+                    $.ajax({
+                        url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
+                        type: "POST",
+                        data: {
+                            "route": selectedOptionId,
+                            "date": selectedDate,
+                            "persons": selectedCount
+                        },  // Передача аргумента в виде объекта JSON
+                        success: function (data) {
+                            alert("Четко");
+                        },
+                        error: function (error) {
+                            // Обработать ошибки
+                        }
+                    });
 
                 }
             </script>

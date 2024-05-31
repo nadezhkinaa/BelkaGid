@@ -1,16 +1,17 @@
 import asyncio
+import datetime
 
 import telegram
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core import serializers
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
-from .models import Shop, Place, Cafe, UserFavourites, Route, Event
+from .models import Shop, Place, Cafe, UserFavourites, Route, Event, Order
 
 bot_token = ''
 chat_id = ''
@@ -32,6 +33,7 @@ def index_page(request):
     cafes = Cafe.objects.all()
     shops = Shop.objects.all()
     routes = Route.objects.filter(creator=0)
+    routes_for_order = Route.objects.filter(creator=request.user.id)
 
     for place in places:
         place.image = place.image.replace("static/", "")
@@ -52,6 +54,7 @@ def index_page(request):
         'cafes': cafes,
         'shops': shops,
         'routes': routes,
+        'routes_for_order': routes_for_order
 
     }
     return render(request, 'main.html', context)
@@ -161,7 +164,11 @@ def profile_routes_page(request):
 
 @login_required
 def profile_orders_page(request):
-    return render(request, "zakazi.html")
+    orders = Order.objects.filter(ordered_user=request.user.id)
+    context = {
+        'orders': orders,
+    }
+    return render(request, "zakazi.html", context)
 
 
 @login_required
@@ -251,3 +258,25 @@ def event_page(request):
         'items': items,
     }
     return render(request, "sobitia.html", context)
+
+
+def parseDate(date_from_form):
+    dates = str(date_from_form).split("-")
+    return datetime.date(int(dates[0]), int(dates[1]), int(dates[2]))
+
+
+@csrf_exempt
+@login_required
+def saveOrder(request):
+    if request.method == "POST":
+        Order.objects.create(
+            route=Route.objects.get(id=request.POST.get("route")),
+            persons=request.POST.get("persons"),
+            date=parseDate(request.POST.get('date')),  # Получение аргумента из запроса
+            ordered_user=request.user.id
+
+        )
+
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
