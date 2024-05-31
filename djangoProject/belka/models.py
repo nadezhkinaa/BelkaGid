@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Place(models.Model):
     name = models.TextField()
     short_description = models.TextField()
@@ -33,7 +34,6 @@ class Cafe(models.Model):
     redirect_url = models.TextField(default="cafe")
     map_x = models.IntegerField(default=0)
     map_y = models.IntegerField(default=0)
-
 
     def __str__(self):
         return self.name
@@ -87,6 +87,20 @@ class Route(models.Model):
     def refreshRating(self, new_rate):
         self.votes += 1
         self.rating = (self.rating + new_rate) / self.votes
+
+    def __str__(self):
+        return str(self.name)
+
+
+class Event(models.Model):
+    name = models.TextField()
+    cost = models.IntegerField()
+    image = models.FilePathField(path='static/img/events', null=1)
+    place = models.TextField()
+    time = models.TimeField()
+    date = models.DateTimeField()
+    link = models.TextField()
+    type = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.name)

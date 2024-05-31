@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from .forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
-from .models import Shop, Place, Cafe, UserFavourites, Route
+from .models import Shop, Place, Cafe, UserFavourites, Route, Event
 
 bot_token = ''
 chat_id = ''
@@ -244,4 +244,10 @@ def route_detail(request, route_id):
 
 
 def event_page(request):
-    return render(request, "sobitia.html")
+    items = Event.objects.all()
+    for item in items:
+        item.image = item.image.replace("static/", "")
+    context = {
+        'items': items,
+    }
+    return render(request, "sobitia.html", context)
