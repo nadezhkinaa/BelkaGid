@@ -85,7 +85,6 @@
                     </svg>
                 </a>
                 <h1>{{ route.name }}</h1>
-                <button onclick="saveMarsh()">Сохранить</button>
                 <svg class="exportm" onclick="saveDisplayChanges()" viewBox="0 0 36 36" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -220,8 +219,7 @@
                     {% endfor %}
                 </select>
                 <button onclick="addPlace()" class="buttonadd" type="submit">Добавить</button>
-
-                <button onclick="" class="buttonsavem" type="submit">Сохранить</button>
+                <button onclick="saveMarsh()" class="buttonsavem" type="submit">Сохранить</button>
 
             </div>
 
