@@ -85,7 +85,9 @@
 
                     </svg>
                 </a>
-                <h1>{{ route.name }}</h1>
+                <div id="text-container">
+                    <h1 id="rName">{{ route.name }}</h1>
+                </div>
                 <svg class="exportm" onclick="saveDisplayChanges()" viewBox="0 0 36 36" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -126,6 +128,20 @@
             <script>
                 const places_json = {{ places|safe }};
                 $('.allmarsrs').sortable();
+
+                const textContainer = document.getElementById("text-container");
+                const textElement = document.getElementById("rName");
+
+                textContainer.addEventListener("click", () => {
+                    // Переключить элемент text в режим редактирования
+                    textElement.contentEditable = true;
+                    textElement.focus();
+                });
+
+                textElement.addEventListener("blur", () => {
+                    // Выключить режим редактирования и сохранить изменения
+                    textElement.contentEditable = false;
+                });
 
                 function deleteItem(element) {
                     var currentItem = element.closest('.marsr'); // Находим родительский элемент текущего элемента marsh
@@ -170,11 +186,16 @@
                     for (let tempstop = 0; tempstop < stopsInOrder.length; tempstop++) {
                         temproute += stopsInOrder[tempstop].map_id + "$";
                     }
+                    const nameElement = document.getElementById("rName");
 
                     $.ajax({
                         url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
                         type: "POST",
-                        data: {"name": "ИМЯ МАРШРУТУ", "short_description": "КРАТКО ОПИСАЛ", "route": temproute},  // Передача аргумента в виде объекта JSON
+                        data: {
+                            "name": nameElement.textContent,
+                            "short_description": "standart description",
+                            "route": temproute
+                        },  // Передача аргумента в виде объекта JSON
                         success: function (data) {
                             alert("Четко");
                         },
