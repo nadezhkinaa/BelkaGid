@@ -845,6 +845,89 @@ body {
         color: #414833;
         width: 380px;
     }
+    .sobcard img {
+        width: 100%;
+        border-radius: 10px;
+        height: 250px;
+
+    }
+    .sobcard {
+        position: relative;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: #FBFAF8;
+        border-radius: 15px;
+        border: 3px solid #fff;
+        border-radius: 15px;
+         width: 407px;
+        height: 502px;
+        place-items: center;
+        align-self: center;
+        justify-self: center;
+    }
+    .sobcard h1{
+    position: absolute;
+        left: 25px;
+        top: 260px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 600;
+        font-size: 24px;
+        color: #414833;
+        width: 300px;
+    }
+    .sobcard h4{
+    position: absolute;
+        left: 25px;
+        top: 330px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 14px;
+        color: #414833;
+        width: 650px;
+    }
+    .sobcard h2{
+    position: absolute;
+        left: 25px;
+        top: 380px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 16px;
+        color: #414833;
+        width: 300px;
+    }
+    .sobcard h3{
+    position: absolute;
+        left: 25px;
+        top: 410px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 16px;
+        color: #414833;
+        width: 650px;
+    }
+    .buttonsob {
+        position: absolute;
+        left: 25px;
+        top: 450px;
+        width: 140px;
+        height: 35px;
+        font-weight: 400;
+        font-size: 18px;
+        color: #333D29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 10px;
+        border: 1px solid #333D29;
+        background-color: #fff;
+        padding-left: 2px;
+        padding-bottom: 3px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .buttonsob:hover {
+        border: 2px solid #000000;
+        color: #000000;
+        font-weight: 600;
+    }
 
     .rate {
 
