@@ -53,7 +53,7 @@ urlpatterns = [
     path('profile/routes/route_<int:route_id>/', belka.views.route_detail, name='route_detail'),
 
     path('save_route/', belka.views.saveRoute, name='save_route'),
-
+    path('save_order/', belka.views.saveOrder, name='save_order'),
     path('events/', belka.views.event_page)
 
 ]
