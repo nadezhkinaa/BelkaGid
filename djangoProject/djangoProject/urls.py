@@ -54,4 +54,6 @@ urlpatterns = [
 
     path('save_route/', belka.views.saveRoute, name='save_route'),
 
+    path('events/', belka.views.event_page)
+
 ]

@@ -220,7 +220,7 @@ body {
         color: #2B2920;
         position: absolute;
         top: 40px;
-        left: 160px;
+        left: 180px;
         width: 870px;
     }
 
@@ -551,7 +551,7 @@ body {
     }
 
     .onasblock2 p,
-    li {
+    li , li1{
         font-weight: 200;
         font-size: 24px;
         font-family: 'Hero';
@@ -561,6 +561,9 @@ body {
         margin-bottom: 50px;
         width: 1500px;
 
+    }
+    li1{
+    margin-left: 410px;
     }
 
     ol {
@@ -572,6 +575,21 @@ body {
     }
 
     ol li:before {
+        content: counter(num);
+        counter-increment: num;
+        font-family: 'Bergamasco';
+        margin-right: 105px;
+
+        color: #A98467;
+        font-weight: 300;
+        font-size: 64px;
+        font-weight: bold;
+        content: counter(num);
+
+        text-align: center;
+
+    }
+    ol li1:before {
         content: counter(num);
         counter-increment: num;
         font-family: 'Bergamasco';
@@ -1251,6 +1269,10 @@ body {
         color: #333d29;
         font-family: 'Hero';
         text-decoration: none;
+        cursor:pointer;
+    }
+    .namemarshr p:hover{
+    font-weight: 800;
     }
 
     .namemarshr a {
@@ -1346,10 +1368,10 @@ body {
     }
 
     .marsrname h1 {
-        padding-top: 30px;
+        padding-top: 40px;
         padding-left: 45px;
         font-weight: 500;
-        font-size: 48px;
+        font-size: 36px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }

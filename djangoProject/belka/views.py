@@ -241,3 +241,7 @@ def route_detail(request, route_id):
     context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all()),
                "placesNonSerialized": Place.objects.all()}
     return render(request, 'marsr.html', context)
+
+
+def event_page(request):
+    return render(request, "sobitia.html")
