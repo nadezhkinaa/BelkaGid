@@ -1451,7 +1451,32 @@
 
 
             <p2>Выберите дату:</p2>
-            <input class='data' type="date">
+            <input id="datePicker" class='data' type="date">
+            <script>
+                const datePicker = document.getElementById("datePicker");
+
+                // Получаем текущую дату
+                const today = new Date();
+
+                // Устанавливаем минимальное значение для элемента "дата"
+                datePicker.min = today.toISOString().split("T")[0];
+
+                // Функция для отключения прошедших дат и подсвечивания их серым цветом
+                function disablePastDates() {
+                    const allDates = document.querySelectorAll(".data");
+
+                    allDates.forEach((date) => {
+                        const dateValue = new Date(date.value);
+
+                        if (dateValue < today) {
+                            date.disabled = true;
+                            date.style.backgroundColor = "#d3d3d3";
+                        }
+                    });
+                }
+
+                // Вызываем функцию при загрузке страницы
+                disablePastDates();</script>
 
             <p3>Выберите количество человек:</p3>
 
