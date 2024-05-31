@@ -935,6 +935,21 @@ body {
         stroke: #333D29;
         stroke-width: 3px;
     }
+    .lovebuttonm {
+        position: absolute;
+        left: 160px;
+        bottom: 19px;
+        cursor: pointer;
+    }
+
+    .lovebuttonm:hover {
+        stroke: #333D29;
+        stroke-width: 3px;
+    }
+    .lovebuttonmsvg{
+    width:30px;
+    height:30px;
+    }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
