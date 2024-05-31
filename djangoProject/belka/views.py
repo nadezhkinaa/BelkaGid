@@ -164,7 +164,11 @@ def profile_routes_page(request):
 
 @login_required
 def profile_orders_page(request):
-    return render(request, "zakazi.html")
+    orders = Order.objects.filter(ordered_user=request.user.id)
+    context = {
+        'orders': orders,
+    }
+    return render(request, "zakazi.html", context)
 
 
 @login_required
