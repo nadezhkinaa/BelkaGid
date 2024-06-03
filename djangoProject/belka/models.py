@@ -52,7 +52,7 @@ class Shop(models.Model):
 
 class UserFavourites(models.Model):
     user_id = models.IntegerField()
-    favourite_places = models.TextField()
+    favourite_places = models.TextField(default="")
 
     def getFavouritePlaces(self):
         return self.favourite_places.split("$")

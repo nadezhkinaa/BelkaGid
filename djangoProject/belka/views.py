@@ -146,6 +146,7 @@ def message_sent(request):
 
 @login_required
 def profile_routes_page(request):
+    favs = UserFavourites.objects.get_or_create(user_id=request.user.id)
     routes = serializers.serialize("json", Route.objects.all().order_by('rating').reverse())
 
     places = Place.objects.all()

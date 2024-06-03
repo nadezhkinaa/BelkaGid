@@ -17,6 +17,7 @@
     <script src="{% static 'lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'lightbox2-2.11.4/dist/css/lightbox.min.css' %}">
 
+
 </head>
 <body>
 
@@ -26,7 +27,7 @@
     <div id="popup-content"></div>
 </div>
 
-
+<div id="snackbar">Всплывающее сообщение с информацией..</div>
 <div class="wrapper">
     <div class="content">
         <header>
@@ -263,6 +264,16 @@
             <div id="map" class="map"></div>
 
             <script>
+
+                function callToast(message, time) {
+                    var x = document.getElementById("snackbar");
+                    x.className = "show";
+                    x.innerText = message;
+                    setTimeout(function () {
+                        x.className = x.className.replace("show", "");
+                    }, time);
+                }
+
                 const places_json = {{ places|safe }};
                 const cafes_json = {{ cafes|safe }};
                 const shops_json = {{ shops|safe }};
@@ -607,7 +618,8 @@
 
                     var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
                     if (!is_authenticated) {
-                        window.location.href = "/login/";
+                        callToast("Чтобы добавить место в избранные, необходимо войти в аккаунт!", 3000);
+
                     } else {
                         $.ajax({
                             url: "/add_fav/",  // URL функции отображения, которую вы хотите вызвать
@@ -670,14 +682,14 @@
                                 "route": popular_route.fields.marshrut
                             },  // Передача аргумента в виде объекта JSON
                             success: function (data) {
-                                alert("Четко");
+                                callToast("Маршрут успешно сохранён!", 3000);
                             },
                             error: function (error) {
                                 // Обработать ошибки
                             }
                         });
                     } else {
-                        alert("Надо авторизоваться!");
+                        callToast("Чтобы добавить маршрут в избранные, необходимо войти в аккаунт!", 3000);
                     }
                 }
 
@@ -1445,14 +1457,14 @@
                                 "persons": selectedCount
                             },  // Передача аргумента в виде объекта JSON
                             success: function (data) {
-                                alert("Четко");
+                                callToast("Заказ создан успешно!", 3000);
                             },
                             error: function (error) {
-                                // Обработать ошибки
+                                callToast("Проверьте корректность ввёденных данных!", 3000);
                             }
                         });
                     } else {
-                        alert("Надо авторизоваться!");
+                        callToast("Чтобы создать заказ, необходимо войти в аккаунт!", 3000);
                     }
 
                 }
