@@ -25,6 +25,7 @@ body {
 
 .footer {
     flex: 0 0 auto;
+
 }
 
 @media (min-width: 1890px) and (max-width: 8000px) {
@@ -1309,7 +1310,9 @@ body {
         left: 550px;
         top: 252px;
         width: 1169px;
-        height: 755px;
+       height:content;
+       padding-bottom:25px;
+
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1369,7 +1372,7 @@ body {
         padding-left: 45px;
         font-weight: 500;
         font-size: 48px;
-        color: #88636d;
+        color: #754C24;
         font-family: 'Montserrat Alternates';
     }
 
@@ -1395,6 +1398,7 @@ body {
         margin-top: 55px;
     }
 
+
     .zayvpole {
         position: absolute;
         left: 450px;
@@ -1403,19 +1407,37 @@ body {
         justify-content: center;
         flex-direction: column;
     }
+    .tfieldinputz {
+        border: 0;
+        border-radius: 15px;
+        width: 580px;
+        height: 58px;
+        background: #F0EEE6;
+        margin-bottom: 40px;
+        padding-left: 15px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+    }
 
     .buttonprikr {
-        margin-left: 700px;
+        margin-left: 660px;
         margin-top: 30px;
-        width: 340px;
+        width: 380px;
         height: 53px;
         font-weight: 400;
         font-size: 25px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #FBFAF8;
+        cursor:pointer;
+    }
+    .buttonprikr:hover {
+        border: 2px solid #000000;
+        color: #000000;
     }
 
     .buttonsozdat {
@@ -1427,9 +1449,14 @@ body {
         font-size: 25px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
-        border-radius: 25px;
+        border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #FBFAF8;
+        cursor:pointer;
+    }
+    .buttonsozdat:hover {
+        border: 2px solid #000000;
+        color: #000000;
     }
 
     .namezayv {
@@ -1439,8 +1466,8 @@ body {
     .editmarsr {
         margin-top: 55px;
         width: 1169px;
-        height: auto;
-
+        height:content;
+        padding-bottom:70px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1459,6 +1486,7 @@ body {
         font-size: 36px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
+        cursor:pointer;
     }
 
     .exportm {
@@ -1688,6 +1716,7 @@ body {
         opacity: 0.8;
     }
 
+
     .boxfiltr {
         width: 320px;
         height: 40px;
@@ -1700,18 +1729,19 @@ body {
         flex: 0.5;
         margin-top: 60px;
         margin-right: 50px;
-        cursor: pointer;
+
 
     }
-
-    .add {
-        display: flex;
-        flex-direction: row;
+    .add{
+    position:relative;
     }
+
+
 
     .buttonadd {
-        margin-top: 50px;
-        margin-left: 25px;
+        position:absolute;
+        left:400px;
+        top:50px;
         border: 1px solid #333d29;
         border-radius: 15px;
         width: 198px;
@@ -1728,10 +1758,31 @@ body {
         border: 2px solid #000000;
         color: #000000;
     }
+    .buttonoptimize {
+        position:absolute;
+        left:900px;
+        top:50px;
+        border: 1px solid #333d29;
+        border-radius: 15px;
+        width: 198px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        background-color: #f0eee6;
+        cursor: pointer;
+    }
+
+    .buttonoptimize:hover {
+        border: 2px solid #000000;
+        color: #000000;
+    }
 
     .buttonsavem {
-        margin-top: 50px;
-        margin-left: 325px;
+        position:absolute;
+        left:900px;
+        top:120px;
         border: 1px solid #333d29;
         border-radius: 15px;
         width: 198px;
