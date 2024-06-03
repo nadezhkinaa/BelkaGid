@@ -275,9 +275,16 @@
             <div class="add">
                 <select id="place-add-select" class="boxfiltrm" onchange="">
                     <option disabled selected value=-1> Добавить место</option>
-                    {% for place in placesNonSerialized %}
-                        <option value="{{ place.map_id }}"> {{ place.name }}</option>
-                    {% endfor %}
+                    <optgroup label="Избранные места">
+                        {% for place in placesFav %}
+                            <option value="{{ place.map_id }}"> {{ place.name }}</option>
+                        {% endfor %}
+                    </optgroup>
+                    <optgroup label="Остальные места">
+                        {% for place in placesNonFav %}
+                            <option value="{{ place.map_id }}"> {{ place.name }}</option>
+                        {% endfor %}
+                    </optgroup>
                 </select>
                 <button onclick="addPlace()" class="buttonadd" type="submit">Добавить</button>
                 <button onclick="makeOptimalMarsh()" class="buttonoptimize" type="submit">Оптимальный маршрут</button>

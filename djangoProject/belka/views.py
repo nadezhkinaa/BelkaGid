@@ -235,6 +235,8 @@ def place_detail(request, place_name):
 
 def route_detail(request, route_id):
     places = Place.objects.all()
+    userfavs = UserFavourites.objects.get(user_id=request.user.id)
+    userfavs = userfavs.favourite_places.split("$")
 
     for place in places:
         place.image = place.image.replace("static/", "")
@@ -245,8 +247,23 @@ def route_detail(request, route_id):
     for i in range(len(routeq.marshrut) - 1):
         arr_stops.append(places[int(routeq.marshrut[i])].name)
 
+    places_favs = []
+    for i in range(len(userfavs) - 1):
+        places_favs.append(places[int(userfavs[i])])
+
+    places_list = list(places)
+    places_not_favs = []
+    for place in places_list:
+        flag = True
+        for fav_place in places_favs:
+            if place.name == fav_place.name:
+                flag = False
+                break
+        if flag:
+            places_not_favs.append(place)
+
     context = {'route': routeq, 'stops': arr_stops, "places": serializers.serialize("json", Place.objects.all()),
-               "placesNonSerialized": Place.objects.all()}
+               'placesFav': places_favs, "placesNonFav": places_not_favs}
     return render(request, 'marsr.html', context)
 
 
