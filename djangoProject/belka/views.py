@@ -304,3 +304,15 @@ def saveOrder(request):
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})
+
+
+@csrf_exempt
+@login_required
+def deleteOrder(request):
+    if request.method == "POST":
+        id = request.POST.get("id")
+        Order.objects.get(id=id).delete()
+
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})

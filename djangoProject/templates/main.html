@@ -459,7 +459,7 @@
 
                 }
 
-                function addPanel() {
+                function addPanel(id) {
                     const panel = document.createElement('div');
                     panel.id = 'marshpanel'
                     panel.style.position = 'absolute';
@@ -513,6 +513,7 @@
 
                     button2.addEventListener('click', function () {
 
+                        saveMarsh(routes_json[id]);
                     });
 
                     button3.addEventListener('click', function () {
@@ -801,7 +802,7 @@
                     function exploreMarsh(id) {
                         deletePaneL()
                         deleteMarkers();
-                        addPanel();
+                        addPanel(id);
                         var ids = routes_json[id].fields.marshrut.split("$").map(Number);
                         ids.pop();
                         var coords = [];
