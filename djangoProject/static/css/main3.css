@@ -1368,11 +1368,11 @@ body {
     }
 
     .zakazi {
-        position: absolute;
-        left: 290px;
-        top: 215px;
+         margin-left:300px;
+        margin-top:-700px;
+        padding-bottom:80px;
+        height: content;
         width: 450px;
-        height: 700px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1438,9 +1438,8 @@ body {
     }
 
     .marsruty {
-        position: absolute;
-        left: 280px;
-        top: 218px;
+        margin-left:290px;
+        margin-top:-705px;
         width: 460px;
 
         border: 4px solid #fff;
@@ -1499,6 +1498,48 @@ body {
     .namemarshr a {
         margin-top: 10px;
     }
+    .datazayavka {
+        width: 230px;
+        height: 45px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-color:#F0EEE6;
+        border-radius: 15px ;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+        margin-top:-25px;
+        margin-left:-165px;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+
+
+    }
+
+
+    .datazayavka {
+        width: 210px;
+        left: 50px;
+        top: 290px;
+
+    }
+    .boxfiltrzayavka {
+        width: 240px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #fff;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+
+        margin-top: 43px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
 
     .zayavka h1 {
         padding-top: 30px;
@@ -1543,12 +1584,12 @@ body {
     .tfieldinputz {
         border: 0;
         border-radius: 15px;
-        width: 280px;
+        width: 230px;
         height: 45px;
         background: #F0EEE6;
         margin-bottom: 45px;
         padding-left: 15px;
-        margin-left:-215px;
+        margin-left:-120px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
@@ -1556,9 +1597,10 @@ body {
     }
 
     .buttonprikr {
-        margin-left: 230px;
-        margin-top: 30px;
-        width: 300px;
+        position:absolute;
+        left:320px;
+        top:483px;
+        width: 260px;
         height: 40px;
         font-weight: 400;
         font-size: 18px;
@@ -1575,8 +1617,9 @@ body {
     }
 
     .buttonsozdat {
-        margin-left: 330px;
-        margin-top: 30px;
+        position:absolute;
+        left:380px;
+        top:550px;
         width: 200px;
         height: 40px;
         font-weight: 400;

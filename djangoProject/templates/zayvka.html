@@ -89,15 +89,15 @@
                 <h1>Заявка</h1>
             </div>
             <p>Название</p>
-            <p>Дата</p>
             <p>Количество человек</p>
             <p>Пожелания</p>
+            <p>Дата</p>
 
             <div class="zayvpole">
                 <input class="tfieldinputz" id="name" required>
-                <input id="datePicker" class='data' type="date">
                 <input placeholder="" class="tfieldinputz" id="persons-count" required>
                 <input placeholder="" class="tfieldinputz" id="messages" required>
+                 <input id="datePicker" class='datazayavka' type="date">
 
 
             </div>
@@ -127,8 +127,8 @@
                 // Вызываем функцию при загрузке страницы
                 disablePastDates();
             </script>
-            <select id="place-add-select" class="boxfiltrm" onchange="">
-                <option disabled selected value=-1> Прикрепить маршрут</option>
+            <select id="place-add-select" class="boxfiltrzayavka " onchange="">
+                <option disabled selected value=-1> Выберите маршрут</option>
                 <optgroup label="Мои маршруты">
                     {% for place in routes_for_order %}
                         <option value="{{ place.id }}"> {{ place.name }}</option>
@@ -141,7 +141,7 @@
                 </optgroup>
             </select>
 
-            <button onclick="#" class="buttonprikr" type="submit">Прикрепить маршрут</button>
+
             <button onclick="createOrder()" class="buttonsozdat" type="submit">Создать</button>
         </div>
     </div>
