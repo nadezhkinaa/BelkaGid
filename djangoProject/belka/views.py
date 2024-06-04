@@ -179,7 +179,14 @@ def profile_redirect_page(request):
 
 @login_required
 def create_order_page(request):
-    return render(request, "zayvka.html")
+    routes = Route.objects.filter(creator=0)
+    routes_for_order = Route.objects.filter(creator=request.user.id)
+    context = {
+        'routes': routes,
+        'routes_for_order': routes_for_order
+    }
+
+    return render(request, "zayvka.html", context)
 
 
 @csrf_exempt
@@ -292,7 +299,6 @@ def saveOrder(request):
             persons=request.POST.get("persons"),
             date=parseDate(request.POST.get('date')),  # Получение аргумента из запроса
             ordered_user=request.user.id
-
         )
 
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
