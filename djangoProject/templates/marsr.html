@@ -16,6 +16,7 @@
 
 
 </head>
+<div id="snackbar">Всплывающее сообщение с информацией..</div>
 <body>
 <div class="wrapper">
     <div class="content">
@@ -126,6 +127,15 @@
                 {% endfor %}
             </div>
             <script>
+                function callToast(message, time) {
+                    var x = document.getElementById("snackbar");
+                    x.className = "show";
+                    x.innerText = message;
+                    setTimeout(function () {
+                        x.className = x.className.replace("show", "");
+                    }, time);
+                }
+
                 const places_json = {{ places|safe }};
                 $('.allmarsrs').sortable();
 
@@ -197,7 +207,7 @@
                             "route": temproute
                         },  // Передача аргумента в виде объекта JSON
                         success: function (data) {
-                            alert("Четко");
+                            callToast("Маршрут сохранён успешно!");
                         },
                         error: function (error) {
                             // Обработать ошибки
