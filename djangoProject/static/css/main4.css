@@ -1546,6 +1546,7 @@ body {
 
     .marsrname {
         display: flex;
+        position:relative;
     }
 
     .marsrname h1 {
@@ -1559,11 +1560,14 @@ body {
     }
 
     .exportm {
-        margin-top: 35px;
-        margin-left: 100px;
+
+        position:absolute;
+        left:400px;
+        top:30px;
         width: 40px;
         height: 40px;
         cursor: pointer;
+
     }
 
     .exportm:hover {
