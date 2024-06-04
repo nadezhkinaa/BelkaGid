@@ -150,7 +150,7 @@
                                 <path d="M32.375 32.375H18.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
                                       stroke-linejoin="round"/>
                             </svg>
-                            <svg class="export1"
+                            <svg onclick="exportRouteById({{ personal_route.id }})" class="export1"
                                  viewBox="0 0 36 36"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22.5 4.5H31.5V13.5" stroke="#333D29" stroke-width="3" stroke-linecap="round"
@@ -319,6 +319,14 @@
             }
             var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
             window.open(urlExport);
+        }
+
+        function exportRouteById(id) {
+            for (let i = 0; i < routes_json.length; i++) {
+                if (routes_json[i].pk === id) {
+                    exportRoute(routes_json[i]);
+                }
+            }
         }
 
         function openEdit(route_id) {
