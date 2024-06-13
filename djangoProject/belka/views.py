@@ -165,11 +165,21 @@ def profile_routes_page(request):
 
 @login_required
 def profile_orders_page(request):
-    orders = Order.objects.filter(ordered_user=request.user.id)
-    context = {
-        'orders': orders,
-    }
-    return render(request, "zakazi.html", context)
+    if request.user.groups.filter(name='Gids').exists():
+        orders = Order.objects.filter(gid=-1)
+        orders_personal = Order.objects.filter(gid=request.user.id)
+
+        context = {
+            'orders': orders,
+            'orders_personal': orders_personal,
+        }
+        return render(request, "zakazi_gid.html", context)
+    else:
+        orders = Order.objects.filter(ordered_user=request.user.id)
+        context = {
+            'orders': orders,
+        }
+        return render(request, "zakazi.html", context)
 
 
 @login_required
