@@ -326,3 +326,24 @@ def deleteOrder(request):
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})
+
+
+@login_required
+def order_detail(request, order_id):
+    order = Order.objects.get(id=order_id)
+    context = {'order': order}
+    return render(request, 'order_detail.html', context)
+
+
+@login_required
+@csrf_exempt
+def takeOrder(request):
+    if request.method == "POST":
+        id = request.POST.get("id")
+        q = Order.objects.get(id=id)
+        q.gid = request.user.id
+        q.save()
+
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
