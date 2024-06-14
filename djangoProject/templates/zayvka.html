@@ -112,7 +112,7 @@
 
                 // Функция для отключения прошедших дат и подсвечивания их серым цветом
                 function disablePastDates() {
-                    const allDates = document.querySelectorAll(".data");
+                    const allDates = document.querySelectorAll(".datazayavka");
 
                     allDates.forEach((date) => {
                         const dateValue = new Date(date.value);
@@ -157,11 +157,11 @@
         }
 
         async function createOrder() {
-            const selectedDate = document.querySelector('.data').value;
+            const selectedDate = document.querySelector('.datazayavka').value;
             // Получить выбранное количество человек
             const selectedCount = document.getElementById('persons-count').value;
             const selectedMessage = document.getElementById('messages').value;
-            let selectedOptionId = document.querySelector('.boxfiltrm').selectedOptions[0].value;
+            let selectedOptionId = document.querySelector('.boxfiltrzayavka').selectedOptions[0].value;
 
 
             $.ajax({

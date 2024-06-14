@@ -4,6 +4,7 @@ import datetime
 import telegram
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.core import serializers
 from django.http import JsonResponse
@@ -331,7 +332,22 @@ def deleteOrder(request):
 @login_required
 def order_detail(request, order_id):
     order = Order.objects.get(id=order_id)
-    context = {'order': order}
+    places = Place.objects.all()
+
+    for place in places:
+        place.image = place.image.replace("static/", "")
+    places = serializers.serialize("json", Place.objects.all())
+
+    routes = serializers.serialize("json", Route.objects.all())
+
+    email = User.objects.filter(id=order.ordered_user).values_list('email', flat=True)
+
+    context = {'places': places,
+               'order': order,
+               'routes': routes,
+               'email': email[0],
+               }
+
     return render(request, 'order_detail.html', context)
 
 
