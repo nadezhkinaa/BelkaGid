@@ -1407,6 +1407,10 @@ body {
         font-family: 'Hero';
         padding-left: 15px;
         padding-top: 10px;
+        cursor:pointer;
+    }
+    .zakaz p:hover{
+    font-weight: 800;
     }
 
     .namezakaz {
