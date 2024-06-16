@@ -1164,8 +1164,10 @@ body {
         font-weight: 700;
         font-size: 40px;
         padding-top: 50px;
-        padding-left: 150px;
+        padding-left: 50px;
     }
+    .namekab{
+    display:flex;}
 
     .smallmenu a {
         display: block;
@@ -1423,6 +1425,30 @@ body {
         top: 290px;
 
     }
+    .datazayavkaorder {
+        width: 330px;
+        height: 58px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-color:#F0EEE6;
+        border-radius: 15px ;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+
+
+    }
+     .datazayavkaorder {
+        width: 360px;
+        left: 50px;
+        top: 320px;
+
+    }
     .boxfiltrzayavka {
         width: 320px;
         height: 50px;
@@ -1437,6 +1463,24 @@ body {
         margin-left: 150px;
         margin-bottom: 30px;
         cursor: pointer;
+    }
+    .boxfiltrzayavkaorder {
+        width: 280px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #fff;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+
+        margin-top: 43px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+    .order{
+    display:flex;
     }
 
     .zayavka h1 {
@@ -1464,10 +1508,42 @@ body {
         height: 690px;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-left:50px;
+        background: #fbfaf8;
+
         margin-left: auto;
         margin-right: auto;
-        background: #fbfaf8;
         margin-top: 55px;
+    }
+    .zayavkaorder h1 {
+        padding-top: 30px;
+        padding-left: 45px;
+        font-weight: 500;
+        font-size: 48px;
+        color: #754C24;
+        font-family: 'Montserrat Alternates';
+    }
+
+    .zayavkaorder p {
+        padding-top: 40px;
+        padding-left: 50px;
+        margin-bottom: 25px;
+        font-weight: 800;
+        font-size: 28px;
+        color: #333d29;
+        font-family: 'Hero';
+        width:100px;
+    }
+
+    .zayavkaorder {
+        position: relative;
+        width: 40%;
+        height: 690px;
+        border-radius: 25px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-left:50px;
+        background: #fbfaf8;
+
     }
 
 
@@ -1487,6 +1563,29 @@ body {
         height: 58px;
         background: #F0EEE6;
         margin-bottom: 40px;
+        padding-left: 15px;
+        margin-left: 50px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+    }
+    .zayvpoleorder {
+        position: absolute;
+        left: 250px;
+        top: 115px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .tfieldinputzorder {
+        border: 0;
+        border-radius: 15px;
+        width: 380px;
+        height: 58px;
+        background: #F0EEE6;
+        margin-bottom: 50px;
         padding-left: 15px;
         margin-left: 50px;
         font-family: 'Montserrat Alternates';
@@ -1533,6 +1632,25 @@ body {
     }
 
     .buttonsozdat:hover {
+        border: 2px solid #000000;
+        color: #000000;
+    }
+    .buttonsohrorder{
+    position:absolute;
+        left:450px;
+        top:560px;
+        width: 208px;
+        height: 43px;
+        font-weight: 400;
+        font-size: 25px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 15px;
+        border: 1px solid #333d29;
+        background-color: #FBFAF8;
+        cursor: pointer;
+    }
+    .buttonsohrorder:hover {
         border: 2px solid #000000;
         color: #000000;
     }
@@ -1767,6 +1885,22 @@ body {
         width: 70%;
 
 
+
+    }
+    .mapclassorder {
+        margin-left: auto;
+        margin-right: auto;
+        width:40%;
+        margin-top:-60px;
+        margin-left:10px;
+
+
+    }
+    .strelka{
+    margin-left:25px;
+    margin-top:55px;
+    width:43px;
+    height:36px;
     }
 
     .vhod h2 {
@@ -2477,7 +2611,7 @@ body {
         height: 27px;
     }
 
-    .editzakaz {
+    .editzakaz,.addzakaz {
         position: absolute;
         left: 950px;
         top: 10px;
@@ -2485,8 +2619,13 @@ body {
         height: 42px;
         cursor: pointer;
     }
+    .addzakaz:hover{
+     stroke: #333D29;
+        stroke-width: 1px;
+    }
 
-    .deletezakaz {
+
+    .deletezakaz, .infozakaz {
         position: absolute;
         left: 1010px;
         top: 10px;
@@ -2495,9 +2634,9 @@ body {
         cursor: pointer;
     }
 
-    .deletezakaz:hover {
+    .deletezakaz:hover, .infozakaz:hover {
         stroke: #333D29;
-        stroke-width: 1px;
+        stroke-width: 0.5px;
     }
 
     wrapper1 {

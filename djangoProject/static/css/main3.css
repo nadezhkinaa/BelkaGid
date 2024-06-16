@@ -1287,7 +1287,7 @@ body {
         font-weight: 700;
         font-size: 32px;
         padding-top: 50px;
-        padding-left: 100px;
+        padding-left: 30px;
     }
 
     .smallmenu a {
@@ -1396,25 +1396,150 @@ body {
         display: flex;
         border-radius: 25px;
         width: 380px;
-        height: 50px;
+        height: 70px;
         background: #FBFAF8;
+
     }
 
     .zakaz p {
         font-weight: 200;
-        font-size: 24px;
+        font-size: 18px;
         color: #333d29;
         font-family: 'Hero';
         padding-left: 15px;
         padding-top: 10px;
         cursor:pointer;
+        width:300px;
     }
     .zakaz p:hover{
     font-weight: 800;
     }
+    .strelka{
+    margin-left:25px;
+    margin-top:55px;
+    width:43px;
+    height:36px;
+    }
+    .namekab     {
+        display: flex;
+    }
+    .order {
+        display: flex;
+    }
 
     .namezakaz {
         display: flex;
+    }
+    .zayavkaorder h1 {
+        padding-top: 30px;
+        padding-left: 45px;
+        font-weight: 500;
+        font-size: 48px;
+        color: #754C24;
+        font-family: 'Montserrat Alternates';
+    }
+
+    .zayavkaorder p {
+        padding-top: 40px;
+        padding-left: 15px;
+        margin-bottom: 25px;
+        font-weight: 800;
+        font-size: 20px;
+        color: #333d29;
+        font-family: 'Hero';
+        width:100px;
+    }
+
+    .zayavkaorder {
+        position: relative;
+        width: 50%;
+        height: 690px;
+        border-radius: 25px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-left:50px;
+        background: #fbfaf8;
+        margin-left:15px;
+
+    }
+    .zayvpoleorder {
+        position: absolute;
+        left: 140px;
+        top: 110px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .tfieldinputzorder {
+        border: 0;
+        border-radius: 15px;
+        width: 200px;
+        height: 48px;
+        background: #F0EEE6;
+        margin-bottom: 55px;
+        padding-left: 15px;
+        margin-left: 10px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+    }
+    .datazayavkaorder {
+        width: 230px;
+        height: 48px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-color:#F0EEE6;
+        border-radius: 15px ;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+
+
+    }
+     .datazayavkaorder {
+        width: 180px;
+        left: 10px;
+        top: 300px;
+
+    }
+    .boxfiltrzayavkaorder {
+        width: 260px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #fff;
+        border-radius: 15px;
+        font-family: 'Montserrat Alternates';
+
+        margin-top: 43px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+    .buttonsohrorder{
+    position:absolute;
+        left:20px;
+        top:580px;
+        width: 208px;
+        height: 43px;
+        font-weight: 400;
+        font-size: 25px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 15px;
+        border: 1px solid #333d29;
+        background-color: #FBFAF8;
+        cursor: pointer;
+    }
+    .buttonsohrorder:hover {
+        border: 2px solid #000000;
+        color: #000000;
     }
 
     .namezakaz h1 {
@@ -1888,6 +2013,12 @@ body {
         width: 70%;
 
 
+    }
+    .mapclassorder {
+
+        width:40%;
+        margin-top:-60px;
+        margin-left:50px;
     }
 
     #map {
@@ -2401,26 +2532,38 @@ body {
 
     .circlezakaz {
         position: relative;
-        margin-top: 12px;
-        margin-left: 0px;
+        margin-top: 20px;
+        margin-left: -20px;
         width: 29px;
         height: 27px;
     }
 
-    .editzakaz {
+    .editzakaz,.addzakaz {
         position: absolute;
-        left: 310px;
-        top: 10px;
-        width: 35px;
-        height: 35px;
+        left: 330px;
+        top: 15px;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+    }
+    .addzakaz:hover{
+     stroke: #333D29;
+        stroke-width: 1px;
     }
 
-    .deletezakaz {
+
+    .deletezakaz, .infozakaz {
         position: absolute;
-        left: 355px;
-        top: 10px;
-        width: 32px;
-        height: 32px;
+        left: 370px;
+        top: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .deletezakaz:hover, .infozakaz:hover {
+        stroke: #333D29;
+        stroke-width: 0.5px;
     }
 
     .ol-popup {

@@ -1254,6 +1254,9 @@ body {
         padding-top: 50px;
         padding-left: 20px;
     }
+    .namekab{
+    display:flex;
+    }
 
     .smallmenu a {
         display: none;
@@ -1360,7 +1363,7 @@ body {
         display: flex;
         border-radius: 25px;
         width: 320px;
-        height: 45px;
+        height: 60px;
         background: #FBFAF8;
     }
 
@@ -1369,7 +1372,7 @@ body {
         font-size: 16px;
         color: #333d29;
         font-family: 'Hero';
-        padding-left: 15px;
+        padding-left: 5px;
         padding-top: 8px;
         cursor:pointer;
     }
@@ -1380,6 +1383,9 @@ body {
     .namezakaz {
         display: flex;
     }
+    .order {
+        display: flex;
+    }
 
     .namezakaz h1 {
         font-weight: 500;
@@ -1388,6 +1394,117 @@ body {
         font-family: 'Montserrat Alternates';
         padding-left: 10px;
         padding-top: 20px;
+    }
+    .zayavkaorder h1 {
+        padding-top: 30px;
+        padding-left: 25px;
+        font-weight: 500;
+        font-size: 32px;
+        color: #754C24;
+        font-family: 'Montserrat Alternates';
+    }
+
+    .zayavkaorder p {
+        padding-top: 40px;
+        padding-left: 10px;
+        margin-bottom: 25px;
+        font-weight: 800;
+        font-size: 18px;
+        color: #333d29;
+        font-family: 'Hero';
+        width:100px;
+    }
+
+    .zayavkaorder {
+        position: relative;
+        width: 50%;
+        height: 690px;
+        border-radius: 25px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-left:50px;
+        background: #fbfaf8;
+        margin-left:15px;
+
+    }
+    .zayvpoleorder {
+        position: absolute;
+        left: 120px;
+        top: 90px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .tfieldinputzorder {
+        border: 0;
+        border-radius: 10px;
+        width: 120px;
+        height: 40px;
+        background: #F0EEE6;
+        margin-bottom: 60px;
+        padding-left: 15px;
+        margin-left: 10px;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 24px;
+        color: #333d29;
+    }
+    .datazayavkaorder {
+        width: 250px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #F0EEE6;
+        border-color:#F0EEE6;
+        border-radius: 10px ;
+        font-family: 'Montserrat Alternates';
+        position: absolute;
+
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+
+
+    }
+     .datazayavkaorder {
+        width: 150px;
+        left: -40px;
+        top: 290px;
+
+    }
+    .boxfiltrzayavkaorder {
+        width: 260px;
+        height: 40px;
+        border: 1px solid #414833;
+        font-size: 18px;
+        color: #414833;
+        background-color: #fff;
+        border-radius: 10px;
+        font-family: 'Montserrat Alternates';
+
+        margin-top: 43px;
+        margin-left: 5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+    .buttonsohrorder{
+    position:absolute;
+        left:5px;
+        top:550px;
+        width: 200px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 20px;
+        color: #333d29;
+        font-family: 'Montserrat Alternates';
+        border-radius: 15px;
+        border: 1px solid #333d29;
+        background-color: #FBFAF8;
+        cursor: pointer;
+    }
+    .buttonsohrorder:hover {
+        border: 2px solid #000000;
+        color: #000000;
     }
 
     .buttoncreate {
@@ -1574,6 +1691,12 @@ body {
         font-weight: 400;
         font-size: 24px;
         color: #333d29;
+    }
+    .strelka{
+    margin-left:25px;
+    margin-top:55px;
+    width:33px;
+    height:30px;
     }
 
     .buttonprikr {
@@ -1841,6 +1964,12 @@ body {
         width: 70%;
 
 
+    }
+    .mapclassorder {
+
+        width:40%;
+        margin-top:-60px;
+        margin-left:50px;
     }
 
     #map {
@@ -2373,25 +2502,37 @@ body {
     .circlezakaz {
         position: relative;
         margin-top: 10px;
-        margin-left: 0px;
+        margin-left: -20px;
         width: 25px;
         height: 25px;
     }
 
-    .editzakaz {
+    .editzakaz,.addzakaz {
         position: absolute;
-        left: 260px;
-        top: 6px;
-        width: 30px;
-        height: 30px;
+        left: 270px;
+        top: 12px;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+    }
+    .addzakaz:hover{
+     stroke: #333D29;
+        stroke-width: 1px;
     }
 
-    .deletezakaz {
+
+    .deletezakaz, .infozakaz {
         position: absolute;
-        left: 300px;
-        top: 6px;
+        left: 310px;
+        top: 15px;
         width: 30px;
         height: 30px;
+        cursor: pointer;
+    }
+
+    .deletezakaz:hover, .infozakaz:hover {
+        stroke: #333D29;
+        stroke-width: 0.5px;
     }
 
     wrapper1 {

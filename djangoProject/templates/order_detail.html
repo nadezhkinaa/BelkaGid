@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="utf-8">
     <title>БелкаГид</title>
@@ -10,13 +9,11 @@
     <link rel="stylesheet" href="{% static 'css/main2.css' %}">
     <link rel="stylesheet" href="{% static 'css/main3.css' %}">
     <link rel="stylesheet" href="{% static 'css/main4.css' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
-    <script src="{% static 'openlayers/dist/ol.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src="{% static 'openlayers/dist/ol.js' %}"></script>
     <link rel="stylesheet" href="{% static 'openlayers/ol.css' %}">
-    <script src="{% static 'lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'lightbox2-2.11.4/dist/css/lightbox.min.css' %}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 
 
 </head>
@@ -26,464 +23,700 @@
 </div>
 
 <div id="snackbar">Всплывающее сообщение с информацией..</div>
+
 <body>
+<div class="wrapper">
+    <div class="content">
+        <header>
+            <div class="headermenu">
+                <div class="logo">
+                    <div class="logotype">
+                        <div class="nazvanie"><a href="/">БелкаГид</a></div>
+                        <a href="/"><img class="imgbelka" src="{% static 'img/белка.png' %}" alt="" width="55"
+                                         height="55"></a>
+                    </div>
 
-{{ order.route }}
-{{ order.date }}
-{{ order.persons }}
-{{ email}}
-
-<div class="mapclass">
-    <div id="map" class="map"></div>
-
-    <script>
-
-        function callToast(message, time) {
-            var x = document.getElementById("snackbar");
-            x.className = "show";
-            x.innerText = message;
-            setTimeout(function () {
-                x.className = x.className.replace("show", "");
-            }, time);
-        }
-
-        const places_json = {{ places|safe }};
-
-        const popup = new ol.Overlay({
-            element: document.getElementById('popup')
-        });
-
-
-        var scale = 512;
-        var extent = [-scale, -scale, scale, scale];
-        var projection = new ol.proj.Projection({
-            code: 'static-image',
-            units: 'pixels',
-            extent: extent
-        });
-
-        var map = new ol.Map({
-            interactions: ol.interaction.defaults.defaults({
-                mouseWheelZoom: false
-            }),
-            layers: [
-                new ol.layer.Image({
-                    name: 'mapMainLayer',
-                    source: new ol.source.ImageStatic({
-                        url: '{% static 'img/map_high_q.png' %}',
-
-
-                        projection: projection,
-                        imageExtent: extent,
-                        imageLoadFunction: function (image, src) {
-                            image.getImage().src = src;
-                            image.getImage().width = ol.extent.getWidth(extent);
-                            image.getImage().height = ol.extent.getHeight(extent);
+                    <div class="menu">
+                        <a href="../../../about">О нас</a>
+                        <a href="../../../places">Места</a>
+                        <a href="../../../events">События</a>
+                        <a href="../../../cafe">Кафе и рестораны</a>
+                        <a href="../../../profile">Личный кабинет</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="wrapper1">
+            <div class="menu1">
+                <a href="#" class="menu-icon">
+                    <svg width="42" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_312_2)">
+                            <path d="M20 17.5C20.3852 17.5002 20.7556 17.6486 21.0344 17.9144C21.3132 18.1802 21.479 18.5431 21.4975 18.9279C21.516 19.3127 21.3858 19.6898 21.1338 19.9812C20.8818 20.2726 20.5274 20.4558 20.144 20.493L20 20.5H4C3.61478 20.4998 3.24441 20.3514 2.96561 20.0856C2.68682 19.8198 2.52099 19.4569 2.50248 19.0721C2.48396 18.6873 2.61419 18.3102 2.86618 18.0188C3.11816 17.7274 3.47258 17.5442 3.856 17.507L4 17.5H20ZM20 10.5C20.3978 10.5 20.7794 10.658 21.0607 10.9393C21.342 11.2206 21.5 11.6022 21.5 12C21.5 12.3978 21.342 12.7794 21.0607 13.0607C20.7794 13.342 20.3978 13.5 20 13.5H4C3.60218 13.5 3.22064 13.342 2.93934 13.0607C2.65804 12.7794 2.5 12.3978 2.5 12C2.5 11.6022 2.65804 11.2206 2.93934 10.9393C3.22064 10.658 3.60218 10.5 4 10.5H20ZM20 3.5C20.3978 3.5 20.7794 3.65804 21.0607 3.93934C21.342 4.22064 21.5 4.60218 21.5 5C21.5 5.39782 21.342 5.77936 21.0607 6.06066C20.7794 6.34196 20.3978 6.5 20 6.5H4C3.60218 6.5 3.22064 6.34196 2.93934 6.06066C2.65804 5.77936 2.5 5.39782 2.5 5C2.5 4.60218 2.65804 4.22064 2.93934 3.93934C3.22064 3.65804 3.60218 3.5 4 3.5H20Z"
+                                  fill="#333D29"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_312_2">
+                                <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+                <nav class="menu-list">
+                    <a href="../../../about">О нас</a>
+                    <a href="../../../places">Места</a>
+                    <a href="../../../events">События</a>
+                    <a href="../../../cafe">Кафе и рестораны</a>
+                    <a href="../../../profile">Личный кабинет</a>
+                </nav>
+            </div>
 
 
-                        }
-                    })
-                })
-            ],
-            target: 'map',
-            view: new ol.View({
-                projection: projection,
-                center: ol.extent.getCenter(extent),
-                zoom: 1.8
+            <script>$('.menu-icon').on('click', function (e) {
+                e.preventDefault();
+                $('.menu1').toggleClass('menu_active');
+                $('section').toggleClass('section_active');
             })
-        });
+            </script>
+        </div>
+
+        <div class="namekab">
+            <a href="../../../profile/orders" style="">
+                <svg class="strelka" viewBox="0 0 43 36"
+                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 18H41M2 18L18.25 2M2 18L18.25 34" stroke="#333D29" stroke-width="3"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <h1>Заявка</h1>
+        </div>
+
+        {{ order.route }} {{ order.date }} {{ order.persons }} {{ email}}
+        <div class="order">
 
 
-        map.on('click', function (evt) {
+            <div class="zayavkaorder">
+                <div class="namezayv">
 
-            const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                return feature
-            })
+                    <h1>Заявка</h1>
+                </div>
+                <p>Название</p>
+                <p>Количество человек</p>
+                <p>Пожелания</p>
+                <p>Дата</p>
 
-            // Проверьте, был ли щелчок сделан вне всплывающего окна
-            if (!feature) {
-                map.removeOverlay(popup);
-            }
-        });
-
-        var sss = 1000;
-        var iw = window.innerWidth;
-
-        if (iw < 3000 && iw >= 1890) {
-            sss = 1500;
-        }
-        if (iw < 1890 && iw >= 1440) {
-            sss = 1100;
-        }
-        if (iw < 1440 && iw >= 1024) {
-            sss = 1100;
-        }
-        if (iw < 1024 && iw >= 768) {
-            sss = 1200;
-        }
-        if (iw < 768 && iw >= 426) {
-            sss = 1500;
-        }
-
-        map.setView(new ol.View({
-            center: map.getView().getCenter(),
-            extent: map.getView().calculateExtent([sss, sss]),
-            zoom: map.getView().getZoom()
-        }));
-        map.getView().setMaxZoom(18);
-
-        const viewportElement = document.querySelector('.ol-viewport');
-        viewportElement.style.overflow = 'visible';
-
-        // Добавим три маркера по координатам на карту
-        map.on("pointermove", function (evt) {
-            var hit = this.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                return true;
-            });
-            if (hit) {
-                this.getTargetElement().style.cursor = 'pointer';
-            } else {
-                this.getTargetElement().style.cursor = '';
-            }
-        });
-
-        // Создадим массив координат
-        setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
-        map.on('click', function (evt) {
-
-            var features;
-            map.getLayers().forEach(layer => {
-
-                if (layer.get('name') === 'markerLayer') {
-                    features = layer.getSource().getFeatures();
-                }
-            });
-            var markers = features;
-            map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                var marker_fields = getFromDb(feature.values_.name);
-                popupFunc(evt, marker_fields.name, marker_fields.short_description, "places/" + marker_fields.name, marker_fields.map_id);
-            });
-        });
+                <div class="zayvpoleorder">
+                    <input placeholder="" class="tfieldinputzorder" id="name" required>
+                    <input placeholder="" class="tfieldinputzorder" id="persons-count" required>
+                    <input placeholder="" class="tfieldinputzorder" id="messages" required>
+                    <input placeholder="" id="datePicker" class='datazayavkaorder' type="date">
 
 
-        async function popupFunc(evt, name, text, url, id) {
-            var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
-            var color_for_svg = "#333D29";
+                </div>
 
-            if (is_authenticated) {
-                const response = await $.ajax({
-                    url: "/check_fav/",
-                    type: "POST",
-                    data: {"place-id": id},
-                });
-
-                color_for_svg = String(response["color"]);
-            }
-
-
-            var feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-                return feature
-            })
-            if (feature) {
-                const content = feature.getGeometry().getCoordinates();
-                popup.setPosition(content);
-                map.addOverlay(popup);
-
-                document.getElementById('popup-content').innerHTML = `
-                        <h1>${name}</h1>
-                        <p>${text}</p>
-                        <div class='ocenka'>
-                        <form action="/${url}">
-                            <input class='buttonpodr' type="submit" value="Подробнее" />
-                        </form>
-                        <a class='love' onclick="addFavourites(${id})">
-                        </div>
-<svg  width="30" height="30" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g clip-path="url(#clip0_282_37)">
-    <path d="M30.936 9.3548C36.4829 9.3818 40.973 13.8718 41 19.4188C41 29.5814 22.5 39.6455 22.5 39.6455C22.5 39.6455 4 29.4335 4 19.4188C4 13.8607 8.50577 9.3548 14.064 9.3548C17.4664 9.32826 20.6473 11.0396 22.5 13.8934C24.3655 11.0534 27.5381 9.34658 30.936 9.3548Z" fill="${color_for_svg}" />
-    <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z" stroke="#333D29" stroke-width="2" />
-  </g>
-  <defs>
-    <clipPath id="clip0_282_37">
-      <rect width="45" height="45" fill="white" />
-    </clipPath>
-  </defs>
-</svg>
-</a>
+                <select id="place-add-select" class="boxfiltrzayavkaorder " onchange="">
+                    <option disabled selected value=-1> Выберите маршрут</option>
+                    <optgroup label="Мои маршруты">
+                        {% for place in routes_for_order %}
+                        <option value="{{ place.id }}"> {{ place.name }}</option>
+                        {% endfor %}
+                    </optgroup>
+                    <optgroup label="Базовые маршруты">
+                        {% for place in routes %}
+                        <option value="{{ place.id }}"> {{ place.name }}</option>
+                        {% endfor %}
+                    </optgroup>
+                </select>
 
 
-                        `;
-                document.querySelector('#popup-closer').addEventListener('click', function () {
-                    map.removeOverlay(popup);
-                });
-            }
-        }
+                <button onclick="createOrder()" class="buttonsohrorder" type="submit">Сохранить</button>
+            </div>
 
 
-        function getFromDb(map_id) {
-            for (const place of places_json) {
-                if (place.fields.map_id === map_id) {
-                    return place.fields;
-                }
-            }
-            return null;
+            <div class="mapclassorder">
+                <div id="map" class="map"></div>
 
-        }
+                <script>
 
-        function addPanel(id) {
-            const panel = document.createElement('div');
-            panel.id = 'marshpanel'
-            panel.style.position = 'absolute';
-            panel.style.top = '20px';
-            panel.style.right = '0';
-
-            panel.style.backgroundColor = 'transparent';
-            panel.style.display = 'flex';
-            panel.style.flexDirection = 'column';
-
-
-            const button1 = document.createElement('button');
-            button1.style.marginTop = '30px';
-            button1.style.width = '50px';
-            button1.style.height = '50px';
-            button1.style.backgroundImage = 'url({% static 'img/return_button.svg' %})';
-            button1.style.backgroundSize = 'contain';
-            button1.style.border = 'none';
-            button1.classList.add('button1');
-
-            const button2 = document.createElement('button');
-            button2.style.marginTop = '30px';
-            button2.style.width = '50px';
-            button2.style.height = '50px';
-            button2.style.backgroundImage = 'url({% static 'img/like_button.svg' %})';
-            button2.style.backgroundSize = 'contain';
-            button2.style.border = 'none';
-            button2.classList.add('button2');
-
-
-            const button3 = document.createElement('button');
-            button3.style.marginTop = '30px'
-            button3.style.width = '50px';
-            button3.style.height = '50px';
-            button3.style.backgroundImage = 'url({% static 'img/export_button.svg' %} )';
-            button3.style.backgroundSize = 'contain';
-            button3.style.border = 'none';
-            button3.classList.add('button3');
-
-            panel.appendChild(button1);
-            panel.appendChild(button2);
-            panel.appendChild(button3);
-
-            map.getViewport().appendChild(panel);
-
-            button1.addEventListener('click', function () {
-                deleteMarkers();
-                deletePaneL();
-                setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
-            });
-
-            button2.addEventListener('click', function () {
-
-                saveMarsh(routes_json[id]);
-            });
-
-            button3.addEventListener('click', function () {
-
-                var features;
-                map.getLayers().forEach(layer => {
-
-                    if (layer.get('name') === 'markerLayer') {
-                        features = layer.getSource().getFeatures();
+                    function callToast(message, time) {
+                        var x = document.getElementById("snackbar");
+                        x.className = "show";
+                        x.innerText = message;
+                        setTimeout(function () {
+                            x.className = x.className.replace("show", "");
+                        }, time);
                     }
-                });
-                var markers = features;
-                var temproute = "";
-                for (let tempmarker = 0; tempmarker < markers.length; tempmarker++) {
-                    temproute += markers[tempmarker].values_.name + "$";
-                }
-                exportMapRoute(temproute);
-            });
-        }
 
-        function deletePaneL() {
-            const panel = document.getElementById('marshpanel');
-            if (panel) {
-                panel.parentNode.removeChild(panel);
-            }
+                    const places_json = {{ places|safe }};
+
+                    const popup = new ol.Overlay({
+                        element: document.getElementById('popup')
+                    });
 
 
-        }
+                    var scale = 512;
+                    var extent = [-scale, -scale, scale, scale];
+                    var projection = new ol.proj.Projection({
+                        code: 'static-image',
+                        units: 'pixels',
+                        extent: extent
+                    });
 
-        function deleteMarkers() {
-            let layersTodDelete = [];
-            map.getLayers().forEach(layer => {
-
-                if (layer.get('name') === 'markerLayer') {
-                    layersTodDelete.push(layer);
-                }
-            });
-            for (let l = 0; l < layersTodDelete.length; l++) {
-                map.removeLayer(layersTodDelete[l]);
-            }
-        }
-
-        function setMarkers(markerCoordinates, mapIDs) {
-
-            // Создадим массив маркеров
-            var markers = [];
-            for (var i = 0; i < markerCoordinates.length; i++) {
-                var marker = new ol.Feature({
-                    geometry: new ol.geom.Point(markerCoordinates[i]),
-                    name: mapIDs[i]
-                });
-                markers.push(marker);
-            }
+                    var map = new ol.Map({
+                        interactions: ol.interaction.defaults.defaults({
+                            mouseWheelZoom: false
+                        }),
+                        layers: [
+                            new ol.layer.Image({
+                                name: 'mapMainLayer',
+                                source: new ol.source.ImageStatic({
+                                    url: '{% static 'img/map_high_q.png' %}',
 
 
-            // Создаем стиль для маркеров
-            const markerStyle = new ol.style.Style({
-                image: new ol.style.Icon({
-                    src: '{% static 'img/marker1.png' %}', // путь к изображению маркера
-                    scale: 0.2// масштаб маркера
-
-                })
-            });
-
-            // Применяем стиль к каждому маркеру
-            markers.forEach(marker => {
-                marker.setStyle(markerStyle);
-            });
-
-            // Создадим векторный слой с маркерами
-            var markerVectorLayer = new ol.layer.Vector({
-                source: new ol.source.Vector({
-                    features: markers
-                })
-            });
-
-            var source = markerVectorLayer.getSource();
-            source.clear();
-            source.addFeatures(markers);
-
-            markerVectorLayer.set('name', 'markerLayer');
-            map.addLayer(markerVectorLayer);
+                                    projection: projection,
+                                    imageExtent: extent,
+                                    imageLoadFunction: function (image, src) {
+                                        image.getImage().src = src;
+                                        image.getImage().width = ol.extent.getWidth(extent);
+                                        image.getImage().height = ol.extent.getHeight(extent);
 
 
-        }
+                                    }
+                                })
+                            })
+                        ],
+                        target: 'map',
+                        view: new ol.View({
+                            projection: projection,
+                            center: ol.extent.getCenter(extent),
+                            zoom: 1.8
+                        })
+                    });
 
-        function initMarkers() {
-            var markerCoordinates = [];
-            var size = 0;
-            for (const place of places_json) {
-                size += 1;
-            }
 
-            for (let i = 0; i < size; i++) {
-                var local_fields = getFromDb(i);
-                markerCoordinates.push([local_fields.map_x, local_fields.map_y])
+                    map.on('click', function (evt) {
 
-            }
-            return markerCoordinates;
-        }
+                        const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                            return feature
+                        })
 
-        function addFavourites(place_id) {
+                        // Проверьте, был ли щелчок сделан вне всплывающего окна
+                        if (!feature) {
+                            map.removeOverlay(popup);
+                        }
+                    });
 
-            var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
-            if (!is_authenticated) {
-                callToast("Чтобы добавить место в избранные, необходимо войти в аккаунт!", 3000);
+                    var sss = 1000;
+                    var iw = window.innerWidth;
 
-            } else {
-                $.ajax({
-                    url: "/add_fav/",  // URL функции отображения, которую вы хотите вызвать
-                    type: "POST",
-                    data: {"place-id": place_id},  // Передача аргумента в виде объекта JSON
-                    success: function (data) {
-                        if (popup.getElement().querySelector('path[fill]').getAttribute("fill") === "#333D29") {
-                            popup.getElement().querySelector('path[fill]').setAttribute('fill', "#ff033e");
+                    if (iw < 3000 && iw >= 1890) {
+                        sss = 1500;
+                    }
+                    if (iw < 1890 && iw >= 1440) {
+                        sss = 1100;
+                    }
+                    if (iw < 1440 && iw >= 1024) {
+                        sss = 1100;
+                    }
+                    if (iw < 1024 && iw >= 768) {
+                        sss = 1200;
+                    }
+                    if (iw < 768 && iw >= 426) {
+                        sss = 1500;
+                    }
+
+                    map.setView(new ol.View({
+                        center: map.getView().getCenter(),
+                        extent: map.getView().calculateExtent([sss, sss]),
+                        zoom: map.getView().getZoom()
+                    }));
+                    map.getView().setMaxZoom(18);
+
+                    const viewportElement = document.querySelector('.ol-viewport');
+                    viewportElement.style.overflow = 'visible';
+
+                    // Добавим три маркера по координатам на карту
+                    map.on("pointermove", function (evt) {
+                        var hit = this.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                            return true;
+                        });
+                        if (hit) {
+                            this.getTargetElement().style.cursor = 'pointer';
                         } else {
-                            popup.getElement().querySelector('path[fill]').setAttribute('fill', "#333D29");
+                            this.getTargetElement().style.cursor = '';
                         }
-                    },
-                    error: function (error) {
-                        // Обработать ошибки
+                    });
+
+                    // Создадим массив координат
+                    setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
+                    map.on('click', function (evt) {
+
+                        var features;
+                        map.getLayers().forEach(layer => {
+
+                            if (layer.get('name') === 'markerLayer') {
+                                features = layer.getSource().getFeatures();
+                            }
+                        });
+                        var markers = features;
+                        map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                            var marker_fields = getFromDb(feature.values_.name);
+                            popupFunc(evt, marker_fields.name, marker_fields.short_description, "places/" + marker_fields.name, marker_fields.map_id);
+                        });
+                    });
+
+
+                    async function popupFunc(evt, name, text, url, id) {
+                        var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                        var color_for_svg = "#333D29";
+
+                        if (is_authenticated) {
+                            const response = await $.ajax({
+                                url: "/check_fav/",
+                                type: "POST",
+                                data: {"place-id": id},
+                            });
+
+                            color_for_svg = String(response["color"]);
+                        }
+
+
+                        var feature = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+                            return feature
+                        })
+                        if (feature) {
+                            const content = feature.getGeometry().getCoordinates();
+                            popup.setPosition(content);
+                            map.addOverlay(popup);
+
+                            document.getElementById('popup-content').innerHTML = `
+                                    <h1>${name}</h1>
+                                    <p>${text}</p>
+                                    <div class='ocenka'>
+                                    <form action="/${url}">
+                                        <input class='buttonpodr' type="submit" value="Подробнее" />
+                                    </form>
+                                    <a class='love' onclick="addFavourites(${id})">
+                                    </div>
+            <svg  width="30" height="30" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_282_37)">
+                <path d="M30.936 9.3548C36.4829 9.3818 40.973 13.8718 41 19.4188C41 29.5814 22.5 39.6455 22.5 39.6455C22.5 39.6455 4 29.4335 4 19.4188C4 13.8607 8.50577 9.3548 14.064 9.3548C17.4664 9.32826 20.6473 11.0396 22.5 13.8934C24.3655 11.0534 27.5381 9.34658 30.936 9.3548Z" fill="${color_for_svg}" />
+                <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z" stroke="#333D29" stroke-width="2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_282_37">
+                  <rect width="45" height="45" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            </a>
+
+
+                                    `;
+                            document.querySelector('#popup-closer').addEventListener('click', function () {
+                                map.removeOverlay(popup);
+                            });
+                        }
+                    }
+
+
+                    function getFromDb(map_id) {
+                        for (const place of places_json) {
+                            if (place.fields.map_id === map_id) {
+                                return place.fields;
+                            }
+                        }
+                        return null;
+
+                    }
+
+                    function addPanel(id) {
+                        const panel = document.createElement('div');
+                        panel.id = 'marshpanel'
+                        panel.style.position = 'absolute';
+                        panel.style.top = '20px';
+                        panel.style.right = '0';
+
+                        panel.style.backgroundColor = 'transparent';
+                        panel.style.display = 'flex';
+                        panel.style.flexDirection = 'column';
+
+
+                        const button1 = document.createElement('button');
+                        button1.style.marginTop = '30px';
+                        button1.style.width = '50px';
+                        button1.style.height = '50px';
+                        button1.style.backgroundImage = 'url({% static 'img/return_button.svg' %})';
+                        button1.style.backgroundSize = 'contain';
+                        button1.style.border = 'none';
+                        button1.classList.add('button1');
+
+                        const button2 = document.createElement('button');
+                        button2.style.marginTop = '30px';
+                        button2.style.width = '50px';
+                        button2.style.height = '50px';
+                        button2.style.backgroundImage = 'url({% static 'img/like_button.svg' %})';
+                        button2.style.backgroundSize = 'contain';
+                        button2.style.border = 'none';
+                        button2.classList.add('button2');
+
+
+                        const button3 = document.createElement('button');
+                        button3.style.marginTop = '30px'
+                        button3.style.width = '50px';
+                        button3.style.height = '50px';
+                        button3.style.backgroundImage = 'url({% static 'img/export_button.svg' %} )';
+                        button3.style.backgroundSize = 'contain';
+                        button3.style.border = 'none';
+                        button3.classList.add('button3');
+
+                        panel.appendChild(button1);
+                        panel.appendChild(button2);
+                        panel.appendChild(button3);
+
+                        map.getViewport().appendChild(panel);
+
+                        button1.addEventListener('click', function () {
+                            deleteMarkers();
+                            deletePaneL();
+                            setMarkers(initMarkers(), Array.from({length: 21}, (_, i) => i));
+                        });
+
+                        button2.addEventListener('click', function () {
+
+                            saveMarsh(routes_json[id]);
+                        });
+
+                        button3.addEventListener('click', function () {
+
+                            var features;
+                            map.getLayers().forEach(layer => {
+
+                                if (layer.get('name') === 'markerLayer') {
+                                    features = layer.getSource().getFeatures();
+                                }
+                            });
+                            var markers = features;
+                            var temproute = "";
+                            for (let tempmarker = 0; tempmarker < markers.length; tempmarker++) {
+                                temproute += markers[tempmarker].values_.name + "$";
+                            }
+                            exportMapRoute(temproute);
+                        });
+                    }
+
+                    function deletePaneL() {
+                        const panel = document.getElementById('marshpanel');
+                        if (panel) {
+                            panel.parentNode.removeChild(panel);
+                        }
+
+
+                    }
+
+                    function deleteMarkers() {
+                        let layersTodDelete = [];
+                        map.getLayers().forEach(layer => {
+
+                            if (layer.get('name') === 'markerLayer') {
+                                layersTodDelete.push(layer);
+                            }
+                        });
+                        for (let l = 0; l < layersTodDelete.length; l++) {
+                            map.removeLayer(layersTodDelete[l]);
+                        }
+                    }
+
+                    function setMarkers(markerCoordinates, mapIDs) {
+
+                        // Создадим массив маркеров
+                        var markers = [];
+                        for (var i = 0; i < markerCoordinates.length; i++) {
+                            var marker = new ol.Feature({
+                                geometry: new ol.geom.Point(markerCoordinates[i]),
+                                name: mapIDs[i]
+                            });
+                            markers.push(marker);
+                        }
+
+
+                        // Создаем стиль для маркеров
+                        const markerStyle = new ol.style.Style({
+                            image: new ol.style.Icon({
+                                src: '{% static 'img/marker1.png' %}', // путь к изображению маркера
+                                scale: 0.2// масштаб маркера
+
+                            })
+                        });
+
+                        // Применяем стиль к каждому маркеру
+                        markers.forEach(marker => {
+                            marker.setStyle(markerStyle);
+                        });
+
+                        // Создадим векторный слой с маркерами
+                        var markerVectorLayer = new ol.layer.Vector({
+                            source: new ol.source.Vector({
+                                features: markers
+                            })
+                        });
+
+                        var source = markerVectorLayer.getSource();
+                        source.clear();
+                        source.addFeatures(markers);
+
+                        markerVectorLayer.set('name', 'markerLayer');
+                        map.addLayer(markerVectorLayer);
+
+
+                    }
+
+                    function initMarkers() {
+                        var markerCoordinates = [];
+                        var size = 0;
+                        for (const place of places_json) {
+                            size += 1;
+                        }
+
+                        for (let i = 0; i < size; i++) {
+                            var local_fields = getFromDb(i);
+                            markerCoordinates.push([local_fields.map_x, local_fields.map_y])
+
+                        }
+                        return markerCoordinates;
+                    }
+
+                    function addFavourites(place_id) {
+
+                        var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                        if (!is_authenticated) {
+                            callToast("Чтобы добавить место в избранные, необходимо войти в аккаунт!", 3000);
+
+                        } else {
+                            $.ajax({
+                                url: "/add_fav/",  // URL функции отображения, которую вы хотите вызвать
+                                type: "POST",
+                                data: {"place-id": place_id},  // Передача аргумента в виде объекта JSON
+                                success: function (data) {
+                                    if (popup.getElement().querySelector('path[fill]').getAttribute("fill") === "#333D29") {
+                                        popup.getElement().querySelector('path[fill]').setAttribute('fill', "#ff033e");
+                                    } else {
+                                        popup.getElement().querySelector('path[fill]').setAttribute('fill', "#333D29");
+                                    }
+                                },
+                                error: function (error) {
+                                    // Обработать ошибки
+                                }
+                            });
+                        }
+
+
+                    }
+
+                    function exportRoute(route) {
+                        var points = route.fields.marshrut.split("$").map(Number);
+                        points.pop();
+                        var tempStr = "";
+                        for (let icurr = 0; icurr < points.length; icurr++) {
+                            tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                            if (icurr !== points.length - 1) {
+                                tempStr += "~";
+                            }
+                        }
+                        var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
+                        window.open(urlExport);
+                    }
+
+                    function exportMapRoute(route) {
+                        var points = route.split("$").map(Number);
+                        points.pop();
+                        var tempStr = "";
+                        for (let icurr = 0; icurr < points.length; icurr++) {
+                            tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
+                            if (icurr !== points.length - 1) {
+                                tempStr += "~";
+                            }
+                        }
+                        var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
+                        window.open(urlExport);
+                    }
+
+                    function saveMarsh(popular_route) {
+
+                        var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                        if (is_authenticated) {
+                            $.ajax({
+                                url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
+                                type: "POST",
+                                data: {
+                                    "name": popular_route.fields.name,
+                                    short_description: popular_route.fields.short_description,
+                                    "route": popular_route.fields.marshrut
+                                },  // Передача аргумента в виде объекта JSON
+                                success: function (data) {
+                                    callToast("Маршрут успешно сохранён!", 3000);
+                                },
+                                error: function (error) {
+                                    // Обработать ошибки
+                                }
+                            });
+                        } else {
+                            callToast("Чтобы добавить маршрут в избранные, необходимо войти в аккаунт!", 3000);
+                        }
+                    }
+
+                    function exploreMarsh(marshrut) {
+                        deletePaneL()
+                        deleteMarkers();
+                        var ids = marshrut.split("$").map(Number);
+                        ids.pop();
+                        var coords = [];
+
+                        for (let temp_id in ids) {
+                            coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
+                        }
+                        setMarkers(coords, ids);
+                        window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
+
+                    }
+
+                    const routes_json = {{ routes|safe }};
+                    exploreMarsh("{{ order.route.marshrut }}");
+
+                </script>
+            </div>
+        </div>
+        <script>
+            const datePicker = document.getElementById("datePicker");
+
+            if ('{{ request.session.date_finish }}' !== "") {
+                datePicker.value = '{{ request.session.date_finish }}';
+                document.getElementById("name").setAttribute("value", "Заказ на {{ request.session.date_finish }}");
+                document.getElementById("persons-count").setAttribute("value", {{ request.session.persons_finish }});
+                document.getElementById("place-add-select").value = '{{ request.session.route_finish }}';
+            }
+
+            // Получаем текущую дату
+            const today = new Date();
+
+            // Устанавливаем минимальное значение для элемента "дата"
+            datePicker.min = today.toISOString().split("T")[0];
+
+            // Функция для отключения прошедших дат и подсвечивания их серым цветом
+            function disablePastDates() {
+                const allDates = document.querySelectorAll(".datazayavka");
+
+                allDates.forEach((date) => {
+                    const dateValue = new Date(date.value);
+
+                    if (dateValue < today) {
+                        date.disabled = true;
+                        date.style.backgroundColor = "#d3d3d3";
                     }
                 });
             }
 
+            // Вызываем функцию при загрузке страницы
+            disablePastDates();
 
-        }
 
-        function exportRoute(route) {
-            var points = route.fields.marshrut.split("$").map(Number);
-            points.pop();
-            var tempStr = "";
-            for (let icurr = 0; icurr < points.length; icurr++) {
-                tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
-                if (icurr !== points.length - 1) {
-                    tempStr += "~";
-                }
+
+            $.ajax({
+                    url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
+                    type: "POST",
+                });
+        </script>
+        <script>
+            function callToast(message, time) {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                x.innerText = message;
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                }, time);
             }
-            var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
-            window.open(urlExport);
-        }
 
-        function exportMapRoute(route) {
-            var points = route.split("$").map(Number);
-            points.pop();
-            var tempStr = "";
-            for (let icurr = 0; icurr < points.length; icurr++) {
-                tempStr += places_json[points[icurr]].fields.geo_x + "," + places_json[points[icurr]].fields.geo_y;
-                if (icurr !== points.length - 1) {
-                    tempStr += "~";
-                }
-            }
-            var urlExport = "https://yandex.ru/maps/?rtext=" + tempStr + "&rtt=pd";
-            window.open(urlExport);
-        }
+            async function createOrder() {
+                const selectedDate = document.querySelector('.datazayavka').value;
+                // Получить выбранное количество человек
+                const selectedCount = document.getElementById('persons-count').value;
+                const selectedMessage = document.getElementById('messages').value;
+                let selectedOptionId = document.querySelector('.boxfiltrzayavka').selectedOptions[0].value;
+                const selectedName = document.getElementById('name').value;
 
-        function saveMarsh(popular_route) {
-
-            var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
-            if (is_authenticated) {
                 $.ajax({
-                    url: "/save_route/",  // URL функции отображения, которую вы хотите вызвать
+                    url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
                     type: "POST",
                     data: {
-                        "name": popular_route.fields.name,
-                        short_description: popular_route.fields.short_description,
-                        "route": popular_route.fields.marshrut
+                        "route": selectedOptionId,
+                        "date": selectedDate,
+                        "persons": selectedCount,
+                        "comments": selectedMessage,
+                        "name" : selectedName
                     },  // Передача аргумента в виде объекта JSON
                     success: function (data) {
-                        callToast("Маршрут успешно сохранён!", 3000);
+                        callToast("Заказ создан успешно!", 3000);
                     },
                     error: function (error) {
-                        // Обработать ошибки
+                        callToast("Проверьте корректность ввёденных данных!", 3000);
                     }
                 });
-            } else {
-                callToast("Чтобы добавить маршрут в избранные, необходимо войти в аккаунт!", 3000);
             }
-        }
+        </script>
+    </div>
 
-        function exploreMarsh(marshrut) {
-            deletePaneL()
-            deleteMarkers();
-            var ids = marshrut.split("$").map(Number);
-            ids.pop();
-            var coords = [];
+    <div class="footer">
+        <div class="logo">
+            <div class="logotype">
+                <div class="nazvanie"><a href="/">БелкаГид</a></div>
+                <a href="/"><img class="imgbelka" src="{% static 'img/белка.png' %}" alt="" width="55"
+                                 height="55"></a>
+            </div>
 
-            for (let temp_id in ids) {
-                coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
-            }
-            setMarkers(coords, ids);
-            window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
+            <div class="footermenu">
+                <a href="../../../about">О нас</a>
+                <a href="../../../places">Места</a>
+                <a href="../../../events">События</a>
+                <a href="../../../cafe">Кафе и рестораны</a>
+                <a href="../../../profile">Личный кабинет</a>
+            </div>
+        </div>
 
-        }
-
-        const routes_json = {{ routes|safe }};
-        exploreMarsh("{{ order.route.marshrut }}");
-
-    </script>
+        <div class="logo">
+            <div class="svyzi">
+                <div class="svyz">
+                    <h1>Телефон</h1>
+                    <h2>+7(999)-999-92-92</h2>
+                </div>
+                <div class="svyz">
+                    <h1>Email</h1>
+                    <h2>Belkagid@mail.ru</h2>
+                </div>
+                <div class="svyz">
+                    <h1>Соцсети</h1>
+                    <div class="managers">
+                        <svg width="51" style="margin-top:25px; " height="51" viewBox="0 0 51 51" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5002 4.32227C13.8039 4.32231 4.32231 13.8039 4.32227 25.5002C4.32231 37.1964 13.8039 46.678 25.5002 46.678C37.1964 46.678 46.678 37.1964 46.678 25.5002C46.678 13.8039 37.1964 4.32231 25.5002 4.32227ZM36.4704 13.8342C37.3308 13.8028 37.9821 14.5817 37.633 15.9812L33.437 35.7568C33.1441 37.1622 32.2944 37.4984 31.118 36.8494L24.7251 32.1257C23.2235 33.5856 21.8785 34.8931 21.652 35.1148C21.2958 35.4627 21.0121 35.7545 20.3726 35.7545C19.5439 35.7545 19.685 35.4409 19.3991 34.6518L17.0474 27.4425L10.9012 25.5235C9.53577 25.1052 9.52584 24.1672 11.2078 23.4924L35.851 13.9875C36.062 13.8917 36.2719 13.8414 36.4704 13.8342ZM32.5615 18.0403C32.3762 18.0378 32.1244 18.1041 31.865 18.2614L18.0123 27.0013L20.3461 34.1584L20.8084 29.2324L32.6705 18.5298C32.9959 18.241 32.8704 18.0446 32.5615 18.0403Z"
+                                  fill="#333D29"/>
+                        </svg>
+                        <svg width="46" height="46" style="margin-top:25px; " viewBox="0 0 46 46" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M23 34.5C29.3513 34.5 34.5 29.3513 34.5 23C34.5 16.6487 29.3513 11.5 23 11.5C16.6487 11.5 11.5 16.6487 11.5 23C11.5 29.3513 16.6487 34.5 23 34.5ZM23 30.6667C27.2341 30.6667 30.6667 27.2341 30.6667 23C30.6667 18.7658 27.2341 15.3333 23 15.3333C18.7658 15.3333 15.3333 18.7658 15.3333 23C15.3333 27.2341 18.7658 30.6667 23 30.6667Z"
+                                  fill="#333D29"/>
+                            <path d="M34.5007 9.58301C33.4421 9.58301 32.584 10.4411 32.584 11.4997C32.584 12.5582 33.4421 13.4163 34.5007 13.4163C35.5592 13.4163 36.4173 12.5582 36.4173 11.4997C36.4173 10.4411 35.5592 9.58301 34.5007 9.58301Z"
+                                  fill="#333D29"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M3.16944 8.19611C1.91602 10.6561 1.91602 13.8764 1.91602 20.317V25.6837C1.91602 32.1242 1.91602 35.3446 3.16944 37.8045C4.27198 39.9684 6.03125 41.7277 8.19513 42.8302C10.6551 44.0837 13.8754 44.0837 20.316 44.0837H25.6827C32.1233 44.0837 35.3436 44.0837 37.8035 42.8302C39.9674 41.7277 41.7267 39.9684 42.8292 37.8045C44.0827 35.3446 44.0827 32.1242 44.0827 25.6837V20.317C44.0827 13.8764 44.0827 10.6561 42.8292 8.19611C41.7267 6.03223 39.9674 4.27296 37.8035 3.17042C35.3436 1.91699 32.1233 1.91699 25.6827 1.91699H20.316C13.8754 1.91699 10.6551 1.91699 8.19513 3.17042C6.03125 4.27296 4.27198 6.03223 3.16944 8.19611ZM25.6827 5.75033H20.316C17.0325 5.75033 14.8003 5.75332 13.075 5.89427C11.3944 6.03158 10.535 6.28046 9.93543 6.58593C8.49285 7.32098 7.32 8.49382 6.58496 9.9364C6.27948 10.5359 6.0306 11.3954 5.89329 13.076C5.75234 14.8013 5.74935 17.0334 5.74935 20.317V25.6837C5.74935 28.9673 5.75234 31.1992 5.89329 32.9246C6.0306 34.6054 6.27948 35.4648 6.58496 36.0643C7.32 37.5068 8.49285 38.6796 9.93543 39.4147C10.535 39.7202 11.3944 39.9691 13.075 40.1064C14.8003 40.2473 17.0325 40.2503 20.316 40.2503H25.6827C28.9663 40.2503 31.1983 40.2473 32.9237 40.1064C34.6044 39.9691 35.4638 39.7202 36.0633 39.4147C37.5058 38.6796 38.6786 37.5068 39.4137 36.0643C39.7192 35.4648 39.9682 34.6054 40.1054 32.9246C40.2463 31.1992 40.2493 28.9673 40.2493 25.6837V20.317C40.2493 17.0334 40.2463 14.8013 40.1054 13.076C39.9682 11.3954 39.7192 10.5359 39.4137 9.9364C38.6786 8.49382 37.5058 7.32098 36.0633 6.58593C35.4638 6.28046 34.6044 6.03158 32.9237 5.89427C31.1983 5.75332 28.9663 5.75033 25.6827 5.75033Z"
+                                  fill="#333D29"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 </body>
 </html>
