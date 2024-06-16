@@ -542,7 +542,7 @@ body {
         font-weight: 300;
         font-size: 64px;
         color: #a58890;;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-left: 200px;
         margin-top: 100px;
     }
@@ -551,8 +551,8 @@ body {
     li, li1 {
         font-weight: 200;
         font-size: 24px;
-        font-family: 'Hero';
-        color: #414833;
+        font-family: 'Lab Grotesque';
+        color: #A98467;
         margin-left: 400px;
         margin-top: 50px;
         margin-bottom: 50px;
@@ -566,7 +566,7 @@ body {
     ol li1:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-right: 105px;
 
         color: #A98467;
@@ -589,7 +589,7 @@ body {
     ol li:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-right: 105px;
         color: #A98467;
         font-weight: 300;

@@ -246,6 +246,10 @@ body {
         color: #754C24;
         margin-top: 70px;
         margin-left: 80px;
+
+    }
+    .onasblock2 h1{
+    margin-bottom:55px;
     }
 
     .marshrblock {
@@ -413,7 +417,8 @@ body {
         font-family: 'Montserrat Alternates';
         color: #2B2920;
         position: absolute;
-        width: 1300px
+        width: 1300px;
+
     }
 
     .onasblock3 h1 {
@@ -546,7 +551,7 @@ body {
         font-weight: 300;
         font-size: 64px;
         color: #a58890;;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-left: 200px;
         margin-top: 100px;
     }
@@ -555,10 +560,10 @@ body {
     li, li1 {
         font-weight: 200;
         font-size: 24px;
-        font-family: 'Hero';
-        color: #414833;
+        font-family: 'Lab Grotesque';
+        color: #A98467;
         margin-left: 400px;
-        margin-top: 50px;
+        margin-top: 40px;
         margin-bottom: 50px;
         width: 1500px;
 
@@ -579,7 +584,7 @@ body {
     ol li:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-right: 105px;
 
         color: #A98467;
@@ -595,9 +600,8 @@ body {
     ol li1:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-right: 105px;
-
         color: #A98467;
         font-weight: 300;
         font-size: 64px;

@@ -262,6 +262,10 @@ body {
         margin-top: 50px;
         margin-left: 30px;
     }
+    .onasblock2 h1{
+
+    margin-bottom:35px;
+    }
 
     .marshrblock {
         margin-right: 50px;
@@ -544,7 +548,7 @@ body {
         font-weight: 300;
         font-size: 36px;
         color: #a58890;;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-left: 200px;
         margin-top: 100px;
     }
@@ -553,27 +557,27 @@ body {
     li, li1 {
         font-weight: 200;
         font-size: 24px;
-        font-family: 'Hero';
-        color: #414833;
-        margin-left: 100px;
+        font-family: 'Lab Grotesque';
+        color: #A98467;
+        margin-left: 50px;
         margin-top: 50px;
         margin-bottom: 50px;
-        width: 600px;
+        width: 90%;
 
     }
 
     li1 {
-        margin-left: 110px;
+        margin-left: 60px;
     }
     ol li1:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
-        margin-right: 105px;
+        font-family: 'Montserrat Alternates';
+        margin-right: 55px;
 
         color: #A98467;
         font-weight: 300;
-        font-size: 64px;
+        font-size: 48px;
         font-weight: bold;
         content: counter(num);
 
@@ -589,11 +593,11 @@ body {
     ol li:before {
         content: counter(num);
         counter-increment: num;
-        font-family: 'Bergamasco';
+        font-family: 'Montserrat Alternates';
         margin-right: 55px;
         color: #A98467;
         font-weight: 300;
-        font-size: 64px;
+        font-size: 48px;
         font-weight: bold;
     }
 
