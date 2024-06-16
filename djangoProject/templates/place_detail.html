@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/main3.css' %}">
     <link rel="stylesheet" href="{% static 'css/main4.css' %}">
 </head>
-
+<div id="snackbar">Всплывающее сообщение с информацией..</div>
 <div class="wrapper">
 
     <header>
@@ -63,18 +63,92 @@
             $('section').toggleClass('section_active');
         })
         </script>
+
+
+
     </div>
     <div class="content">
         <body>
+        <a class='lovebuttonm' onclick="">
 
+            <svg class='lovebuttonmsvg' onclick="addFavourites({{ place.map_id }})" viewBox="0 0 45 45" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z"
+                      stroke="#333D29" stroke-width="2"/>
+                <path d="M30.936 8.0003C36.4829 8.02731 40.973 12.5173 41 18.0643C41 28.2269 22.5 38.291 22.5 38.291C22.5 38.291 4 28.079 4 18.0643C4 12.5062 8.50577 8.0003 14.064 8.0003C17.4664 7.97377 20.6473 9.68507 22.5 12.5389C24.3655 9.69895 27.5381 7.99209 30.936 8.0003Z"
+                      id="heart_to_fill" fill="${color_for_svg}"/>
+            </svg>
+        </a>
         <div class="longdescr">
             <a onclick="window.history.back();"> <img class='back' src="{% static 'img/back.svg' %}"
                                                       alt="{{ place.name }}"></a>
+
             <h1>{{ place.name }}</h1>
             <img class='img1' src="{% static place.image %}" alt="{{ place.name }}">
             <p>{{ place.description }}</p>
         </div>
     </div>
+    <script>
+            function callToast(message, time) {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                x.innerText = message;
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                }, time);
+            }
+
+            async function checkFav() {
+                var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+                if (is_authenticated) {
+                    var color_for_svg = "#333D29";
+                    const response = await $.ajax({
+                        url: "/check_fav/",
+                        type: "POST",
+                        data: {"place-id": {{place.map_id}}},
+                    });
+
+                    color_for_svg = String(response["color"]);
+                    document.getElementById("heart_to_fill").setAttribute("fill", color_for_svg);
+
+                }else{
+                    document.getElementById("heart_to_fill").setAttribute('fill', "#333D29");
+                }
+            }
+
+            checkFav();
+        </script>
+
+    <script>
+
+
+        function addFavourites(place_id) {
+
+            var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+            if (!is_authenticated) {
+                callToast("Чтобы добавить место в избранные, необходимо войти в аккаунт!", 3000);
+
+            } else {
+                $.ajax({
+                    url: "/add_fav/",  // URL функции отображения, которую вы хотите вызвать
+                    type: "POST",
+                    data: {"place-id": place_id},  // Передача аргумента в виде объекта JSON
+                    success: function (data) {
+                        if (document.getElementById("heart_to_fill").getAttribute("fill") === "#333D29") {
+                            document.getElementById("heart_to_fill").setAttribute('fill', "#ff033e");
+                        } else {
+                            document.getElementById("heart_to_fill").setAttribute('fill', "#333D29");
+                        }
+                    },
+                    error: function (error) {
+                        // Обработать ошибки
+                    }
+                });
+            }
+
+
+        }
+    </script>
     <div class="footer">
         <div class="logo">
             <div class="logotype">
@@ -84,11 +158,11 @@
             </div>
 
             <div class="footermenu">
-                 <a href="../../about">О нас</a>
-                    <a href="../../places">Места</a>
-                    <a href="../../events">События</a>
-                    <a href="../../cafe">Кафе и рестораны</a>
-                    <a href="../../profile">Личный кабинет</a>
+                <a href="../../about">О нас</a>
+                <a href="../../places">Места</a>
+                <a href="../../events">События</a>
+                <a href="../../cafe">Кафе и рестораны</a>
+                <a href="../../profile">Личный кабинет</a>
             </div>
         </div>
         <div class="logo">
