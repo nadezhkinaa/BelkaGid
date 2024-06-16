@@ -13,7 +13,7 @@
 
 </head>
 <body>
-
+<div id="snackbar">Всплывающее сообщение с информацией..</div>
 <div class="wrapper">
     <div class="content">
         <header>
@@ -134,7 +134,41 @@
 
 
 </body>
+<script>
+    checkError();
+
+    function callToast(message, time) {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        x.innerText = message;
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, time);
+    }
+
+    function checkError() {
+        var paras = document.getElementsByClassName('errorlist');
 
 
+        if (paras.length > 0) {
+            if (paras[0].textContent.includes("This password is entirely numeric.")) {
+                callToast("Пароль не может состоять только из цифр!", 3000);
+            } else if (paras[0].textContent.includes("This password is too common.")) {
+                callToast("Этот пароль слишком распространённый!", 3000);
+            } else if (paras[0].textContent.includes("The two password fields didn’t match.")) {
+                callToast("Пароли отличаются!", 3000);
+            } else if (paras[0].textContent.includes("A user with that username already exists.")) {
+                callToast("Пользователь с этим логином уже зарегистирован!", 3000);
+            } else if (paras[0].textContent.includes("This password is too short. It must contain at least 8 characters.")) {
+                callToast("Пароль должен содержать не менее 8 символов!", 3000);
+            } else {
+                callToast("Ошибка регистрации!", 3000);
+            }
+        }
+        while (paras[0]) {
+            paras[0].parentNode.removeChild(paras[0]);
+        }
+    }
+</script>
 </body>
 </html>
