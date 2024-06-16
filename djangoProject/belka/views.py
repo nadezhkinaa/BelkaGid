@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.core import serializers
+from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -333,6 +334,9 @@ def deleteOrder(request):
 def order_detail(request, order_id):
     order = Order.objects.get(id=order_id)
     places = Place.objects.all()
+
+    if order.ordered_user != request.user.id and (not request.user.groups.filter(name='Gids').exists()):
+        raise PermissionDenied()
 
     for place in places:
         place.image = place.image.replace("static/", "")
