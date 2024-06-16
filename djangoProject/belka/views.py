@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
+from django.contrib.sites import requests
 from django.core import serializers
 from django.core.exceptions import PermissionDenied
 from django.http import JsonResponse
@@ -364,6 +365,31 @@ def takeOrder(request):
         q.gid = request.user.id
         q.save()
 
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
+
+
+@login_required
+@csrf_exempt
+def finishOrder(request):
+    if request.method == "POST":
+        request.session['route_finish'] = request.POST.get("route")
+        request.session['date_finish'] = request.POST.get("date")
+        request.session['persons_finish'] = request.POST.get("persons")
+
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
+
+
+@login_required
+@csrf_exempt
+def deleteSessionData(request):
+    if request.method == "POST":
+        request.session['route_finish'] = ""
+        request.session['date_finish'] = ""
+        request.session['persons_finish'] = ""
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})

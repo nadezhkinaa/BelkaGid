@@ -1437,7 +1437,7 @@
                     if (selectedOptionId === "optmashr2name") {
                         selectedOptionId = 3;
                     }
-                    if (selectedOptionId === "optmashr2name") {
+                    if (selectedOptionId === "optmashr3name") {
                         selectedOptionId = 4;
                     }
 
@@ -1450,7 +1450,7 @@
                     var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
                     if (is_authenticated) {
                         $.ajax({
-                            url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
+                            url: "/finish_order/",  // URL функции отображения, которую вы хотите вызвать
                             type: "POST",
                             data: {
                                 "route": selectedOptionId,
@@ -1458,7 +1458,7 @@
                                 "persons": selectedCount
                             },  // Передача аргумента в виде объекта JSON
                             success: function (data) {
-                                callToast("Заказ создан успешно!", 3000);
+                                window.location.replace('/profile/orders/create');
                             },
                             error: function (error) {
                                 callToast("Проверьте корректность ввёденных данных!", 3000);

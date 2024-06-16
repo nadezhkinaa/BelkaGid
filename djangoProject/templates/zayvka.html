@@ -97,36 +97,11 @@
                 <input class="tfieldinputz" id="name" required>
                 <input placeholder="" class="tfieldinputz" id="persons-count" required>
                 <input placeholder="" class="tfieldinputz" id="messages" required>
-                 <input id="datePicker" class='datazayavka' type="date">
+                <input id="datePicker" class='datazayavka' type="date">
 
 
             </div>
-            <script>
-                const datePicker = document.getElementById("datePicker");
 
-                // Получаем текущую дату
-                const today = new Date();
-
-                // Устанавливаем минимальное значение для элемента "дата"
-                datePicker.min = today.toISOString().split("T")[0];
-
-                // Функция для отключения прошедших дат и подсвечивания их серым цветом
-                function disablePastDates() {
-                    const allDates = document.querySelectorAll(".datazayavka");
-
-                    allDates.forEach((date) => {
-                        const dateValue = new Date(date.value);
-
-                        if (dateValue < today) {
-                            date.disabled = true;
-                            date.style.backgroundColor = "#d3d3d3";
-                        }
-                    });
-                }
-
-                // Вызываем функцию при загрузке страницы
-                disablePastDates();
-            </script>
             <select id="place-add-select" class="boxfiltrzayavka " onchange="">
                 <option disabled selected value=-1> Выберите маршрут</option>
                 <optgroup label="Мои маршруты">
@@ -145,7 +120,45 @@
             <button onclick="createOrder()" class="buttonsozdat" type="submit">Создать</button>
         </div>
     </div>
+    <script>
+        const datePicker = document.getElementById("datePicker");
 
+        if ('{{ request.session.date_finish }}' !== "") {
+            datePicker.value = '{{ request.session.date_finish }}';
+            document.getElementById("persons-count").setAttribute("value", {{ request.session.persons_finish }});
+            document.getElementById("place-add-select").value = '{{ request.session.route_finish }}';
+        }
+
+        // Получаем текущую дату
+        const today = new Date();
+
+        // Устанавливаем минимальное значение для элемента "дата"
+        datePicker.min = today.toISOString().split("T")[0];
+
+        // Функция для отключения прошедших дат и подсвечивания их серым цветом
+        function disablePastDates() {
+            const allDates = document.querySelectorAll(".datazayavka");
+
+            allDates.forEach((date) => {
+                const dateValue = new Date(date.value);
+
+                if (dateValue < today) {
+                    date.disabled = true;
+                    date.style.backgroundColor = "#d3d3d3";
+                }
+            });
+        }
+
+        // Вызываем функцию при загрузке страницы
+        disablePastDates();
+
+
+
+        $.ajax({
+                url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
+                type: "POST",
+            });
+    </script>
     <script>
         function callToast(message, time) {
             var x = document.getElementById("snackbar");
@@ -192,11 +205,11 @@
             </div>
 
             <div class="footermenu">
-                 <a href="../../about">О нас</a>
-                        <a href="../../places">Места</a>
-                        <a href="../../events">События</a>
-                        <a href="../../cafe">Кафе и рестораны</a>
-                        <a href="../../profile">Личный кабинет</a>
+                <a href="../../about">О нас</a>
+                <a href="../../places">Места</a>
+                <a href="../../events">События</a>
+                <a href="../../cafe">Кафе и рестораны</a>
+                <a href="../../profile">Личный кабинет</a>
             </div>
         </div>
 

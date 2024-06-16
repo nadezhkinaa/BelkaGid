@@ -59,4 +59,6 @@ urlpatterns = [
 
     path('profile/orders/order_<int:order_id>/', belka.views.order_detail, name='order_detail'),
     path('take_order/', belka.views.takeOrder, name='take_order'),
+    path('finish_order/', belka.views.finishOrder, name='finish_order'),
+    path('delete_session_data/', belka.views.deleteSessionData, name='delete_session_data'),
 ]
