@@ -311,7 +311,9 @@ def saveOrder(request):
             route=Route.objects.get(id=request.POST.get("route")),
             persons=request.POST.get("persons"),
             date=parseDate(request.POST.get('date')),  # Получение аргумента из запроса
-            ordered_user=request.user.id
+            ordered_user=request.user.id,
+            name=request.POST.get("name"),
+            comments=request.POST.get("comments")
         )
 
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON

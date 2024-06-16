@@ -125,6 +125,7 @@
 
         if ('{{ request.session.date_finish }}' !== "") {
             datePicker.value = '{{ request.session.date_finish }}';
+            document.getElementById("name").setAttribute("value", "Заказ на {{ request.session.date_finish }}");
             document.getElementById("persons-count").setAttribute("value", {{ request.session.persons_finish }});
             document.getElementById("place-add-select").value = '{{ request.session.route_finish }}';
         }
@@ -175,7 +176,7 @@
             const selectedCount = document.getElementById('persons-count').value;
             const selectedMessage = document.getElementById('messages').value;
             let selectedOptionId = document.querySelector('.boxfiltrzayavka').selectedOptions[0].value;
-
+            const selectedName = document.getElementById('name').value;
 
             $.ajax({
                 url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
@@ -184,7 +185,8 @@
                     "route": selectedOptionId,
                     "date": selectedDate,
                     "persons": selectedCount,
-                    "comments": selectedMessage
+                    "comments": selectedMessage,
+                    "name" : selectedName
                 },  // Передача аргумента в виде объекта JSON
                 success: function (data) {
                     callToast("Заказ создан успешно!", 3000);

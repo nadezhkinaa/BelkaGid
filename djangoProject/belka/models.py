@@ -113,6 +113,7 @@ class Order(models.Model):
     gid = models.IntegerField(default=-1)
     comments = models.TextField(default="")
     ordered_user = models.IntegerField(default=0)
+    name = models.TextField(default="Заказ")
 
     def __str__(self):
         return "Заказ на " + str(self.date)
