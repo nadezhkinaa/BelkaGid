@@ -116,7 +116,21 @@ def shop_page(request):
 
 @login_required
 def profile_page(request):
-    return render(request, 'lkab.html')
+    if request.user.first_name != "":
+        context = {
+            'name': request.user.first_name,
+            'surname': request.user.last_name,
+            'email': User.objects.filter(id=request.user.id).values_list('email', flat=True)[0],
+            'username': request.user.username,
+        }
+    else:
+        context = {
+            'name': "",
+            'surname': "",
+            'email': User.objects.filter(id=request.user.id).values_list('email', flat=True)[0],
+            'username': request.user.username,
+        }
+    return render(request, 'lkab.html', context)
 
 
 def signup(request):
@@ -392,6 +406,23 @@ def deleteSessionData(request):
         request.session['route_finish'] = ""
         request.session['date_finish'] = ""
         request.session['persons_finish'] = ""
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
+
+
+@csrf_exempt
+@login_required
+def saveDataEdits(request):
+    if request.method == "POST":
+        u = User.objects.get(id=request.user.id)
+        u.first_name = request.POST.get("name")
+        u.last_name = request.POST.get("surname")
+        u.username = request.POST.get("username")
+        u.email = request.POST.get("email")
+        if (request.POST.get("password")) != "":
+            u.set_password(request.POST.get("password"))
+        u.save()
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})

@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
 
 </head>
+<div id="snackbar">Всплывающее сообщение с информацией..</div>
+
 <body>
 <div class="wrapper">
     <div class="content">
@@ -129,26 +131,64 @@
             </div>
             <div class="lichndann">
                 <div class="pp">
-
                     <p>Имя</p>
                     <p>Фамилия</p>
-                    <p>Телефон</p>
+                    <p>Логин</p>
                     <p>Почта</p>
-                    <p>Текущий пароль</p>
+                    <p>Новый пароль</p>
                 </div>
                 <div class="pole">
                     <input class="tfieldinput" type="name" name="name" id="name" required>
-                    <input placeholder="" class="tfieldinput" type="name" name="name" id="name" required>
-                    <input placeholder="" class="tfieldinput" type="phone" name="phone" id="phone" required>
+                    <input placeholder="" class="tfieldinput" type="name" name="name" id="surname" required>
+                    <input placeholder="" class="tfieldinput" type="name" name="email" id="login" required>
                     <input placeholder="" class="tfieldinput" type="email" name="email" id="email" required>
-                    <input placeholder="" class="tfieldinput" type="password" name="password" id="password" required>
+                    <input placeholder="" class="tfieldinput" type="parol" name="password" id="password" required>
 
                 </div>
-                <button onclick="#" class="buttonsave" type="submit">Сохранить изменения</button>
+                <button onclick="saveDataEdits()" class="buttonsave" type="submit">Сохранить изменения</button>
 
             </div>
         </div>
     </div>
+
+    <script>
+        if ("{{ name }}" !== "") {
+            document.getElementById("name").setAttribute("value", "{{ name }}");
+            document.getElementById("surname").setAttribute("value", "{{ surname }}");
+        }
+        document.getElementById("login").setAttribute("value", "{{ username }}");
+        document.getElementById("email").setAttribute("value", "{{ email }}");
+
+
+        async function saveDataEdits() {
+            $.ajax({
+                url: "/save_data_edits/",  // URL функции отображения, которую вы хотите вызвать
+                type: "POST",
+                data: {
+                    "name": document.getElementById("name").value,
+                    "surname": document.getElementById("surname").value,
+                    "username": document.getElementById("login").value,
+                    "email": document.getElementById("email").value,
+                    "password": document.getElementById("password").value,
+                },  // Передача аргумента в виде объекта JSON
+                success: function (data) {
+                    callToast("Данные изменены успешно!", 3000);
+                },
+                error: function (error) {
+                    callToast("Ошибка! Проверьте корректность ввёденных данных!", 3000);
+                }
+            });
+        }
+
+        function callToast(message, time) {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            x.innerText = message;
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, time);
+        }
+    </script>
 
     <div class="footer">
         <div class="logo">
