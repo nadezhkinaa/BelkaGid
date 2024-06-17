@@ -65,7 +65,6 @@
         </script>
 
 
-
     </div>
     <div class="content">
         <body>
@@ -89,35 +88,35 @@
         </div>
     </div>
     <script>
-            function callToast(message, time) {
-                var x = document.getElementById("snackbar");
-                x.className = "show";
-                x.innerText = message;
-                setTimeout(function () {
-                    x.className = x.className.replace("show", "");
-                }, time);
+        function callToast(message, time) {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            x.innerText = message;
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, time);
+        }
+
+        async function checkFav() {
+            var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
+            if (is_authenticated) {
+                var color_for_svg = "#333D29";
+                const response = await $.ajax({
+                    url: "/check_fav/",
+                    type: "POST",
+                    data: {"place-id": {{place.map_id}}},
+                });
+
+                color_for_svg = String(response["color"]);
+                document.getElementById("heart_to_fill").setAttribute("fill", color_for_svg);
+
+            } else {
+                document.getElementById("heart_to_fill").setAttribute('fill', "#333D29");
             }
+        }
 
-            async function checkFav() {
-                var is_authenticated = {{ request.user.is_authenticated|yesno:"true,false" }};
-                if (is_authenticated) {
-                    var color_for_svg = "#333D29";
-                    const response = await $.ajax({
-                        url: "/check_fav/",
-                        type: "POST",
-                        data: {"place-id": {{place.map_id}}},
-                    });
-
-                    color_for_svg = String(response["color"]);
-                    document.getElementById("heart_to_fill").setAttribute("fill", color_for_svg);
-
-                }else{
-                    document.getElementById("heart_to_fill").setAttribute('fill', "#333D29");
-                }
-            }
-
-            checkFav();
-        </script>
+        checkFav();
+    </script>
 
     <script>
 

@@ -28,8 +28,8 @@
 
                     <div class="menu">
                         <a href="../about">О нас</a>
-                        <a  href="../places">Места</a>
-                        <a style="text-decoration: underline;"href="../events">События</a>
+                        <a href="../places">Места</a>
+                        <a style="text-decoration: underline;" href="../events">События</a>
                         <a href="../cafe">Кафе и рестораны</a>
                         <a href="../profile">Личный кабинет</a>
                     </div>
@@ -95,7 +95,7 @@
                     <img class='img' src="{% static item.image %}" alt="{{ item.name }}">
                     <div class="card-body">
                         <h1>{{ item.name }}</h1>
-                        <h4>от {{item.cost}}₽</h4>
+                        <h4>от {{ item.cost }}₽</h4>
                         <h2>{{ item.place }}</h2>
                         <h3>{{ item.date }}</h3>
                         <form action="{{ item.link }}">

@@ -154,11 +154,10 @@
         disablePastDates();
 
 
-
         $.ajax({
-                url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
-                type: "POST",
-            });
+            url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
+            type: "POST",
+        });
     </script>
     <script>
         function callToast(message, time) {
@@ -186,7 +185,7 @@
                     "date": selectedDate,
                     "persons": selectedCount,
                     "comments": selectedMessage,
-                    "name" : selectedName
+                    "name": selectedName
                 },  // Передача аргумента в виде объекта JSON
                 success: function (data) {
                     callToast("Заказ создан успешно!", 3000);

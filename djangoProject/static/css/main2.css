@@ -288,7 +288,7 @@ body {
         position: absolute;
         top: 70px;
         left: 100px;
-        width:550px;
+        width: 550px;
     }
 
     .block2 p {
@@ -629,6 +629,7 @@ body {
     li1 {
         margin-left: 110px;
     }
+
     ol li1:before {
         content: counter(num);
         counter-increment: num;
@@ -929,12 +930,14 @@ body {
         color: #414833;
         width: 400px;
     }
-    .card img,.sobcard img {
+
+    .card img, .sobcard img {
         width: 100%;
         border-radius: 10px;
         height: 250px;
 
     }
+
     .sobcard {
         position: relative;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -948,8 +951,9 @@ body {
         align-self: center;
         justify-self: center;
     }
-    .sobcard h1{
-    position: absolute;
+
+    .sobcard h1 {
+        position: absolute;
         left: 25px;
         top: 260px;
         font-family: 'Montserrat Alternates';
@@ -958,8 +962,9 @@ body {
         color: #414833;
         width: 400px;
     }
-    .sobcard h4{
-    position: absolute;
+
+    .sobcard h4 {
+        position: absolute;
         left: 25px;
         top: 350px;
         font-family: 'Montserrat Alternates';
@@ -968,8 +973,9 @@ body {
         color: #414833;
         width: 650px;
     }
-    .sobcard h2{
-    position: absolute;
+
+    .sobcard h2 {
+        position: absolute;
         left: 25px;
         top: 400px;
         font-family: 'Montserrat Alternates';
@@ -978,8 +984,9 @@ body {
         color: #414833;
         width: 650px;
     }
-    .sobcard h3{
-    position: absolute;
+
+    .sobcard h3 {
+        position: absolute;
         left: 25px;
         top: 430px;
         font-family: 'Montserrat Alternates';
@@ -988,6 +995,7 @@ body {
         color: #414833;
         width: 650px;
     }
+
     .buttonsob {
         position: absolute;
         left: 25px;
@@ -1105,9 +1113,10 @@ body {
         stroke: #333D29;
         stroke-width: 3px;
     }
-    .lovebuttonmsvg{
-    width:30px;
-    height:30px;
+
+    .lovebuttonmsvg {
+        width: 30px;
+        height: 30px;
     }
 
     .cafecard {
@@ -1386,10 +1395,10 @@ body {
         color: #000000;
     }
 
-    .zakazi,.zakazi2 {
-        margin-left:330px;
-        margin-top:-700px;
-        padding-bottom:80px;
+    .zakazi, .zakazi2 {
+        margin-left: 330px;
+        margin-top: -700px;
+        padding-bottom: 80px;
         height: content;
         width: 700px;
 
@@ -1397,12 +1406,13 @@ body {
         border-radius: 25px;
         background: #F0EEE6;
     }
-    .zakazi2{
+
+    .zakazi2 {
         border: 4px solid #fff;
         border-radius: 25px;
-         margin-left:330px;
-        margin-top:50px;
-        margin-bottom:200px;
+        margin-left: 330px;
+        margin-top: 50px;
+        margin-bottom: 200px;
 
     }
 
@@ -1420,16 +1430,17 @@ body {
 
     .zakaz p {
         font-weight: 200;
-        font-size:24px;
+        font-size: 24px;
         color: #333d29;
         font-family: 'Hero';
         padding-left: 15px;
         padding-top: 10px;
-        cursor:pointer;
-        width:500px;
+        cursor: pointer;
+        width: 500px;
     }
-    .zakaz p:hover{
-    font-weight: 800;
+
+    .zakaz p:hover {
+        font-weight: 800;
     }
 
     .namezakaz {
@@ -1472,14 +1483,14 @@ body {
     }
 
     .marsruty {
-        margin-left:330px;
-        margin-top:-705px;
+        margin-left: 330px;
+        margin-top: -705px;
         width: 720px;
-        height:content;
+        height: content;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
-        margin-bottom:200px;
+        margin-bottom: 200px;
     }
 
     .marsruty h1 {
@@ -1501,8 +1512,8 @@ body {
         height: content;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         background: #FBFAF8;
-        margin-bottom:25px;
-        padding-bottom:25px;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
     }
 
     .namemarshr {
@@ -1521,27 +1532,32 @@ body {
         color: #333d29;
         font-family: 'Hero';
         text-decoration: none;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .namemarshr p:hover{
-    font-weight: 800;
+
+    .namemarshr p:hover {
+        font-weight: 800;
     }
 
     .namemarshr a {
         margin-top: 10px;
     }
-    .strelka{
-    margin-left:25px;
-    margin-top:55px;
-    width:43px;
-    height:36px;
+
+    .strelka {
+        margin-left: 25px;
+        margin-top: 55px;
+        width: 43px;
+        height: 36px;
     }
-    .namekab     {
+
+    .namekab {
         display: flex;
     }
+
     .order {
         display: flex;
     }
+
     .datazayavka {
         width: 330px;
         height: 58px;
@@ -1549,11 +1565,11 @@ body {
         font-size: 18px;
         color: #414833;
         background-color: #F0EEE6;
-        border-color:#F0EEE6;
-        border-radius: 15px ;
+        border-color: #F0EEE6;
+        border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
-        margin-left:-15px;
+        margin-left: -15px;
         padding-left: 15px;
         padding-right: 15px;
         cursor: pointer;
@@ -1568,6 +1584,7 @@ body {
         top: 290px;
 
     }
+
     .boxfiltrzayavka {
         width: 320px;
         height: 50px;
@@ -1614,6 +1631,7 @@ body {
         background: #fbfaf8;
         margin-top: 55px;
     }
+
     .zayavkaorder h1 {
         padding-top: 30px;
         padding-left: 45px;
@@ -1631,7 +1649,7 @@ body {
         font-size: 24px;
         color: #333d29;
         font-family: 'Hero';
-        width:100px;
+        width: 100px;
     }
 
     .zayavkaorder {
@@ -1640,11 +1658,12 @@ body {
         height: 690px;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        margin-left:50px;
+        margin-left: 50px;
         background: #fbfaf8;
-        margin-left:15px;
+        margin-left: 15px;
 
     }
+
     .zayvpoleorder {
         position: absolute;
         left: 180px;
@@ -1653,6 +1672,7 @@ body {
         justify-content: center;
         flex-direction: column;
     }
+
     .tfieldinputzorder {
         border: 0;
         border-radius: 15px;
@@ -1667,6 +1687,7 @@ body {
         font-size: 24px;
         color: #333d29;
     }
+
     .datazayavkaorder {
         width: 330px;
         height: 58px;
@@ -1674,8 +1695,8 @@ body {
         font-size: 18px;
         color: #414833;
         background-color: #F0EEE6;
-        border-color:#F0EEE6;
-        border-radius: 15px ;
+        border-color: #F0EEE6;
+        border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
 
@@ -1685,12 +1706,14 @@ body {
 
 
     }
-     .datazayavkaorder {
+
+    .datazayavkaorder {
         width: 280px;
         left: 10px;
         top: 300px;
 
     }
+
     .boxfiltrzayavkaorder {
         width: 260px;
         height: 40px;
@@ -1706,10 +1729,11 @@ body {
         margin-bottom: 30px;
         cursor: pointer;
     }
-    .buttonsohrorder{
-    position:absolute;
-        left:300px;
-        top:535px;
+
+    .buttonsohrorder {
+        position: absolute;
+        left: 300px;
+        top: 535px;
         width: 208px;
         height: 43px;
         font-weight: 400;
@@ -1721,6 +1745,7 @@ body {
         background-color: #FBFAF8;
         cursor: pointer;
     }
+
     .buttonsohrorder:hover {
         border: 2px solid #000000;
         color: #000000;
@@ -1743,7 +1768,7 @@ body {
         background: #F0EEE6;
         margin-bottom: 40px;
         padding-left: 15px;
-        margin-left:35px;
+        margin-left: 35px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
@@ -1751,9 +1776,9 @@ body {
     }
 
     .buttonprikr {
-        position:absolute;
-        left:600px;
-        top:520px;
+        position: absolute;
+        left: 600px;
+        top: 520px;
         width: 330px;
         height: 53px;
         font-weight: 400;
@@ -1763,17 +1788,18 @@ body {
         border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #FBFAF8;
-        cursor:pointer;
+        cursor: pointer;
     }
+
     .buttonprikr:hover {
         border: 2px solid #000000;
         color: #000000;
     }
 
     .buttonsozdat {
-         position:absolute;
-        left:730px;
-        top:600px;
+        position: absolute;
+        left: 730px;
+        top: 600px;
         width: 208px;
         height: 53px;
         font-weight: 400;
@@ -1783,8 +1809,9 @@ body {
         border-radius: 20px;
         border: 1px solid #333d29;
         background-color: #FBFAF8;
-        cursor:pointer;
+        cursor: pointer;
     }
+
     .buttonsozdat:hover {
         border: 2px solid #000000;
         color: #000000;
@@ -1797,8 +1824,8 @@ body {
     .editmarsr {
         margin-top: 55px;
         width: 1000px;
-        height:content;
-        padding-bottom:70px;
+        height: content;
+        padding-bottom: 70px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1808,7 +1835,7 @@ body {
 
     .marsrname {
         display: flex;
-        position:relative;
+        position: relative;
     }
 
     .marsrname h1 {
@@ -1818,13 +1845,13 @@ body {
         font-size: 36px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .exportm {
-        position:absolute;
-        left:900px;
-        top:30px;
+        position: absolute;
+        left: 900px;
+        top: 30px;
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -1965,16 +1992,15 @@ body {
 
     }
 
-    .add{
-    position:relative;
+    .add {
+        position: relative;
     }
 
 
-
     .buttonadd {
-        position:absolute;
-        left:400px;
-        top:50px;
+        position: absolute;
+        left: 400px;
+        top: 50px;
         border: 1px solid #333d29;
         border-radius: 15px;
         width: 198px;
@@ -1991,10 +2017,11 @@ body {
         border: 2px solid #000000;
         color: #000000;
     }
+
     .buttonoptimize {
-        position:absolute;
-        left:760px;
-        top:50px;
+        position: absolute;
+        left: 760px;
+        top: 50px;
         border: 1px solid #333d29;
         border-radius: 15px;
         width: 198px;
@@ -2013,9 +2040,9 @@ body {
     }
 
     .buttonsavem {
-        position:absolute;
-        left:760px;
-        top:120px;
+        position: absolute;
+        left: 760px;
+        top: 120px;
         border: 1px solid #333d29;
         border-radius: 15px;
         width: 198px;
@@ -2098,11 +2125,12 @@ body {
         margin-right: auto;
         width: 70%;
     }
+
     .mapclassorder {
 
-        width:40%;
-        margin-top:-60px;
-        margin-left:50px;
+        width: 40%;
+        margin-top: -60px;
+        margin-left: 50px;
     }
 
     .map_high_q {
@@ -2545,7 +2573,7 @@ body {
         height: 27px;
     }
 
-    .editzakaz,.addzakaz {
+    .editzakaz, .addzakaz {
         position: absolute;
         left: 530px;
         top: 18px;
@@ -2553,8 +2581,9 @@ body {
         height: 42px;
         cursor: pointer;
     }
-    .addzakaz:hover{
-     stroke: #333D29;
+
+    .addzakaz:hover {
+        stroke: #333D29;
         stroke-width: 1px;
     }
 
@@ -2657,6 +2686,7 @@ body {
         left: 30px;
 
     }
+
     #snackbar {
         visibility: hidden;
         min-width: 250px;
@@ -2672,8 +2702,8 @@ body {
         padding: 16px;
         position: fixed;
         z-index: 1;
-        left:50%;
-        transform:translate(-50%,-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
         bottom: 50px;
 
     }

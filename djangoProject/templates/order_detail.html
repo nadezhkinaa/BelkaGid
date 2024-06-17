@@ -90,7 +90,7 @@
             <h1>Заявка</h1>
         </div>
 
-        {{ order.route }} {{ order.date }} {{ order.persons }} {{ email}}
+        {{ order.route }} {{ order.date }} {{ order.persons }} {{ email }}
         <div class="order">
 
 
@@ -117,12 +117,12 @@
                     <option disabled selected value=-1> Выберите маршрут</option>
                     <optgroup label="Мои маршруты">
                         {% for place in routes_for_order %}
-                        <option value="{{ place.id }}"> {{ place.name }}</option>
+                            <option value="{{ place.id }}"> {{ place.name }}</option>
                         {% endfor %}
                     </optgroup>
                     <optgroup label="Базовые маршруты">
                         {% for place in routes %}
-                        <option value="{{ place.id }}"> {{ place.name }}</option>
+                            <option value="{{ place.id }}"> {{ place.name }}</option>
                         {% endfor %}
                     </optgroup>
                 </select>
@@ -619,11 +619,10 @@
             disablePastDates();
 
 
-
             $.ajax({
-                    url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
-                    type: "POST",
-                });
+                url: "/delete_session_data/",  // URL функции отображения, которую вы хотите вызвать
+                type: "POST",
+            });
         </script>
         <script>
             function callToast(message, time) {
@@ -651,7 +650,7 @@
                         "date": selectedDate,
                         "persons": selectedCount,
                         "comments": selectedMessage,
-                        "name" : selectedName
+                        "name": selectedName
                     },  // Передача аргумента в виде объекта JSON
                     success: function (data) {
                         callToast("Заказ создан успешно!", 3000);

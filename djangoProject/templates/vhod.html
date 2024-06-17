@@ -14,7 +14,6 @@
 </head>
 
 
-
 <div id="snackbar">Всплывающее сообщение с информацией..</div>
 <body>
 <div class="wrapper">
@@ -85,7 +84,7 @@
             </svg>
 
             <div class="vhodd">
-                <form method="post" >
+                <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="vhodd">
@@ -106,13 +105,13 @@
         checkError();
 
         function callToast(message, time) {
-                var x = document.getElementById("snackbar");
-                x.className = "show";
-                x.innerText = message;
-                setTimeout(function () {
-                    x.className = x.className.replace("show", "");
-                }, time);
-            }
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            x.innerText = message;
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, time);
+        }
 
         function checkError() {
             var paras = document.getElementsByClassName('errorlist nonfield');

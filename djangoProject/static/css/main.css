@@ -248,8 +248,9 @@ body {
         margin-left: 80px;
 
     }
-    .onasblock2 h1{
-    margin-bottom:55px;
+
+    .onasblock2 h1 {
+        margin-bottom: 55px;
     }
 
     .marshrblock {
@@ -1166,8 +1167,10 @@ body {
         padding-top: 50px;
         padding-left: 50px;
     }
-    .namekab{
-    display:flex;}
+
+    .namekab {
+        display: flex;
+    }
 
     .smallmenu a {
         display: block;
@@ -1252,21 +1255,22 @@ body {
 
     .zakazi, .zakazi2 {
         width: 1169px;
-        margin-left:500px;
-        margin-top:-700px;
+        margin-left: 500px;
+        margin-top: -700px;
 
         height: content;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
-        padding-bottom:80px;
+        padding-bottom: 80px;
     }
-    .zakazi2{
+
+    .zakazi2 {
         border: 4px solid #fff;
         border-radius: 25px;
-         margin-left:500px;
-        margin-top:100px;
-        margin-bottom:200px;
+        margin-left: 500px;
+        margin-top: 100px;
+        margin-bottom: 200px;
 
     }
 
@@ -1289,10 +1293,11 @@ body {
         font-family: 'Hero';
         padding-left: 15px;
         padding-top: 10px;
-        cursor:pointer;
+        cursor: pointer;
     }
-    .zakaz p:hover{
-    font-weight: 800;
+
+    .zakaz p:hover {
+        font-weight: 800;
 
     }
 
@@ -1334,17 +1339,18 @@ body {
         border: 2px solid #2B2920;
         color: #2B2920;
     }
-    .dannie{
+
+    .dannie {
 
     }
 
     .marsruty {
-        margin-left:500px;
-        margin-top:-700px;
+        margin-left: 500px;
+        margin-top: -700px;
         width: 1169px;
         height: content;
         padding-bottom: 25px;
-        margin-bottom:200px;
+        margin-bottom: 200px;
         border: 4px solid #fff;
         border-radius: 25px;
         background: #F0EEE6;
@@ -1399,15 +1405,16 @@ body {
     .namemarshr a {
         margin-top: 10px;
     }
-     .datazayavka {
+
+    .datazayavka {
         width: 330px;
         height: 58px;
         border: 1px solid #414833;
         font-size: 18px;
         color: #414833;
         background-color: #F0EEE6;
-        border-color:#F0EEE6;
-        border-radius: 15px ;
+        border-color: #F0EEE6;
+        border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
 
@@ -1425,6 +1432,7 @@ body {
         top: 290px;
 
     }
+
     .datazayavkaorder {
         width: 330px;
         height: 58px;
@@ -1432,8 +1440,8 @@ body {
         font-size: 18px;
         color: #414833;
         background-color: #F0EEE6;
-        border-color:#F0EEE6;
-        border-radius: 15px ;
+        border-color: #F0EEE6;
+        border-radius: 15px;
         font-family: 'Montserrat Alternates';
         position: absolute;
 
@@ -1443,12 +1451,14 @@ body {
 
 
     }
-     .datazayavkaorder {
+
+    .datazayavkaorder {
         width: 360px;
         left: 50px;
         top: 320px;
 
     }
+
     .boxfiltrzayavka {
         width: 320px;
         height: 50px;
@@ -1464,6 +1474,7 @@ body {
         margin-bottom: 30px;
         cursor: pointer;
     }
+
     .boxfiltrzayavkaorder {
         width: 280px;
         height: 40px;
@@ -1479,8 +1490,9 @@ body {
         margin-bottom: 30px;
         cursor: pointer;
     }
-    .order{
-    display:flex;
+
+    .order {
+        display: flex;
     }
 
     .zayavka h1 {
@@ -1508,13 +1520,14 @@ body {
         height: 690px;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        margin-left:50px;
+        margin-left: 50px;
         background: #fbfaf8;
 
         margin-left: auto;
         margin-right: auto;
         margin-top: 55px;
     }
+
     .zayavkaorder h1 {
         padding-top: 30px;
         padding-left: 45px;
@@ -1532,7 +1545,7 @@ body {
         font-size: 28px;
         color: #333d29;
         font-family: 'Hero';
-        width:100px;
+        width: 100px;
     }
 
     .zayavkaorder {
@@ -1541,7 +1554,7 @@ body {
         height: 690px;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        margin-left:50px;
+        margin-left: 50px;
         background: #fbfaf8;
 
     }
@@ -1570,6 +1583,7 @@ body {
         font-size: 24px;
         color: #333d29;
     }
+
     .zayvpoleorder {
         position: absolute;
         left: 250px;
@@ -1595,9 +1609,9 @@ body {
     }
 
     .buttonprikr {
-        position:absolute;
-        left:800px;
-        top:520px;
+        position: absolute;
+        left: 800px;
+        top: 520px;
         width: 380px;
         height: 53px;
         font-weight: 400;
@@ -1616,9 +1630,9 @@ body {
     }
 
     .buttonsozdat {
-        position:absolute;
-        left:940px;
-        top:600px;
+        position: absolute;
+        left: 940px;
+        top: 600px;
         width: 238px;
         height: 53px;
         font-weight: 400;
@@ -1635,10 +1649,11 @@ body {
         border: 2px solid #000000;
         color: #000000;
     }
-    .buttonsohrorder{
-    position:absolute;
-        left:450px;
-        top:560px;
+
+    .buttonsohrorder {
+        position: absolute;
+        left: 450px;
+        top: 560px;
         width: 208px;
         height: 43px;
         font-weight: 400;
@@ -1650,6 +1665,7 @@ body {
         background-color: #FBFAF8;
         cursor: pointer;
     }
+
     .buttonsohrorder:hover {
         border: 2px solid #000000;
         color: #000000;
@@ -1674,7 +1690,7 @@ body {
 
     .marsrname {
         display: flex;
-        position:relative;
+        position: relative;
     }
 
     .marsrname h1 {
@@ -1688,9 +1704,9 @@ body {
     }
 
     .exportm {
-        position:absolute;
-        left:1050px;
-        top:40px;
+        position: absolute;
+        left: 1050px;
+        top: 40px;
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -1885,22 +1901,23 @@ body {
         width: 70%;
 
 
-
     }
+
     .mapclassorder {
         margin-left: auto;
         margin-right: auto;
-        width:40%;
-        margin-top:-60px;
-        margin-left:10px;
+        width: 40%;
+        margin-top: -60px;
+        margin-left: 10px;
 
 
     }
-    .strelka{
-    margin-left:25px;
-    margin-top:55px;
-    width:43px;
-    height:36px;
+
+    .strelka {
+        margin-left: 25px;
+        margin-top: 55px;
+        width: 43px;
+        height: 36px;
     }
 
     .vhod h2 {
@@ -2611,7 +2628,7 @@ body {
         height: 27px;
     }
 
-    .editzakaz,.addzakaz {
+    .editzakaz, .addzakaz {
         position: absolute;
         left: 950px;
         top: 10px;
@@ -2619,8 +2636,9 @@ body {
         height: 42px;
         cursor: pointer;
     }
-    .addzakaz:hover{
-     stroke: #333D29;
+
+    .addzakaz:hover {
+        stroke: #333D29;
         stroke-width: 1px;
     }
 
@@ -2816,8 +2834,8 @@ body {
         padding: 16px;
         position: fixed;
         z-index: 1;
-        left:50%;
-        transform:translate(-50%,-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
         bottom: 50px;
 
     }
