@@ -1446,16 +1446,28 @@ body {
         font-family: 'Hero';
         width: 100px;
     }
+    .zayavkaorder p1 {
+        padding-top: 40px;
+        padding-left: 10px;
+        margin-bottom: 25px;
+        font-weight: 800;
+        font-size: 18px;
+        color: #333d29;
+        font-family: 'Hero';
+        width: 100px;
+    }
 
     .zayavkaorder {
         position: relative;
         width: 50%;
-        height: 690px;
+        height:content;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        margin-left: 50px;
+
         background: #fbfaf8;
-        margin-left: 15px;
+        margin-left: 60px;
+        margin-top: -40px;
+        padding-bottom:20px;
 
     }
 
@@ -1474,9 +1486,9 @@ body {
         width: 120px;
         height: 40px;
         background: #F0EEE6;
-        margin-bottom: 60px;
+        margin-bottom: 65px;
         padding-left: 15px;
-        margin-left: 10px;
+        margin-left: 15px;
         font-family: 'Montserrat Alternates';
         font-weight: 400;
         font-size: 24px;
@@ -1505,7 +1517,7 @@ body {
     .datazayavkaorder {
         width: 150px;
         left: -40px;
-        top: 290px;
+        top: 500px;
 
     }
 
@@ -1528,8 +1540,8 @@ body {
     .buttonsohrorder {
         position: absolute;
         left: 5px;
-        top: 550px;
-        width: 200px;
+        bottom:20px;
+        width: 188px;
         height: 40px;
         font-weight: 400;
         font-size: 20px;
@@ -2016,6 +2028,13 @@ body {
         width: 40%;
         margin-top: -60px;
         margin-left: 50px;
+    }
+    #maporder {
+        width: 100%;
+        height: 900px;
+
+        min-height: 80vh;
+
     }
 
     #map {

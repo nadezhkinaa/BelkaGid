@@ -79,7 +79,7 @@
             </script>
         </div>
 
-        <div class="namekab">
+
             <a href="../../../profile/orders" style="">
                 <svg class="strelka" viewBox="0 0 43 36"
                      fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,8 +87,8 @@
                           stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
-            <h1>Заявка</h1>
-        </div>
+
+
 
         {{ order.route }} {{ order.date }} {{ order.persons }} {{ email }}
         <div class="order">
@@ -100,20 +100,26 @@
                     <h1>Заявка</h1>
                 </div>
                 <p>Название</p>
+                <p>Название маршрута</p>
                 <p>Количество человек</p>
                 <p>Пожелания</p>
+                <p>Электронная почта</p>
                 <p>Дата</p>
+                <p1>Гид: Имя</p1>
+                <p1>Почта гида: Почта</p1>
 
                 <div class="zayvpoleorder">
                     <input placeholder="" class="tfieldinputzorder" id="name" required>
+                    <input placeholder="" class="tfieldinputzorder" id="name" required>
                     <input placeholder="" class="tfieldinputzorder" id="persons-count" required>
                     <input placeholder="" class="tfieldinputzorder" id="messages" required>
+                    <input placeholder="" class="tfieldinputzorder" id="name" required>
                     <input placeholder="" id="datePicker" class='datazayavkaorder' type="date">
 
 
                 </div>
 
-                <select id="place-add-select" class="boxfiltrzayavkaorder " onchange="">
+                <!--<select id="place-add-select" class="boxfiltrzayavkaorder " onchange="">
                     <option disabled selected value=-1> Выберите маршрут</option>
                     <optgroup label="Мои маршруты">
                         {% for place in routes_for_order %}
@@ -125,7 +131,7 @@
                             <option value="{{ place.id }}"> {{ place.name }}</option>
                         {% endfor %}
                     </optgroup>
-                </select>
+                </select>-->
 
 
                 <button onclick="createOrder()" class="buttonsohrorder" type="submit">Сохранить</button>
@@ -133,7 +139,7 @@
 
 
             <div class="mapclassorder">
-                <div id="map" class="map"></div>
+                <div id="maporder" class="map"></div>
 
                 <script>
 
@@ -184,7 +190,7 @@
                                 })
                             })
                         ],
-                        target: 'map',
+                        target: 'maporder',
                         view: new ol.View({
                             projection: projection,
                             center: ol.extent.getCenter(extent),
@@ -575,7 +581,7 @@
                             coords.push([places_json[ids[temp_id]].fields.map_x, places_json[ids[temp_id]].fields.map_y])
                         }
                         setMarkers(coords, ids);
-                        window.scrollTo({top: document.getElementById('map').offsetTop, behavior: 'smooth'});
+                        window.scrollTo({top: document.getElementById('maporder').offsetTop, behavior: 'smooth'});
 
                     }
 

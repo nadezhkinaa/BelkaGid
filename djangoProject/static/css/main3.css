@@ -1466,7 +1466,7 @@ body {
         padding-top: 30px;
         padding-left: 45px;
         font-weight: 500;
-        font-size: 48px;
+        font-size: 36px;
         color: #754C24;
         font-family: 'Montserrat Alternates';
     }
@@ -1481,16 +1481,28 @@ body {
         font-family: 'Hero';
         width: 100px;
     }
+    .zayavkaorder p1 {
+        padding-top: 40px;
+        padding-left: 15px;
+        margin-bottom: 25px;
+        font-weight: 800;
+        font-size: 20px;
+        color: #333d29;
+        font-family: 'Hero';
+        width: 100px;
+    }
 
     .zayavkaorder {
         position: relative;
         width: 50%;
-        height: 690px;
+        height:content;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        margin-left: 50px;
+
         background: #fbfaf8;
-        margin-left: 15px;
+       margin-left: 80px;
+        margin-top: -40px;
+        padding-bottom:80px;
 
     }
 
@@ -1540,7 +1552,7 @@ body {
     .datazayavkaorder {
         width: 180px;
         left: 10px;
-        top: 300px;
+        top: 500px;
 
     }
 
@@ -1563,11 +1575,11 @@ body {
     .buttonsohrorder {
         position: absolute;
         left: 20px;
-        top: 580px;
-        width: 208px;
-        height: 43px;
+        bottom:20px;
+        width: 188px;
+        height: 40px;
         font-weight: 400;
-        font-size: 25px;
+        font-size: 20px;
         color: #333d29;
         font-family: 'Montserrat Alternates';
         border-radius: 15px;
@@ -2071,6 +2083,13 @@ body {
         height: 600px;
 
         min-height: 70vh;
+    }
+    #maporder {
+        width: 100%;
+        height: 900px;
+
+        min-height: 80vh;
+
     }
 
     .vhod h2 {
