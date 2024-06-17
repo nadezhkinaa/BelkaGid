@@ -1264,6 +1264,7 @@ body {
         border-radius: 25px;
         background: #F0EEE6;
         padding-bottom: 80px;
+        margin-bottom: 400px;
     }
 
     .zakazi2 {
@@ -1548,6 +1549,7 @@ body {
         font-family: 'Hero';
         width: 100px;
     }
+
     .zayavkaorder p1 {
         padding-top: 40px;
         padding-left: 50px;
@@ -1569,7 +1571,7 @@ body {
         margin-left: 100px;
         margin-top: -40px;
         background: #fbfaf8;
-        padding-bottom:80px;
+        padding-bottom: 80px;
 
     }
 
@@ -1926,6 +1928,7 @@ body {
 
 
     }
+
     #maporder {
         width: 100%;
         height: 900px;
@@ -1964,12 +1967,11 @@ body {
         background: #F0EEE6;
         margin-bottom: 15px;
     }
-    .email_reg__input::placeholder,.username_reg__input::placeholder,.password1_reg__input::placeholder,.password2_reg__input::placeholder {
+
+    .email_reg__input::placeholder, .username_reg__input::placeholder, .password1_reg__input::placeholder, .password2_reg__input::placeholder {
         color: #A98467;
         opacity: 0.8;
     }
-
-
 
 
     .boxfiltr {
@@ -2382,13 +2384,15 @@ body {
         height: 38px;
 
     }
+
     .lovebuttonpodrsvg {
         width: 38px;
         height: 38px;
 
     }
+
     .lovebuttonpodr {
-    position: absolute;
+        position: absolute;
         margin-left: 69%;
         top: 215px;
         cursor: pointer;
@@ -2398,8 +2402,6 @@ body {
         stroke: #333D29;
         stroke-width: 3px;
     }
-
-
 
 
     .buttonmesta {
@@ -2832,7 +2834,7 @@ body {
         text-align: start;
         width: 800px;
         padding-top: 100px;
-        position:relative;
+        position: relative;
     }
 
     .longdescr p {
@@ -2859,7 +2861,7 @@ body {
         position: absolute;
         top: 210px;
         left: 280px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
 

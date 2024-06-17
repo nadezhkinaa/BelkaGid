@@ -1059,10 +1059,12 @@ body {
         width: 30px;
         height: 30px;
     }
+
     .lovebuttonpodrsvg {
         width: 38x;
         height: 38px;
     }
+
     .lovebuttonpodr {
         position: absolute;
         margin-left: 78%;
@@ -1373,6 +1375,7 @@ body {
         border: 4px solid #fff;
         border-radius: 15px;
         background: #F0EEE6;
+        margin-bottom: 200px;
     }
 
     .zakazi2 {
@@ -1446,6 +1449,7 @@ body {
         font-family: 'Hero';
         width: 100px;
     }
+
     .zayavkaorder p1 {
         padding-top: 40px;
         padding-left: 10px;
@@ -1460,14 +1464,14 @@ body {
     .zayavkaorder {
         position: relative;
         width: 50%;
-        height:content;
+        height: content;
         border-radius: 25px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
         background: #fbfaf8;
         margin-left: 60px;
         margin-top: -40px;
-        padding-bottom:20px;
+        padding-bottom: 20px;
 
     }
 
@@ -1540,7 +1544,7 @@ body {
     .buttonsohrorder {
         position: absolute;
         left: 5px;
-        bottom:20px;
+        bottom: 20px;
         width: 188px;
         height: 40px;
         font-weight: 400;
@@ -2029,6 +2033,7 @@ body {
         margin-top: -60px;
         margin-left: 50px;
     }
+
     #maporder {
         width: 100%;
         height: 900px;
@@ -2077,7 +2082,7 @@ body {
         margin-bottom: 15px;
     }
 
-    .email_reg__input::placeholder,.username_reg__input::placeholder,.password1_reg__input::placeholder,.password2_reg__input::placeholder {
+    .email_reg__input::placeholder, .username_reg__input::placeholder, .password1_reg__input::placeholder, .password2_reg__input::placeholder {
         color: #A98467;
         opacity: 0.8;
     }
@@ -2763,7 +2768,7 @@ body {
         position: absolute;
         top: 150px;
         left: 30px;
-         cursor:pointer;
+        cursor: pointer;
 
     }
 
@@ -2863,6 +2868,7 @@ body {
         -webkit-animation: fadein1 0.5s, fadeout1 0.5s 2.5s;
         animation: fadein1 0.5s, fadeout1 0.5s 2.5s;
     }
+
     @-webkit-keyframes fadein1 {
         from {
             bottom: 250px;
@@ -2906,8 +2912,6 @@ body {
             opacity: 0;
         }
     }
-
-
 
 
 }
