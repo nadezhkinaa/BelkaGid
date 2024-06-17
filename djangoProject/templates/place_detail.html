@@ -75,7 +75,7 @@
 
             <h1>{{ place.name }}</h1>
             <img class='img1' src="{% static place.image %}" alt="{{ place.name }}">
-            <p>{{ place.description }}</p>
+            <p>{{ place.description |linebreaks }}</p>
         </div>
         <a class='lovebuttonpodr' onclick="">
 
