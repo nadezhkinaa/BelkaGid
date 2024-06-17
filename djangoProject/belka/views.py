@@ -420,7 +420,8 @@ def saveDataEdits(request):
         u.last_name = request.POST.get("surname")
         u.username = request.POST.get("username")
         u.email = request.POST.get("email")
-        u.set_password(request.POST.get("password"))
+        if (request.POST.get("password")) != "":
+            u.set_password(request.POST.get("password"))
         u.save()
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
