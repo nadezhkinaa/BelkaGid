@@ -68,16 +68,7 @@
     </div>
     <div class="content">
         <body>
-        <a class='lovebuttonm' onclick="">
 
-            <svg class='lovebuttonmsvg' onclick="addFavourites({{ place.map_id }})" viewBox="0 0 45 45" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z"
-                      stroke="#333D29" stroke-width="2"/>
-                <path d="M30.936 8.0003C36.4829 8.02731 40.973 12.5173 41 18.0643C41 28.2269 22.5 38.291 22.5 38.291C22.5 38.291 4 28.079 4 18.0643C4 12.5062 8.50577 8.0003 14.064 8.0003C17.4664 7.97377 20.6473 9.68507 22.5 12.5389C24.3655 9.69895 27.5381 7.99209 30.936 8.0003Z"
-                      id="heart_to_fill" fill="${color_for_svg}"/>
-            </svg>
-        </a>
         <div class="longdescr">
             <a onclick="window.history.back();"> <img class='back' src="{% static 'img/back.svg' %}"
                                                       alt="{{ place.name }}"></a>
@@ -86,6 +77,16 @@
             <img class='img1' src="{% static place.image %}" alt="{{ place.name }}">
             <p>{{ place.description }}</p>
         </div>
+        <a class='lovebuttonpodr' onclick="">
+
+            <svg class='lovebuttonpodrsvg' onclick="addFavourites({{ place.map_id }})" viewBox="0 0 45 45" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M36 1H9C4.58172 1 1 4.58172 1 9V36C1 40.4183 4.58172 44 9 44H36C40.4183 44 44 40.4183 44 36V9C44 4.58172 40.4183 1 36 1Z"
+                      stroke="#333D29" stroke-width="2"/>
+                <path d="M30.936 8.0003C36.4829 8.02731 40.973 12.5173 41 18.0643C41 28.2269 22.5 38.291 22.5 38.291C22.5 38.291 4 28.079 4 18.0643C4 12.5062 8.50577 8.0003 14.064 8.0003C17.4664 7.97377 20.6473 9.68507 22.5 12.5389C24.3655 9.69895 27.5381 7.99209 30.936 8.0003Z"
+                      id="heart_to_fill" fill="${color_for_svg}"/>
+            </svg>
+        </a>
     </div>
     <script>
         function callToast(message, time) {

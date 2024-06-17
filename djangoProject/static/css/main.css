@@ -2357,7 +2357,26 @@ body {
     .lovebuttonmsvg {
         width: 38px;
         height: 38px;
+
     }
+    .lovebuttonpodrsvg {
+        width: 38px;
+        height: 38px;
+
+    }
+    .lovebuttonpodr {
+    position: absolute;
+        margin-left: 69%;
+        top: 215px;
+        cursor: pointer;
+    }
+
+    .lovebuttonpodr:hover {
+        stroke: #333D29;
+        stroke-width: 3px;
+    }
+
+
 
 
     .buttonmesta {
@@ -2790,6 +2809,7 @@ body {
         text-align: start;
         width: 800px;
         padding-top: 100px;
+        position:relative;
     }
 
     .longdescr p {
@@ -2816,8 +2836,9 @@ body {
         position: absolute;
         top: 210px;
         left: 280px;
-
+        cursor:pointer;
     }
+
 
     #snackbar {
         visibility: hidden;
