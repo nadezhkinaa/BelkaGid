@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div id="snackbar">Всплывающее сообщение с информацией..</div>
+<div id="snackbar1">Всплывающее сообщение с информацией..</div>
 <div class="wrapper">
     <div class="content">
         <header>
@@ -79,6 +79,7 @@
                 <button class="buttonregistr " type="submit">Зарегистрироваться</button>
             </form>
         </div>
+        </div>
 
 
         <div class="footer">
@@ -131,6 +132,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
 </body>
@@ -138,7 +140,7 @@
     checkError();
 
     function callToast(message, time) {
-        var x = document.getElementById("snackbar");
+        var x = document.getElementById("snackbar1");
         x.className = "show";
         x.innerText = message;
         setTimeout(function () {

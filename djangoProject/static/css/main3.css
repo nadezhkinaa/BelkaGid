@@ -1265,13 +1265,13 @@ body {
         font-family: 'Hero';
         font-weight: 200;
         font-size: 32px;
-        color: #a58890;
+        color: #A98467;
         background: #F0EEE6;
         margin-bottom: 15px;
     }
 
     .text-field__input::placeholder {
-        color: #a58890;
+        color: #A98467;
         opacity: 0.8;
     }
 
@@ -2091,13 +2091,13 @@ body {
         font-family: 'Hero';
         font-weight: 200;
         font-size: 18px;
-        color: #333d29;
+        color: #A98467;
         background: #F0EEE6;
         margin-bottom: 15px;
     }
 
-    .text-field__input::placeholder {
-        color: #a58890;
+   .email_reg__input::placeholder,.username_reg__input::placeholder,.password1_reg__input::placeholder,.password2_reg__input::placeholder {
+        color: #A98467;
         opacity: 0.8;
     }
 
@@ -2790,6 +2790,76 @@ body {
         }
         to {
             bottom: 0;
+            opacity: 0;
+        }
+    }
+    #snackbar1 {
+        visibility: hidden;
+        min-width: 450px;
+
+        background-color: #754C24;
+        color: #fff;
+        text-align: center;
+        border-radius: 15px;
+        border: solid 2px #F5F5F5;
+        font-family: 'Montserrat Alternates';
+        font-weight: 400;
+        font-size: 20px;
+        padding: 15px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 300px;
+
+    }
+
+    #snackbar1.show {
+        visibility: visible;
+        -webkit-animation: fadein1 0.5s, fadeout1 0.5s 2.5s;
+        animation: fadein1 0.5s, fadeout1 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes fadein1 {
+        from {
+            bottom: 250px;
+            opacity: 0;
+        }
+        to {
+            bottom: 300px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadein1 {
+        from {
+            bottom: 250px;
+            opacity: 0;
+        }
+        to {
+            bottom: 300px;
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeout1 {
+        from {
+            bottom: 300px;
+            opacity: 1;
+        }
+        to {
+            bottom: 250px;
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeout1 {
+        from {
+            bottom: 300px;
+            opacity: 1;
+        }
+        to {
+            bottom: 250px;
             opacity: 0;
         }
     }
