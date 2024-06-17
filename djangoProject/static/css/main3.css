@@ -1085,6 +1085,21 @@ body {
         width: 30px;
         height: 30px;
     }
+    .lovebuttonpodrsvg {
+        width: 38x;
+        height: 38px;
+    }
+    .lovebuttonpodr {
+        position: absolute;
+        margin-left: 77%;
+        top: 165px;
+        cursor: pointer;
+    }
+
+    .lovebuttonpodr:hover {
+        stroke: #333D29;
+        stroke-width: 3px;
+    }
 
     .cafecard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -2704,6 +2719,7 @@ body {
         position: absolute;
         top: 190px;
         left: 30px;
+         cursor:pointer;
 
     }
 
