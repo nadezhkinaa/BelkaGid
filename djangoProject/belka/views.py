@@ -363,11 +363,25 @@ def order_detail(request, order_id):
 
     email = User.objects.filter(id=order.ordered_user).values_list('email', flat=True)
 
-    context = {'places': places,
-               'order': order,
-               'routes': routes,
-               'email': email[0],
-               }
+    if order.gid == -1:
+        context = {'places': places,
+                   'order': order,
+                   'routes': routes,
+                   'email': email[0],
+                   'gid_name': "",
+                   'gid_email': "",
+                   'isgid': int(request.user.groups.filter(name='Gids').exists()),
+                   }
+    else:
+        context = {'places': places,
+                   'order': order,
+                   'routes': routes,
+                   'email': email[0],
+                   'gid_name': User.objects.get(id=order.gid).first_name + " " + User.objects.get(
+                       id=order.gid).last_name,
+                   'gid_email': User.objects.filter(id=order.gid).values_list('email', flat=True)[0],
+                   'isgid': int(request.user.groups.filter(name='Gids').exists()),
+                   }
 
     return render(request, 'order_detail.html', context)
 
@@ -423,6 +437,21 @@ def saveDataEdits(request):
         if (request.POST.get("password")) != "":
             u.set_password(request.POST.get("password"))
         u.save()
+        return JsonResponse({'success': True})  # Возврат ответа в виде JSON
+    else:
+        return JsonResponse({'success': False})
+
+
+@login_required
+@csrf_exempt
+def editOrder(request):
+    if request.method == "POST":
+        order = Order.objects.get(id=request.POST.get("order"))
+        order.name = request.POST.get("name")
+        order.persons = request.POST.get("persons")
+        order.comments = request.POST.get("comments")
+        order.date = request.POST.get("date")
+        order.save()
         return JsonResponse({'success': True})  # Возврат ответа в виде JSON
     else:
         return JsonResponse({'success': False})

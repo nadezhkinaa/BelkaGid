@@ -80,40 +80,35 @@
         </div>
 
 
-            <a href="../../../profile/orders" style="">
-                <svg class="strelka" viewBox="0 0 43 36"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 18H41M2 18L18.25 2M2 18L18.25 34" stroke="#333D29" stroke-width="3"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
+        <a href="../../../profile/orders" style="">
+            <svg class="strelka" viewBox="0 0 43 36"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 18H41M2 18L18.25 2M2 18L18.25 34" stroke="#333D29" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
 
 
-
-        {{ order.route }} {{ order.date }} {{ order.persons }} {{ email }}
         <div class="order">
-
-
             <div class="zayavkaorder">
                 <div class="namezayv">
-
                     <h1>Заявка</h1>
                 </div>
                 <p>Название</p>
                 <p>Название маршрута</p>
                 <p>Количество человек</p>
                 <p>Пожелания</p>
-                <p>Электронная почта</p>
+                <p id="">Электронная почта</p>
                 <p>Дата</p>
-                <p1>Гид: Имя</p1>
-                <p1>Почта гида: Почта</p1>
+                <p1 id="gid_name">Гид: Имя</p1>
+                <p1 id="gid_email">Почта гида: Почта</p1>
 
                 <div class="zayvpoleorder">
                     <input placeholder="" class="tfieldinputzorder" id="name" required>
-                    <input placeholder="" class="tfieldinputzorder" id="name" required>
+                    <input placeholder="" class="tfieldinputzorder" id="name_route" readonly required>
                     <input placeholder="" class="tfieldinputzorder" id="persons-count" required>
                     <input placeholder="" class="tfieldinputzorder" id="messages" required>
-                    <input placeholder="" class="tfieldinputzorder" id="name" required>
+                    <input placeholder="" class="tfieldinputzorder" id="email" readonly required>
                     <input placeholder="" id="datePicker" class='datazayavkaorder' type="date">
 
 
@@ -134,10 +129,37 @@
                 </select>-->
 
 
-                <button onclick="createOrder()" class="buttonsohrorder" type="submit">Сохранить</button>
+                <button onclick="editOrder()" id="button_for_editting_data" class="buttonsohrorder" type="submit">
+                    Сохранить
+                </button>
             </div>
 
-
+            <script>async function editOrder() {
+                const selectedDate = document.querySelector('.datazayavkaorder').value;
+                // Получить выбранное количество человек
+                const selectedCount = document.getElementById('persons-count').value;
+                const selectedMessage = document.getElementById('messages').value;
+                const selectedName = document.getElementById('name').value;
+                const selectedEmail = document.getElementById('email').value;
+                $.ajax({
+                    url: "/edit_order/",  // URL функции отображения, которую вы хотите вызвать
+                    type: "POST",
+                    data: {
+                        "order": {{ order.id }},
+                        "date": selectedDate,
+                        "persons": selectedCount,
+                        "comments": selectedMessage,
+                        "name": selectedName,
+                        "email": selectedEmail,
+                    },  // Передача аргумента в виде объекта JSON
+                    success: function (data) {
+                        callToast("Заказ создан успешно!", 3000);
+                    },
+                    error: function (error) {
+                        callToast("Проверьте корректность ввёденных данных!", 3000);
+                    }
+                });
+            }</script>
             <div class="mapclassorder">
                 <div id="maporder" class="map"></div>
 
@@ -640,35 +662,41 @@
                 }, time);
             }
 
-            async function createOrder() {
-                const selectedDate = document.querySelector('.datazayavka').value;
-                // Получить выбранное количество человек
-                const selectedCount = document.getElementById('persons-count').value;
-                const selectedMessage = document.getElementById('messages').value;
-                let selectedOptionId = document.querySelector('.boxfiltrzayavka').selectedOptions[0].value;
-                const selectedName = document.getElementById('name').value;
-
-                $.ajax({
-                    url: "/save_order/",  // URL функции отображения, которую вы хотите вызвать
-                    type: "POST",
-                    data: {
-                        "route": selectedOptionId,
-                        "date": selectedDate,
-                        "persons": selectedCount,
-                        "comments": selectedMessage,
-                        "name": selectedName
-                    },  // Передача аргумента в виде объекта JSON
-                    success: function (data) {
-                        callToast("Заказ создан успешно!", 3000);
-                    },
-                    error: function (error) {
-                        callToast("Проверьте корректность ввёденных данных!", 3000);
-                    }
-                });
-            }
         </script>
     </div>
+    <script>
+        document.getElementById("name").setAttribute("value", "{{ order.name }}");
+        document.getElementById("name_route").setAttribute("value", "{{ order.route.name }}");
+        document.getElementById("persons-count").setAttribute("value", "{{ order.persons }}");
+        document.getElementById("messages").setAttribute("value", "{{ order.comments }}");
+        document.getElementById("email").setAttribute("value", "{{ email }}");
+        document.getElementById("datePicker").value = {{ order.date.year }} +"-" + ("0" + {{ order.date.month }}).slice(-2) + "-" + ("0" + {{ order.date.day }}).slice(-2);
 
+        var gid = {{ order.gid }};
+        if (gid === -1) {
+            document.getElementById("gid_name").remove();
+            document.getElementById("gid_email").remove();
+
+        } else {
+            document.getElementById("gid_name").textContent = "Гид: {{ gid_name}}";
+            document.getElementById("gid_email").textContent = "Почта гида: {{ gid_email}}";
+            document.getElementById("button_for_editting_data").remove();
+        }
+
+        var isgid = {{ isgid }};
+        if (isgid === 1) {
+            if (gid === -1) {
+                document.getElementById("email").setAttribute("value", "*******************");
+            }
+            document.getElementById("name").readOnly = true;
+            document.getElementById("name_route").readOnly = true;
+            document.getElementById("persons-count").readOnly = true;
+            document.getElementById("messages").readOnly = true;
+            document.getElementById("email").readOnly = true;
+            document.getElementById("datePicker").readOnly = true;
+            document.getElementById("button_for_editting_data").remove();
+        }
+    </script>
     <div class="footer">
         <div class="logo">
             <div class="logotype">
