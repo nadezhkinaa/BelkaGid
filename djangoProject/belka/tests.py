@@ -17,7 +17,7 @@ def create_places():
     Place.objects.create(name="Место 1", short_description="Краткое описание для места 1", image=None,
                          description="Полное описание для места 1", rating=4.99, type=1, map_id=2,
                          redirect_url="redir_url", map_x=12, map_y=21, geo_x=120, geo_y=123)
-    Place.objects.create(name="Место 2", short_description="Краткое описание для места 2", image=None,
+    Place.objects.create(name="Place2", short_description="Краткое описание для места 2", image=None,
                          description="Полное описание для места 2", rating=4.5, type=2, map_id=3,
                          redirect_url="redir_url_2", map_x=15, map_y=25, geo_x=125, geo_y=128)
 
@@ -58,6 +58,11 @@ class PlaceTestCase(TestCase):
 
         self.assertEqual(self.client.get('/login/').status_code, 200)
         self.assertEqual(self.client.get('/profile/orders').status_code, 200)
+
+    def test_place_detail(self):
+        response = self.client.get('/places/Place2')
+        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response.url, '/places/Place2/')
 
 
 class SignUpFormTest(TestCase):
