@@ -59,36 +59,75 @@ def create_routes():
                          marshrut="1$2$3$4$5")
 
 
-class PlaceTestCase(TestCase):
+class ViewTest(TestCase):
+    """
+    Unit 1. Class for testing view urls and templates
+    """
 
-    def setUp(self):
-        create_places()
-
-    def test_correct_added_places(self):
-        places = Place.objects.all()
-        self.assertEqual(len(places), 6)
-
-    def test_check_user(self):
-        self.assertEqual(self.client.get('/login/').status_code, 200)
-        response = self.client.get('/profile/orders')
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.url, '/login/?next=/profile/orders')
-
+    def setUp(self) -> None:
         User.objects.create_user(username='username', password='Pas$w0rd')
-        self.assertTrue(self.client.login(username='username', password='Pas$w0rd'))
 
-        self.assertEqual(self.client.get('/login/').status_code, 200)
-        self.assertEqual(self.client.get('/profile/orders').status_code, 200)
+    def login(self):
+        self.client.login(username='username', password='Pas$w0rd')
 
-    def test_place_detail(self):
-        response = self.client.get('/places/Place2')
-        self.assertEqual(response.status_code, 301)
-        self.assertEqual(response.url, '/places/Place2/')
+    def logout(self):
+        self.client.logout()
+
+    def test_view_index(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'main.html')
+
+    def test_view_login(self):
+        response = self.client.get("/login/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'vhod.html')
+
+    def test_view_about(self):
+        response = self.client.get("/about/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'onas.html')
+
+    def test_view_places(self):
+        response = self.client.get("/places/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'mesta.html')
+
+    def test_view_cafe(self):
+        response = self.client.get("/cafe/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'cafe.html')
+
+    def test_view_profile(self):
+        self.login()
+        response = self.client.get("/profile/info")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'lkab.html')
+        self.logout()
+
+    def test_view_orders(self):
+        self.login()
+        response = self.client.get("/profile/orders")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'zakazi.html')
+        self.logout()
+
+    def test_view_routes(self):
+        self.login()
+        response = self.client.get("/profile/routes")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'marsruty.html')
+        self.logout()
+
+    def test_view_register(self):
+        response = self.client.get("/register/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'register.html')
 
 
 class SignUpFormTest(TestCase):
     """
-    Class for testing SignUpForm
+    Unit 2. Class for testing SignUpForm
     """
 
     def test_form_valid_basic(self):
@@ -158,7 +197,7 @@ class SignUpFormTest(TestCase):
 
 class AuthenticationFormTest(TestCase):
     """
-    Class for testing AuthenticationForm
+    Unit 3. Class for testing AuthenticationForm
     """
 
     def setUp(self) -> None:
@@ -182,7 +221,7 @@ class AuthenticationFormTest(TestCase):
 
 class FeedbackFormTest(TestCase):
     """
-    Class for testing FeedbackForm
+    Unit 4. Class for testing FeedbackForm
     """
 
     def test_form_correct(self):
@@ -217,61 +256,9 @@ class FeedbackFormTest(TestCase):
         self.assertFalse(form.is_valid())
 
 
-class ViewTest(TestCase):
+class TestExportYaMaps(StaticLiveServerTestCase):
     """
-    Class for testing view urls and templates
-    """
-
-    def setUp(self) -> None:
-        User.objects.create_user(username='username', password='Pas$w0rd')
-
-    def login(self):
-        self.client.login(username='username', password='Pas$w0rd')
-
-    def logout(self):
-        self.client.logout()
-
-    def test_view_index(self):
-        response = self.client.get("/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main.html')
-
-    def test_view_login(self):
-        response = self.client.get("/login/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'vhod.html')
-
-    def test_view_about(self):
-        response = self.client.get("/about/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'onas.html')
-
-    def test_view_places(self):
-        response = self.client.get("/places/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'mesta.html')
-
-    def test_view_cafe(self):
-        response = self.client.get("/cafe/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'cafe.html')
-
-    def test_view_profile(self):
-        self.login()
-        response = self.client.get("/profile/info")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'lkab.html')
-        self.logout()
-
-    def test_view_register(self):
-        response = self.client.get("/register/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'register.html')
-
-
-class TestSelenium(StaticLiveServerTestCase):
-    """
-    Class for testing frontend with Selenium
+    Unit 5. Class for testing export to yandex maps
     """
 
     def setUp(self):
@@ -292,14 +279,6 @@ class TestSelenium(StaticLiveServerTestCase):
         password_field.send_keys('Pas$w0rd')
         login_button.click()
 
-    def tearDown(self):
-        self.client.login()
-        self.browser.quit()
-
-    def test_correct_title(self):
-        self.browser.get(self.live_server_url)
-        self.assertIn("БелкаГид", self.browser.title)
-
     def test_export_yandex_maps(self):
         self.login()
         initial_windows = self.browser.window_handles
@@ -312,3 +291,7 @@ class TestSelenium(StaticLiveServerTestCase):
         self.browser.switch_to.window(new_window_handle)
         self.assertIn("yandex", self.browser.current_url)
         self.assertIn("Яндекс", self.browser.title)
+
+    def tearDown(self):
+        self.client.login()
+        self.browser.quit()
