@@ -1,8 +1,11 @@
 from django.contrib.auth.models import User
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.test import TestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from belka.forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
 from belka.models import Place, Route
 
@@ -10,6 +13,7 @@ from belka.models import Place, Route
 # some_path_to/virtualenv/lib/python3.11/site-packages/django/test/runner.py (probably at line 1044)
 # def run_tests(self, test_labels, some=None, **kwargs):
 # add any parameter like some=None
+
 # https://docs.djangoproject.com/en/dev/topics/testing/overview/
 # https://habr.com/ru/articles/122156/
 # https://yourtodo.ru/ru/posts/django-testirovanie/
@@ -43,13 +47,15 @@ def create_places():
 
 
 def create_routes():
-    Route.objects.create(name="Маршрут 1", short_description="short_description", rating=5.0, votes=15, creator=0,
+    Route.objects.create(name="Маршрут 1", short_description="short_description", rating=5.0, votes=15, creator=1,
                          marshrut="1$2$3$4$5")
-    Route.objects.create(name="Маршрут 2", short_description="short_description", rating=5.0, votes=15, creator=0,
+    Route.objects.create(name="Маршрут 2", short_description="short_description", rating=5.0, votes=15, creator=1,
                          marshrut="1$2$3$4$5")
-    Route.objects.create(name="Маршрут 3", short_description="short_description", rating=5.0, votes=15, creator=0,
+    Route.objects.create(name="Маршрут 3", short_description="short_description", rating=5.0, votes=15, creator=1,
                          marshrut="1$2$3$4$5")
-    Route.objects.create(name="Маршрут 4", short_description="short_description", rating=5.0, votes=15, creator=0,
+    Route.objects.create(name="Маршрут 4", short_description="short_description", rating=5.0, votes=15, creator=1,
+                         marshrut="1$2$3$4$5")
+    Route.objects.create(name="Маршрут 5", short_description="short_description", rating=5.0, votes=15, creator=1,
                          marshrut="1$2$3$4$5")
 
 
@@ -269,7 +275,7 @@ class TestSelenium(StaticLiveServerTestCase):
     """
 
     def setUp(self):
-        User.objects.create_user(username='username', password='Pas$w0rd')
+        User.objects.create_superuser(username='username', password='Pas$w0rd')
 
         self.browser = webdriver.Chrome()
         create_places()
@@ -287,16 +293,22 @@ class TestSelenium(StaticLiveServerTestCase):
         login_button.click()
 
     def tearDown(self):
+        self.client.login()
         self.browser.quit()
 
     def test_correct_title(self):
         self.browser.get(self.live_server_url)
         self.assertIn("БелкаГид", self.browser.title)
 
-    def test_route_items(self):
+    def test_export_yandex_maps(self):
         self.login()
-        popular_1 = self.browser.find_element(By.ID, "popular1")
-        popular_1.click()
-
-        self.assertIn("БелкаГид", self.browser.title)
-        self.assertEqual("Маршрут 2", self.browser.find_element(By.ID, 'rName').text)
+        initial_windows = self.browser.window_handles
+        routes = self.browser.find_elements(By.CLASS_NAME, "export1")
+        route_2 = routes[1]
+        route_2.click()
+        WebDriverWait(self.browser, 10).until(EC.number_of_windows_to_be(len(initial_windows) + 1))
+        all_windows = self.browser.window_handles
+        new_window_handle = [window for window in all_windows if window not in initial_windows][0]
+        self.browser.switch_to.window(new_window_handle)
+        self.assertIn("yandex", self.browser.current_url)
+        self.assertIn("Яндекс", self.browser.title)
