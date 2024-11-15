@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
+from django.urls import reverse
 
 from belka.forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
 from belka.models import Place
@@ -188,3 +189,55 @@ class FeedbackFormTest(TestCase):
         form_data = {'name': '', 'email': 'email@', 'message': 'message'}
         form = FeedbackForm(data=form_data)
         self.assertFalse(form.is_valid())
+
+
+class ViewTest(TestCase):
+    """
+    Class for testing view urls and templates
+    """
+
+    def setUp(self) -> None:
+        User.objects.create_user(username='username', password='Pas$w0rd')
+
+    def login(self):
+        self.client.login(username='username', password='Pas$w0rd')
+
+    def logout(self):
+        self.client.logout()
+
+    def test_view_index(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'main.html')
+
+    def test_view_login(self):
+        response = self.client.get("/login/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'vhod.html')
+
+    def test_view_about(self):
+        response = self.client.get("/about/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'onas.html')
+
+    def test_view_places(self):
+        response = self.client.get("/places/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'mesta.html')
+
+    def test_view_cafe(self):
+        response = self.client.get("/cafe/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'cafe.html')
+
+    def test_view_profile(self):
+        self.login()
+        response = self.client.get("/profile/info")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'lkab.html')
+        self.logout()
+
+    def test_view_register(self):
+        response = self.client.get("/register/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'register.html')
