@@ -4,6 +4,7 @@ from django.test import TestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 from belka.forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
@@ -56,6 +57,14 @@ def create_routes():
     Route.objects.create(name="Маршрут 4", short_description="short_description", rating=5.0, votes=15, creator=1,
                          marshrut="1$2$3$4$5")
     Route.objects.create(name="Маршрут 5", short_description="short_description", rating=5.0, votes=15, creator=1,
+                         marshrut="1$2$3$4$5")
+    Route.objects.create(name="Маршрут 6", short_description="short_description", rating=5.0, votes=15, creator=0,
+                         marshrut="1$2$3$4$5")
+    Route.objects.create(name="Маршрут 7", short_description="short_description", rating=5.0, votes=15, creator=0,
+                         marshrut="1$2$3$4$5")
+    Route.objects.create(name="Маршрут 8", short_description="short_description", rating=5.0, votes=15, creator=0,
+                         marshrut="1$2$3$4$5")
+    Route.objects.create(name="Маршрут 9", short_description="short_description", rating=5.0, votes=15, creator=0,
                          marshrut="1$2$3$4$5")
 
 
@@ -279,7 +288,7 @@ class TestExportYaMaps(StaticLiveServerTestCase):
         password_field.send_keys('Pas$w0rd')
         login_button.click()
 
-    def test_export_yandex_maps(self):
+    def test_export_yandex_maps_from_lkab(self):
         self.login()
         initial_windows = self.browser.window_handles
         routes = self.browser.find_elements(By.CLASS_NAME, "export1")
@@ -291,6 +300,91 @@ class TestExportYaMaps(StaticLiveServerTestCase):
         self.browser.switch_to.window(new_window_handle)
         self.assertIn("yandex", self.browser.current_url)
         self.assertIn("Яндекс", self.browser.title)
+
+    def test_export_yandex_maps_from_index(self):
+        self.login()
+        self.browser.get(self.live_server_url)
+        routes = self.browser.find_elements(By.CLASS_NAME, "buttonexport")
+        route_3 = routes[2]
+        initial_windows = self.browser.window_handles
+        self.browser.execute_script("arguments[0].scrollIntoView();", route_3)
+        self.browser.execute_script("arguments[0].click();", route_3)
+        WebDriverWait(self.browser, 10).until(EC.number_of_windows_to_be(len(initial_windows) + 1))
+        all_windows = self.browser.window_handles
+        new_window_handle = [window for window in all_windows if window not in initial_windows][0]
+        self.browser.switch_to.window(new_window_handle)
+        self.assertIn("yandex", self.browser.current_url)
+        self.assertIn("Яндекс", self.browser.title)
+
+    def tearDown(self):
+        self.client.login()
+        self.browser.quit()
+
+
+class TestCreateOrder(StaticLiveServerTestCase):
+    """
+    Unit 6. Class for testing order creation
+    """
+
+    def setUp(self):
+        User.objects.create_superuser(username='username', password='Pas$w0rd')
+
+        self.browser = webdriver.Chrome()
+        create_places()
+        create_routes()
+
+    def login(self):
+        self.browser.get(self.live_server_url + "/login/")
+
+        login_field = self.browser.find_element(By.NAME, "username")
+        password_field = self.browser.find_element(By.NAME, "password")
+        login_button = self.browser.find_element(By.CLASS_NAME, "buttonvhod")
+
+        login_field.send_keys('username')
+        password_field.send_keys('Pas$w0rd')
+        login_button.click()
+
+    def test_create_order(self):
+        self.login()
+        self.browser.get(self.live_server_url + "/profile/orders")
+
+        create_button = self.browser.find_element(By.CLASS_NAME, "buttoncreate")
+        create_button.click()
+
+        name_field = self.browser.find_element(By.ID, "name")
+        persons_field = self.browser.find_element(By.ID, "persons-count")
+        message_field = self.browser.find_element(By.ID, "messages")
+        date_field = self.browser.find_element(By.CLASS_NAME, "datazayavka")
+
+        place_add = Select(self.browser.find_element(By.ID, "place-add-select"))
+        button_finish = self.browser.find_element(By.CLASS_NAME, "buttonsozdat")
+
+        name_field.send_keys('New order for me')
+        persons_field.send_keys('5')
+        message_field.send_keys("Message for my order for me")
+        date_field.send_keys("01.01.2032")
+        place_add.select_by_visible_text('Маршрут 8')
+        button_finish.click()
+
+        self.browser.get(self.live_server_url + "/profile/orders")
+
+        orders = self.browser.find_elements(By.CLASS_NAME, "zakaz")
+        self.assertEqual(len(orders), 1)
+        self.assertEqual(orders[0].text, "New order for me")
+
+        orders[0].click()
+
+        name_field_order = self.browser.find_element(By.ID, "name")
+        persons_field_order = self.browser.find_element(By.ID, "persons-count")
+        message_field_order = self.browser.find_element(By.ID, "messages")
+        date_field_order = self.browser.find_element(By.CLASS_NAME, "datazayavkaorder")
+        route_field_order = self.browser.find_element(By.ID, "name_route")
+
+        self.assertEqual(name_field_order.get_attribute("value"), "New order for me")
+        self.assertEqual(persons_field_order.get_attribute("value"), "5")
+        self.assertEqual(message_field_order.get_attribute("value"), "Message for my order for me")
+        self.assertEqual(date_field_order.get_attribute("value"), "2032-01-01")
+        self.assertEqual(route_field_order.get_attribute("value"), "Маршрут 8")
 
     def tearDown(self):
         self.client.login()
