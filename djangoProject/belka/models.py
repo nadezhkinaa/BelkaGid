@@ -55,10 +55,10 @@ class UserFavourites(models.Model):
     favourite_places = models.TextField(default="")
 
     def getFavouritePlaces(self):
-        return self.favourite_places.split("$")
+        return self.favourite_places.split("$")[:-1]
 
     def saveFavouritePlaces(self, new_places):
-        self.favourite_places = '$'.join(new_places)
+        self.favourite_places = '$'.join(new_places) + "$"
 
     def addId(self, new_id):
         temp_places = self.getFavouritePlaces()
