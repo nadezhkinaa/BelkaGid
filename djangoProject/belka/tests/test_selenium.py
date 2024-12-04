@@ -1,24 +1,14 @@
-from django.contrib.auth.models import User
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from django.test import TestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
-
-from belka.forms import SignUpForm, CustomAuthenticationForm, FeedbackForm
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from django.contrib.auth.models import User
 from belka.models import Place, Route
 
 
-# some_path_to/virtualenv/lib/python3.11/site-packages/django/test/runner.py (probably at line 1044)
-# def run_tests(self, test_labels, some=None, **kwargs):
-# add any parameter like some=None
-
-# https://docs.djangoproject.com/en/dev/topics/testing/overview/
-# https://habr.com/ru/articles/122156/
-# https://yourtodo.ru/ru/posts/django-testirovanie/
-# https://sky.pro/media/kak-provodit-testirovanie-s-ispolzovaniem-selenium/
+# python manage.py test belka.tests.test_selenium
 
 def create_places():
     from django.db import models
@@ -68,206 +58,9 @@ def create_routes():
                          marshrut="1$2$3$4$5")
 
 
-class ViewTest(TestCase):
-    """
-    Unit 1. Class for testing view urls and templates
-    """
-
-    def setUp(self) -> None:
-        User.objects.create_user(username='username', password='Pas$w0rd')
-
-    def login(self):
-        self.client.login(username='username', password='Pas$w0rd')
-
-    def logout(self):
-        self.client.logout()
-
-    def test_view_index(self):
-        response = self.client.get("/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'main.html')
-
-    def test_view_login(self):
-        response = self.client.get("/login/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'vhod.html')
-
-    def test_view_about(self):
-        response = self.client.get("/about/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'onas.html')
-
-    def test_view_places(self):
-        response = self.client.get("/places/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'mesta.html')
-
-    def test_view_cafe(self):
-        response = self.client.get("/cafe/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'cafe.html')
-
-    def test_view_profile(self):
-        self.login()
-        response = self.client.get("/profile/info")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'lkab.html')
-        self.logout()
-
-    def test_view_orders(self):
-        self.login()
-        response = self.client.get("/profile/orders")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'zakazi.html')
-        self.logout()
-
-    def test_view_routes(self):
-        self.login()
-        response = self.client.get("/profile/routes")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'marsruty.html')
-        self.logout()
-
-    def test_view_register(self):
-        response = self.client.get("/register/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'register.html')
-
-
-class SignUpFormTest(TestCase):
-    """
-    Unit 2. Class for testing SignUpForm
-    """
-
-    def test_form_valid_basic(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com', 'password1': 'Lqt3z8L-',
-                     'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertTrue(form.is_valid())
-
-    def test_form_valid_long_password(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com',
-                     'password1': 'Lqt3z8L-Lqt3z8L-Lqt3z8L-', 'password2': 'Lqt3z8L-Lqt3z8L-Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertTrue(form.is_valid())
-
-    def test_form_invalid_short_password(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com',
-                     'password1': 'Lq', 'password2': 'Lq'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_form_invalid_simple_password(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com',
-                     'password1': '1234567890', 'password2': '1234567890'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_form_mismatch_password(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L+'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_form_invalid_email(self):
-        form_data = {'username': 'username1', 'email': 'email',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'username': 'username1', 'email': 'emailnodomain.com',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'username': 'username1', 'email': 'email@nodomaincom',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'username': 'username1', 'email': 'email@',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_excisting_username(self):
-        form_data = {'username': 'username1', 'email': 'email@nodomain.com',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertTrue(form.is_valid())
-
-        form.save()
-
-        form_data = {'username': 'username1', 'email': 'email@domain.com',
-                     'password1': 'Lqt3z8L-', 'password2': 'Lqt3z8L-'}
-        form = SignUpForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-
-class AuthenticationFormTest(TestCase):
-    """
-    Unit 3. Class for testing AuthenticationForm
-    """
-
-    def setUp(self) -> None:
-        User.objects.create_user(username='username', password='Pas$w0rd')
-
-    def test_form_login_correct(self):
-        form_data = {'username': 'username', 'password': 'Pas$w0rd'}
-        form = CustomAuthenticationForm(data=form_data)
-        self.assertTrue(form.is_valid())
-
-    def test_form_login_incorrect_password(self):
-        form_data = {'username': 'username', 'password': 'INCORRECT_PASSWORD'}
-        form = CustomAuthenticationForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_form_login_incorrect_username(self):
-        form_data = {'username': 'UsErNaMe', 'password': 'Pas$w0rd'}
-        form = CustomAuthenticationForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-
-class FeedbackFormTest(TestCase):
-    """
-    Unit 4. Class for testing FeedbackForm
-    """
-
-    def test_form_correct(self):
-        form_data = {'name': 'username', 'email': 'email@nodomain.com', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertTrue(form.is_valid())
-
-    def test_form_login_incorrect_email(self):
-        form_data = {'name': 'username', 'email': 'email', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'name': 'username', 'email': '@nodomain.com', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'name': 'username', 'email': 'emailnodomain.com', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'name': 'username', 'email': '', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-        form_data = {'name': 'username', 'email': 'email@', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-    def test_form_login_incorrect_name(self):
-        form_data = {'name': '', 'email': 'email@', 'message': 'message'}
-        form = FeedbackForm(data=form_data)
-        self.assertFalse(form.is_valid())
-
-
 class TestExportYaMaps(StaticLiveServerTestCase):
     """
-    Unit 5. Class for testing export to yandex maps
+    Class for testing export to yandex maps
     """
 
     def setUp(self):
@@ -323,7 +116,7 @@ class TestExportYaMaps(StaticLiveServerTestCase):
 
 class TestCreateOrder(StaticLiveServerTestCase):
     """
-    Unit 6. Class for testing order creation
+    Class for testing order creation
     """
 
     def setUp(self):
