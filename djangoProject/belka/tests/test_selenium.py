@@ -58,6 +58,18 @@ def create_routes():
                          marshrut="1$2$3$4$5")
 
 
+def login(browser, live_server_url, username, password):
+    browser.get(live_server_url + "/login/")
+
+    login_field = browser.find_element(By.NAME, "username")
+    password_field = browser.find_element(By.NAME, "password")
+    login_button = browser.find_element(By.CLASS_NAME, "buttonvhod")
+
+    login_field.send_keys(username)
+    password_field.send_keys(password)
+    login_button.click()
+
+
 class TestExportYaMaps(StaticLiveServerTestCase):
     """
     Class for testing export to yandex maps
@@ -70,19 +82,8 @@ class TestExportYaMaps(StaticLiveServerTestCase):
         create_places()
         create_routes()
 
-    def login(self):
-        self.browser.get(self.live_server_url + "/login/")
-
-        login_field = self.browser.find_element(By.NAME, "username")
-        password_field = self.browser.find_element(By.NAME, "password")
-        login_button = self.browser.find_element(By.CLASS_NAME, "buttonvhod")
-
-        login_field.send_keys('username')
-        password_field.send_keys('Pas$w0rd')
-        login_button.click()
-
     def test_export_yandex_maps_from_lkab(self):
-        self.login()
+        login(self.browser, self.live_server_url, 'username', 'Pas$w0rd')
         initial_windows = self.browser.window_handles
         routes = self.browser.find_elements(By.CLASS_NAME, "export1")
         route_2 = routes[1]
@@ -95,7 +96,7 @@ class TestExportYaMaps(StaticLiveServerTestCase):
         self.assertIn("Яндекс", self.browser.title)
 
     def test_export_yandex_maps_from_index(self):
-        self.login()
+        login(self.browser, self.live_server_url, 'username', 'Pas$w0rd')
         self.browser.get(self.live_server_url)
         routes = self.browser.find_elements(By.CLASS_NAME, "buttonexport")
         route_3 = routes[2]
@@ -110,7 +111,6 @@ class TestExportYaMaps(StaticLiveServerTestCase):
         self.assertIn("Яндекс", self.browser.title)
 
     def tearDown(self):
-        self.client.login()
         self.browser.quit()
 
 
@@ -126,19 +126,8 @@ class TestCreateOrder(StaticLiveServerTestCase):
         create_places()
         create_routes()
 
-    def login(self):
-        self.browser.get(self.live_server_url + "/login/")
-
-        login_field = self.browser.find_element(By.NAME, "username")
-        password_field = self.browser.find_element(By.NAME, "password")
-        login_button = self.browser.find_element(By.CLASS_NAME, "buttonvhod")
-
-        login_field.send_keys('username')
-        password_field.send_keys('Pas$w0rd')
-        login_button.click()
-
     def test_create_order(self):
-        self.login()
+        login(self.browser, self.live_server_url, 'username', 'Pas$w0rd')
         self.browser.get(self.live_server_url + "/profile/orders")
 
         create_button = self.browser.find_element(By.CLASS_NAME, "buttoncreate")
@@ -180,4 +169,25 @@ class TestCreateOrder(StaticLiveServerTestCase):
         self.assertEqual(route_field_order.get_attribute("value"), "Маршрут 8")
 
     def tearDown(self):
+        self.browser.quit()
+
+
+class TestLogin(StaticLiveServerTestCase):
+    """
+    Class for testing login
+    """
+
+    def setUp(self) -> None:
+        User.objects.create_superuser(username='username', password='Pas$w0rd')
+        self.browser = webdriver.Chrome()
+
+    def test_correct_login(self):
+        login(self.browser, self.live_server_url, 'username', 'Pas$w0rd')
+        self.assertEqual(self.browser.current_url, self.live_server_url + "/profile/routes")
+
+    def test_wrong_login(self):
+        login(self.browser, self.live_server_url, 'username', 'WRONG_PASSWORD')
+        self.assertEqual(self.browser.current_url, self.live_server_url + "/login/")
+
+    def tearDown(self) -> None:
         self.browser.quit()
