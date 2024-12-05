@@ -180,5 +180,4 @@ class TestCreateOrder(StaticLiveServerTestCase):
         self.assertEqual(route_field_order.get_attribute("value"), "Маршрут 8")
 
     def tearDown(self):
-        self.client.login()
         self.browser.quit()
