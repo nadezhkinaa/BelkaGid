@@ -18,63 +18,47 @@ class BelkaLoads(HttpUser):
 
     @task
     def about(self):
-        self.client.get("/about")
+        self.client.get("/about/")
 
     @task
     def admin(self):
-        self.client.get("/admin")
+        self.client.get("/admin/")
 
     @task
     def places_page(self):
-        self.client.get("/places")
+        self.client.get("/places/")
 
     @task
     def cafe_page(self):
-        self.client.get("/cafe")
+        self.client.get("/cafe/")
 
     @task
     def shop_page(self):
-        self.client.get("/shop")
+        self.client.get("/shop/")
 
     @task
     def profile_redirect_page(self):
-        self.client.get("/profile")
-
-    @task
-    def profile_page(self):
-        self.client.get("/profile/info")
-
-    @task
-    def profile_routes_page(self):
-        self.client.get("/profile/routes")
-
-    @task
-    def profile_orders_page(self):
-        self.client.get("/profile/orders")
-
-    @task
-    def create_order_page(self):
-        self.client.get("/profile/orders/create")
+        self.client.get("/profile/")
 
     @task
     def login(self):
-        self.client.get("/login")
+        self.client.get("/login/")
 
     @task
     def log_out(self):
-        self.client.get("/logout")
+        self.client.get("/logout/")
 
     @task
     def signup(self):
-        self.client.get("/register")
+        self.client.get("/register/")
 
     @task
     def message_sent(self):
-        self.client.get("/message_sent")
+        self.client.get("/message_sent/")
 
     @task
     def events(self):
-        self.client.get("/events")
+        self.client.get("/events/")
 
 
 class BelkaForms(HttpUser):
@@ -82,7 +66,7 @@ class BelkaForms(HttpUser):
 
     @task
     def login(self):
-        URL = "http://127.0.0.1:8000/login/"
+        URL = "/login/"
         client = self.client
         client.get(URL)
         if 'csrftoken' in client.cookies:
@@ -98,7 +82,7 @@ class BelkaForms(HttpUser):
 
     @task
     def send_message(self):
-        URL = "http://127.0.0.1:8000/about/"
+        URL = "/about/"
         client = self.client
         client.get(URL)
         if 'csrftoken' in client.cookies:
