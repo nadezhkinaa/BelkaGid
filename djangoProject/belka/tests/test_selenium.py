@@ -1,11 +1,12 @@
+from django.contrib.auth.models import User
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from django.contrib.auth.models import User
-from belka.models import Place, Route
+
+from belka.models import Place, Route, Event
 
 
 # python manage.py test belka.tests.test_selenium
@@ -32,8 +33,8 @@ def create_places():
                          description="Полное описание для места 5", rating=4.9, type=2, map_id=5,
                          redirect_url="places", map_x=350, map_y=180, geo_x=55.995364, geo_y=37.243641)
 
-    Place.objects.create(image=models.FilePathField(), name="Место 6", short_description="Краткое описание для места 6",
-                         description="Полное описание для места 6", rating=3.5, type=3, map_id=6,
+    Place.objects.create(image=models.FilePathField(), name="Место 0", short_description="Краткое описание для места 0",
+                         description="Полное описание для места 0", rating=3.5, type=3, map_id=0,
                          redirect_url="places", map_x=20, map_y=480, geo_x=56.014953, geo_y=37.208202)
 
 
@@ -215,6 +216,28 @@ class TestFilters(StaticLiveServerTestCase):
         filter_object.select_by_visible_text("Музеи")
         cards = self.browser.find_elements(By.CLASS_NAME, "card")
         self.assertEqual(len([card for card in cards if "display: block;" in card.get_attribute("style")]), 2)
+
+    def tearDown(self) -> None:
+        self.browser.quit()
+
+
+class TestRedirectEvents(StaticLiveServerTestCase):
+    """
+    Class for testing redirecting events on provider website
+    """
+
+    def setUp(self) -> None:
+        self.browser = webdriver.Chrome()
+        Event.objects.create(name="Event 1", cost=300, image="/", place="Event Hall", time="19:00",
+                             date="2024-03-08 19:00:00", link="https://www.wikipedia.org/", type=0)
+
+    def test_event(self):
+        self.browser.get(self.live_server_url + "/events/")
+        button_link = self.browser.find_element(By.CLASS_NAME, "buttonsob")
+        button_link.click()
+        WebDriverWait(self.browser, 10).until(
+            EC.title_is("Wikipedia"))
+        self.assertEqual(self.browser.current_url, "https://www.wikipedia.org/?")
 
     def tearDown(self) -> None:
         self.browser.quit()
