@@ -191,3 +191,30 @@ class TestLogin(StaticLiveServerTestCase):
 
     def tearDown(self) -> None:
         self.browser.quit()
+
+
+class TestFilters(StaticLiveServerTestCase):
+    """
+    Class for testing filters
+    """
+
+    def setUp(self) -> None:
+        self.browser = webdriver.Chrome()
+        create_places()
+
+    def test_places_filter_parks(self):
+        self.browser.get(self.live_server_url + "/places/")
+        filter_object = Select(self.browser.find_element(By.CLASS_NAME, "boxfiltr"))
+        filter_object.select_by_visible_text("Парки")
+        cards = self.browser.find_elements(By.CLASS_NAME, "card")
+        self.assertEqual(len([card for card in cards if "display: block;" in card.get_attribute("style")]), 2)
+
+    def test_places_filter_museums(self):
+        self.browser.get(self.live_server_url + "/places/")
+        filter_object = Select(self.browser.find_element(By.CLASS_NAME, "boxfiltr"))
+        filter_object.select_by_visible_text("Музеи")
+        cards = self.browser.find_elements(By.CLASS_NAME, "card")
+        self.assertEqual(len([card for card in cards if "display: block;" in card.get_attribute("style")]), 2)
+
+    def tearDown(self) -> None:
+        self.browser.quit()
