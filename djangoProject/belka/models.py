@@ -82,11 +82,12 @@ class Route(models.Model):
     marshrut = models.TextField()
 
     def getRoute(self):
-        return self.marshrut.split("$")
+        return self.marshrut.split("$")[:-1]
 
     def refreshRating(self, new_rate):
+        prev_sum = self.rating * self.votes
         self.votes += 1
-        self.rating = (self.rating + new_rate) / self.votes
+        self.rating = (prev_sum + new_rate) / self.votes
 
     def __str__(self):
         return str(self.name)
